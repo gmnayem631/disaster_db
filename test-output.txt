@@ -1,0 +1,388 @@
+============================================================
+ARTICLE: Flood death toll jumps to 31, over 58 lakh people affected
+============================================================
+
+CARDINAL:
+   - 11
+   - 31
+   - four
+   - 12
+   - five
+   - two
+   - six
+   - three
+   - 12,27,554
+   - 73
+   - 11
+   - 58,22,734
+   - 528
+   - 11
+   - Two
+   - at least 5
+   - 40,510
+   - 4,003
+   - 39,531
+   - 619
+   - 15,000
+   - 35
+
+ORG:
+   - Cumilla, Noakhali
+   - the Disaster Management and Relief Ministry
+   - Cox's Bazar
+   - Cumilla, Chattogram
+   - Khagrachhari
+   - Noakhali, Moulvibazar
+
+PRODUCT:
+   - Feni
+   - Feni
+
+GPE:
+   - Cumilla
+   - Chattogram
+   - Noakhali
+   - Brahmanbaria
+   - Khagrachhari
+   - Habiganj
+   - Brahmanbaria
+   - Sylhet
+   - Moulvibazar
+
+LOC:
+   - Feni
+
+PERSON:
+   - Lakshmipur
+   - Lakshmipur
+
+QUANTITY:
+   - 20,650 tonnes
+
+============================================================
+ARTICLE: Over a million stranded as flooding worsens
+============================================================
+
+GPE:
+   - Naogoan
+   - Gaibandha
+   - Padma
+   - Dharla
+   - Gobindaganj
+   - Chilmari
+   - Naogaon
+   - Atrai
+   - Manda
+   - Amrul
+   - Kashab
+   - Bishnapur
+   - Jamuna
+
+PERSON:
+   - Kurigram
+   - Jumuna Rivers
+   - Mokhlesur Rahman
+   - Masudur Rahman
+   - Kurigram
+   - Mohammad Rezaul Karim
+   - Md Sanaullah
+   - Mohammad Abdul Halim
+   - Abdur Rahim
+   - Jhenai
+   - Sirajul Islam
+
+ORG:
+   - Tangail
+   - Sirajganj
+   - Brahmmaputra
+   - Gaibandha Water Development Board
+   - WDB
+   - Department of Agricultural Extension
+   - Nunkhawa
+   - Bridge
+   - Bangladesh Water Development Board
+   - Atrai Upazila Nirbahi
+   - Manda Upazila Nirbahi
+   - Sirajganj
+   - Vulnerable Group Feeding
+   - Tangail
+   - the Water Development Board
+   - WDB
+   - Dhaleswari
+   - WDB
+
+DATE:
+   - Friday
+   - Gaibandha
+   - the next couple of days
+
+CARDINAL:
+   - Over one million
+   - around 150,000
+   - 109
+   - 84
+   - 475
+   - 56
+   - 300,000
+   - Some 120,000
+   - 13
+   - about 20,000
+   - six
+   - five
+   - 25
+   - around 215,000
+   - 47,217 thousand
+   - 214
+   - 187
+   - 35
+   - 14,013
+   - About 1.3
+   - 151
+   - Hundreds
+
+LOC:
+   - Brahmaputra
+   - the Ghagot River
+   - Korotoa River
+   - Brahmaputra River
+   - The Dharla River
+   - the Atrai River
+   - the Atrai River
+
+QUANTITY:
+   - 15 centimetres
+   - 91cm and
+   - 81cm
+   - 62cm
+   - 19 cm
+   - 11cm
+   - 99cm
+
+NORP:
+   - Palshbari
+   - Baithakhali
+
+PRODUCT:
+   - 400MT
+
+TIME:
+   - the last 24 hours
+
+============================================================
+ARTICLE: Flood death toll nears 500
+============================================================
+
+CARDINAL:
+   - At least 38
+   - 481
+   - 33
+   - two
+   - three
+   - 4,088
+   - 1,045
+   - 1,000
+   - 927
+   - some 15
+   - only six
+   - 5
+   - 7
+   - 20
+   - 132
+   - 272
+   - 43
+   - 1,309
+   - 1,358
+   - 270
+   - 4,840
+   - 1.6
+   - 251
+   - 39
+   - some 59,501
+   - 8,62,657
+   - 510
+   - 6,517
+   - 716
+   - Some 72
+   - 1,536
+
+TIME:
+   - 24 hours
+   - every 24 hours
+   - 24 hours
+   - evening
+   - evening
+
+DATE:
+   - 1:00pm yesterday
+   - the last one week
+   - the1998
+   - Between 8:00am Tuesday
+   - Wednesday
+   - yesterday
+   - yesterday
+   - next two days
+   - yesterday
+
+ORG:
+   - the Directorate General of Health Services
+   - DGHS
+   - International Centre for Diarrhoeal Diseases and Research
+   - ICDDR
+   - ICDDR
+   - Short Stay Unit
+   - ICDDR
+   - ICDDR
+   - Shaheed Suhrawardi Hospital
+   - Dhaka Medical College and Hospital
+   - DMCH
+   - National Institute of Diseases of Chest and Hospital
+   - Mitford Hospital
+   - DGHS
+   - ICDDR
+   - B. However
+   - DGHS
+   - DGHS
+   - DGHS
+   - ICDDR
+   - ICDDR
+   - DGSH
+   - Flood Forecasting
+   - Press Information Department
+
+PERSON:
+   - Azharul Islam
+   - Haji Camp
+   - Haji Camp
+   - Haji
+   - Maj Naufel
+
+GPE:
+   - Ashkona
+   - West Bengal
+   - Bangladesh
+
+FAC:
+   - Camp
+
+QUANTITY:
+   - 6,79,615 acres
+   - 6,78,1388 acres
+   - 2,558 km
+   - 21,334 km
+   - 79 km
+
+============================================================
+ARTICLE: Flood death toll now 131: DGHS
+============================================================
+
+CARDINAL:
+   - 131
+   - two
+   - 73
+   - 43
+   - 14
+   - one
+   - One hundred and three
+   - 16
+   - two
+   - one
+   - nine
+   - Around 24,838
+   - One hundred and eighty-five
+   - 33
+   - three
+   - seven
+   - 13
+   - seven
+   - five
+
+GPE:
+   - Lalmonirhat
+   - Sylhet
+   - Mymensingh
+   - Sylhet
+   - Rangpur
+   - Mymensingh
+   - Netrokona
+
+TIME:
+   - 24 hours
+   - this morning
+
+DATE:
+   - July 26, 2022
+   - May 17 to July 26
+   - 11
+
+ORG:
+   - the Directorate General of Health Services
+   - DGHS
+   - Dhaka
+   - Chattogram
+   - Moulvibazar
+
+FAC:
+   - Rangpur
+
+PERSON:
+   - Sylhet
+   - Sunamganj
+
+============================================================
+ARTICLE: Death toll from flood now 126: DGHS
+============================================================
+
+CARDINAL:
+   - 126
+   - some 21,843
+   - 99
+   - 15
+   - two
+   - one
+   - nine
+   - 72
+   - 41
+   - 12
+   - one
+   - 70
+   - 33
+   - 16
+   - 20
+   - 13
+   - nine
+
+GPE:
+   - Moulvibazar
+   - Sylhet
+   - Mymensingh
+   - Rangpur
+   - Dhaka
+   - Netrokona
+
+TIME:
+   - 24 hours
+   - this morning
+
+DATE:
+   - July 20, 2022
+   - between May 17 to July 20
+   - 11
+   - 10
+
+ORG:
+   - the Directorate General of Health Services
+   - DGHS
+   - DGHS
+   - Chattogram
+
+NORP:
+   - Sylhet
+
+LOC:
+   - Rangpur
+
+PERSON:
+   - Mymensingh
+   - Sylhet
+   - Sunamganj
+   - Kurigram
