@@ -6,7 +6,7 @@ from datetime import datetime
 from newspaper import Article
 import requests
 
-# ── Paths ──────────────────────────────────────────────────────────────────
+# Paths 
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 URLS_FILE   = os.path.join(BASE_DIR, "data", "urls.txt")
 OUTPUT_DIR  = os.path.join(BASE_DIR, "articles", "raw")
@@ -16,7 +16,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
 
 
-# ── Helpers ─────────────────────────────────────────────────────────────────
+# Helpers
 def url_to_filename(url):
     """Create a unique filename from a URL using hashing."""
     return hashlib.md5(url.encode()).hexdigest() + ".json"
@@ -40,7 +40,7 @@ def extract_date_fallback(url):
     return None
 
 
-# ── Core scraper ─────────────────────────────────────────────────────────────
+# Core scraper
 def scrape_article(url):
     """Download and parse a single article. Returns a dict or None on failure."""
     try:

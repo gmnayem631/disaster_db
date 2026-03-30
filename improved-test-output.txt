@@ -1,0 +1,100 @@
+Total patterns added: 9214
+
+============================================================
+ARTICLE: Flood death toll jumps to 31, over 58 lakh people affected
+============================================================       
+
+BD_DISTRICT:
+   - Cumilla 
+   - Noakhali
+   - Feni    
+   - Chattogram
+   - Brahmanbaria
+   - Khagrachhari
+   - Lakshmipur
+   - Moulvibazar
+   - Habiganj
+   - Sylhet
+
+BD_UNION:
+   - Noakhali
+
+============================================================
+ARTICLE: Over a million stranded as flooding worsens
+============================================================
+
+GPE:
+   - Naogoan
+   - Padma
+   - Dharla
+   - Kashab
+   - Jamuna
+
+BD_DISTRICT:
+   - Kurigram
+   - Tangail
+   - Sirajganj
+   - Gaibandha
+   - Naogaon
+
+BD_UNION:
+   - Gaibandha
+   - Manda
+   - Amrul
+   - Bishnapur
+
+LOC:
+   - Brahmaputra
+   - the Ghagot River
+   - Korotoa River
+   - Brahmaputra River
+   - The Dharla River
+
+BD_UPAZILA:
+   - Gobindaganj
+   - Chilmari
+   - Atrai
+
+============================================================
+ARTICLE: Flood death toll nears 500
+============================================================
+
+BD_DISTRICT:
+   - Dhaka
+
+GPE:
+   - Ashkona
+   - West Bengal
+   - Bangladesh
+
+============================================================
+ARTICLE: Flood death toll now 131: DGHS
+============================================================
+
+BD_DISTRICT:
+   - Lalmonirhat
+   - Sylhet
+   - Mymensingh
+   - Rangpur
+   - Dhaka
+   - Chattogram
+   - Sunamganj
+   - Netrokona
+   - Moulvibazar
+
+============================================================
+ARTICLE: Death toll from flood now 126: DGHS
+============================================================
+
+BD_DISTRICT:
+   - Moulvibazar
+   - Sylhet
+   - Mymensingh
+   - Rangpur
+   - Dhaka
+   - Chattogram
+   - Sunamganj
+   - Netrokona
+   - Kurigram
+
+Pipeline saved to: D:\DSCR\8th Semester\Research Project\disaster_db\models\gazetteer_model
