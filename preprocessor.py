@@ -3,7 +3,7 @@ import os
 import re
 from datetime import datetime
 
-# ── Paths ──────────────────────────────────────────────────────────────────
+# Paths
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 RAW_DIR     = os.path.join(BASE_DIR, "articles", "raw")
 CLEANED_DIR = os.path.join(BASE_DIR, "articles", "cleaned")
@@ -12,7 +12,7 @@ LOG_FILE    = os.path.join(BASE_DIR, "logs", "preprocessor_log.txt")
 os.makedirs(CLEANED_DIR, exist_ok=True)
 
 
-# ── Helpers ──────────────────────────────────────────────────────────────────
+# Helpers
 def log(message):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     entry = f"[{timestamp}] {message}"
@@ -81,7 +81,7 @@ def is_flood_related(text, title):
     return any(keyword in combined for keyword in keywords)
 
 
-# ── Core processor ────────────────────────────────────────────────────────────
+# Core processor
 def process_article(raw_data):
     """Clean and validate a single article. Returns cleaned dict or None."""
 
@@ -111,7 +111,7 @@ def process_article(raw_data):
     }
 
 
-# ── Main loop ─────────────────────────────────────────────────────────────────
+# Main loop
 def run_preprocessor():
     raw_files = [f for f in os.listdir(RAW_DIR) if f.endswith('.json')]
     log(f"Starting preprocessor. {len(raw_files)} raw files found.")

@@ -72,7 +72,7 @@ def scrape_article(url):
         return None
 
 
-# ── Main loop ─────────────────────────────────────────────────────────────────
+# Main loop
 def run_scraper():
     # Load URLs
     with open(URLS_FILE, "r", encoding="utf-8") as f:
