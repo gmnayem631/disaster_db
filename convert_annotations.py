@@ -12,7 +12,14 @@ TRAIN_OUTPUT    = os.path.join(BASE_DIR, "data", "annotations", "train.spacy")
 DEV_OUTPUT      = os.path.join(BASE_DIR, "data", "annotations", "dev.spacy")
 
 # Labels to ignore during conversion
-IGNORE_LABELS   = {"HOUSES_DAMAGED"}
+IGNORE_LABELS = {
+    "HOUSES_DAMAGED",
+    "SECONDARY_HAZARD",
+    "INFRASTRUCTURE_DAMAGED",
+    "AFFECTED_PEOPLE",
+    "EVENT_DATE",
+    "RELIEF_INFO",
+}
 
 def convert_to_spacy(export_file, train_output, dev_output, split=0.8):
     with open(export_file, "r", encoding="utf-8") as f:
