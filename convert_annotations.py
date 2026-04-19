@@ -16,9 +16,11 @@ IGNORE_LABELS = {
     "HOUSES_DAMAGED",
     "SECONDARY_HAZARD",
     "INFRASTRUCTURE_DAMAGED",
-    "AFFECTED_PEOPLE",
+    # "AFFECTED_PEOPLE",
     "EVENT_DATE",
-    "RELIEF_INFO",
+    # "RELIEF_INFO",
+    "INJURED",
+    "CROPS_AFFECTED",
 }
 
 def convert_to_spacy(export_file, train_output, dev_output, split=0.8):
