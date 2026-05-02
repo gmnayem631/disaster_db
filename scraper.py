@@ -40,6 +40,37 @@ def extract_date_fallback(url):
     return None
 
 
+# Scraping date extraction
+def extract_date_from_meta(url):
+    """Extract date from HTML meta tags."""
+    try:
+        import requests
+        from bs4 import BeautifulSoup
+        
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        response = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Try common meta date tags
+        meta_tags = [
+            {"property": "article:published_time"},
+            {"name": "pubdate"},
+            {"name": "publishdate"},
+            {"name": "date"},
+            {"itemprop": "datePublished"},
+        ]
+        
+        for attrs in meta_tags:
+            tag = soup.find("meta", attrs=attrs)
+            if tag and tag.get("content"):
+                date_str = tag["content"][:10]  # Take YYYY-MM-DD part
+                return date_str
+                
+        return None
+    except:
+        return None
+
+
 # Core scraper
 def scrape_article(url):
     """Download and parse a single article. Returns a dict or None on failure."""
@@ -52,7 +83,9 @@ def scrape_article(url):
         if article.publish_date:
             date = article.publish_date.strftime("%Y-%m-%d")
         else:
-            date = extract_date_fallback(url)
+            date = extract_date_from_meta(url)
+            if not date:
+                date = extract_date_fallback(url)
 
         # Basic validation - skip if no meaningful text
         if not article.text or len(article.text.strip()) < 100:

@@ -4,15 +4,15 @@ from datetime import datetime
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
-# ── Load environment variables ─────────────────────────────────────────────
+# Load environment variables
 load_dotenv()
 
-# ── Connect to MongoDB ─────────────────────────────────────────────────────
+# Connect to MongoDB
 def get_database():
     client = MongoClient(os.getenv("MONGODB_URI"))
     return client["disaster_db"]
 
-# ── Insert disaster record ─────────────────────────────────────────────────
+# Insert disaster record
 def insert_disaster_record(record):
     db = get_database()
     collection = db["disaster_events"]
@@ -29,7 +29,7 @@ def insert_disaster_record(record):
     result = collection.insert_one(record)
     return {"status": "inserted", "id": str(result.inserted_id)}
 
-# ── Test connection ────────────────────────────────────────────────────────
+# Test connection
 def test_connection():
     try:
         db = get_database()
