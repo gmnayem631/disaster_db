@@ -1,0 +1,73 @@
+{
+  "model": "XLM-RoBERTa",
+  "evaluation_date": "2026-05-04 19:48:26",
+  "dev_set_size": 56,
+  "overall_precision": 77.74,
+  "overall_recall": 80.74,
+  "overall_f1": 79.21,
+  "avg_processing_time_sec": 2.549,
+  "model_extracted": 22,
+  "rule_based_extracted": 2,
+  "per_entity_results": {
+    "BD_UPAZILA": {
+      "precision": 82.78,
+      "recall": 80.65,
+      "f1": 81.7,
+      "support": 155
+    },
+    "RELIEF_INFO": {
+      "precision": 44.0,
+      "recall": 51.56,
+      "f1": 47.48,
+      "support": 64
+    },
+    "AGENCIES_INVOLVED": {
+      "precision": 71.29,
+      "recall": 82.76,
+      "f1": 76.6,
+      "support": 174
+    },
+    "BD_DISTRICT": {
+      "precision": 95.23,
+      "recall": 93.25,
+      "f1": 94.23,
+      "support": 385
+    },
+    "DISASTER_TYPE": {
+      "precision": 91.62,
+      "recall": 87.93,
+      "f1": 89.74,
+      "support": 174
+    },
+    "FATALITIES": {
+      "precision": 56.35,
+      "recall": 66.98,
+      "f1": 61.21,
+      "support": 106
+    },
+    "DISPLACED": {
+      "precision": 63.41,
+      "recall": 67.53,
+      "f1": 65.41,
+      "support": 77
+    },
+    "MISSING": {
+      "precision": 57.14,
+      "recall": 72.73,
+      "f1": 64.0,
+      "support": 11
+    },
+    "AFFECTED_PEOPLE": {
+      "precision": 55.56,
+      "recall": 56.82,
+      "f1": 56.18,
+      "support": 44
+    },
+    "BD_UNION": {
+      "precision": 53.57,
+      "recall": 50.0,
+      "f1": 51.72,
+      "support": 30
+    }
+  }
+}
