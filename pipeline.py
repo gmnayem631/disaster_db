@@ -10,7 +10,7 @@ from newspaper import Article
 from entity_linker import extract_entities
 from db_writer import insert_disaster_record
 
-# ── Logging setup ──────────────────────────────────────────────────────────
+# Logging setup
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_FILE = os.path.join(BASE_DIR, "logs", "pipeline_log.txt")
 os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
@@ -25,43 +25,44 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# ── Newspaper sources ──────────────────────────────────────────────────────
+# Newspaper sources
 SOURCES = [
     {
         "name": "The Daily Star",
         "sections": [
             "https://www.thedailystar.net/environment/disaster",
-            "https://www.thedailystar.net/flood",
+            "https://www.thedailystar.net/tags/flood",
         ]
     },
     {
         "name": "Dhaka Tribune",
         "sections": [
             "https://www.dhakatribune.com/bangladesh/disaster",
+            "https://www.dhakatribune.com/climate-environment",
         ]
     },
     {
         "name": "New Age",
         "sections": [
-            "https://www.newagebd.net/flood",
+            "https://www.newagebd.net/category/national",
         ]
     },
     {
         "name": "bdnews24",
         "sections": [
-            "https://bdnews24.com/bangladesh/disaster",
+            "https://bdnews24.com/bangladesh",
         ]
     }
 ]
 
-# ── Flood keywords ─────────────────────────────────────────────────────────
+# Flood keywords
 FLOOD_KEYWORDS = [
     'flood', 'flooding', 'flooded', 'flash flood',
     'inundated', 'inundation', 'waterlogged', 'submerged',
     'deluge', 'overflowed', 'embankment breach', 'tidal surge'
 ]
 
-# ── Seen URLs tracker ──────────────────────────────────────────────────────
+# Seen URLs tracker
 SEEN_URLS_FILE = os.path.join(BASE_DIR, "data", "seen_urls.json")
 
 def load_seen_urls():
@@ -74,7 +75,7 @@ def save_seen_urls(seen_urls):
     with open(SEEN_URLS_FILE, "w") as f:
         json.dump(list(seen_urls), f)
 
-# ── Article scraper ────────────────────────────────────────────────────────
+# Article scraper
 def scrape_article(url):
     try:
         article = Article(url)
@@ -123,7 +124,7 @@ def extract_date_from_meta(url):
     except:
         return None
 
-# ── Text cleaner ───────────────────────────────────────────────────────────
+# Text cleaner
 def clean_text(text):
     import re
     boilerplate = [
@@ -151,33 +152,66 @@ def is_flood_related(text, title):
     combined = (title + ' ' + text).lower()
     return any(kw in combined for kw in FLOOD_KEYWORDS)
 
-# ── Section scraper ────────────────────────────────────────────────────────
-def get_article_urls_from_section(section_url):
+# Section scraper
+def get_article_urls_from_section(section_url, source_name):
     """Extract article URLs from a newspaper section page."""
     try:
         import requests
         from bs4 import BeautifulSoup
+        from urllib.parse import urlparse
+
         headers  = {'User-Agent': 'Mozilla/5.0'}
         response = requests.get(section_url, headers=headers, timeout=15)
         soup     = BeautifulSoup(response.text, 'html.parser')
-        
+
+        base     = urlparse(section_url)
+        base_url = f"{base.scheme}://{base.netloc}"
+
+        # Article URL patterns per source
+        article_patterns = {
+            "The Daily Star": [
+                "/news/", "/environment/", "/disaster/", "/flood/"
+            ],
+            "Dhaka Tribune": [
+                "/bangladesh/", "/climate-environment/"
+            ],
+            "New Age": [
+                "/article/", "/news/"
+            ],
+            "bdnews24": [
+                "/bangladesh/", "/environment/"
+            ]
+        }
+
+        patterns = article_patterns.get(source_name, ["/"])
+
         urls = set()
         for a_tag in soup.find_all('a', href=True):
             href = a_tag['href']
+
             # Make absolute URL
             if href.startswith('http'):
-                urls.add(href)
+                full_url = href
             elif href.startswith('/'):
-                from urllib.parse import urlparse
-                base = urlparse(section_url)
-                urls.add(f"{base.scheme}://{base.netloc}{href}")
-        
+                full_url = base_url + href
+            else:
+                continue
+
+            # Only keep URLs from same domain
+            if base.netloc not in full_url:
+                continue
+
+            # Only keep URLs matching article patterns
+            if any(pattern in full_url for pattern in patterns):
+                urls.add(full_url)
+
         return list(urls)
+
     except Exception as e:
         log.error(f"Failed to get URLs from {section_url}: {e}")
         return []
 
-# ── Main pipeline ──────────────────────────────────────────────────────────
+# Main pipeline
 def run_pipeline():
     log.info("=" * 50)
     log.info("Pipeline started")
@@ -193,7 +227,7 @@ def run_pipeline():
         log.info(f"Processing source: {source['name']}")
         
         for section_url in source["sections"]:
-            urls = get_article_urls_from_section(section_url)
+            urls = get_article_urls_from_section(section_url, source["name"])
             log.info(f"Found {len(urls)} URLs in {section_url}")
             
             for url in urls:
@@ -257,7 +291,7 @@ def run_pipeline():
     log.info(f"Pipeline complete — Inserted: {success} | Duplicate: {duplicate} | Skipped: {skipped} | Failed: {failed}")
     log.info("=" * 50)
 
-# ── Scheduler ──────────────────────────────────────────────────────────────
+# Scheduler
 if __name__ == "__main__":
     log.info("Scheduler started. Pipeline will run daily at 09:00.")
     
@@ -269,4 +303,4 @@ if __name__ == "__main__":
     
     while True:
         schedule.run_pending()
-        time.sleep(60)
+        time.sleep(60) 
