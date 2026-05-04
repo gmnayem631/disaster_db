@@ -138,7 +138,7 @@ def run_scraper():
             failed += 1
 
         # Polite delay between requests
-        time.sleep(2)
+        time.sleep(random.uniform(1.5, 4.5))
 
     log(f"Done. Success: {success} | Skipped: {failed} | Already existed: {skipped}")
 
