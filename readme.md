@@ -100,7 +100,7 @@ python scraper.py
 python entity_linker.py
 ```
 
-> **\*Note:** The trained model and annotated dataset are not included in this repository due to size. You will need to train your own model using the provided scripts.\*
+> **Note:** The trained model and annotated dataset are not included in this repository due to size. You will need to train your own model using the provided scripts.
 
 ## Model Performance
 
