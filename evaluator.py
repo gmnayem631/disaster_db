@@ -6,24 +6,24 @@ from spacy.tokens import DocBin
 from spacy.training import Example
 from datetime import datetime
 
-# ── Paths ──────────────────────────────────────────────────────────────────
+# Paths
 BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH     = os.path.join(BASE_DIR, "models", "xlmroberta_final")
 DEV_DATA_PATH  = os.path.join(BASE_DIR, "data", "annotations", "dev.spacy")
 OUTPUT_FILE    = os.path.join(BASE_DIR, "data", "evaluation_results.json")
 
-# ── Load model ─────────────────────────────────────────────────────────────
+# Load model
 print("Loading model...")
 nlp = spacy.load(MODEL_PATH)
 print("Model loaded.")
 
-# ── Load dev data ──────────────────────────────────────────────────────────
+# Load dev data
 def load_dev_data():
     doc_bin = DocBin().from_disk(DEV_DATA_PATH)
     docs    = list(doc_bin.get_docs(nlp.vocab))
     return docs
 
-# ── Entity level evaluation ────────────────────────────────────────────────
+# Entity level evaluation
 def evaluate_entities(dev_docs):
     """Calculate precision, recall, F1 per entity type."""
     
@@ -96,7 +96,7 @@ def evaluate_entities(dev_docs):
 
     return results, overall_precision, overall_recall, overall_f1, avg_time
 
-# ── Rule-based contribution ────────────────────────────────────────────────
+# Rule-based contribution
 def evaluate_rule_based_contribution(dev_docs):
     """Measure how many entities came from model vs rule-based."""
     from entity_linker import extract_entities
@@ -118,7 +118,7 @@ def evaluate_rule_based_contribution(dev_docs):
 
     return model_count, rule_based_count
 
-# ── Print results ──────────────────────────────────────────────────────────
+# Print results
 def print_results(results, overall_p, overall_r, overall_f1, avg_time, model_count, rule_count):
     print("\n" + "=" * 65)
     print("EVALUATION RESULTS — XLM-RoBERTa NER Model")
@@ -140,7 +140,7 @@ def print_results(results, overall_p, overall_r, overall_f1, avg_time, model_cou
     print(f"Rule-based contribution             : {rule_count/(model_count+rule_count)*100:.1f}%" if (model_count+rule_count) > 0 else "N/A")
     print("=" * 65)
 
-# ── Save results ───────────────────────────────────────────────────────────
+# Save results
 def save_results(results, overall_p, overall_r, overall_f1, avg_time, model_count, rule_count):
     output = {
         "model":                  "XLM-RoBERTa",
@@ -160,7 +160,7 @@ def save_results(results, overall_p, overall_r, overall_f1, avg_time, model_coun
 
     print(f"\nResults saved to: {OUTPUT_FILE}")
 
-# ── Main ───────────────────────────────────────────────────────────────────
+# Main
 if __name__ == "__main__":
     print("Loading dev data...")
     dev_docs = load_dev_data()
