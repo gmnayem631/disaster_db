@@ -5,6 +5,7 @@ import hashlib
 from datetime import datetime
 from newspaper import Article
 import requests
+import random
 
 # Paths 
 BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
