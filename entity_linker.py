@@ -2,7 +2,7 @@ import re
 import spacy
 import os
 
-# ── Load model ─────────────────────────────────────────────────────────────
+# Load model
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "models", "xlmroberta_final")
 
@@ -10,7 +10,7 @@ print("Loading XLM-RoBERTa model...")
 nlp = spacy.load(MODEL_PATH)
 print("Model loaded.")
 
-# ── Number extractor ───────────────────────────────────────────────────────
+# Number extractor 
 def extract_number(text):
     text = text.replace(',', '')
     lakh_match  = re.search(r'(\d+\.?\d*)\s*lakh', text, re.IGNORECASE)
@@ -24,7 +24,7 @@ def extract_number(text):
         return int(match.group())
     return None
 
-# ── Rule-based fallback patterns ───────────────────────────────────────────
+# Rule-based fallback patterns 
 FATALITY_PATTERNS = [
     r'(\d[\d,]*)\s+people\s+(died|killed|dead)',
     r'death toll\s+\w+\s+to\s+(\d[\d,]*)',
@@ -52,7 +52,7 @@ def apply_rule_based(text, patterns):
                     return extract_number(group)
     return None
 
-# ── Main entity linker ─────────────────────────────────────────────────────
+# Main entity linker 
 def extract_entities(text, source_url, publish_date=None):
     doc = nlp(text)
 
@@ -152,7 +152,7 @@ def extract_entities(text, source_url, publish_date=None):
                     "source": "model"
                 })
 
-    # ── Process numerical entities ─────────────────────────────────────────
+    # Process numerical entities 
     if fatality_mentions:
         best = max(fatality_mentions, key=lambda x: extract_number(x) or 0)
         num  = extract_number(best)
@@ -206,7 +206,7 @@ def extract_entities(text, source_url, publish_date=None):
 
     return record
 
-# ── Test ───────────────────────────────────────────────────────────────────
+# Test 
 if __name__ == "__main__":
     test_text = """
     The flood situation in Sylhet and Sunamganj has worsened.

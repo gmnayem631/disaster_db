@@ -75,7 +75,8 @@ def is_flood_related(text, title):
     keywords = [
         'flood', 'flooding', 'flooded', 'flash flood', 'floods','flash flood',
         'inundated', 'inundation', 'waterlogged', 'submerged',
-        'deluge', 'overflowed', 'embankment breach'
+        'deluge', 'overflowed', 'embankment breach','fire', 'blaze', 'burnt', 'arson', 
+        'inferno', 'gutted', 'conflagration'
     ]
     combined = (title + ' ' + text).lower()
     return any(keyword in combined for keyword in keywords)
