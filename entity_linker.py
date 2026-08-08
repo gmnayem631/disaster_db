@@ -4,7 +4,8 @@ import os
 
 # Load model
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "models", "xlmroberta_final")
+# MODEL_PATH = os.path.join(BASE_DIR, "models", "xlmroberta_final")
+MODEL_PATH = os.path.join(BASE_DIR, "models", "xlmroberta_v2") # updated xlmroberta model
 
 print("Loading XLM-RoBERTa model...")
 nlp = spacy.load(MODEL_PATH)

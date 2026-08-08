@@ -78,7 +78,12 @@ def convert_to_spacy(export_file, train_output, dev_output, split=0.8):
             doc = nlp.make_doc(text)
             ents = []
             for start, end, label in clean_entities:
-                span = doc.char_span(start, end, label=label)
+                # span = doc.char_span(start, end, label=label)
+                # if span is not None:
+                #     ents.append(span)
+                span = doc.char_span(start, end, label=label, alignment_mode="contract")
+                if span is None:
+                    span = doc.char_span(start, end, label=label, alignment_mode="expand")
                 if span is not None:
                     ents.append(span)
             doc.ents = ents
