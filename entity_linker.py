@@ -1,28 +1,89 @@
 import re
 import spacy
 import os
+import json
 
 # Load model
 BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
 # MODEL_PATH = os.path.join(BASE_DIR, "models", "xlmroberta_final")
 MODEL_PATH = os.path.join(BASE_DIR, "models", "xlmroberta_v2") # updated xlmroberta model
 
+# print("Loading XLM-RoBERTa model...")
+# nlp = spacy.load(MODEL_PATH)
+# print("Model loaded.")
+
 print("Loading XLM-RoBERTa model...")
 nlp = spacy.load(MODEL_PATH)
-print("Model loaded.")
+
+# Load gazetteer and add to pipeline
+GAZETTEER_PATH = os.path.join(BASE_DIR, "data", "gazetteer", "bangladesh_gazetteer.json")
+
+with open(GAZETTEER_PATH, "r", encoding="utf-8") as f:
+    gazetteer = json.load(f)
+
+if "entity_ruler" in nlp.pipe_names:
+    ruler = nlp.get_pipe("entity_ruler")
+else:
+    ruler = nlp.add_pipe("entity_ruler", before="ner")
+
+patterns = []
+for district in gazetteer["districts"]:
+    patterns.append({"label": "BD_DISTRICT", "pattern": district})
+    patterns.append({"label": "BD_DISTRICT", "pattern": district.lower()})
+
+for upazila in gazetteer["upazilas"]:
+    patterns.append({"label": "BD_UPAZILA", "pattern": upazila})
+    patterns.append({"label": "BD_UPAZILA", "pattern": upazila.lower()})
+
+for union in gazetteer["unions"]:
+    patterns.append({"label": "BD_UNION", "pattern": union})
+    patterns.append({"label": "BD_UNION", "pattern": union.lower()})
+
+ruler.add_patterns(patterns)
+print(f"Gazetteer loaded: {len(patterns)} patterns added.")
 
 # Number extractor 
 def extract_number(text):
-    text = text.replace(',', '')
-    lakh_match  = re.search(r'(\d+\.?\d*)\s*lakh', text, re.IGNORECASE)
-    crore_match = re.search(r'(\d+\.?\d*)\s*crore', text, re.IGNORECASE)
+    """Extract number from entity text including words and South Asian formats."""
+    text_clean = text.replace(',', '').strip()
+
+    # Word to number mapping
+    word_numbers = {
+        'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5,
+        'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10,
+        'eleven': 11, 'twelve': 12, 'thirteen': 13, 'fourteen': 14,
+        'fifteen': 15, 'sixteen': 16, 'seventeen': 17, 'eighteen': 18,
+        'nineteen': 19, 'twenty': 20, 'thirty': 30, 'forty': 40,
+        'fifty': 50, 'sixty': 60, 'seventy': 70, 'eighty': 80,
+        'ninety': 90, 'hundred': 100, 'thousand': 1000,
+    }
+
+    # South Asian formats
+    lakh_match  = re.search(r'(\d+\.?\d*)\s*lakh', text_clean, re.IGNORECASE)
+    crore_match = re.search(r'(\d+\.?\d*)\s*crore', text_clean, re.IGNORECASE)
+    million_match = re.search(r'(\d+\.?\d*)\s*million', text_clean, re.IGNORECASE)
+    thousand_match = re.search(r'(\d+\.?\d*)\s*thousand', text_clean, re.IGNORECASE)
+
     if lakh_match:
         return int(float(lakh_match.group(1)) * 100000)
     if crore_match:
         return int(float(crore_match.group(1)) * 10000000)
-    match = re.search(r'\d+', text)
-    if match:
-        return int(match.group())
+    if million_match:
+        return int(float(million_match.group(1)) * 1000000)
+    if thousand_match:
+        return int(float(thousand_match.group(1)) * 1000)
+
+    # Regular digits
+    digit_match = re.search(r'\d+', text_clean)
+    if digit_match:
+        return int(digit_match.group())
+
+    # Word numbers
+    text_lower = text_clean.lower()
+    for word, value in word_numbers.items():
+        if re.search(r'\b' + word + r'\b', text_lower):
+            return value
+
     return None
 
 # Rule-based fallback patterns 
@@ -155,7 +216,11 @@ def extract_entities(text, source_url, publish_date=None):
 
     # Process numerical entities 
     if fatality_mentions:
-        best = max(fatality_mentions, key=lambda x: extract_number(x) or 0)
+        cumulative_keywords = ['total', 'toll', 'risen to', 'climbed to',
+                            'reached', 'now', 'so far']
+        cumulative = [m for m in fatality_mentions
+                    if any(kw in m.lower() for kw in cumulative_keywords)]
+        best = cumulative[-1] if cumulative else fatality_mentions[-1]
         num  = extract_number(best)
         if num:
             record["fatalities"] = {
@@ -172,7 +237,11 @@ def extract_entities(text, source_url, publish_date=None):
             }
 
     if displaced_mentions:
-        best = max(displaced_mentions, key=lambda x: extract_number(x) or 0)
+        cumulative_keywords = ['total', 'displaced', 'stranded',
+                               'marooned', 'evacuated', 'so far']
+        cumulative = [m for m in displaced_mentions
+                      if any(kw in m.lower() for kw in cumulative_keywords)]
+        best = cumulative[-1] if cumulative else displaced_mentions[-1]
         num  = extract_number(best)
         if num:
             record["displaced"] = {
@@ -189,7 +258,11 @@ def extract_entities(text, source_url, publish_date=None):
             }
 
     if affected_mentions:
-        best = max(affected_mentions, key=lambda x: extract_number(x) or 0)
+        cumulative_keywords = ['total', 'affected', 'impacted',
+                               'so far', 'now', 'across']
+        cumulative = [m for m in affected_mentions
+                      if any(kw in m.lower() for kw in cumulative_keywords)]
+        best = cumulative[-1] if cumulative else affected_mentions[-1]
         num  = extract_number(best)
         if num:
             record["affected_people"] = {
