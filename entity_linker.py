@@ -189,16 +189,23 @@ def extract_entities(text, source_url, publish_date=None):
 
         elif label == "MISSING":
             num = extract_number(text_)
-            if num is not None and (record["missing"] is None or num > record["missing"].get("value", 0)):
-                record["missing"] = {
-                    "value":  num,
-                    "source": "model"
-                }
-            elif num is None and record["missing"] is None:
+            if num is not None:
+                existing = record["missing"]
+                existing_val = existing.get("value", 0) if existing else 0
+                if isinstance(existing_val, str):
+                    existing_val = 0
+                if existing is None or num > existing_val:
+                    record["missing"] = {
+                        "value":  num,
+                        "source": "model"
+                    }
+            elif record["missing"] is None:
                 record["missing"] = {
                     "value":  text_,
                     "source": "model"
                 }
+
+
 
         elif label == "RELIEF_INFO":
             if text_ not in [r["value"] for r in record["relief_info"]]:
