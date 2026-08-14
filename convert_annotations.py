@@ -21,7 +21,7 @@ IGNORE_LABELS = {
     "CROPS_AFFECTED",
 }
 
-def convert_to_spacy(export_file, train_output, dev_output, split=0.8):
+def convert_to_spacy(export_file, train_output, dev_output):
     with open(export_file, "r", encoding="utf-8") as f:
         tasks = json.load(f)
 
@@ -92,27 +92,35 @@ def convert_to_spacy(export_file, train_output, dev_output, split=0.8):
             print(f"Error processing task {task.get('id')}: {e}")
             skipped += 1
 
-    # Shuffle and split
+    # Shuffle and split 70/15/15
     random.seed(42)
     random.shuffle(all_examples)
 
-    split_idx   = int(len(all_examples) * split)
-    train_docs  = all_examples[:split_idx]
-    dev_docs    = all_examples[split_idx:]
+    n           = len(all_examples)
+    train_docs  = all_examples[:int(0.70 * n)]
+    dev_docs    = all_examples[int(0.70 * n):int(0.85 * n)]
+    test_docs   = all_examples[int(0.85 * n):]
 
     # Save
+    TEST_OUTPUT = os.path.join(BASE_DIR, "data", "annotations", "test.spacy")
+
     train_db = DocBin(docs=train_docs)
     train_db.to_disk(train_output)
 
     dev_db = DocBin(docs=dev_docs)
     dev_db.to_disk(dev_output)
 
+    test_db = DocBin(docs=test_docs)
+    test_db.to_disk(TEST_OUTPUT)
+
     print(f"Total articles processed : {len(all_examples)}")
     print(f"Skipped                  : {skipped}")
     print(f"Training set             : {len(train_docs)} articles")
     print(f"Dev set                  : {len(dev_docs)} articles")
+    print(f"Test set                 : {len(test_docs)} articles")
     print(f"Train saved to           : {train_output}")
     print(f"Dev saved to             : {dev_output}")
+    print(f"Test saved to            : {TEST_OUTPUT}")
 
 if __name__ == "__main__":
     convert_to_spacy(EXPORT_FILE, TRAIN_OUTPUT, DEV_OUTPUT)

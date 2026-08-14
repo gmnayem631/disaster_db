@@ -10,7 +10,7 @@ OUTPUT_FILE      = os.path.join(BASE_DIR, "data", "annotations", "pre_annotated_
 
 # Load trained DistilBERT model
 print("Loading model...")
-nlp = spacy.load(os.path.join(BASE_DIR, "models", "xlmroberta_final"))
+nlp = spacy.load(os.path.join(BASE_DIR, "models", "xlmroberta_v2"))
 print("Model loaded.")
 
 def get_already_annotated_urls():
