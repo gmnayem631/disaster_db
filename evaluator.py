@@ -9,8 +9,8 @@ from datetime import datetime
 # Paths
 BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
 # MODEL_PATH     = os.path.join(BASE_DIR, "models", "xlmroberta_final")
-MODEL_PATH = os.path.join(BASE_DIR, "models", "xlmroberta_v2")
-DEV_DATA_PATH  = os.path.join(BASE_DIR, "data", "annotations", "dev.spacy")
+MODEL_PATH = os.path.join(BASE_DIR, "models", "xlmroberta_v3")
+DEV_DATA_PATH  = os.path.join(BASE_DIR, "data", "annotations", "test.spacy")
 OUTPUT_FILE    = os.path.join(BASE_DIR, "data", "evaluation_results.json")
 
 # Load model

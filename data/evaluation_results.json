@@ -1,73 +1,73 @@
 {
   "model": "XLM-RoBERTa",
-  "evaluation_date": "2026-08-09 20:11:30",
+  "evaluation_date": "2026-08-24 06:34:54",
   "dev_set_size": 56,
-  "overall_precision": 84.01,
-  "overall_recall": 86.25,
-  "overall_f1": 85.12,
-  "avg_processing_time_sec": 5.104,
-  "model_extracted": 31,
+  "overall_precision": 84.88,
+  "overall_recall": 85.18,
+  "overall_f1": 85.03,
+  "avg_processing_time_sec": 2.454,
+  "model_extracted": 36,
   "rule_based_extracted": 1,
   "per_entity_results": {
+    "FATALITIES": {
+      "precision": 75.0,
+      "recall": 74.36,
+      "f1": 74.68,
+      "support": 117
+    },
     "BD_DISTRICT": {
-      "precision": 96.68,
-      "recall": 95.85,
-      "f1": 96.26,
-      "support": 699
-    },
-    "DISASTER_TYPE": {
-      "precision": 92.21,
-      "recall": 96.77,
-      "f1": 94.44,
-      "support": 465
-    },
-    "BD_UPAZILA": {
-      "precision": 87.26,
-      "recall": 90.0,
-      "f1": 88.61,
-      "support": 350
+      "precision": 97.52,
+      "recall": 95.51,
+      "f1": 96.51,
+      "support": 535
     },
     "BD_UNION": {
-      "precision": 53.4,
-      "recall": 68.75,
-      "f1": 60.11,
-      "support": 80
+      "precision": 58.21,
+      "recall": 66.1,
+      "f1": 61.9,
+      "support": 59
     },
-    "AGENCIES_INVOLVED": {
-      "precision": 79.1,
-      "recall": 82.49,
-      "f1": 80.76,
-      "support": 257
-    },
-    "FATALITIES": {
-      "precision": 62.5,
-      "recall": 64.75,
-      "f1": 63.6,
-      "support": 139
-    },
-    "RELIEF_INFO": {
-      "precision": 46.59,
-      "recall": 45.05,
-      "f1": 45.81,
-      "support": 91
-    },
-    "DISPLACED": {
-      "precision": 65.26,
-      "recall": 62.0,
-      "f1": 63.59,
-      "support": 100
-    },
-    "AFFECTED_PEOPLE": {
-      "precision": 67.31,
-      "recall": 64.81,
-      "f1": 66.04,
-      "support": 54
+    "BD_UPAZILA": {
+      "precision": 87.23,
+      "recall": 84.02,
+      "f1": 85.59,
+      "support": 244
     },
     "MISSING": {
-      "precision": 56.25,
+      "precision": 58.33,
+      "recall": 70.0,
+      "f1": 63.64,
+      "support": 10
+    },
+    "DISPLACED": {
+      "precision": 62.96,
+      "recall": 62.96,
+      "f1": 62.96,
+      "support": 81
+    },
+    "AGENCIES_INVOLVED": {
+      "precision": 77.6,
+      "recall": 78.45,
+      "f1": 78.02,
+      "support": 181
+    },
+    "AFFECTED_PEOPLE": {
+      "precision": 67.5,
       "recall": 69.23,
-      "f1": 62.07,
-      "support": 13
+      "f1": 68.35,
+      "support": 39
+    },
+    "DISASTER_TYPE": {
+      "precision": 93.64,
+      "recall": 97.01,
+      "f1": 95.29,
+      "support": 334
+    },
+    "RELIEF_INFO": {
+      "precision": 39.13,
+      "recall": 40.3,
+      "f1": 39.71,
+      "support": 67
     }
   }
 }
