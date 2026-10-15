@@ -28,7 +28,7 @@ Unit guide: use 'people' for persons, 'families' for households,
 
 Return only valid JSON matching the required schema."""
 
-def run_branch_b(prompt: str, model: str = "qwen2.5:3b") -> BranchBResult:
+def run_branch_b(prompt: str, model: str = "qwen3:8b") -> BranchBResult:
     """Send structured prompt to local LLM and return validated claims."""
     
     response = ollama.chat(
@@ -44,7 +44,8 @@ def run_branch_b(prompt: str, model: str = "qwen2.5:3b") -> BranchBResult:
             }
         ],
         format  = BranchBResult.model_json_schema(),
-        options = {"temperature": 0}
+        options = {"temperature": 0},
+        think = False
     )
 
     return BranchBResult.model_validate_json(
