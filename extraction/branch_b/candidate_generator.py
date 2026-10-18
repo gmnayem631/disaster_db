@@ -36,6 +36,8 @@ class Candidate:
 
 # Quantity patterns 
 QUANTITY_PATTERNS = [
+    # Bengali/South Asian comma format: 12,27,554 or 1,23,456
+    r'\b\d{1,2}(?:,\d{2})*(?:,\d{3})\b',
     # South Asian formats
     r'\d+\.?\d*\s*(?:lakh|crore|million|billion|thousand)',
     # Ranges

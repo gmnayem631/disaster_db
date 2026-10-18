@@ -63,7 +63,7 @@ for u in branch_a["locations"]["upazilas"]:
 print(f"Locations found: {[l['name'] for l in branch_a_locations]}")
 print(f"Disaster type  : {[d['value'] for d in branch_a['disaster_type']]}")
 
-# ── Branch B — candidate generation ───────────────────────────────────────
+# ── Branch B — candidate generation
 print("\n[Branch B] Generating candidates...")
 sentences, candidates = generate_candidates(article["text"])
 print(f"Sentences : {len(sentences)}")
@@ -73,8 +73,10 @@ for c in candidates:
 
 # ── Branch B — LLM interpretation ─────────────────────────────────────────
 print("\n[Branch B] Sending to Qwen3 8B...")
-prompt = format_for_llm(sentences, candidates, branch_a_locations)
-result = run_branch_b(prompt)
+# prompt = format_for_llm(sentences, candidates, branch_a_locations)
+# result = run_branch_b(prompt)
+from extraction.branch_b.local_llm import run_branch_b_batched
+result = run_branch_b_batched(sentences, candidates, branch_a_locations)
 print(f"Claims returned: {len(result.claims)}")
 
 # ── Validation ─────────────────────────────────────────────────────────────

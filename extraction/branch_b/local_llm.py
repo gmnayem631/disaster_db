@@ -44,14 +44,57 @@ def run_branch_b(prompt: str, model: str = "qwen3:8b") -> BranchBResult:
             }
         ],
         format  = BranchBResult.model_json_schema(),
-        options = {"temperature": 0},
-        think = False
+        options = {
+            "temperature": 0,
+            "num_predict": 4096
+        },
+        think   = False
     )
+
+    content = response.message.content
+    if not content or not content.strip():
+        raise ValueError("Empty response from model")
 
     return BranchBResult.model_validate_json(
         response.message.content
     )
 
+
+def run_branch_b_batched(
+    sentences,
+    candidates,
+    branch_a_locations,
+    batch_size: int = 6,
+    model: str = "qwen3:8b"
+) -> list[dict]:
+    """Process candidates in batches and collect all claims."""
+    from extraction.branch_b.candidate_generator import format_for_llm
+    from extraction.branch_b.schemas import BranchBResult
+
+    all_claims = []
+
+    # Split candidates into batches
+    for i in range(0, len(candidates), batch_size):
+        batch = candidates[i:i + batch_size]
+        print(f"  Processing batch {i//batch_size + 1} "
+              f"({len(batch)} candidates)...")
+
+        prompt = format_for_llm(sentences, batch, branch_a_locations)
+
+        max_retries = 2
+        for attempt in range(max_retries):
+            try:
+                result = run_branch_b(prompt, model)
+                all_claims.extend(result.claims)
+                break
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    print(f"  Batch {i//batch_size + 1} attempt {attempt + 1} failed, retrying...")
+                else:
+                    print(f"  Batch {i//batch_size + 1} failed after {max_retries} attempts: {e}")
+
+    # Wrap all claims in BranchBResult
+    return BranchBResult(claims=all_claims)
 
 # ── Quick test ─────────────────────────────────────────────────────────────
 if __name__ == "__main__":
