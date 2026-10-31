@@ -1,12 +1,15 @@
 import json
 import os
 import spacy
+from datetime import datetime
 
 # Paths
 BASE_DIR         = os.path.dirname(os.path.abspath(__file__))
 CLEANED_DIR      = os.path.join(BASE_DIR, "articles", "cleaned")
 ANNOTATED_FILE   = os.path.join(BASE_DIR, "data", "annotations", "label_studio_import.json")
-OUTPUT_FILE      = os.path.join(BASE_DIR, "data", "annotations", "pre_annotated_import.json")
+# OUTPUT_FILE      = os.path.join(BASE_DIR, "data", "annotations", "pre_annotated_import.json")
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+OUTPUT_FILE = os.path.join(BASE_DIR, "data", "annotations", f"pre_annotated_{timestamp}.json")
 
 # Load trained DistilBERT model
 print("Loading model...")
