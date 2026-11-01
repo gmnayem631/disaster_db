@@ -46,7 +46,8 @@ def run_branch_b(prompt: str, model: str = "qwen3:8b") -> BranchBResult:
         format  = BranchBResult.model_json_schema(),
         options = {
             "temperature": 0,
-            "num_predict": 4096
+            "num_predict": 4096,
+            "num_gpu": 0
         },
         think   = False
     )
@@ -91,12 +92,16 @@ def run_branch_b_batched(
                 if attempt < max_retries - 1:
                     print(f"  Batch {i//batch_size + 1} attempt {attempt + 1} failed, retrying...")
                 else:
-                    print(f"  Batch {i//batch_size + 1} failed after {max_retries} attempts: {e}")
+                    raise RuntimeError(
+                        f"Branch B batch {i//batch_size + 1} failed "
+                        f"after {max_retries} attempts"
+                    ) from e
+                   
 
     # Wrap all claims in BranchBResult
     return BranchBResult(claims=all_claims)
 
-# ── Quick test ─────────────────────────────────────────────────────────────
+# Quick test 
 if __name__ == "__main__":
     test_prompt = """
 Known locations:

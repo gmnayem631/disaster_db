@@ -1,155 +1,69 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Local Ollama disaster extraction patch
 
-# AI-Powered Digital Disaster Database for Bangladesh
+This is a **standalone experimental patch**, not a replacement for the published 85% F1 baseline. It keeps claims, evidence and original article metadata. It does not perform cross-article event reconciliation or certify semantic correctness of claims.
 
-**Automated extraction of near real-time disaster information from Bangladeshi English newspapers using NLP, stored in MongoDB.**
+## Setup (Windows PowerShell, in your Python 3.11 environment)
 
----
-
-## Project Overview
-
-This project is my BSc final semester research work. It implements a fully automated daily pipeline that scrapes disaster-related news articles from major Bangladeshi English-language newspapers, extracts structured information using a custom-trained **XLM-RoBERTa** Named Entity Recognition (NER) model, and stores the processed records in **MongoDB Atlas**.
-
-The system focuses primarily on flood-related events and aims to support disaster management, research, and early warning initiatives in Bangladesh.
-
-## Features
-
-- Daily automated scraping from 4 major news sources
-- Intelligent filtering for disaster-related articles
-- Custom NER model for extracting disaster-specific entities
-- Gazetteer-based location enhancement (District, Upazila, Union)
-- Duplicate detection and clean storage in MongoDB
-- Modular and extensible pipeline
-
-## Tech Stack
-
-- **Language**: Python 3.10+
-- **Scraping**: `newspaper3k`, BeautifulSoup4, requests
-- **NLP**: spaCy, spacy-transformers, XLM-RoBERTa
-- **Database**: MongoDB Atlas + pymongo
-- **Annotation**: Label Studio
-- **Training**: Google Colab (GPU)
-- **Others**: python-dotenv, schedule, pandas
-
-## Project Structure
-
-```
-disaster_db/
-├── data/                  # Preprocessed articles and gazetteers
-├── models/                # Trained spaCy models
-├── outputs/               # Sample outputs and results
-├── unused/                # Legacy scripts
-├── scraper.py             # News scraping logic
-├── preprocessor.py        # Text cleaning and preparation
-├── entity_linker.py       # Main NLP extraction pipeline
-├── db_writer.py           # MongoDB storage logic
-├── pipeline.py            # End-to-end daily pipeline
-├── evaluator.py           # Model evaluation
-├── requirements.txt
-├── .env.example
-└── README.md
+```powershell
+python -m pip install -U ollama 'pydantic>=2,<3' 'spacy>=3.7,<4' pytest
+ollama --version
+ollama list
+ollama ps
+ollama show --modelfile qwen3:8b
+python ollama_smoke_test.py
+python -m pytest -q tests
 ```
 
-## Installation
+If smoke test fails, capture the returned `thinking_length`, `done_reason`, `eval_count`, Ollama version, and the relevant lines from `%LOCALAPPDATA%\\Ollama\\server.log`. Test the tiny schema before the article schema.
 
-1. Clone the repository:
+## Run on a cleaned article
 
-```
-git clone https://github.com/gmnayem631/disaster_db.git
-cd disaster_db
-```
+From the original disaster_db repository root (so the baseline entity_linker can be found), copy `reliable_extractor.py` here, then:
 
-2. Create and activate a virtual environment:
-
-```
-python -m venv venv
-source venv/bin/activate    # Linux/Mac
-venv\Scripts\activate       # Windows
+```powershell
+python reliable_extractor.py path\to\cleaned_article.json --model qwen3:8b --output extracted_article.json
 ```
 
-3. Install dependencies:
+Optional Branch A baseline output:
 
-```
-pip install -r requirements.txt
-```
-
-4. Create a .env file and add your MongoDB Atlas connection string:
-
-```
-MONGO_URI=mongodb+srv://<username>:<password>@...
+```powershell
+python reliable_extractor.py path\to\cleaned_article.json --use-branch-a --output extracted_article.json
 ```
 
-5. Download the spaCy model:
+For full 500-word article on CPU, default context 8192, max output 2048. Longer articles automatically split into overlapping 550-word windows. If the schema response fails, one JSON-mode retry is attempted and that window is recursively split. Unrecoverable sections set extraction_status=INCOMPLETE and the process exits nonzero; **do not insert incomplete results as complete**.
 
+Set `--max-words 350` for less CPU pressure, or `--num-ctx 4096` for short windows. Check `ollama_diagnostics.jsonl` for the reason for blank outputs. The accepted claims here only pass structural evidence checks; calibrate semantic accuracy against human-verified article claims before public deployment.
+
+## Recommended deployment changes
+
+1. Keep `main` untouched; use a separate feature branch.
+2. Archive article JSON and all extracted claims with source URLs. Never sum cumulative numbers across repeated articles.
+3. Store original NER span-F1 and new claim/field-level performance separately; evaluate both systems on the same gold articles.
+4. Introduce an independent event matcher and claim reconciler **before** publishing national event totals.
+5. Do not rely on the original `seen_urls.add(url)` before success; queue failed URLs for retry.
+6. Pin Ollama version and model digest in experiment metadata; sample with a few fixed seeds; inspect omitted claims and unsupported evidence.
+
+## One-shot daily processing (uses existing cleaner output)
+
+From the hybrid branch root, with both `reliable_extractor.py` and `daily_pipeline.py` available:
+
+```powershell
+python daily_pipeline.py --cleaned-dir articles\cleaned --out-dir extracted_articles --limit 20
 ```
-python -m spacy download en_core_web_sm
+
+When validated on your own data, and after setting `MONGODB_URI`, write to **new** `articles` and `claims` collections without touching the old database:
+
+```powershell
+python -m pip install pymongo
+python daily_pipeline.py --cleaned-dir articles\cleaned --out-dir extracted_articles --limit 20 --mongo
 ```
 
-## Usage
+The daily runner skips unchanged articles already marked COMPLETE, retries failed or incomplete extractions, and does not treat one article as one event. Schedule the one-shot command via Windows Task Scheduler. Implement a separate event matcher/reconciler before creating events or publishing accumulated national totals. It does not automatically rescrape news - keep and schedule the existing scraper too.
 
-- Run the full pipeline:
+Use `--use-branch-a` in the daily runner to load the existing `entity_linker.py` once and pass only its hazard, locations, and agency output as optional evidence hints to the local LLM:
 
-```
-python pipeline.py
-```
-
-- Run individual components
-
-```
-python scraper.py
-python entity_linker.py
+```powershell
+python daily_pipeline.py --cleaned-dir articles\cleaned --out-dir extracted_articles --limit 20 --use-branch-a --mongo
 ```
 
-> **Note:** The trained model and annotated dataset are not included in this repository due to size. You will need to train your own model using the provided scripts.
-
-## Model Performance
-
-### Entity-wise F1 Scores
-
-| Entity Type       | F1 Score   |
-| ----------------- | ---------- |
-| BD_DISTRICT       | 94.23%     |
-| DISASTER_TYPE     | 89.74%     |
-| BD_UPAZILA        | 81.70%     |
-| AGENCIES_INVOLVED | 76.60%     |
-| DISPLACED         | 65.41%     |
-| MISSING           | 64.00%     |
-| FATALITIES        | 61.21%     |
-| AFFECTED_PEOPLE   | 56.18%     |
-| BD_UNION          | 51.72%     |
-| RELIEF_INFO       | 47.48%     |
-| **Overall F1**    | **79.21%** |
-
-**Average processing time:** 2.549 seconds per article
-
-## Model Comparison
-
-| Model           | Dataset Size | Overall F1 |
-| --------------- | ------------ | ---------- |
-| CNN spaCy       | 72           | 60.47%     |
-| DistilBERT      | 72           | 67.05%     |
-| RoBERTa         | 220          | 78.16%     |
-| DistilBERT      | 220          | 77.37%     |
-| mBERT           | 220          | 77.52%     |
-| **XLM-RoBERTa** | **220**      | **79.21%** |
-
-## Limitations
-
-- Currently supports English language only
-- Prototype focuses mainly on flood disasters
-- Publish date extraction fails for some sources
-- Requires the machine to remain on for local scheduling
-- Small training dataset limits performance on rare entities
-
-## Future Work
-
-- Support for Bangla language news
-- Multi-disaster type coverage (cyclone, landslide, etc.)
-- Cloud deployment (AWS/GCP) for 24/7 operation
-- Larger annotated dataset
-- Event deduplication and coreference resolution
-
-**Built by** [Gulam Mustafa Nayem](https://github.com/gmnayem631/)  
-BSc Final Semester Research Project  
-[LinkedIn](https://linkedin.com/in/gulam-mustafa-nayem/)  
-**Contributions and suggestions are welcome!**
+This continues to execute the old ten-label XLM-RoBERTa model internally. A future optimization is to train a stable-entities-only Branch A model; that is not included here. The model's location suggestions are **hints**, not gold truth.
