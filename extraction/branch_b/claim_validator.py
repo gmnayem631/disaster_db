@@ -10,13 +10,41 @@ from extraction.branch_b.quantity_normalizer import normalize_quantity
 from extraction.branch_b.impact_cues import NEGATION_CUES, HISTORICAL_CUES, FORECAST_CUES
 
 
-# ── Validation outcomes ────────────────────────────────────────────────────
+# Validation outcomes
 ACCEPTED        = "ACCEPTED"
 REVIEW_REQUIRED = "REVIEW_REQUIRED"
 REJECTED        = "REJECTED"
 
 
-# ── Unit compatibility ─────────────────────────────────────────────────────
+# Is the number followed by a noun that is not a person?
+PEOPLE_IMPACT_TYPES = {"FATALITIES", "INJURED", "MISSING", "AFFECTED_PEOPLE",
+                       "DISPLACED", "EVACUATED", "MAROONED"}
+PEOPLE_NOUNS = {"people", "persons", "person", "families", "family", "households",
+                "residents", "villagers", "children", "women", "men", "individuals",
+                "victims", "fishermen", "farmers", "workers", "deaths", "dead", "bodies"}
+NON_PEOPLE_NOUNS = {"districts", "district", "upazilas", "upazila", "unions", "union",
+                    "municipalities", "municipality", "villages", "village", "centres",
+                    "centers", "shelters", "teams", "animals", "cattle", "livestock",
+                    "houses", "homes", "roads", "bridges", "tonnes", "tons", "kg",
+                    "packets", "pieces", "hectares", "acres", "taka", "days", "hours",
+                    "years", "months", "weeks", "km", "kilometres", "metres", "cm",
+                    "mm", "percent", "%"}
+
+
+def non_people_noun_after(candidate, sentences_by_id):
+    """Look at the first 3 words after the number. Return the bad noun, or None."""
+    sent = sentences_by_id.get(candidate.sentence_id)
+    if sent is None:
+        return None
+    after = sent.text[candidate.end_char - sent.start_char:]
+    for word in re.findall(r"[a-zA-Z%]+", after.lower())[:3]:
+        if word in PEOPLE_NOUNS:
+            return None
+        if word in NON_PEOPLE_NOUNS:
+            return word
+    return None
+
+# Unit compatibility
 UNIT_COMPATIBLE = {
     "FATALITIES":             ["people", "persons", "individuals", "victims"],
     "INJURED":                ["people", "persons", "individuals"],
@@ -142,6 +170,14 @@ def validate_claims(
             if status == ACCEPTED:
                 status = REVIEW_REQUIRED
 
+
+        # ── 11. A people-count claim whose number counts something else ───
+        if candidate.kind == "QUANTITY" and impact_type_str in PEOPLE_IMPACT_TYPES:
+            bad_noun = non_people_noun_after(candidate, sentences_by_id)
+            if bad_noun:
+                flags.append(f"NOT_A_PEOPLE_COUNT:{bad_noun}")
+                status = REJECTED
+
         validated.append(_build_result(
             claim, candidate, normalized, status, flags
         ))
@@ -167,6 +203,8 @@ def _build_result(
             "modifier":   normalized.modifier         if normalized else None,
             "unit":       normalized.unit             if normalized else None,
             "qualitative": normalized.is_qualitative  if normalized else False,
+            "lower_bound": normalized.lower_bound if normalized else None,
+            "upper_bound": normalized.upper_bound if normalized else None,
         },
         "aggregation":         claim.aggregation.value,
         "certainty":           claim.certainty.value,

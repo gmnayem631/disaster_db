@@ -35,26 +35,27 @@ class Candidate:
 
 
 # Quantity patterns 
+# ── Word numbers: whole phrases, e.g. "one hundred and twenty five" ───────
+_UNITS = r'(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)'
+_TENS  = r'(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)'
+_SUB100  = rf'(?:{_TENS}(?:[\s-]{_UNITS})?|{_UNITS})'
+_SUB1000 = rf'(?:{_SUB100}[\s-]hundred(?:[\s-](?:and[\s-])?{_SUB100})?|{_SUB100})'
+_SCALE   = r'(?:thousand|lakh|crore|million)'
+WORD_NUMBER = rf'\b{_SUB1000}(?:[\s-]{_SCALE}(?:[\s-](?:and[\s-])?{_SUB1000})?)?\b'
+
+_APPROX = r'(?:nearly|almost|about|around|approximately|over|at least|up to|more than|some)'
+
 QUANTITY_PATTERNS = [
-    # Bengali/South Asian comma format: 12,27,554 or 1,23,456
+    # Bengali comma with a stray space: "5, 40,510"
+    rf'(?:{_APPROX}\s+)?\b\d{{1,2}},\s\d{{2}},\d{{3}}\b',
+    # Bengali/South Asian comma format: 12,27,554
     r'\b\d{1,2}(?:,\d{2})*(?:,\d{3})\b',
-    # South Asian formats
     r'\d+\.?\d*\s*(?:lakh|crore|million|billion|thousand)',
-    # Ranges
     r'\d[\d,]*\s*(?:to|-)\s*\d[\d,]*',
-    # Approximations with digits
-    r'(?:nearly|almost|about|around|approximately|over|at least|up to|more than|some)\s+\d[\d,]*',
-    # Plain digits with commas
+    rf'{_APPROX}\s+\d[\d,]*',
     r'\b\d{1,3}(?:,\d{3})+\b',
-    # Plain digits
     r'\b\d+\b',
-    # Word numbers
-    r'\b(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|'
-    r'thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|'
-    r'thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand)\b',
-    # Compound word numbers
-    r'\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)'
-    r'[\s-](?:one|two|three|four|five|six|seven|eight|nine)\b',
+    WORD_NUMBER,
 ]
 
 COMPILED_PATTERNS = [re.compile(p, re.IGNORECASE) for p in QUANTITY_PATTERNS]

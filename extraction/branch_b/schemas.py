@@ -60,3 +60,5 @@ class NormalizedQuantity(BaseModel):
     unit:             Optional[str]
     is_qualitative:   bool = False
     qualitative_text: Optional[str] = None
+    lower_bound:      Optional[float] = None
+    upper_bound:      Optional[float] = None
