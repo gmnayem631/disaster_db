@@ -68,10 +68,11 @@ database/                  NEW collections only (articles, claims, events). Neve
   store.py                 Store class: add articles, pending/retry, save extraction, events
 
 extraction_service.py      extract_article(): Branch A + B on one article via a swappable LLM backend.
-                           Has FakeBackend for tests. No Ollama backend yet, no database step (run_pending) yet.
+                           OllamaBackend (real Qwen) and FakeBackend (tests). No database step (run_pending) yet.
 
-tests/                     pytest, 91 tests, all pass. None need Atlas, the NER model or the LLM
-                           (mongomock for the database, FakeBackend for the LLM).
+tests/                     pytest, 101 tests pass without Atlas, the NER model or the LLM
+                           (mongomock for the database, FakeBackend / a stand-in client for the LLM).
+                           1 test marked `qwen` needs real Qwen and is skipped unless RUN_QWEN=1.
 docs/                      design.md, runbook.md, background.md
 ```
 

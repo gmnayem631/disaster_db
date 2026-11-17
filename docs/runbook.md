@@ -25,6 +25,12 @@ For the LLM: install Ollama and `ollama pull qwen3:8b`. Verify with `python test
 venv\Scripts\python -m pytest tests
 ```
 
+To also run the test that talks to real Qwen (Ollama must be running; minutes on CPU):
+
+```
+$env:RUN_QWEN = "1"; venv\Scripts\python -m pytest tests -m qwen -s
+```
+
 Always pass `tests`. The root folder has scripts named `test_cpu.py`, `test_branch_b_pipeline.py`, `pipeline_test.py` and `ner_test.py`. They are not pytest tests, but plain `pytest` would collect them and try to load the model and call Ollama.
 
 ## Collect and clean articles

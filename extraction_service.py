@@ -108,6 +108,75 @@ class FakeBackend:
                 "options": {"num_ctx": self.num_ctx}}
 
 
+class OllamaBackend:
+    """The real LLM: a model served by Ollama on this machine.
+
+    The settings below are the ones the project found necessary (CLAUDE.md
+    section 7) and are always sent, because the model's own defaults are
+    temperature 0.6 and thinking switched on:
+      think=False    as its own argument, not inside options
+      temperature 0  same input should give the same output
+      num_gpu 0      CPU only; GPU offload on the lab PC produced garbage
+      num_ctx        set explicitly so the prompt is not cut off silently
+    """
+    name = "ollama"
+
+    def __init__(self, model="qwen3:8b", *, host="http://127.0.0.1:11434", num_ctx=8192,
+                 num_predict=4096, timeout=900, keep_alive="10m", client=None):
+        self.model      = model
+        self.host       = host
+        self.keep_alive = keep_alive
+        self.options    = {"temperature": 0, "num_gpu": 0,
+                           "num_ctx": num_ctx, "num_predict": num_predict}
+        if client is None:
+            import ollama                      # imported here so tests need no Ollama
+            client = ollama.Client(host=host, timeout=timeout)
+        self._client = client                  # tests pass a stand-in client
+        self._digest = None
+
+    def complete(self, system_prompt, user_prompt, json_schema):
+        started = time.perf_counter()
+        try:
+            response = self._client.chat(
+                model=self.model,
+                messages=[{"role": "system", "content": system_prompt},
+                          {"role": "user", "content": user_prompt}],
+                format=json_schema,
+                options=dict(self.options),
+                think=False,
+                stream=False,
+                keep_alive=self.keep_alive,
+            )
+        except ConnectionError as exc:
+            # The ollama client raises this when the server is not running.
+            raise BackendUnavailable(f"Cannot reach Ollama at {self.host}: {exc}") from exc
+        except Exception as exc:
+            if getattr(exc, "status_code", None) == 404:
+                # Model not pulled. Asking again will not help.
+                raise BackendUnavailable(
+                    f"Ollama does not have model '{self.model}': {exc}") from exc
+            raise BackendError(f"{type(exc).__name__}: {exc}") from exc
+
+        return LLMResponse(
+            content=response.message.content or "",
+            prompt_tokens=response.prompt_eval_count,
+            output_tokens=response.eval_count,
+            seconds=time.perf_counter() - started,
+        )
+
+    def describe(self):
+        """What was used, saved with every extraction for reproducibility."""
+        if self._digest is None:
+            try:
+                for item in self._client.list().models:
+                    if item.model == self.model:
+                        self._digest = item.digest
+            except Exception:
+                pass                           # not worth failing an extraction over
+        return {"backend": self.name, "model": self.model, "model_digest": self._digest,
+                "host": self.host, "think": False, "options": dict(self.options)}
+
+
 # ── What extract_article() returns ─────────────────────────────────────────
 @dataclass
 class BatchReport:
