@@ -1,7 +1,13 @@
 # Project context for AI assistants
 
-Read this fully before changing anything. Last updated: November 2026.
-Items marked **VERIFY** were stated in conversation but not confirmed in the repo. Check them before relying on them.
+Read this fully before changing anything. Last checked against the code: 2026-11-17 (branch `hybrid-local-llm`, commit `af06181`).
+Items marked **VERIFY** have not been confirmed in the repo. Check them before relying on them.
+
+More detail lives in `docs/`:
+
+- `docs/design.md`: proposed MongoDB schemas, `extraction_service.py` interface, event matching, migration, test plan, open questions. **Proposal only, not built.**
+- `docs/runbook.md`: how to run every script, and the current data formats.
+- `docs/background.md`: project history, the Ollama incident, achievements, risk table, glossary.
 
 ## 1. What this project is
 
@@ -20,13 +26,14 @@ Items marked **VERIFY** were stated in conversation but not confirmed in the rep
 - Be honest. Say "I don't know" or "unverified" instead of guessing. Do not oversell results.
 - Do **not** rewrite files wholesale or add new architectures unprompted. Earlier in the project, overlapping instructions from two chatbots confused the author.
 - Do **not** modify `main`, delete models, delete annotations, or touch `.env`.
-- Windows machine. Use **PowerShell** with the venv (`venv\Scripts\activate`). An MSYS2 bash shell on the lab PC resolved `python` to a different interpreter with no pip. Run scripts from the project root. Python 3.11.9.
+- Windows machine. Use **PowerShell** with the venv (`venv\Scripts\activate`). An MSYS2 bash shell on the lab PC resolved `python` to a different interpreter with no pip. Run scripts from the project root.
+- Python: the lab PC venv runs **3.13.15** (checked). Earlier notes said 3.11.9. Which one is the reference is undecided (`docs/design.md` question 17).
 - Never commit secrets. `.env` holds `MONGODB_URI` and is gitignored.
 
 ## 3. Repository layout
 
-Committed to Git: code, `requirements.txt`, `README.md`.
-**Not in Git (kept local or copied by pen drive):** `articles/`, `data/`, `models/`, `.env`, `venv/`, `logs/`.
+**In Git:** code, `docs/`, `tests/`, `data/` (annotations, `.spacy` splits, gazetteer, gold draft, URL lists), and some old models (`models/gazetteer_model`, `models/trained_ner*`) that were committed before `models/` was gitignored.
+**Not in Git (local or pen drive):** `articles/`, `models/xlmroberta_*` and the other transformer models, `.env`, `venv/`, `logs/`.
 
 ```
 scraper.py                 reads data/urls.txt, newspaper3k, saves JSON to articles/raw/
@@ -36,37 +43,46 @@ gazetteer_ner.py           early gazetteer experiment (not used in production)
 label_studio_import.py     original 90 articles -> Label Studio tasks
 pre_annotator.py           runs the NER model on new articles to pre-annotate for Label Studio
 convert_annotations.py     Label Studio export -> train/dev/test .spacy (70/15/15, seed 42)
-entity_linker.py           PRODUCTION extractor (Branch A style): XLM-R + gazetteer + regex fallback
+entity_linker.py           PRODUCTION extractor (Branch A): XLM-R + gazetteer + regex fallback
 db_writer.py               MongoDB insert with duplicate check on source_url
-pipeline.py                scrape -> clean -> extract -> MongoDB, run daily with `schedule`
+pipeline.py                scrape -> clean -> extract -> MongoDB, run daily with `schedule` (flood keywords only)
 evaluator.py               per-entity P/R/F1 on a .spacy file + timing
-test_cpu.py                Ollama CPU-only sanity test (plain + JSON)
-test_branch_b_pipeline.py  runs Branch A + candidate generator + Qwen + validator on one article
+test_cpu.py                Ollama CPU-only sanity test (plain + JSON). A script, not a pytest test.
+test_branch_b_pipeline.py  runs Branch A + candidate generator + Qwen + validator on one article. A script.
 build_gold_draft.py        drafts a claim-level evaluation CSV from test-split annotations
 gold_helpers.py            guesses unit/aggregation for the draft CSV
+ner_test.py, pipeline_test.py   early one-off scripts
+config.cfg, config_bert.cfg     old CNN training configs. NOT the XLM-R config (see section 5.8).
 
-extraction/branch_b/       (hybrid-local-llm branch)
+extraction/branch_b/
   schemas.py               Pydantic: ImpactType, AggregationType, CertaintyType, ImpactClaim, BranchBResult, NormalizedQuantity
   impact_cues.py           keyword lists: impact, negation, historical, forecast
   quantity_normalizer.py   deterministic number parsing (lakh/crore, word numbers, ranges, modifiers)
   candidate_generator.py   sentence split + finds every number and impact-cue sentence
   local_llm.py             Ollama call (qwen3:8b), structured JSON output, batching
   claim_validator.py       deterministic checks on the LLM's claims
+
+tests/                     pytest: test_quantity_normalizer.py, test_claim_validator.py (12 tests, all pass)
+docs/                      design.md, runbook.md, background.md
 ```
 
-Empty folders exist for the planned restructure (`ingestion/`, `preprocessing/`, `events/`, `database/`, `api/`, `evaluation/`, `tests/`). Existing code has not been moved into them. Branch-B scripts use a `sys.path.insert` hack so they run from any folder.
+Run tests with `venv\Scripts\python -m pytest tests`. Always pass `tests`: plain `pytest` would also collect the root scripts and try to load the model and call Ollama.
 
-## 4. Baseline system (`main`): what exists and how well it works
+The folders for a planned restructure (`ingestion/`, `preprocessing/`, `events/`, `database/`, `api/`, `evaluation/`) do not exist in the repo. Branch-B scripts use a `sys.path.insert` hack so they run from any folder.
+
+`README.md` on this branch is **not** the project README. Commit `fbde06a` overwrote it with the README of a rejected ChatGPT patch. The original is in commit `b6d3137`. Not yet restored.
+
+## 4. Baseline system (`main`)
 
 Pipeline: scraper -> preprocessor -> `entity_linker.extract_entities()` -> MongoDB (`disaster_events`, db `disaster_db`).
 
-- **Model:** XLM-RoBERTa base fine-tuned for NER with spaCy 3.8 + spacy-transformers, config trained on Colab T4 (2,000 steps, lr 5e-5, Adam, warmup 250). Local copy at `models/xlmroberta_v3/` (not in Git).
-- **Gazetteer:** 64 districts, 483 upazilas, 4,060 unions from `nuhil/bangladesh-geocode` (and OCHA COD-AB for reference), added as an `EntityRuler` patterns (9,214 patterns incl. lowercase). It was originally missing from the production extractor and was wired into `entity_linker.py` later.
-- **10 labels:** DISASTER_TYPE, BD_DISTRICT, BD_UPAZILA, BD_UNION, FATALITIES, DISPLACED, AFFECTED_PEOPLE, MISSING, RELIEF_INFO, AGENCIES_INVOLVED. (INJURED, EVENT_DATE, SECONDARY_HAZARD, INFRASTRUCTURE_DAMAGED, CROPS_AFFECTED, HOUSES_DAMAGED were dropped: too rare or inconsistent.)
-- **Hybrid inside Branch A:** if the model finds no number for fatalities/displaced/affected, regex patterns try (`source: "rule_based"` vs `"model"`). Rule-based contribution was small (~3%).
-- **Dataset:** 276 annotated flood articles (Daily Star, Dhaka Tribune, New Age, bdnews24, plus UNB/Bangladesh Post), split 193 train / 41 dev / 42 test, **randomly by article, not by disaster event**.
+- **Model:** XLM-RoBERTa base fine-tuned for NER with spaCy 3.8 + spacy-transformers. Local copy at `models/xlmroberta_v3/` (not in Git).
+- **Gazetteer:** 64 districts, 483 distinct upazila names, 4,060 distinct union names from `nuhil/bangladesh-geocode`, added as `EntityRuler` patterns (9,214 incl. lowercase). The CSVs have 494 upazila rows and 4,540 union rows; the difference is repeated names. **Report "distinct names", not "483 upazilas".**
+- **10 labels:** DISASTER_TYPE, BD_DISTRICT, BD_UPAZILA, BD_UNION, FATALITIES, DISPLACED, AFFECTED_PEOPLE, MISSING, RELIEF_INFO, AGENCIES_INVOLVED.
+- **Hybrid inside Branch A:** if the model finds no number for fatalities/displaced/affected, regex patterns try (`source: "rule_based"` vs `"model"`). Contribution was about 3% on a 20-article sample.
+- **Dataset:** 276 annotated flood articles, split 193 train / 41 dev / 42 test, **randomly by article, not by disaster event**. `articles/cleaned/` now holds 345 files (it includes unannotated and fire articles, and sources beyond the original four, e.g. TBS, Prothom Alo English, Financial Express).
 
-**Current numbers (`models/xlmroberta_v3`, evaluated on `test.spacy`, 42 articles):** overall F1 **85.03%**, ~2.5 s/article.
+**Current numbers (`models/xlmroberta_v3`, `test.spacy`, 42 articles):** overall F1 **85.03%**, ~2.5 s/article.
 
 | Entity            | F1    |     | Entity          | F1    |
 | ----------------- | ----- | --- | --------------- | ----- |
@@ -76,34 +92,32 @@ Pipeline: scraper -> preprocessor -> `entity_linker.extract_entities()` -> Mongo
 | AGENCIES_INVOLVED | 78.02 |     | BD_UNION        | 61.90 |
 | FATALITIES        | 74.68 |     | RELIEF_INFO     | 39.71 |
 
-**History worth knowing (for honest reporting):**
-
-- Model comparison on the first split (220/56, before the bug fix below): CNN 60.47 (72 articles), DistilBERT 67.05 (72), RoBERTa 78.16, DistilBERT 77.37, mBERT 77.52, **XLM-RoBERTa 79.21** (all 220). The submitted report and defense used these.
-- **Bug found and fixed:** `convert_annotations.py` used `doc.char_span()` with strict alignment and silently dropped ~45% of annotations. Fixed with `alignment_mode="contract"` then `"expand"`; training spans rose from about 5,197 to 7,290. Overall F1 rose to 85.12% (dev, v2) and 85.03% (test, v3). **The model-architecture ranking was not re-run after this fix.** Re-validate before claiming XLM-R is best.
-- The submitted report still contains the older 79.21% figures. They need updating.
+The model-architecture comparison (XLM-R 79.21 etc.) was done **before** an annotation-conversion bug was fixed and has not been re-run. The submitted report still has the old figures. Details in `docs/background.md`.
 
 ## 5. Known problems in the baseline (not yet fixed)
 
-1. `evaluator.py` hard-codes `"dev_set_size": 56` in saved results, but the 85.03% was measured on the 42-article test set. The score looks right, but the label is wrong. Rerun and correct before submission.
+1. `evaluator.py:149` hard-codes `"dev_set_size": 56`, but the 85.03% was measured on the 42-article test set. The saved `data/evaluation_results.json` carries the wrong label. Rerun and correct before submission.
 2. Split is random by article. Reports of the same flood can land in train and test. Needs an event-grouped split for the paper.
-3. `publish_date` is `null` for most articles. A meta-tag fallback exists in `pipeline.py` but the 276 training articles have no dates. `scraped_at` is stored instead.
+3. `publish_date` is null for 281 of 345 cleaned articles. `scraped_at` is stored instead.
 4. `pipeline.py` adds URLs to `seen_urls` _before_ scraping/extraction succeeds, so failed articles are never retried.
 5. Each article becomes its own MongoDB "event" (UUID per article). Several articles about one flood are not linked.
-6. Number handling in `entity_linker.py` picks one value per field with a keyword heuristic for "cumulative" phrases. It loses incremental vs cumulative information and has no location link or evidence sentence.
-7. No true per-entity confidence is available from spaCy transformers. The `source` field (`model`/`rule_based`) is used instead. **Do not fabricate confidence scores.**
-8. `requirements.txt` may be incomplete. **VERIFY** and rebuild cleanly.
-9. Label Studio has duplicate tasks (about 531) because a pre-annotated file was imported more than once. The author chose not to delete them (annotations would be lost). Use timestamped import files from now on.
+6. Number handling in `entity_linker.py` picks one value per field with a keyword heuristic. It loses incremental vs cumulative information and has no location link or evidence sentence.
+7. No true per-entity confidence is available from spaCy transformers. The `source` field is used instead. **Do not fabricate confidence scores.**
+8. The XLM-R training config is not in the repo. `config_bert.cfg` is a CNN config despite its name. The real one is in `models/xlmroberta_v3/config.cfg` (not in Git).
+9. `requirements.txt` is a full `pip freeze` in UTF-16, includes Label Studio/Django, and lacks `pytest`. Rebuild cleanly.
+10. `pipeline.py` and `disaster_events` do not store article text, so pipeline-ingested articles cannot be re-extracted without re-scraping.
+11. `pipeline.py` filters on flood keywords only. `preprocessor.py` already includes fire keywords.
 
-## 6. Branch B (`hybrid-local-llm`): the redesign in progress
+## 6. Branch B (`hybrid-local-llm`)
 
-**Why:** NER is weak on impact numbers (what does "31", "58 lakh", "10,000" refer to?). Idea: let conventional code find candidates, let a local LLM decide only what each number _means_, then validate deterministically.
+**Why:** NER is weak on impact numbers (what does "31", "58 lakh", "10,000" refer to?). Conventional code finds candidates, a local LLM decides only what each number _means_, then deterministic code validates.
 
 ```
 article -> Branch A (XLM-R + gazetteer: hazard, locations, agencies)
         -> candidate_generator (every number + impact-cue sentences, with sentence IDs)
         -> local LLM (Qwen3 8B via Ollama): impact_type, aggregation, certainty, unit, location IDs
         -> claim_validator (deterministic checks)
-        -> [planned] store claims with evidence -> match to events -> MongoDB
+        -> [planned, docs/design.md] store claims with evidence -> match to events -> MongoDB
 ```
 
 Design rules (keep):
@@ -112,162 +126,47 @@ Design rules (keep):
 - Preserve raw text, evidence sentence, and individual claims. Never sum cumulative figures. Keep conflicting reports.
 - Impact taxonomy: FATALITIES, INJURED, MISSING, AFFECTED_PEOPLE, DISPLACED, EVACUATED, MAROONED, HOUSING_DAMAGE, INFRASTRUCTURE_DAMAGE, AGRICULTURAL_DAMAGE, LIVESTOCK_LOSS, ECONOMIC_LOSS, RELIEF, OTHER. Aggregation: CUMULATIVE, INCREMENTAL, POINT_ESTIMATE, RANGE, LOWER_BOUND, UPPER_BOUND, UNKNOWN.
 
-**What works (tested):** quantity normalizer, candidate generator (incl. Bengali commas like `12,27,554`), validator checks (invalid candidate/evidence/location IDs, unit compatibility, negation/historical/forecast flags), end-to-end run on a 25-candidate article with all batches completing.
+**Confirmed in the code and by `pytest tests` (2026-11-17):** normalizer (range bounds, `"5, 40,510"` -> 540510, whole word-number phrases, word number + lakh/crore), candidate generator (word-number phrases, Bengali commas, stray-space numbers), validator (invalid IDs, unit compatibility, negation/historical/forecast flags, non-person noun after a people count), `local_llm.py` raises on a failed batch after 2 attempts.
 
-**Recent changes** (given to the author on the date above; **VERIFY** they are applied and tested):
+**VERIFY:** the full Qwen run (`test_branch_b_pipeline.py`) has not been re-run since commits `76adeac` and `af06181`, nor on Ollama 0.40.16.
 
-- Normalizer: range bounds (`lower_bound`/`upper_bound`), `"5, 40,510"` -> 540510, whole word-number phrases.
-- Candidate generator: whole word-number phrases ("one hundred and twenty five"), stray-space Bengali numbers.
-- Validator: rejects people-count claims where the number is followed by a non-person noun (districts, upazilas, shelter centres, animals, teams...).
-- `build_gold_draft.py` + `gold_helpers.py`: draft evaluation CSV.
+**Known weaknesses:**
 
-**Known remaining weaknesses:**
-
-- Qwen can still give a plausible-looking wrong meaning (e.g. "people took shelter" labelled RELIEF). The validator cannot catch semantic errors. This is what the gold comparison measures.
-- Candidate routing cannot recover a claim the generator never surfaces. Cue-only candidates are created only for sentences with no number (so "houses washed away" next to a number can be missed). Deliberately deferred until recall is measured.
+- Qwen can give a plausible-looking wrong meaning (e.g. "people took shelter" labelled RELIEF). The validator cannot catch semantic errors. The gold comparison measures this.
+- The system prompt in `local_llm.py` describes only 5 of the 14 impact types and folds "marooned, stranded, evacuated" into DISPLACED, which contradicts the taxonomy. Settle this before correcting the gold set.
+- Nothing checks that the LLM answered every candidate in a batch. A skipped candidate disappears without an error.
+- `num_ctx` is not set in `local_llm.py` and `prompt_eval_count` is not logged, so silent truncation would go unnoticed.
+- For cue-only candidates the validator drops the LLM's `unit`. Validated claims hold only article-local IDs (`S2`, `L1`), not the sentence text.
+- Only districts and upazilas are passed to the LLM as locations, not unions.
+- Cue-only candidates are created only for sentences with no number (so "houses washed away" next to a number can be missed). Deferred until recall is measured.
 - Years like "2022" become candidates (labelled OTHER by the LLM).
+- `build_gold_draft.py` writes a fixed `data/gold/gold_draft.csv`, overwrites it each run, and does **not** skip verified articles.
 
-## 7. Local LLM setup and the empty-response incident
+## 7. Local LLM: required call shape
 
-- Lab PC: Windows 11, 32 GB RAM, Xeon W-1250, **AMD Radeon RX 550 (4 GB)**. Dev laptop: 8 GB RAM, no usable GPU.
-- Ollama 0.40.11, model `qwen3:8b`. Ollama partly offloaded the model to the RX 550 (59% CPU / 41% GPU). The model then produced garbage (`0000...`) and the server log showed `Unexpected empty grammar stack after accepting piece`, which surfaced in Python as "Empty response from model" / JSON EOF.
-- **Fix confirmed by test:** `options={"num_gpu": 0}` (CPU only). `test_cpu.py` passed 6/6 (plain + JSON) and `ollama ps` showed `100% CPU`. Then the full 25-candidate article completed all batches. The GPU explanation is strongly supported but not formally proven. A cross-check (a second AI reviewer) said the grammar error could also come from schema/template interactions.
-- Required call shape: `think=False` as a top-level argument to `ollama.chat()` (not in `options`); `temperature 0`; `num_gpu 0`. Batches of 6 candidates. `local_llm.py` must raise on a failed batch and not silently skip it (**VERIFY** this edit is in).
-- Context: Ollama showed `num_ctx` 4096. For full-article tests set `num_ctx` explicitly (8192 is a sensible start) and log `prompt_eval_count` so silent truncation is detected.
-- A ChatGPT-generated patch (`reliable_extractor.py`, `daily_pipeline.py`, `ollama_smoke_test.py`) exists outside the repo. **It was not adopted.** It duplicates Branch B and has no `num_gpu` setting.
-- Record Ollama version and `ollama show qwen3:8b` output for reproducibility.
+- `think=False` as a top-level argument to `ollama.chat()` (not in `options`); `temperature 0`; `num_gpu 0` (CPU only). Batches of 6 candidates. Raise on a failed batch.
+- Why CPU only: on the lab PC (AMD RX 550) partial GPU offload produced empty or garbage output. `num_gpu 0` fixed it. Full story in `docs/background.md`.
+- The model's own defaults are temperature 0.6 and thinking on, so these options must always be passed.
+- Set `num_ctx` explicitly for full-article work (8192 is a sensible start) and log `prompt_eval_count`. Not done yet.
+- Lab PC now has Ollama **0.40.16**, `qwen3:8b` ID `500a1f067a9f` (Q4_K_M). The fix was tested on 0.40.11.
+- A ChatGPT-generated patch (`reliable_extractor.py`, `daily_pipeline.py`, `ollama_smoke_test.py`) was **not adopted**. Do not build on it.
 
 ## 8. Current plan (in order)
 
 1. **Done:** confirm and fix Ollama CPU inference.
-2. **In progress:** number-finder and validator fixes (section 6). Verify they pass `test_branch_b_pipeline.py`.
-3. **In progress:** claim-level gold set. `build_gold_draft.py` drafts rows from `test.spacy` articles (default 20 articles, ~280 rows) into `data/gold/gold_draft_<timestamp>.csv`. The author corrects `impact_type`, `aggregation`, `unit` (only `review`-flagged rows need real attention) and saves as `data/gold/gold_verified.csv`. The script skips articles already in that file. Plan: a second person independently checks ~20% of rows. Unit accuracy should be reported on a checked sample, not the full rule-derived column.
+2. **Done in code, unit-tested:** number-finder and validator fixes. **Remaining:** re-run `test_branch_b_pipeline.py` end to end.
+3. **In progress:** claim-level gold set. Draft exists (279 rows, 20 test articles, 114 flagged `review`). The author corrects `impact_type`, `aggregation`, `unit` and saves `data/gold/gold_verified.csv` (does not exist yet). Plan: a second person independently checks ~20% of rows. Report unit accuracy on a checked sample, not the full rule-derived column.
 4. **Next:** compare on the same articles: (A) NER baseline, (B) candidate-routed Qwen + validator, (C) optionally full-article Qwen. Metrics: impact-type P/R/F1, value accuracy, aggregation accuracy, unsupported/invented claims, missed claims, runtime, failed requests. Do not present baseline span-F1 (85.03%) and claim-level F1 as directly comparable.
-5. Fix evaluator reporting (section 5.1); event-grouped split.
-6. Add fire articles (71 pre-annotated, annotation pending in Label Studio), retrain, and extend keywords in `pipeline.py`.
-7. Then: MongoDB `articles` / `claims` / `events` collections (design agreed, not built), event matcher, cross-source reconciliation, retry queue with article status, OS scheduler (Task Scheduler/cron) instead of the infinite `schedule` loop, FastAPI + website with a Leaflet map.
+5. Fix evaluator reporting (5.1); event-grouped split.
+6. Add fire articles (71 pre-annotated, annotation pending in Label Studio, **VERIFY** count), retrain, extend keywords in `pipeline.py`.
+7. Build what `docs/design.md` proposes, after the author answers its open questions: `extraction_service.py`, `articles` / `claims` / `events` collections, event matcher, reconciliation, retry with article status, OS scheduler instead of the `schedule` loop, then FastAPI + website with a Leaflet map.
 8. Journal submission (suggested: IJDRR, IJGI/MDPI, or an NLP crisis workshop). Do not fine-tune the LLM until the zero-shot baseline is measured.
 
-## 9. Deployment idea
-
-Only the daily extraction job needs the LLM. Run it on a PC the lab controls on a schedule. The database (MongoDB Atlas) and the website can be in the cloud. Atlas free tier (512 MB) is far more than needed. Expected about 10 to 20 relevant articles per day.
-
-## 10. Achievements so far
-
-- Built an end-to-end automated pipeline: scrape -> clean -> extract -> MongoDB, with duplicate detection. First automated run inserted 22 records from 4 newspapers.
-- Built and manually annotated a 276-article Bangladeshi flood corpus (10 entity types) in Label Studio.
-- Built a Bangladesh administrative gazetteer (64 / 483 / 4,060) and integrated it into extraction.
-- Trained and compared five architectures; reached **85.03% overall F1** on a held-out test set (BD_DISTRICT 96.5, DISASTER_TYPE 95.3, BD_UPAZILA 85.6).
-- Found and fixed a silent data-loss bug in annotation conversion (about 2,093 spans recovered).
-- Diagnosed a local-LLM failure (Ollama GPU offload on an unsupported AMD card) with server-log evidence and fixed it with CPU-only inference.
-- Built the Branch B toolkit: deterministic quantity normalizer (lakh/crore/words/ranges), candidate generator, structured-output LLM call, and a validator with evidence, unit, negation, historical and forecast checks.
-- Started the evaluation dataset for claim-level comparison.
-
-## 11. Potential challenges and proposed solutions
-
-| Challenge                                                             | Why it matters                        | Proposed solution                                                                                                                        |
-| --------------------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Few examples of rare entities (MISSING, BD_UNION, RELIEF_INFO)        | Low F1 regardless of model            | More data, other hazards; report per-class results honestly; consider merging classes                                                    |
-| Annotation inconsistency (span boundaries, labels)                    | Noisy training and evaluation         | Written guidelines, second annotator on a 20% sample, report agreement                                                                   |
-| Number meaning: cumulative vs incremental vs different scope          | Wrong values in the database          | Branch B claims with `aggregation`; never sum across articles; keep all claims                                                           |
-| LLM gives a plausible but wrong meaning or invents a value            | Research data would be untrustworthy  | Python converts numbers, validator checks evidence/units, gold-set comparison; no fake confidence scores                                 |
-| CPU-only inference is slow (minutes per article with many candidates) | Daily run must finish                 | Batching, keep model loaded, run overnight, measure real time per article; compare against a full-article call; consider a smaller model |
-| Candidate generator misses a real claim                               | The LLM never sees it                 | Measure recall against the gold set; add cue candidates for sentences that also contain numbers if recall is low                         |
-| Many articles describe one event                                      | Database overcounts events            | Event matcher (hazard + date + district overlap + embedding similarity), thresholds tuned on labelled article pairs                      |
-| Missing publication dates                                             | No timeline analysis                  | Parse HTML meta tags and datelines; fall back to `scraped_at` and label it as such                                                       |
-| Scraper breaks when a site changes                                    | Silent data gaps                      | Prefer RSS where available, log per-source counts, alert on zero results, retry queue and article status                                 |
-| Lab PC must be on at run time                                         | Missed days                           | OS scheduler plus retry of failed/missed articles; cloud runner later                                                                    |
-| Random train/test split leaks same-event articles                     | Inflated scores                       | Event-grouped split before the paper                                                                                                     |
-| Reproducibility                                                       | Reviewers will ask                    | Record versions, seeds, prompt/schema versions, `ollama show` digest; save the Colab training config in the repo                         |
-| Journal rejection                                                     | Likely at least once                  | Honest evaluation, state limitations, use reviewer feedback; keep a clean reproducible repo                                              |
-| Adding fire and other hazards                                         | Labels and keywords differ per hazard | Add hazard-specific cues and labels, evaluate per hazard and combined, do not mix silently                                               |
-
-## 12. How to run things
-
-Run everything from the project root in PowerShell with the venv active.
-
-**Environment on a new machine**
-
-```
-git clone https://github.com/gmnayem631/disaster_db
-cd disaster_db
-git checkout hybrid-local-llm
-python -m venv venv
-venv\Scripts\activate
-python -m pip install -r requirements.txt
-```
-
-Then copy from the author (not in Git): `articles/`, `data/`, `models/xlmroberta_v3/`, and create `.env` with `MONGODB_URI=...`. For the LLM: install Ollama and `ollama pull qwen3:8b`. Verify with `python test_cpu.py`; `ollama ps` should show `100% CPU`.
-
-**Collect and clean articles**
-
-1. Append URLs to `data/urls.txt`.
-2. `python scraper.py` (skips URLs already scraped).
-3. `python preprocessor.py` (skips articles already cleaned).
-
-**Annotate (Label Studio)**
-
-1. `python pre_annotator.py` writes a pre-annotated JSON of unannotated articles. Import **that one file once** (project "Disaster NER Annotation"). Importing the same file twice creates duplicate tasks.
-2. Correct the annotations in Label Studio (`label-studio start`, http://localhost:8080).
-3. Export JSON to `data/annotations/annotations_export.json`.
-4. `python convert_annotations.py` writes `train.spacy`, `dev.spacy`, `test.spacy`. Labels listed in `IGNORE_LABELS` are dropped.
-
-**Train and evaluate (Google Colab T4, no Google Drive)**
-
-1. Install: `pip install spacy spacy-transformers torch transformers`. Upload the three `.spacy` files and write the config (`xlm-roberta-base`, 2,000 steps, lr 5e-5, seed 42, `gpu_allocator = "pytorch"`).
-2. `python -m spacy train config_bert.cfg --output /content/xlmroberta_vN --gpu-id 0`
-3. `python -m spacy evaluate /content/xlmroberta_vN/model-best /content/test.spacy --gpu-id 0`
-4. Zip `model-best`, download it **before closing the session** (an idle session wipes it), and unzip to `models/xlmroberta_vN/`.
-5. Point `MODEL_PATH` in `entity_linker.py` and `evaluator.py` at it. `python evaluator.py` reads `data/annotations/test.spacy`.
-
-The Colab training config is not stored in the repo. Save a copy in the repo for reproducibility.
-
-**Run the daily pipeline (baseline)**: `python pipeline.py` runs once immediately, then every day at 09:00 via `schedule` (stop with Ctrl+C). It uses `entity_linker.extract_entities()` only. Branch B is not wired into it yet.
-
-**Test Branch B**
-
-```
-python extraction/branch_b/candidate_generator.py     # prints candidates for a built-in test text
-python test_branch_b_pipeline.py                       # full Branch A + B run on one real article
-```
-
-Qwen on CPU takes minutes for an article with 25 candidates, so do not cancel early.
-
-**Claim-level gold set**
-
-1. `python build_gold_draft.py` writes `data/gold/gold_draft_<timestamp>.csv` from `test.spacy` articles (`MAX_ARTICLES = 20`).
-2. Correct `impact_type`, `aggregation`, `unit` in Excel. Rows with a `review` note need attention first.
-3. Save as `data/gold/gold_verified.csv` (CSV UTF-8). Later runs skip articles already in this file.
-
-## 13. Data formats and schemas
-
-**Raw / cleaned article JSON** (`articles/raw`, `articles/cleaned`): `title`, `text`, `publish_date` (mostly null), `source_url`, `scraped_at`, and `preprocessed_at` for cleaned files. Files are named by the MD5 hash of the URL.
-
-**Current MongoDB document** (db `disaster_db`, collection `disaster_events`): `event_id` (a UUID per article), `title`, `source_url`, `publish_date`, `scraped_at`, `extraction_timestamp`, `disaster_type[]`, `locations{districts[], upazilas[], unions[]}`, `fatalities`, `displaced`, `affected_people`, `missing` (each `{value, source}`), `relief_info[]`, `agencies_involved[]`, `raw_entities[]`. `source` is `"model"` or `"rule_based"`.
-
-**Planned collections (design agreed, not built):**
-
-- `articles`: article_id, source, url, title, publish_date, scraped_at, content_hash, text, processing_status, retry_count, last_error, event_id, extraction metadata (model names, prompt/schema versions).
-- `claims`: claim_id, article_id, event_id, impact_type, raw_value, normalized_value (or lower/upper bound), unit, modifier, aggregation, certainty, location_ids, evidence_sentence, extractor, validation_status and flags.
-- `events`: event_id, hazard_type, start/end date, locations, article_ids, current_summary, conflicting_claims, last_updated. The website should show events, not articles.
-
-**Branch B LLM output:** `{"claims": [{candidate_id, impact_type, evidence_sentence_ids, location_ids, aggregation, certainty, unit}]}`. Validated claims add `normalized_quantity {raw, value, lower_bound, upper_bound, modifier, unit, qualitative}`, `validation_status` (ACCEPTED / REVIEW_REQUIRED / REJECTED) and `validation_flags`.
-
-## 14. Glossary
-
-- **NER**: finding and labelling spans of text (a district name, a death count phrase).
-- **Span**: a start and end position in the text. **F1**: the balance of precision and recall.
-- **Gazetteer**: a list of known place names used to help recognise locations.
-- **Candidate**: any number or impact phrase that might matter. Code finds them; it does not decide their meaning.
-- **Claim**: one impact statement from an article (type, value, unit, evidence).
-- **Cumulative / incremental**: a running total ("toll rose to 31") versus a new addition ("three more died").
-- **Lakh / crore**: South Asian units, 100,000 and 10,000,000. Bengali digit grouping looks like `12,27,554` (= 1,227,554).
-- **Upazila / union / district**: Bangladesh administrative levels (district > upazila > union).
-- **Branch A / Branch B**: stable-entity extraction (XLM-R + gazetteer) / impact-claim extraction (LLM + validator). Not Git branches.
-
-## 15. Things to avoid
+## 9. Things to avoid
 
 - Fabricated confidence scores, fabricated citations, or claims of improvement without a held-out comparison.
-- Using training-split articles for the evaluation set.
+- Using training-split articles for the evaluation set, or tuning anything on test-split articles.
 - Letting the LLM do arithmetic or invent identifiers.
+- Adding numbers together across articles or across claims.
 - Merging `hybrid-local-llm` into `main` before Branch A + B are integrated and tested end to end.
+- Writing to or deleting the `disaster_events` collection. New work goes in new collections.
