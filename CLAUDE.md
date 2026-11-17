@@ -62,7 +62,12 @@ extraction/branch_b/
   local_llm.py             Ollama call (qwen3:8b), structured JSON output, batching
   claim_validator.py       deterministic checks on the LLM's claims
 
-tests/                     pytest: test_quantity_normalizer.py, test_claim_validator.py (12 tests, all pass)
+database/                  NEW collections only (articles, claims, events). Never touches disaster_events.
+  schema.py                collection names, status values, retry policy, index list, ensure_indexes()
+  documents.py             pure functions that build article/claim/event documents (IDs, dates, checks)
+  store.py                 Store class: add articles, pending/retry, save extraction, events
+
+tests/                     pytest, 69 tests, all pass. Database tests use mongomock (no Atlas, no model, no LLM).
 docs/                      design.md, runbook.md, background.md
 ```
 
@@ -104,7 +109,7 @@ The model-architecture comparison (XLM-R 79.21 etc.) was done **before** an anno
 6. Number handling in `entity_linker.py` picks one value per field with a keyword heuristic. It loses incremental vs cumulative information and has no location link or evidence sentence.
 7. No true per-entity confidence is available from spaCy transformers. The `source` field is used instead. **Do not fabricate confidence scores.**
 8. The XLM-R training config is not in the repo. `config_bert.cfg` is a CNN config despite its name. The real one is in `models/xlmroberta_v3/config.cfg` (not in Git).
-9. `requirements.txt` is a full `pip freeze` in UTF-16, includes Label Studio/Django, and lacks `pytest`. Rebuild cleanly.
+9. `requirements.txt` is a full `pip freeze` in UTF-16, and includes Label Studio/Django. `pytest` and `mongomock` were added by hand. Rebuild cleanly.
 10. `pipeline.py` and `disaster_events` do not store article text, so pipeline-ingested articles cannot be re-extracted without re-scraping.
 11. `pipeline.py` filters on flood keywords only. `preprocessor.py` already includes fire keywords.
 

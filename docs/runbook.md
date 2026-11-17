@@ -15,7 +15,7 @@ python -m pip install -r requirements.txt
 
 Then copy from the author (not in Git): `articles/`, `models/xlmroberta_v3/`, and create `.env` with `MONGODB_URI=...`. `data/` is in Git.
 
-Notes on `requirements.txt` (checked 2026-11-17): it is a full `pip freeze` saved as UTF-16, it includes Label Studio and its Django dependencies, and it does not list `pytest`. Install pytest separately (`python -m pip install pytest`) until the file is rebuilt.
+Notes on `requirements.txt` (checked 2026-11-17): it is a full `pip freeze` saved as UTF-16, and it includes Label Studio and its Django dependencies. It does list the test tools `pytest` and `mongomock` (added 2026-11-17). `mongomock` is an in-memory imitation of MongoDB used only by the database tests.
 
 For the LLM: install Ollama and `ollama pull qwen3:8b`. Verify with `python test_cpu.py`; `ollama ps` should show `100% CPU`.
 
