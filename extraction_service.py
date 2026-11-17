@@ -390,7 +390,8 @@ def _claim_records(llm_claims, validated, candidates, sentences, locations):
 
 
 # ── The main function ──────────────────────────────────────────────────────
-def extract_article(article, backend, *, branch_a=None, batch_size=6, max_batch_attempts=2):
+def extract_article(article, backend, *, branch_a=None, branch_a_model=None,
+                    batch_size=6, max_batch_attempts=2):
     """Run Branch A + Branch B on one article.
 
     article: a dict with the text and, if available, _id/article_id, url, publish_date.
@@ -407,7 +408,8 @@ def extract_article(article, backend, *, branch_a=None, batch_size=6, max_batch_
     url = article.get("url") or article.get("source_url")
     result = ExtractionResult(article_id=article_id, status="failed", started_at=utc_now())
     result.versions = {"extraction": EXTRACTION_VERSION, "prompt": PROMPT_VERSION,
-                       "branch_a_model": "injected", "llm": backend.describe()}
+                       "branch_a_model": branch_a_model or "injected",
+                       "llm": backend.describe()}
 
     def finish(status, error=None):
         result.status, result.error = status, error
@@ -468,3 +470,123 @@ def extract_article(article, backend, *, branch_a=None, batch_size=6, max_batch_
             "message": f"batches {[b.index for b in bad]} did not complete; "
                        f"unanswered candidates: {result.unanswered}"})
     return finish("complete")
+
+
+# ── Many articles: read from the database, extract, save ──────────────────
+@dataclass
+class RunReport:
+    """What one run did. Printed and logged at the end of every run."""
+    started_at: object = None
+    finished_at: object = None
+    seconds: float = 0.0
+    picked_up: int = 0             # articles that were waiting
+    extracted: int = 0             # completed and saved
+    failed: int = 0                # will be retried later
+    dead: int = 0                  # failed too many times; a person must look
+    claims_saved: int = 0
+    not_attempted: int = 0         # left waiting because the run stopped early
+    stopped_early: str | None = None    # why the run stopped, if it did
+    articles: list = field(default_factory=list)   # one line per article handled
+
+    def summary(self):
+        lines = [f"Extraction run: {self.picked_up} waiting, {self.extracted} extracted "
+                 f"({self.claims_saved} claims), {self.failed} failed, {self.dead} dead, "
+                 f"{self.not_attempted} not attempted, {self.seconds:.0f} s"]
+        if self.picked_up == 0:
+            lines.append("  Nothing was waiting. If articles were expected, check the scraper.")
+        if self.stopped_early:
+            lines.append(f"  STOPPED EARLY: {self.stopped_early}")
+        for a in self.articles:
+            if a["outcome"] != "extracted":
+                lines.append(f"  {a['outcome'].upper()} {a['article_id']} "
+                             f"{(a['title'] or '')[:50]!r}: {a['error']}")
+        return "\n".join(lines)
+
+
+def run_pending(store, backend, *, limit=50, branch_a=None, batch_size=6,
+                max_batch_attempts=2, now=None):
+    """Extract every article that is waiting, and record what happened to each.
+
+    store:   database.store.Store
+    backend: OllamaBackend in production, FakeBackend in tests
+    now:     only for tests; leave it out normally
+
+    For each waiting article (never tried, or failed earlier and due for retry):
+      complete -> claims and entities are saved, status becomes `extracted`
+      anything else -> NO claims are saved; the error and the batch reports are
+                       stored on the article and a retry is scheduled.
+                       The third failure makes it `dead`.
+
+    The run stops at once, leaving the remaining articles untouched and their
+    retries unused, when the problem is the machine and not the article:
+    the LLM server is down, or the Branch A model cannot be loaded.
+    """
+    clock = time.perf_counter()
+    report = RunReport(started_at=utc_now())
+
+    def finish():
+        report.finished_at = utc_now()
+        report.seconds = time.perf_counter() - clock
+        return report
+
+    pending = store.get_pending("extraction", limit=limit, now=now)
+    report.picked_up = len(pending)
+    if not pending:
+        return finish()
+
+    # Load the Branch A model once, before touching any article.
+    branch_a_model = None
+    if branch_a is None:
+        try:
+            branch_a, branch_a_model = _default_branch_a()
+        except Exception as exc:
+            report.stopped_early = f"Branch A model could not be loaded: {type(exc).__name__}: {exc}"
+            report.not_attempted = len(pending)
+            return finish()
+
+    for position, article in enumerate(pending):
+        article_id = article["_id"]
+        line = {"article_id": article_id, "title": article.get("title"),
+                "outcome": None, "claims": 0, "seconds": 0.0, "error": None}
+        started = time.perf_counter()
+
+        try:
+            result = extract_article(article, backend, branch_a=branch_a,
+                                     branch_a_model=branch_a_model, batch_size=batch_size,
+                                     max_batch_attempts=max_batch_attempts)
+        except BackendUnavailable as exc:
+            report.stopped_early = f"LLM backend unavailable: {exc}"
+            report.not_attempted = len(pending) - position     # this article and all after it
+            return finish()
+
+        error = result.error
+        if result.status == "complete":
+            try:
+                line["claims"] = store.save_extraction(
+                    article_id, entities=result.entities, hazard_types=result.hazard_types,
+                    extraction=result.extraction_record(), claims=result.claims, now=now)
+            except ValueError as exc:
+                # The store refused the result (for example a claim that does not
+                # fit the schema). Nothing was written; treat it as a failure.
+                error = {"stage": "save", "kind": "save_refused", "message": str(exc)}
+
+        if result.status == "complete" and error is None:
+            line["outcome"] = "extracted"
+            report.extracted += 1
+            report.claims_saved += line["claims"]
+        else:
+            status = store.mark_failed(
+                article_id, stage="extraction", kind=error["kind"],
+                message=f"[{error['stage']}] {error['message']}",
+                extraction=result.extraction_record(), now=now)
+            line["outcome"] = "dead" if status == "dead" else "failed"
+            line["error"] = f"[{error['stage']}] {error['message']}"
+            if status == "dead":
+                report.dead += 1
+            else:
+                report.failed += 1
+
+        line["seconds"] = time.perf_counter() - started
+        report.articles.append(line)
+
+    return finish()

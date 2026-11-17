@@ -97,7 +97,7 @@ def test_ids_are_resolved_to_sentence_text_and_place_names():
 
 
 def test_numbers_come_from_python_not_from_the_llm():
-    lakh = candidate(TEXT, "58 lakh")
+    lakh = candidate(TEXT, "At least 58 lakh")
 
     def reply(prompt):
         answer = auto_reply(prompt, impact_type="AFFECTED_PEOPLE")
@@ -109,6 +109,7 @@ def test_numbers_come_from_python_not_from_the_llm():
     result = run(FakeBackend([reply]), batch_size=50)
     claim = next(c for c in result.claims if c["candidate_id"] == lakh.candidate_id)
     assert claim["normalized_value"] == 5_800_000
+    assert claim["modifier"] == "AT_LEAST"
     assert all(c["normalized_value"] != 999 for c in result.claims)
 
 

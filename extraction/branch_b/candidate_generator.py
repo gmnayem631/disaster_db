@@ -50,12 +50,14 @@ QUANTITY_PATTERNS = [
     rf'(?:{_APPROX}\s+)?\b\d{{1,2}},\s\d{{2}},\d{{3}}\b',
     # Bengali/South Asian comma format: 12,27,554
     r'\b\d{1,2}(?:,\d{2})*(?:,\d{3})\b',
-    r'\d+\.?\d*\s*(?:lakh|crore|million|billion|thousand)',
+    # "58 lakh", and with its modifier when there is one: "at least 58 lakh"
+    rf'(?:\b{_APPROX}\s+)?\d+\.?\d*\s*(?:lakh|crore|million|billion|thousand)',
     r'\d[\d,]*\s*(?:to|-)\s*\d[\d,]*',
     rf'{_APPROX}\s+\d[\d,]*',
     r'\b\d{1,3}(?:,\d{3})+\b',
     r'\b\d+\b',
-    WORD_NUMBER,
+    # "three", and with its modifier: "at least three", "more than two lakh"
+    rf'(?:\b{_APPROX}\s+)?{WORD_NUMBER}',
 ]
 
 COMPILED_PATTERNS = [re.compile(p, re.IGNORECASE) for p in QUANTITY_PATTERNS]

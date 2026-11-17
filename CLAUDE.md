@@ -68,9 +68,12 @@ database/                  NEW collections only (articles, claims, events). Neve
   store.py                 Store class: add articles, pending/retry, save extraction, events
 
 extraction_service.py      extract_article(): Branch A + B on one article via a swappable LLM backend.
-                           OllamaBackend (real Qwen) and FakeBackend (tests). No database step (run_pending) yet.
+                           OllamaBackend (real Qwen) and FakeBackend (tests).
+                           run_pending(): extracts every waiting article in the new `articles` collection,
+                           saves claims or records the failure and retry. Not yet run on real MongoDB.
+                           No scraping step and no scheduled entry script yet.
 
-tests/                     pytest, 101 tests pass without Atlas, the NER model or the LLM
+tests/                     pytest, 131 tests pass without Atlas, the NER model or the LLM
                            (mongomock for the database, FakeBackend / a stand-in client for the LLM).
                            1 test marked `qwen` needs real Qwen and is skipped unless RUN_QWEN=1.
 docs/                      design.md, runbook.md, background.md
