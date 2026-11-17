@@ -125,6 +125,7 @@ def build_article(url, *, title=None, text=None, publish_date=None,
         # (data/hazard_keywords.txt). A filter result, not a classification.
         "keyword_hazards":     sorted(keyword_hazards or []),
         "keyword_hits":        sorted(keyword_hits or []),
+        "screening":           None,   # the LLM hazard check (screening.py)
         "entities":            None,
         "processing_status":   schema.CLEANED if text else schema.DISCOVERED,
         "retry_count":         0,

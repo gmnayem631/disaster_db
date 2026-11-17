@@ -72,14 +72,25 @@ class Store:
         }})
 
     def mark_filtered_out(self, article_id, reason, now=None):
-        """Not a flood/fire article, or too short. Final; it is not retried."""
+        """Not a disaster article, or too short. Final; it is not retried.
+        extraction_failed is allowed because a hazard check can fail once and
+        say "not a disaster" on the retry."""
         now = now or utc_now()
-        self._require(article_id, {schema.DISCOVERED, schema.SCRAPE_FAILED, schema.CLEANED})
+        self._require(article_id, {schema.DISCOVERED, schema.SCRAPE_FAILED, schema.CLEANED,
+                                   schema.EXTRACTION_FAILED})
         self.articles.update_one({"_id": article_id}, {"$set": {
             "processing_status": schema.FILTERED_OUT,
             "last_error": {"stage": "filter", "kind": "filtered_out", "message": reason, "at": now},
             "next_retry_at": None, "updated_at": now,
         }})
+
+    def save_screening(self, article_id, record, now=None):
+        """Store the hazard check's answer (screening.py) on the article.
+        The status is not changed here."""
+        now = now or utc_now()
+        self._require(article_id, {schema.CLEANED, schema.EXTRACTION_FAILED})
+        self.articles.update_one({"_id": article_id}, {"$set": {
+            "screening": record, "updated_at": now}})
 
     def mark_failed(self, article_id, *, stage, kind, message, extraction=None, now=None):
         """Record a failed scrape or extraction and schedule the retry.

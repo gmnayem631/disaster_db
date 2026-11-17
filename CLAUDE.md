@@ -75,6 +75,8 @@ ingestion.py               NEW daily collection: reads data/newspapers.txt (news
                            politely (robots.txt, random 5-15 s per site, crawl-delay, backs off on 429/403/503),
                            cleans, keeps articles matching data/hazard_keywords.txt -> `articles` as `cleaned`.
                            Failed downloads retried; unrelated articles stored without text as `filtered_out`.
+screening.py               Qwen hazard check run by run_pending() before extraction: is this a real
+                           disaster report in Bangladesh, which hazards. Drops keyword false matches.
 data/newspapers.txt        one line per newspaper: name | method | url. 7 enabled (checked 2026-11-18).
 data/hazard_keywords.txt   one line per hazard. PROPOSED hazard list, awaiting the author's decision.
                            No scheduled entry script yet.

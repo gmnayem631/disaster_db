@@ -51,6 +51,15 @@ venv\Scripts\python ingestion.py --db disaster_db_test --limit 20
 - Polite: obeys robots.txt and each site's crawl-delay, waits a random 5 to 15 seconds between requests to the same site, and stops using a site for the run if it answers 403, 429 or 503.
 - A full daily run downloads several hundred pages and takes roughly an hour (estimate).
 
+### Hazard check (Qwen)
+
+Keywords let through many non-disasters ("fire safety clearance", "set tyres on fire").
+`run_pending()` therefore first asks Qwen about each new daily article (`screening.py`):
+title + first 400 words -> report type, in Bangladesh or not, hazards.
+Kept: `CURRENT_EVENT`, `FOLLOW_UP`, `WARNING` in Bangladesh. Anything else becomes
+`filtered_out` with the reason, and is not extracted. The answer is stored on the
+article as `screening`. Corpus articles (`origin` not `daily`) are not checked.
+
 ## Collect and clean articles by hand (old way, used for the training corpus)
 
 1. Append URLs to `data/urls.txt`.

@@ -14,6 +14,7 @@ from dataclasses import asdict, dataclass, field
 
 from pydantic import ValidationError
 
+import screening
 from database.documents import utc_now
 from extraction.branch_b.candidate_generator import format_for_llm, generate_candidates
 from extraction.branch_b.claim_validator import REVIEW_REQUIRED, validate_claims
@@ -77,23 +78,39 @@ class FakeBackend:
       - an Exception: raised, to imitate a failure
       - a function(user_prompt) returning any of the above
     With no list, every request is answered with auto_reply().
+
+    Hazard-check requests (screening.py) are answered separately, from
+    `screen_replies` (same kinds of items), so they never use up `replies`.
+    With no list, every article passes the check as a FLOOD report.
     """
     name  = "fake"
     model = "fake-model"
 
-    def __init__(self, replies=None, num_ctx=8192):
+    def __init__(self, replies=None, num_ctx=8192, screen_replies=None):
         self.replies = list(replies) if replies is not None else None
+        self.screen_replies = list(screen_replies) if screen_replies is not None else None
         self.num_ctx = num_ctx
-        self.calls   = []          # every user prompt received, for tests to inspect
+        self.calls   = []          # every extraction prompt received, for tests to inspect
+        self.screen_calls = []     # every hazard-check prompt received
 
     def complete(self, system_prompt, user_prompt, json_schema):
-        self.calls.append(user_prompt)
-        if self.replies is None:
-            reply = auto_reply(user_prompt)
-        elif not self.replies:
-            raise BackendError("FakeBackend has no reply left for this request")
+        if (json_schema or {}).get("title") == "HazardCheck":
+            from screening import fake_answer
+            self.screen_calls.append(user_prompt)
+            if self.screen_replies is None:
+                reply = fake_answer()
+            elif not self.screen_replies:
+                raise BackendError("FakeBackend has no hazard-check reply left")
+            else:
+                reply = self.screen_replies.pop(0)
         else:
-            reply = self.replies.pop(0)
+            self.calls.append(user_prompt)
+            if self.replies is None:
+                reply = auto_reply(user_prompt)
+            elif not self.replies:
+                raise BackendError("FakeBackend has no reply left for this request")
+            else:
+                reply = self.replies.pop(0)
         if callable(reply):
             reply = reply(user_prompt)
         if isinstance(reply, Exception):
@@ -481,6 +498,7 @@ class RunReport:
     seconds: float = 0.0
     picked_up: int = 0             # articles that were waiting
     extracted: int = 0             # completed and saved
+    screened_out: int = 0          # the hazard check said: not a disaster report
     failed: int = 0                # will be retried later
     dead: int = 0                  # failed too many times; a person must look
     claims_saved: int = 0
@@ -490,7 +508,8 @@ class RunReport:
 
     def summary(self):
         lines = [f"Extraction run: {self.picked_up} waiting, {self.extracted} extracted "
-                 f"({self.claims_saved} claims), {self.failed} failed, {self.dead} dead, "
+                 f"({self.claims_saved} claims), {self.screened_out} dropped by the hazard "
+                 f"check, {self.failed} failed, {self.dead} dead, "
                  f"{self.not_attempted} not attempted, {self.seconds:.0f} s"]
         if self.picked_up == 0:
             lines.append("  Nothing was waiting. If articles were expected, check the scraper.")
@@ -504,7 +523,7 @@ class RunReport:
 
 
 def run_pending(store, backend, *, limit=50, branch_a=None, batch_size=6,
-                max_batch_attempts=2, now=None):
+                max_batch_attempts=2, screen=True, now=None):
     """Extract every article that is waiting, and record what happened to each.
 
     store:   database.store.Store
@@ -512,6 +531,11 @@ def run_pending(store, backend, *, limit=50, branch_a=None, batch_size=6,
     now:     only for tests; leave it out normally
 
     For each waiting article (never tried, or failed earlier and due for retry):
+      first, if it came from the daily scraper and has not been checked yet,
+      the hazard check (screening.py) asks the LLM whether it really reports a
+      disaster. No -> status `filtered_out` with the reason; no extraction.
+      The answer is stored on the article as `screening` either way.
+      Then the extraction:
       complete -> claims and entities are saved, status becomes `extracted`
       anything else -> NO claims are saved; the error and the batch reports are
                        stored on the article and a retry is scheduled.
@@ -549,6 +573,35 @@ def run_pending(store, backend, *, limit=50, branch_a=None, batch_size=6,
         line = {"article_id": article_id, "title": article.get("title"),
                 "outcome": None, "claims": 0, "seconds": 0.0, "error": None}
         started = time.perf_counter()
+
+        if screen and screening.needs_screening(article):
+            try:
+                check = screening.screen_article(article, backend, now=now)
+            except BackendUnavailable as exc:
+                report.stopped_early = f"LLM backend unavailable: {exc}"
+                report.not_attempted = len(pending) - position
+                return finish()
+            if check.status != "ok":
+                message = f"[screening] {check.error['message']}"
+                status = store.mark_failed(article_id, stage="extraction",
+                                           kind=check.error["kind"], message=message, now=now)
+                line["outcome"] = "dead" if status == "dead" else "failed"
+                line["error"] = message
+                report.dead += status == "dead"
+                report.failed += status != "dead"
+                line["seconds"] = time.perf_counter() - started
+                report.articles.append(line)
+                continue
+            store.save_screening(article_id, check.record, now=now)
+            if not check.record["keep"]:
+                reason = screening.drop_reason(check.record)
+                store.mark_filtered_out(article_id, reason, now=now)
+                line["outcome"] = "screened_out"
+                line["error"] = reason
+                report.screened_out += 1
+                line["seconds"] = time.perf_counter() - started
+                report.articles.append(line)
+                continue
 
         try:
             result = extract_article(article, backend, branch_a=branch_a,
