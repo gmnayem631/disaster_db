@@ -60,6 +60,30 @@ Kept: `CURRENT_EVENT`, `FOLLOW_UP`, `WARNING` in Bangladesh. Anything else becom
 `filtered_out` with the reason, and is not extracted. The answer is stored on the
 article as `screening`. Corpus articles (`origin` not `daily`) are not checked.
 
+## Daily job (collect + hazard check + extract)
+
+```
+venv\Scripts\python daily_run.py --db disaster_db_test
+```
+
+- Runs ingestion, then `run_pending()` (hazard check, Branch A, Qwen). One log file per run in `logs/daily_<date>_<time>.log`.
+- Limits: `--scrape-limit 1000`, `--extract-limit 200`, `--extract-minutes 300` (no new extraction starts after 5 hours; the rest wait for tomorrow, no retry used).
+- `--skip-ingestion` / `--skip-extraction` run one stage only.
+- Exit code 0 = all ran, 1 = a stage stopped or crashed (e.g. Ollama not running; nothing is lost), 2 = another run was still going.
+- Ollama must be running (it starts with Windows when installed normally).
+
+Schedule it (Windows Task Scheduler, every day at 06:00, only while you are logged in so Ollama is running).
+Run once in PowerShell from the project folder:
+
+```
+$action  = New-ScheduledTaskAction -Execute "$PWD\venv\Scripts\python.exe" -Argument "daily_run.py --db disaster_db_test" -WorkingDirectory "$PWD"
+$trigger = New-ScheduledTaskTrigger -Daily -At 6am
+Register-ScheduledTask -TaskName "DisasterDB daily" -Action $action -Trigger $trigger
+```
+
+Check it: `Get-ScheduledTaskInfo -TaskName "DisasterDB daily"` (`LastTaskResult` is the exit code). Run it now: `Start-ScheduledTask -TaskName "DisasterDB daily"`. Remove it: `Unregister-ScheduledTask -TaskName "DisasterDB daily"`.
+Change `--db` to the real database only when the author decides to go live.
+
 ## Collect and clean articles by hand (old way, used for the training corpus)
 
 1. Append URLs to `data/urls.txt`.

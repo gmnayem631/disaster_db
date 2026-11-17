@@ -523,12 +523,15 @@ class RunReport:
 
 
 def run_pending(store, backend, *, limit=50, branch_a=None, batch_size=6,
-                max_batch_attempts=2, screen=True, now=None):
+                max_batch_attempts=2, screen=True, stop_at=None, progress=None, now=None):
     """Extract every article that is waiting, and record what happened to each.
 
-    store:   database.store.Store
-    backend: OllamaBackend in production, FakeBackend in tests
-    now:     only for tests; leave it out normally
+    store:    database.store.Store
+    backend:  OllamaBackend in production, FakeBackend in tests
+    stop_at:  a time.monotonic() value; no new article is started after it.
+              The rest stay waiting, with no retry used, for the next run.
+    progress: function(str) for one line per article (e.g. print)
+    now:      only for tests; leave it out normally
 
     For each waiting article (never tried, or failed earlier and due for retry):
       first, if it came from the daily scraper and has not been checked yet,
@@ -568,7 +571,20 @@ def run_pending(store, backend, *, limit=50, branch_a=None, batch_size=6,
             report.not_attempted = len(pending)
             return finish()
 
+    say = progress or (lambda message: None)
+
+    def done(line, position):
+        line["seconds"] = time.perf_counter() - started
+        report.articles.append(line)
+        note = f" ({line['claims']} claims)" if line["outcome"] == "extracted" else f": {line['error']}"
+        say(f"[{position + 1}/{len(pending)}] {line['outcome'].upper()} "
+            f"{(line['title'] or '')[:60]}{note} [{line['seconds']:.0f} s]")
+
     for position, article in enumerate(pending):
+        if stop_at is not None and time.monotonic() >= stop_at:
+            report.stopped_early = "time limit reached; the rest wait for the next run"
+            report.not_attempted = len(pending) - position
+            return finish()
         article_id = article["_id"]
         line = {"article_id": article_id, "title": article.get("title"),
                 "outcome": None, "claims": 0, "seconds": 0.0, "error": None}
@@ -589,8 +605,7 @@ def run_pending(store, backend, *, limit=50, branch_a=None, batch_size=6,
                 line["error"] = message
                 report.dead += status == "dead"
                 report.failed += status != "dead"
-                line["seconds"] = time.perf_counter() - started
-                report.articles.append(line)
+                done(line, position)
                 continue
             store.save_screening(article_id, check.record, now=now)
             if not check.record["keep"]:
@@ -599,8 +614,7 @@ def run_pending(store, backend, *, limit=50, branch_a=None, batch_size=6,
                 line["outcome"] = "screened_out"
                 line["error"] = reason
                 report.screened_out += 1
-                line["seconds"] = time.perf_counter() - started
-                report.articles.append(line)
+                done(line, position)
                 continue
 
         try:
@@ -639,7 +653,6 @@ def run_pending(store, backend, *, limit=50, branch_a=None, batch_size=6,
             else:
                 report.failed += 1
 
-        line["seconds"] = time.perf_counter() - started
-        report.articles.append(line)
+        done(line, position)
 
     return finish()

@@ -77,9 +77,10 @@ ingestion.py               NEW daily collection: reads data/newspapers.txt (news
                            Failed downloads retried; unrelated articles stored without text as `filtered_out`.
 screening.py               Qwen hazard check run by run_pending() before extraction: is this a real
                            disaster report in Bangladesh, which hazards. Drops keyword false matches.
+daily_run.py               the daily job: ingestion, then run_pending(). Log per run in logs/, lock file
+                           so two runs never overlap, exit code for Task Scheduler. --db is required.
 data/newspapers.txt        one line per newspaper: name | method | url. 7 enabled (checked 2026-11-18).
 data/hazard_keywords.txt   one line per hazard. PROPOSED hazard list, awaiting the author's decision.
-                           No scheduled entry script yet.
 
 tests/                     pytest, 137 tests pass without Atlas, the NER model or the LLM
                            (mongomock for the database, FakeBackend / a stand-in client for the LLM).

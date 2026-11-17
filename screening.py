@@ -27,7 +27,7 @@ BASE_DIR      = os.path.dirname(os.path.abspath(__file__))
 KEYWORDS_FILE = os.path.join(BASE_DIR, "data", "hazard_keywords.txt")
 
 # Bump when the prompt, the answer format or the keep rule changes.
-SCREENING_VERSION = "s1"
+SCREENING_VERSION = "s2"   # s2: ongoing outbreaks with new figures are CURRENT_EVENT
 
 WORDS_SENT     = 400      # the title and first 400 words are enough to tell what an article is about
 RAW_REPLY_KEPT = 2000
@@ -56,6 +56,9 @@ Rules:
 - Road, rail, boat and launch accidents with victims are disasters (ROAD_ACCIDENT,
   WATER_TRANSPORT_ACCIDENT).
 - Disease outbreaks with reported cases or deaths are disasters (DISEASE_OUTBREAK).
+  A daily or weekly update with new cases or deaths in an ongoing outbreak or
+  season (e.g. "5 more die of dengue") is CURRENT_EVENT, not GENERAL.
+- An ongoing event reported with new figures is CURRENT_EVENT even if it began weeks ago.
 - in_bangladesh is true only if the event happened in Bangladesh or directly
   affected people in Bangladesh.
 - hazards: choose only from this list: {hazards}. Use OTHER for a disaster not in
