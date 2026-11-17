@@ -67,7 +67,11 @@ database/                  NEW collections only (articles, claims, events). Neve
   documents.py             pure functions that build article/claim/event documents (IDs, dates, checks)
   store.py                 Store class: add articles, pending/retry, save extraction, events
 
-tests/                     pytest, 69 tests, all pass. Database tests use mongomock (no Atlas, no model, no LLM).
+extraction_service.py      extract_article(): Branch A + B on one article via a swappable LLM backend.
+                           Has FakeBackend for tests. No Ollama backend yet, no database step (run_pending) yet.
+
+tests/                     pytest, 91 tests, all pass. None need Atlas, the NER model or the LLM
+                           (mongomock for the database, FakeBackend for the LLM).
 docs/                      design.md, runbook.md, background.md
 ```
 
