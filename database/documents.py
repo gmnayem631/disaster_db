@@ -27,6 +27,9 @@ SOURCE_NAMES = {
     "thefinancialexpress.com.bd": "The Financial Express",
     "unb.com.bd":                 "UNB",
     "bangladeshpost.net":         "Bangladesh Post",
+    "observerbd.com":             "Daily Observer",
+    "daily-sun.com":              "The Daily Sun",
+    "bssnews.net":                "BSS",
 }
 
 
@@ -99,7 +102,8 @@ def source_name(url):
 # ── Articles ───────────────────────────────────────────────────────────────
 def build_article(url, *, title=None, text=None, publish_date=None,
                   publish_date_source=None, scraped_at=None,
-                  legacy_event_id=None, origin="daily", now=None):
+                  legacy_event_id=None, origin="daily", keyword_hazards=None,
+                  keyword_hits=None, now=None):
     """A new article document. With text it starts as `cleaned`,
     without text as `discovered`."""
     now = now or utc_now()
@@ -117,6 +121,10 @@ def build_article(url, *, title=None, text=None, publish_date=None,
         "publish_date_source": publish_date_source if publish_date else None,
         "scraped_at":          to_utc(scraped_at),
         "hazard_types":        [],
+        # Which hazard keywords the article matched when it was ingested
+        # (data/hazard_keywords.txt). A filter result, not a classification.
+        "keyword_hazards":     sorted(keyword_hazards or []),
+        "keyword_hits":        sorted(keyword_hits or []),
         "entities":            None,
         "processing_status":   schema.CLEANED if text else schema.DISCOVERED,
         "retry_count":         0,

@@ -53,7 +53,8 @@ class Store:
         return doc["_id"], True
 
     def set_text(self, article_id, *, title, text, publish_date=None,
-                 publish_date_source=None, scraped_at=None, now=None):
+                 publish_date_source=None, scraped_at=None, keyword_hazards=(),
+                 keyword_hits=(), now=None):
         """Store the scraped, cleaned text: discovered/scrape_failed -> cleaned."""
         now = now or utc_now()
         self._require(article_id, {schema.DISCOVERED, schema.SCRAPE_FAILED})
@@ -64,6 +65,7 @@ class Store:
             "publish_date": to_utc(publish_date),
             "publish_date_source": publish_date_source if publish_date else None,
             "scraped_at": to_utc(scraped_at) or now,
+            "keyword_hazards": sorted(keyword_hazards), "keyword_hits": sorted(keyword_hits),
             "processing_status": schema.CLEANED,
             "retry_count": 0, "next_retry_at": None, "last_error": None,
             "updated_at": now,

@@ -71,7 +71,13 @@ extraction_service.py      extract_article(): Branch A + B on one article via a 
                            OllamaBackend (real Qwen) and FakeBackend (tests).
                            run_pending(): extracts every waiting article in the new `articles` collection,
                            saves claims or records the failure and retry.
-                           No scraping step and no scheduled entry script yet.
+ingestion.py               NEW daily collection: reads data/newspapers.txt (news sitemaps / RSS), downloads
+                           politely (robots.txt, random 5-15 s per site, crawl-delay, backs off on 429/403/503),
+                           cleans, keeps articles matching data/hazard_keywords.txt -> `articles` as `cleaned`.
+                           Failed downloads retried; unrelated articles stored without text as `filtered_out`.
+data/newspapers.txt        one line per newspaper: name | method | url. 7 enabled (checked 2026-11-18).
+data/hazard_keywords.txt   one line per hazard. PROPOSED hazard list, awaiting the author's decision.
+                           No scheduled entry script yet.
 
 tests/                     pytest, 137 tests pass without Atlas, the NER model or the LLM
                            (mongomock for the database, FakeBackend / a stand-in client for the LLM).

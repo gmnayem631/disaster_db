@@ -1,0 +1,28 @@
+# Keywords that make an article worth keeping. One line per hazard:
+#
+#   HAZARD: keyword, keyword, ...
+#
+# Matching ignores case and only matches whole words, so "fire" does not
+# match "ceasefire" or "firing". Plurals must be listed separately.
+#
+# This is a first, high-recall filter. It lets through some articles that are
+# not disaster reports ("opened fire", "a flood of complaints"). The LLM is
+# meant to remove those later; the keywords only decide what gets stored.
+#
+# PROPOSAL (2026-11-18): the hazard list itself is waiting for the author's decision.
+
+FLOOD: flood, floods, flooding, flooded, flash flood, flash floods, inundated, inundation, waterlogged, waterlogging, submerged, deluge, embankment breach, onrush of water, tidal surge
+CYCLONE: cyclone, cyclones, cyclonic, storm surge, deep depression, landfall
+LANDSLIDE: landslide, landslides, mudslide, mudslides, hill collapse
+RIVERBANK_EROSION: river erosion, riverbank erosion, river bank erosion
+FIRE: fire, fires, blaze, inferno, gutted, burnt to ashes, fire service
+BUILDING_COLLAPSE: building collapse, building collapsed, collapsed building, roof collapse, roof collapsed, wall collapse, wall collapsed
+ROAD_ACCIDENT: road accident, road accidents, road crash, collision, collided, run over, ran over, overturned, plunged into
+WATER_TRANSPORT_ACCIDENT: capsize, capsized, capsizes, capsizing, launch sank, boat sank, trawler sank
+EARTHQUAKE: earthquake, earthquakes, quake, tremor, tremors, aftershock
+LIGHTNING: lightning, thunderbolt
+HEATWAVE: heatwave, heat wave, heatstroke, heat stroke
+COLD_WAVE: cold wave, cold snap, cold spell
+DISEASE_OUTBREAK: dengue, cholera, outbreak, epidemic, chikungunya, anthrax, nipah
+STORM: tornado, nor'wester, norwester, kalbaishakhi, hailstorm, thunderstorm
+DROUGHT: drought

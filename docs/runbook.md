@@ -39,7 +39,19 @@ $env:RUN_MONGO = "1"; venv\Scripts\python -m pytest tests/test_database_store.py
 
 Always pass `tests`. The root folder has scripts named `test_cpu.py`, `test_branch_b_pipeline.py`, `pipeline_test.py` and `ner_test.py`. They are not pytest tests, but plain `pytest` would collect them and try to load the model and call Ollama.
 
-## Collect and clean articles
+## Collect articles automatically (new system)
+
+```
+venv\Scripts\python ingestion.py --db disaster_db_test --limit 20
+```
+
+- Reads the newspapers in `data/newspapers.txt`. To add one, add a line `name | method | url` and do a small run like the one above to check it.
+- Keeps articles that match a keyword in `data/hazard_keywords.txt`, stores them in the `articles` collection as `cleaned`, ready for `run_pending()`.
+- `--db` has no default on purpose. Use `disaster_db_test` until the daily job is set up.
+- Polite: obeys robots.txt and each site's crawl-delay, waits a random 5 to 15 seconds between requests to the same site, and stops using a site for the run if it answers 403, 429 or 503.
+- A full daily run downloads several hundred pages and takes roughly an hour (estimate).
+
+## Collect and clean articles by hand (old way, used for the training corpus)
 
 1. Append URLs to `data/urls.txt`.
 2. `python scraper.py` (skips URLs already scraped).

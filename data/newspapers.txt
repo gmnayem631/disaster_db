@@ -1,0 +1,32 @@
+# Newspapers the ingestion step reads. One line per source:
+#
+#   name | method | url
+#
+# method:
+#   sitemap  a news sitemap, or a sitemap index that points to news sitemaps (best: has dates)
+#   rss      an RSS or Atom feed
+#   section  a section page whose article links are collected (least reliable)
+#
+# Lines starting with # are ignored. To add a newspaper, add one line, then run
+#   venv\Scripts\python ingestion.py --db disaster_db_test --limit 5
+# once and read the report.
+#
+# Checked 2026-11-18: robots.txt allows our scraper on all enabled sources.
+# Each site's crawl-delay is read from its robots.txt automatically
+# (The Business Standard 10 s, Daily Observer 10 s).
+
+The Daily Star         | sitemap | https://www.thedailystar.net/googlenews.xml
+Dhaka Tribune          | sitemap | https://www.dhakatribune.com/news-sitemap.xml
+bdnews24               | sitemap | https://bdnews24.com/news_sitemap.xml
+The Business Standard  | sitemap | https://www.tbsnews.net/googlenews.xml
+Prothom Alo English    | sitemap | https://en.prothomalo.com/news_sitemap.xml
+New Age                | sitemap | https://www.newagebd.net/sitemap.xml
+Daily Observer         | rss     | https://www.observerbd.com/rss
+
+# ── Not enabled ────────────────────────────────────────────────────────────
+# Daily Sun: its sitemap and feeds answer "403 Forbidden" to our scraper.
+#   We do not work around a block.
+# The Daily Sun | sitemap | https://www.daily-sun.com/news_sitemap.xml
+#
+# The Financial Express, BSS, UNB, Bangladesh Post: no usable news sitemap or
+#   feed found. They need the "section" method; not checked yet.
