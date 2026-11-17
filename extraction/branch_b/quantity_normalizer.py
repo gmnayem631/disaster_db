@@ -30,14 +30,14 @@ def parse_word_number(text):
     words = re.sub(r'[-]', ' ', text.lower().strip()).split()
     total, current, found = 0, 0, False
     for w in words:
-        if w in WORD_NUMBERS:
+        if w in SCALES:  # thousand, lakh, crore, million, billion
+            total += (current if current else 1) * SCALES[w]
+            current = 0
+        elif w in WORD_NUMBERS:
             found = True
             v = WORD_NUMBERS[w]
             if v == 100:
                 current = current * 100 if current else 100
-            elif v == 1000:
-                total += (current if current else 1) * 1000
-                current = 0
             else:
                 current += v
     return float(total + current) if found else None

@@ -29,15 +29,22 @@ NON_PEOPLE_NOUNS = {"districts", "district", "upazilas", "upazila", "unions", "u
                     "packets", "pieces", "hectares", "acres", "taka", "days", "hours",
                     "years", "months", "weeks", "km", "kilometres", "metres", "cm",
                     "mm", "percent", "%"}
+# A function word starts a new phrase; nouns after it do not describe the number.
+STOP_WORDS = {"in", "of", "at", "on", "across", "from", "by", "with", "among",
+              "to", "for", "as", "and", "were", "was", "has", "have", "had",
+              "is", "are", "while", "after"}
 
 
 def non_people_noun_after(candidate, sentences_by_id):
-    """Look at the first 3 words after the number. Return the bad noun, or None."""
+    """Look at up to 3 words after the number, stopping at a function word.
+    Return the non-person noun if one is reached first, else None."""
     sent = sentences_by_id.get(candidate.sentence_id)
     if sent is None:
         return None
     after = sent.text[candidate.end_char - sent.start_char:]
     for word in re.findall(r"[a-zA-Z%]+", after.lower())[:3]:
+        if word in STOP_WORDS:
+            return None
         if word in PEOPLE_NOUNS:
             return None
         if word in NON_PEOPLE_NOUNS:
