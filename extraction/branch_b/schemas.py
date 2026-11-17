@@ -8,9 +8,7 @@ class ImpactType(str, Enum):
     INJURED            = "INJURED"
     MISSING            = "MISSING"
     AFFECTED_PEOPLE    = "AFFECTED_PEOPLE"
-    DISPLACED          = "DISPLACED"
-    EVACUATED          = "EVACUATED"
-    MAROONED           = "MAROONED"
+    DISPLACED          = "DISPLACED"    # includes marooned, stranded, evacuated (decided 2026-11-17)
     HOUSING_DAMAGE     = "HOUSING_DAMAGE"
     INFRASTRUCTURE_DAMAGE = "INFRASTRUCTURE_DAMAGE"
     AGRICULTURAL_DAMAGE = "AGRICULTURAL_DAMAGE"

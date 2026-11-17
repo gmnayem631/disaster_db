@@ -148,7 +148,7 @@ Design rules (keep):
 
 - The LLM **never converts numbers** and never invents IDs/URLs. Python does lakh/crore, word numbers, ranges, modifiers.
 - Preserve raw text, evidence sentence, and individual claims. Never sum cumulative figures. Keep conflicting reports.
-- Impact taxonomy: FATALITIES, INJURED, MISSING, AFFECTED_PEOPLE, DISPLACED, EVACUATED, MAROONED, HOUSING_DAMAGE, INFRASTRUCTURE_DAMAGE, AGRICULTURAL_DAMAGE, LIVESTOCK_LOSS, ECONOMIC_LOSS, RELIEF, OTHER. Aggregation: CUMULATIVE, INCREMENTAL, POINT_ESTIMATE, RANGE, LOWER_BOUND, UPPER_BOUND, UNKNOWN.
+- Impact taxonomy: FATALITIES, INJURED, MISSING, AFFECTED_PEOPLE, DISPLACED (includes marooned, stranded, evacuated; author's decision 2026-11-17), HOUSING_DAMAGE, INFRASTRUCTURE_DAMAGE, AGRICULTURAL_DAMAGE, LIVESTOCK_LOSS, ECONOMIC_LOSS, RELIEF, OTHER. Aggregation: CUMULATIVE, INCREMENTAL, POINT_ESTIMATE, RANGE, LOWER_BOUND, UPPER_BOUND, UNKNOWN.
 
 **Confirmed in the code and by `pytest tests` (2026-11-17):** normalizer (range bounds, `"5, 40,510"` -> 540510, whole word-number phrases, word number + lakh/crore), candidate generator (word-number phrases, Bengali commas, stray-space numbers), validator (invalid IDs, unit compatibility, negation/historical/forecast flags, non-person noun after a people count), `local_llm.py` raises on a failed batch after 2 attempts.
 
@@ -157,7 +157,7 @@ Design rules (keep):
 **Known weaknesses:**
 
 - Qwen can give a plausible-looking wrong meaning (e.g. "people took shelter" labelled RELIEF). The validator cannot catch semantic errors. The gold comparison measures this.
-- The system prompt in `local_llm.py` describes only 5 of the 14 impact types and folds "marooned, stranded, evacuated" into DISPLACED, which contradicts the taxonomy. Settle this before correcting the gold set.
+- Fixed 2026-11-17 (prompt `p2`, extraction `b2`): the system prompt now describes all 12 impact types, all aggregations and certainties, for all hazards. MAROONED and EVACUATED were removed from the schema; DISPLACED covers them. Gold CSV rows using them must be relabelled DISPLACED.
 - Nothing checks that the LLM answered every candidate in a batch. A skipped candidate disappears without an error.
 - `num_ctx` is not set in `local_llm.py` and `prompt_eval_count` is not logged, so silent truncation would go unnoticed.
 - For cue-only candidates the validator drops the LLM's `unit`. Validated claims hold only article-local IDs (`S2`, `L1`), not the sentence text.

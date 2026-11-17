@@ -22,8 +22,8 @@ from extraction.branch_b.schemas import BranchBResult
 
 # Bump these when the prompt, schema, candidate generator or validator changes.
 # They are stored with every claim so old and new results can be told apart.
-EXTRACTION_VERSION = "b1"
-PROMPT_VERSION     = "p1"
+EXTRACTION_VERSION = "b2"   # b2: new prompt, MAROONED/EVACUATED merged into DISPLACED
+PROMPT_VERSION     = "p2"   # p2: all impact types, aggregations and certainties described
 
 RAW_REPLY_KEPT = 2000      # characters of a bad reply kept in the error record
 TRUNCATION_SHARE = 0.9     # prompt using 90%+ of the context window gets flagged

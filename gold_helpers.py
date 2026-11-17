@@ -1,6 +1,6 @@
 import re
 
-PEOPLE_TYPES = {"FATALITIES", "INJURED", "MISSING", "AFFECTED_PEOPLE", "DISPLACED", "EVACUATED", "MAROONED"}
+PEOPLE_TYPES = {"FATALITIES", "INJURED", "MISSING", "AFFECTED_PEOPLE", "DISPLACED"}
 
 UNIT_WORDS = {
     "people": "people", "persons": "people", "person": "people", "residents": "people",

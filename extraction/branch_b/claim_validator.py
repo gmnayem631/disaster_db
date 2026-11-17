@@ -18,7 +18,7 @@ REJECTED        = "REJECTED"
 
 # Is the number followed by a noun that is not a person?
 PEOPLE_IMPACT_TYPES = {"FATALITIES", "INJURED", "MISSING", "AFFECTED_PEOPLE",
-                       "DISPLACED", "EVACUATED", "MAROONED"}
+                       "DISPLACED"}
 PEOPLE_NOUNS = {"people", "persons", "person", "families", "family", "households",
                 "residents", "villagers", "children", "women", "men", "individuals",
                 "victims", "fishermen", "farmers", "workers", "deaths", "dead", "bodies"}
@@ -58,9 +58,7 @@ UNIT_COMPATIBLE = {
     "MISSING":                ["people", "persons", "individuals"],
     "AFFECTED_PEOPLE":        ["people", "persons", "families", "households"],
     "DISPLACED":              ["people", "persons", "families", "households"],
-    "EVACUATED":              ["people", "persons", "families", "households"],
-    "MAROONED":               ["people", "persons", "families", "households"],
-    "HOUSING_DAMAGE":         ["houses", "homes", "structures", "buildings", "units"],
+    "HOUSING_DAMAGE":         ["houses", "homes", "structures", "buildings", "units", "shops"],
     "INFRASTRUCTURE_DAMAGE":  ["roads", "bridges", "km", "kilometers", "structures"],
     "AGRICULTURAL_DAMAGE":    ["hectares", "acres", "bigha", "crops", "tonnes"],
     "LIVESTOCK_LOSS":         ["animals", "cattle", "livestock", "heads"],

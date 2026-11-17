@@ -6,6 +6,7 @@ model, so nothing here needs Ollama, the model files or MongoDB.
 import json
 
 import pytest
+import extraction_service
 
 from database.documents import build_article, build_claims
 from extraction.branch_b.candidate_generator import generate_candidates
@@ -124,7 +125,7 @@ def test_claims_fit_the_database_layer():
 def test_extraction_record_is_plain_data():
     result = run(FakeBackend())
     record = result.extraction_record()
-    assert record["status"] == "complete" and record["version"] == "b1"
+    assert record["status"] == "complete" and record["version"] == extraction_service.EXTRACTION_VERSION
     assert record["candidate_count"] == record["claim_count"] == len(result.claims)
     assert record["llm"]["model"] == "fake-model"
     assert record["batches"][0]["candidate_ids"] == result.batches[0].candidate_ids
