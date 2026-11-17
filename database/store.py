@@ -21,7 +21,11 @@ def get_database(name="disaster_db"):
     from dotenv import load_dotenv
     from pymongo import MongoClient
     load_dotenv()
-    return MongoClient(os.getenv("MONGODB_URI"), tz_aware=True)[name]
+    uri = os.getenv("MONGODB_URI")
+    if not uri:
+        # Without this check pymongo would quietly try a database on this PC instead.
+        raise RuntimeError("MONGODB_URI is not set. Put it in .env in the project root.")
+    return MongoClient(uri, tz_aware=True)[name]
 
 
 class Store:

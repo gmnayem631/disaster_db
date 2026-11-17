@@ -45,14 +45,22 @@ WORD_NUMBER = rf'\b{_SUB1000}(?:[\s-]{_SCALE}(?:[\s-](?:and[\s-])?{_SUB1000})?)?
 
 _APPROX = r'(?:nearly|almost|about|around|approximately|over|at least|up to|more than|some)'
 
+_SCALE_WORD = r'(?:lakh|crore|million|billion|thousand)'
+_DECIMAL    = r'\d+(?:\.\d+)?'
+
 QUANTITY_PATTERNS = [
+    # Range with a scale word, kept whole: "10 to 15 lakh", "about 1.5 to 2 crore",
+    # "10 lakh to 15 lakh". Must come before the single-number patterns below,
+    # or "15 lakh" alone is taken and the lower end is lost.
+    rf'(?:\b{_APPROX}\s+)?{_DECIMAL}\s*(?:{_SCALE_WORD}\s*)?(?:to|-|–)\s*{_DECIMAL}\s*{_SCALE_WORD}',
     # Bengali comma with a stray space: "5, 40,510"
     rf'(?:{_APPROX}\s+)?\b\d{{1,2}},\s\d{{2}},\d{{3}}\b',
     # Bengali/South Asian comma format: 12,27,554
     r'\b\d{1,2}(?:,\d{2})*(?:,\d{3})\b',
     # "58 lakh", and with its modifier when there is one: "at least 58 lakh"
     rf'(?:\b{_APPROX}\s+)?\d+\.?\d*\s*(?:lakh|crore|million|billion|thousand)',
-    r'\d[\d,]*\s*(?:to|-)\s*\d[\d,]*',
+    # Range without a scale word, with its modifier: "some 300 to 400"
+    rf'(?:\b{_APPROX}\s+)?\d[\d,]*(?:\.\d+)?\s*(?:to|-|–)\s*\d[\d,]*(?:\.\d+)?',
     rf'{_APPROX}\s+\d[\d,]*',
     r'\b\d{1,3}(?:,\d{3})+\b',
     r'\b\d+\b',

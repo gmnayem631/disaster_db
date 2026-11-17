@@ -48,6 +48,27 @@ def test_number_without_a_modifier_is_unchanged(text, raw, value):
     assert normalized.modifier is None
 
 
+@pytest.mark.parametrize("text, raw, low, high, modifier", [
+    # a scale word used to make the lower end disappear, or a wrong number
+    ("Between 10 to 15 lakh people were affected.", "10 to 15 lakh", 1_000_000, 1_500_000, None),
+    ("Some 10-15 lakh people were affected.", "Some 10-15 lakh", 1_000_000, 1_500_000, "SOME"),
+    ("About 1.5 to 2 crore taka was lost.", "About 1.5 to 2 crore", 15_000_000, 20_000_000, "ABOUT"),
+    ("Nearly 10 lakh to 15 lakh people were marooned.", "Nearly 10 lakh to 15 lakh",
+     1_000_000, 1_500_000, "NEARLY"),
+    # plain ranges used to lose their modifier
+    ("Some 300 to 400 houses were damaged.", "Some 300 to 400", 300, 400, "SOME"),
+    ("Around 10,000 to 15,000 families were stranded.", "Around 10,000 to 15,000",
+     10_000, 15_000, "AROUND"),
+])
+def test_range_is_one_candidate_with_both_ends(text, raw, low, high, modifier):
+    [candidate] = quantities(text)
+    assert candidate.raw == raw
+    normalized = normalize_quantity(candidate.raw)
+    assert normalized.normalized_value is None          # a range is never one number
+    assert (normalized.lower_bound, normalized.upper_bound) == (low, high)
+    assert normalized.modifier == modifier
+
+
 def test_offsets_point_at_the_whole_phrase():
     text = "Officials said at least 58 lakh people have been affected across 11 districts."
     first = quantities(text)[0]

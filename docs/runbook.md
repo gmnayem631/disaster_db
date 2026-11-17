@@ -31,6 +31,12 @@ To also run the test that talks to real Qwen (Ollama must be running; minutes on
 $env:RUN_QWEN = "1"; venv\Scripts\python -m pytest tests -m qwen -s
 ```
 
+To run the database tests against the real MongoDB server from `.env` instead of the in-memory imitation (about 2 minutes). They use only the database `disaster_db_test`, empty it before and after each test, and print the document counts of the real `disaster_db` before and after as a check:
+
+```
+$env:RUN_MONGO = "1"; venv\Scripts\python -m pytest tests/test_database_store.py tests/test_run_pending.py -s; Remove-Item Env:RUN_MONGO
+```
+
 Always pass `tests`. The root folder has scripts named `test_cpu.py`, `test_branch_b_pipeline.py`, `pipeline_test.py` and `ner_test.py`. They are not pytest tests, but plain `pytest` would collect them and try to load the model and call Ollama.
 
 ## Collect and clean articles

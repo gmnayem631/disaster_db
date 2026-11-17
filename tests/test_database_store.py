@@ -5,7 +5,6 @@ to Atlas, reads .env, loads the NER model or calls the LLM.
 """
 from datetime import datetime, timedelta, timezone
 
-import mongomock
 import pytest
 
 from database import schema
@@ -18,8 +17,9 @@ URL_C = "https://www.newagebd.net/article/flood-c"
 
 
 @pytest.fixture
-def db():
-    return mongomock.MongoClient(tz_aware=True)["disaster_db_test"]
+def db(test_db):
+    # mongomock normally; real `disaster_db_test` with RUN_MONGO=1 (see conftest.py)
+    return test_db
 
 
 @pytest.fixture

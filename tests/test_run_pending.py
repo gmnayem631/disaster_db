@@ -5,7 +5,6 @@ the XLM-R model. Nothing here needs Atlas, Ollama or the model files.
 """
 from datetime import datetime, timedelta, timezone
 
-import mongomock
 import pytest
 
 import extraction_service
@@ -19,8 +18,9 @@ DAY = timedelta(days=1)
 
 
 @pytest.fixture
-def store():
-    s = Store(mongomock.MongoClient(tz_aware=True)["disaster_db_test"])
+def store(test_db):
+    # mongomock normally; real `disaster_db_test` with RUN_MONGO=1 (see conftest.py)
+    s = Store(test_db)
     s.setup()
     return s
 

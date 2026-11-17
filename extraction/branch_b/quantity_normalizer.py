@@ -15,7 +15,10 @@ QUALITATIVE = ['several', 'dozens', 'hundreds', 'thousands', 'many', 'numerous',
                'scores', 'a number of', 'a few']
 SCALES = {'lakh': 100_000, 'crore': 10_000_000, 'million': 1_000_000,
           'billion': 1_000_000_000, 'thousand': 1_000}
-RANGE_RE = re.compile(r'(\d+\.?\d*)\s*(?:to|-|–)\s*(\d+\.?\d*)\s*(lakh|crore|million|billion|thousand)?')
+# "10 to 15 lakh" and "10 lakh to 15 lakh". A scale word on only one side
+# applies to both ends.
+RANGE_RE = re.compile(r'(\d+\.?\d*)\s*(lakh|crore|million|billion|thousand)?\s*(?:to|-|–)\s*'
+                      r'(\d+\.?\d*)\s*(lakh|crore|million|billion|thousand)?')
 
 
 def extract_modifier(text):
@@ -57,8 +60,10 @@ def normalize_quantity(raw_text, unit=None):
     # Ranges: keep both ends, never pick one silently
     rm = RANGE_RE.search(clean)
     if rm:
-        scale = SCALES.get(rm.group(3), 1) if rm.group(3) else 1
-        lo, hi = round(float(rm.group(1)) * scale), round(float(rm.group(2)) * scale)
+        lo_word = rm.group(2) or rm.group(4)
+        hi_word = rm.group(4) or rm.group(2)
+        lo = round(float(rm.group(1)) * SCALES.get(lo_word, 1))
+        hi = round(float(rm.group(3)) * SCALES.get(hi_word, 1))
         return NormalizedQuantity(raw_value=raw_text, normalized_value=None, modifier=modifier,
                                   unit=unit, lower_bound=lo, upper_bound=hi)
 
