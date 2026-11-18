@@ -202,6 +202,9 @@ class Store:
             "processing_status": schema.MATCHED if article.get("event_id") else schema.EXTRACTED,
             "retry_count": 0, "next_retry_at": None, "last_error": None, "updated_at": now,
         }})
+        if article.get("event_id"):
+            # Re-extracted while already in an event: its summary must be rebuilt.
+            self.events.update_one({"_id": article["event_id"]}, {"$set": {"last_updated": now}})
         return len(docs)
 
     def get_claims(self, article_id, include_superseded=False):

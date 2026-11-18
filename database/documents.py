@@ -273,8 +273,9 @@ def build_event(hazard_type, title=None, now=None):
         "locations":              {"districts": [], "upazilas": [], "unions": []},
         "article_ids":            [],
         "source_count":           0,
-        "summary":                {},     # built later by reconciliation (not part of this layer)
+        "summary":                {},     # built by event_summary.py from the claims
         "conflicting_claims":     [],
+        "summary_built_at":       None,
         "status":                 "open",
         "merged_into":            None,
         "needs_review":           False,

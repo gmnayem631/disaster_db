@@ -83,6 +83,7 @@ def test_new_articles_are_collected_checked_and_extracted(store, monkeypatch):
     assert "KEPT something" in text                       # ingestion progress reaches the log
     assert "[1/2] EXTRACTED Flood 0" in text              # one line per extracted article
     assert "Event matching: 2 articles, 1 joined an existing event, 1 new events" in text
+    assert report.summaries.rebuilt == 1 and "Event summaries: 1 rebuilt" in text
     assert "waiting for extraction now: 0" in text
 
 

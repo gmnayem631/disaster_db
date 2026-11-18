@@ -81,12 +81,15 @@ event_matcher.py           articles -> events by rules (hazard, date window, sha
                            fires/accidents). Settings at the top are PROVISIONAL (author's decision 1).
                            Never merges events; unclear cases set needs_review. District spellings unified
                            by documents.canonical_district (Chittagong -> Chattogram).
-daily_run.py               the daily job: ingestion, then run_pending(), then event matching. Log per run in logs/, lock file
+event_summary.py           headline numbers per event from its claims (docs/design.md 3.3): latest figure, never
+                           a sum; same-day disagreement -> range + conflicting_claims; groups by type/unit/place.
+                           Rebuilt only for events that changed. Labelled "not checked by a person".
+daily_run.py               the daily job: ingestion, run_pending(), event matching, event summaries. Log per run in logs/, lock file
                            so two runs never overlap, exit code for Task Scheduler. --db is required.
 data/newspapers.txt        one line per newspaper: name | method | url. 7 enabled (checked 2026-11-18).
 data/hazard_keywords.txt   one line per hazard. PROPOSED hazard list, awaiting the author's decision.
 
-tests/                     pytest, 137 tests pass without Atlas, the NER model or the LLM
+tests/                     pytest, 281 tests pass (2026-11-18) without Atlas, the NER model or the LLM
                            (mongomock for the database, FakeBackend / a stand-in client for the LLM).
                            1 test marked `qwen` needs real Qwen and is skipped unless RUN_QWEN=1.
                            With RUN_MONGO=1 the database tests use real Atlas, database

@@ -66,7 +66,8 @@ article as `screening`. Corpus articles (`origin` not `daily`) are not checked.
 venv\Scripts\python daily_run.py --db disaster_db_test
 ```
 
-- Runs ingestion, then `run_pending()` (hazard check, Branch A, Qwen), then event matching (`event_matcher.py`). One log file per run in `logs/daily_<date>_<time>.log`.
+- Runs ingestion, then `run_pending()` (hazard check, Branch A, Qwen), then event matching (`event_matcher.py`), then event summaries (`event_summary.py`, only events that changed; seconds). One log file per run in `logs/daily_<date>_<time>.log`.
+- Event summary: `events.summary.impacts.<TYPE>` is a list of entries, one per unit and place (`scope` "event" or "local"), each with `headline` (None if sources disagree), `low`, `high`, `display`, `as_of`, `sources`, `claim_ids`. Also `timeline` (INCREMENTAL claims), `qualitative`, `unverified` (with a reason), `not_counted`. Disagreements are in `events.conflicting_claims`. To rebuild every summary: `python -c "from database.store import Store, get_database; from event_summary import refresh_summaries; print(refresh_summaries(Store(get_database('disaster_db_test')), everything=True).summary())"`.
 - Limits: `--scrape-limit 1000`, `--extract-limit 200`, `--extract-minutes 300` (no new extraction starts after 5 hours; the rest wait for tomorrow, no retry used).
 - `--skip-ingestion` / `--skip-extraction` / `--skip-matching` leave a stage out.
 - Event matching rules (time windows, spread vs spot hazards) are settings at the top of `event_matcher.py`. They are provisional until the author decides what counts as one event. Events marked `needs_review: true` need a person to look.

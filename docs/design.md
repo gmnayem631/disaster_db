@@ -428,6 +428,8 @@ Reconciliation builds `events.summary` from the event's claims. It runs each tim
 
 **What the summary looks like**
 
+Built 2026-11-18 in `event_summary.py` (`recon_v1`). One change from the sketch below: each impact type holds a **list** of entries (one per unit and place), because one type can have several units (RELIEF in tonnes and in packets) and place names are not safe MongoDB keys. The exact format is in `docs/runbook.md`.
+
 ```
 summary: {
   FATALITIES: {

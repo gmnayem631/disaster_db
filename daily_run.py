@@ -3,6 +3,7 @@
   1. Ingestion   (ingestion.py)        newspapers -> `articles` (cleaned / filtered_out)
   2. Extraction  (extraction_service)  hazard check, then Branch A + Qwen -> `claims`
   3. Matching    (event_matcher)       extracted articles -> `events`
+  4. Summaries   (event_summary)       claims -> headline numbers of each changed event
 
 Everything printed is also written to logs/daily_<date>_<time>.log.
 Windows Task Scheduler starts it once a day (docs/runbook.md). It can also be
@@ -97,13 +98,15 @@ class DailyReport:
     ingestion: object = None        # ingestion.IngestReport
     extraction: object = None       # extraction_service.RunReport
     matching: object = None         # event_matcher.MatchReport
+    summaries: object = None        # event_summary.SummaryReport
     problems: list = field(default_factory=list)
 
     @property
     def exit_code(self):
         stopped = self.extraction is not None and self.extraction.stopped_early
         match_failed = self.matching is not None and self.matching.failed
-        return 1 if self.problems or stopped or match_failed else 0
+        summary_failed = self.summaries is not None and self.summaries.failed
+        return 1 if self.problems or stopped or match_failed or summary_failed else 0
 
 
 def daily_run(store, *, backend, log, sources=None, hazard_keywords=None, fetcher=None,
@@ -114,6 +117,7 @@ def daily_run(store, *, backend, log, sources=None, hazard_keywords=None, fetche
     and the next stage still runs (articles already collected are not lost)."""
     import ingestion
     from event_matcher import match_pending
+    from event_summary import refresh_summaries
     from extraction_service import run_pending
 
     report = DailyReport()
@@ -158,6 +162,15 @@ def daily_run(store, *, backend, log, sources=None, hazard_keywords=None, fetche
         except Exception:
             report.problems.append("event matching crashed")
             log("EVENT MATCHING CRASHED:\n" + traceback.format_exc())
+
+    # Always runs: cheap, and only touches events that changed.
+    log("== 4. Event summaries: headline numbers of changed events")
+    try:
+        report.summaries = refresh_summaries(store, progress=log, now=now)
+        log(report.summaries.summary())
+    except Exception:
+        report.problems.append("event summaries crashed")
+        log("EVENT SUMMARIES CRASHED:\n" + traceback.format_exc())
 
     waiting = store.articles.count_documents({"processing_status": {"$in": ["cleaned", "extraction_failed"]}})
     log(f"== Done. Articles waiting for extraction now: {waiting}")
