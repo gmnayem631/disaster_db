@@ -2,6 +2,7 @@
 
   1. Ingestion   (ingestion.py)        newspapers -> `articles` (cleaned / filtered_out)
   2. Extraction  (extraction_service)  hazard check, then Branch A + Qwen -> `claims`
+  3. Matching    (event_matcher)       extracted articles -> `events`
 
 Everything printed is also written to logs/daily_<date>_<time>.log.
 Windows Task Scheduler starts it once a day (docs/runbook.md). It can also be
@@ -95,21 +96,24 @@ def release_lock(path=None):
 class DailyReport:
     ingestion: object = None        # ingestion.IngestReport
     extraction: object = None       # extraction_service.RunReport
+    matching: object = None         # event_matcher.MatchReport
     problems: list = field(default_factory=list)
 
     @property
     def exit_code(self):
         stopped = self.extraction is not None and self.extraction.stopped_early
-        return 1 if self.problems or stopped else 0
+        match_failed = self.matching is not None and self.matching.failed
+        return 1 if self.problems or stopped or match_failed else 0
 
 
 def daily_run(store, *, backend, log, sources=None, hazard_keywords=None, fetcher=None,
               branch_a=None, scrape_limit=SCRAPE_LIMIT, extract_limit=EXTRACT_LIMIT,
               extract_minutes=EXTRACT_MINUTES, lookback_days=None, skip_ingestion=False,
-              skip_extraction=False, now=None):
-    """Run both stages and return a DailyReport. A crash in one stage is logged
+              skip_extraction=False, skip_matching=False, now=None):
+    """Run the three stages and return a DailyReport. A crash in one stage is logged
     and the next stage still runs (articles already collected are not lost)."""
     import ingestion
+    from event_matcher import match_pending
     from extraction_service import run_pending
 
     report = DailyReport()
@@ -144,6 +148,17 @@ def daily_run(store, *, backend, log, sources=None, hazard_keywords=None, fetche
             report.problems.append("extraction crashed")
             log("EXTRACTION CRASHED:\n" + traceback.format_exc())
 
+    if skip_matching:
+        log("== 3. Event matching: skipped")
+    else:
+        log("== 3. Event matching: extracted articles -> events")
+        try:
+            report.matching = match_pending(store, progress=log, now=now)
+            log(report.matching.summary())
+        except Exception:
+            report.problems.append("event matching crashed")
+            log("EVENT MATCHING CRASHED:\n" + traceback.format_exc())
+
     waiting = store.articles.count_documents({"processing_status": {"$in": ["cleaned", "extraction_failed"]}})
     log(f"== Done. Articles waiting for extraction now: {waiting}")
     for problem in report.problems:
@@ -163,6 +178,7 @@ def main(argv=None):
                         help="no new extraction is started after this many minutes")
     parser.add_argument("--skip-ingestion", action="store_true")
     parser.add_argument("--skip-extraction", action="store_true")
+    parser.add_argument("--skip-matching", action="store_true")
     args = parser.parse_args(argv)
 
     os.chdir(BASE_DIR)          # Task Scheduler starts programs in another folder
@@ -183,7 +199,8 @@ def main(argv=None):
             report = daily_run(
                 store, backend=OllamaBackend(), log=log, scrape_limit=args.scrape_limit,
                 extract_limit=args.extract_limit, extract_minutes=args.extract_minutes,
-                skip_ingestion=args.skip_ingestion, skip_extraction=args.skip_extraction)
+                skip_ingestion=args.skip_ingestion, skip_extraction=args.skip_extraction,
+                skip_matching=args.skip_matching)
             log(f"Exit code {report.exit_code}")
             return report.exit_code
         except Exception:

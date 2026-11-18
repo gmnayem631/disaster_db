@@ -154,4 +154,4 @@ def test_new_event_is_empty_and_open():
 
 def test_unknown_hazard_is_refused():
     with pytest.raises(ValueError):
-        build_event("EARTHQUAKE")
+        build_event("VOLCANO")

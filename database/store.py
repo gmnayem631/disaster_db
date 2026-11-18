@@ -12,7 +12,7 @@ from datetime import timedelta
 from pymongo.errors import DuplicateKeyError
 
 from database import schema
-from database.documents import (build_article, build_claims, build_event,
+from database.documents import (build_article, build_claims, build_event, canonical_district,
                                 make_article_id, make_content_hash, to_utc, utc_now)
 
 
@@ -26,6 +26,19 @@ def get_database(name="disaster_db"):
         # Without this check pymongo would quietly try a database on this PC instead.
         raise RuntimeError("MONGODB_URI is not set. Put it in .env in the project root.")
     return MongoClient(uri, tz_aware=True)[name]
+
+
+def event_title(hazard_type, districts, start_date):
+    """A readable label, e.g. "Flood: Sylhet, Sunamganj and 3 more districts, Jun 2026".
+    Districts mentioned by the most articles come first."""
+    label = hazard_type.replace("_", " ").capitalize()
+    names = [d["name"] for d in sorted(districts, key=lambda d: (-d["articles"], d["name"]))]
+    if len(names) > 2:
+        where = f"{names[0]}, {names[1]} and {len(names) - 2} more districts"
+    else:
+        where = " and ".join(names) or "district unknown"
+    when = f", {start_date:%b %Y}" if start_date else ""
+    return f"{label}: {where}{when}"
 
 
 class Store:
@@ -261,20 +274,28 @@ class Store:
             counts = {}
             for a in articles:
                 found = ((a.get("entities") or {}).get("locations") or {}).get(level, [])
-                for name in {item["value"] for item in found}:
+                names = {item["value"] for item in found}
+                if level == "districts":
+                    names = {canonical_district(n) for n in names}
+                for name in names:
                     counts[name] = counts.get(name, 0) + 1
             locations[level] = [{"name": n, "articles": c} for n, c in sorted(counts.items())]
 
         # The same text printed by two papers counts once.
         sources = {a["source"] for a in articles if not a.get("duplicate_of")}
 
-        self.events.update_one({"_id": event_id}, {"$set": {
+        changes = {
             "article_ids": [a["_id"] for a in articles],
             "start_date": min(dates) if dates else None,
             "end_date": max(dates) if dates else None,
             "date_basis": date_basis, "locations": locations,
             "source_count": len(sources), "last_updated": now,
-        }})
+        }
+        event = self.get_event(event_id)
+        if event and not event.get("title_locked"):     # a title typed by a person is kept
+            changes["title"] = event_title(event["hazard_type"], locations["districts"],
+                                           changes["start_date"])
+        self.events.update_one({"_id": event_id}, {"$set": changes})
 
     def get_event_claims(self, event_id, impact_type=None):
         """Current claims of an event, for building its summary."""

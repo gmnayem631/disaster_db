@@ -76,11 +76,13 @@ def test_new_articles_are_collected_checked_and_extracted(store, monkeypatch):
     assert report.exit_code == 0
     assert report.extraction.extracted == 2
     statuses = {a["processing_status"] for a in store.articles.find()}
-    assert statuses == {schema.EXTRACTED}
+    assert statuses == {schema.MATCHED}                   # stage 3 put them into events
+    assert store.events.count_documents({}) == 1          # both report the Feni flood
     text = log.text()
     assert "Ingestion run" in text and "Extraction run" in text
     assert "KEPT something" in text                       # ingestion progress reaches the log
     assert "[1/2] EXTRACTED Flood 0" in text              # one line per extracted article
+    assert "Event matching: 2 articles, 1 joined an existing event, 1 new events" in text
     assert "waiting for extraction now: 0" in text
 
 
@@ -123,8 +125,9 @@ def test_time_limit_leaves_the_rest_waiting(store, monkeypatch):
 
 def test_stages_can_be_skipped(store, monkeypatch):
     monkeypatch.setattr(ingestion, "run_ingestion", fake_ingestion(crash=True))
-    report, log = go(store, skip_ingestion=True, skip_extraction=True)
+    report, log = go(store, skip_ingestion=True, skip_extraction=True, skip_matching=True)
     assert report.exit_code == 0 and report.ingestion is None and report.extraction is None
+    assert report.matching is None and "Event matching: skipped" in log.text()
     assert "Ingestion: skipped" in log.text() and "Extraction: skipped" in log.text()
 
 

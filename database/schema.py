@@ -27,7 +27,12 @@ DEAD              = "dead"               # failed too many times, needs a person
 VALIDATION_STATUSES = {"ACCEPTED", "REVIEW_REQUIRED", "REJECTED"}
 
 CANDIDATE_KINDS = {"QUANTITY", "CUE"}
-HAZARD_TYPES    = {"FLOOD", "FIRE"}
+# PROVISIONAL: the proposed list in data/hazard_keywords.txt, plus OTHER.
+# Waiting for the author's decision on the final hazard list.
+HAZARD_TYPES    = {"FLOOD", "CYCLONE", "LANDSLIDE", "RIVERBANK_EROSION", "FIRE",
+                   "BUILDING_COLLAPSE", "ROAD_ACCIDENT", "WATER_TRANSPORT_ACCIDENT",
+                   "EARTHQUAKE", "LIGHTNING", "HEATWAVE", "COLD_WAVE", "DISEASE_OUTBREAK",
+                   "STORM", "DROUGHT", "OTHER"}
 DECIDED_BY      = {"auto", "human"}
 
 # Retry policy. These are the suggested defaults from open question 8,

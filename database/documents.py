@@ -33,6 +33,49 @@ SOURCE_NAMES = {
 }
 
 
+# ── District names ─────────────────────────────────────────────────────────
+# Newspapers use old and new spellings (Chittagong / Chattogram). Event
+# matching compares district names, so every spelling must become one name.
+# The names are the gazetteer's (data/gazetteer/districts.csv), except
+# "Cox's Bazar", which the gazetteer writes as "Coxsbazar".
+DISTRICTS = [
+    "Cumilla", "Feni", "Brahmanbaria", "Rangamati", "Noakhali", "Chandpur", "Lakshmipur",
+    "Chattogram", "Cox's Bazar", "Khagrachhari", "Bandarban", "Sirajganj", "Pabna", "Bogura",
+    "Rajshahi", "Natore", "Joypurhat", "Chapainawabganj", "Naogaon", "Jashore", "Satkhira",
+    "Meherpur", "Narail", "Chuadanga", "Kushtia", "Magura", "Khulna", "Bagerhat", "Jhenaidah",
+    "Jhalakathi", "Patuakhali", "Pirojpur", "Barisal", "Bhola", "Barguna", "Sylhet",
+    "Moulvibazar", "Habiganj", "Sunamganj", "Narsingdi", "Gazipur", "Shariatpur",
+    "Narayanganj", "Tangail", "Kishoreganj", "Manikganj", "Dhaka", "Munshiganj", "Rajbari",
+    "Madaripur", "Gopalganj", "Faridpur", "Panchagarh", "Dinajpur", "Lalmonirhat",
+    "Nilphamari", "Gaibandha", "Thakurgaon", "Rangpur", "Kurigram", "Sherpur", "Mymensingh",
+    "Jamalpur", "Netrokona",
+]
+DISTRICT_ALIASES = {
+    "chittagong": "Chattogram", "comilla": "Cumilla", "jessore": "Jashore", "bogra": "Bogura",
+    "barishal": "Barisal", "jhalokati": "Jhalakathi", "jhalokathi": "Jhalakathi",
+    "jhalakati": "Jhalakathi", "maulvibazar": "Moulvibazar", "netrakona": "Netrokona",
+    "narshingdi": "Narsingdi", "khagrachari": "Khagrachhari", "laxmipur": "Lakshmipur",
+    "lakhsmipur": "Lakshmipur", "hobiganj": "Habiganj", "jhenidah": "Jhenaidah",
+    "panchagar": "Panchagarh", "chapainababganj": "Chapainawabganj",
+}
+
+
+def _district_key(name):
+    key = "".join(ch for ch in name.lower() if ch.isalpha())
+    return key.replace("gonj", "ganj")          # Sirajgonj, Kishorgonj -> ...ganj
+
+
+_DISTRICT_BY_KEY = {_district_key(d): d for d in DISTRICTS}
+_DISTRICT_BY_KEY.update({_district_key(k): v for k, v in DISTRICT_ALIASES.items()})
+_DISTRICT_BY_KEY["kishorganj"] = "Kishoreganj"
+
+
+def canonical_district(name):
+    """One spelling per district: "Chittagong" -> "Chattogram", "cox's bazar"
+    -> "Cox's Bazar". A name that is not a known district is returned unchanged."""
+    return _DISTRICT_BY_KEY.get(_district_key(name), name.strip())
+
+
 # ── Dates ──────────────────────────────────────────────────────────────────
 def _to_ms(dt):
     """MongoDB keeps milliseconds, not microseconds. Cut them off here so a

@@ -66,9 +66,10 @@ article as `screening`. Corpus articles (`origin` not `daily`) are not checked.
 venv\Scripts\python daily_run.py --db disaster_db_test
 ```
 
-- Runs ingestion, then `run_pending()` (hazard check, Branch A, Qwen). One log file per run in `logs/daily_<date>_<time>.log`.
+- Runs ingestion, then `run_pending()` (hazard check, Branch A, Qwen), then event matching (`event_matcher.py`). One log file per run in `logs/daily_<date>_<time>.log`.
 - Limits: `--scrape-limit 1000`, `--extract-limit 200`, `--extract-minutes 300` (no new extraction starts after 5 hours; the rest wait for tomorrow, no retry used).
-- `--skip-ingestion` / `--skip-extraction` run one stage only.
+- `--skip-ingestion` / `--skip-extraction` / `--skip-matching` leave a stage out.
+- Event matching rules (time windows, spread vs spot hazards) are settings at the top of `event_matcher.py`. They are provisional until the author decides what counts as one event. Events marked `needs_review: true` need a person to look.
 - Exit code 0 = all ran, 1 = a stage stopped or crashed (e.g. Ollama not running; nothing is lost), 2 = another run was still going.
 - Ollama must be running (it starts with Windows when installed normally).
 
