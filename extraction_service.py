@@ -23,8 +23,8 @@ from extraction.branch_b.schemas import BranchBResult
 
 # Bump these when the prompt, schema, candidate generator or validator changes.
 # They are stored with every claim so old and new results can be told apart.
-EXTRACTION_VERSION = "b3"   # b3: headline numbers sent too (b2: MAROONED/EVACUATED -> DISPLACED)
-PROMPT_VERSION     = "p3"   # p3: headline as sentence T1 (p2: all impact types described)
+EXTRACTION_VERSION = "b4"   # b4: short OTHER answers; b3: headline numbers; b2: DISPLACED merge
+PROMPT_VERSION     = "p4"   # p4: OTHER answered with id + type only; p3: headline as T1
 
 RAW_REPLY_KEPT = 2000      # characters of a bad reply kept in the error record
 TRUNCATION_SHARE = 0.9     # prompt using 90%+ of the context window gets flagged
@@ -369,12 +369,14 @@ def _claim_records(llm_claims, validated, candidates, sentences, locations):
 
         sentence_ids = [sid for sid in llm_claim.evidence_sentence_ids if sid in sentences_by_id]
         if not sentence_ids:
-            # The LLM named no usable sentence. Use the one the number sits in,
-            # and say so, instead of storing a claim with no evidence.
+            # The LLM named no usable sentence. Use the one the number sits in.
             sentence_ids = [candidate.sentence_id]
-            flags.append("EVIDENCE_DEFAULTED_TO_CANDIDATE_SENTENCE")
-            if status == "ACCEPTED":
-                status = REVIEW_REQUIRED
+            if checked["impact_type"] != "OTHER":
+                # An impact claim without evidence: say so and let a person look.
+                # (OTHER answers are one short line on purpose and give no evidence.)
+                flags.append("EVIDENCE_DEFAULTED_TO_CANDIDATE_SENTENCE")
+                if status == "ACCEPTED":
+                    status = REVIEW_REQUIRED
 
         # Positions of a headline number are in the title, not in articles.text.
         in_headline = candidate.sentence_id == HEADLINE_ID

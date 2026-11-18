@@ -4,6 +4,7 @@ FakeBackend stands in for Qwen and fake_branch_a stands in for the XLM-R
 model, so nothing here needs Ollama, the model files or MongoDB.
 """
 import json
+import re
 
 import pytest
 import extraction_service
@@ -300,3 +301,39 @@ def test_article_without_title_works_as_before():
     result = run(FakeBackend())
     assert result.status == "complete"
     assert not any(c["candidate_id"].startswith("H") for c in result.claims)
+
+
+# ── Short OTHER answers (extraction b4) ────────────────────────────────────
+def short_other_reply(prompt):
+    """What Qwen sends for OTHER candidates now: id and type only."""
+    ids = re.findall(r'^([QCH]\d+) = ', prompt, flags=re.MULTILINE)
+    return {"claims": [{"candidate_id": cid, "impact_type": "OTHER"} for cid in ids]}
+
+
+def test_one_line_other_answers_are_accepted_without_review_flags():
+    result = run(FakeBackend([short_other_reply] * 10))
+    assert result.status == "complete" and result.claims
+    for claim in result.claims:
+        assert claim["impact_type"] == "OTHER" and claim["aggregation"] == "UNKNOWN"
+        assert "EVIDENCE_DEFAULTED_TO_CANDIDATE_SENTENCE" not in claim["validation_flags"]
+        assert claim["evidence"]                        # the number's own sentence
+
+
+def test_impact_claim_without_details_is_weak_and_flagged():
+    _, candidates = generate_candidates(TEXT)
+    first = candidates[0].candidate_id
+    def reply(prompt):
+        answer = short_other_reply(prompt)
+        answer["claims"][0] = {"candidate_id": first, "impact_type": "FATALITIES"}
+        return answer
+    result = run(FakeBackend([reply] + [short_other_reply] * 10))
+    claim = next(c for c in result.claims if c["candidate_id"] == first)
+    assert claim["aggregation"] == "UNKNOWN"                   # never feeds a headline
+    assert claim["validation_status"] == "REVIEW_REQUIRED"
+    assert "EVIDENCE_DEFAULTED_TO_CANDIDATE_SENTENCE" in claim["validation_flags"]
+
+
+def test_schema_requires_only_id_and_type():
+    from extraction.branch_b.schemas import BranchBResult
+    schema = BranchBResult.model_json_schema()
+    assert sorted(schema["$defs"]["ImpactClaim"]["required"]) == ["candidate_id", "impact_type"]

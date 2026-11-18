@@ -166,6 +166,7 @@ Design rules (keep):
 - Qwen can give a plausible-looking wrong meaning (e.g. "people took shelter" labelled RELIEF). The validator cannot catch semantic errors. The gold comparison measures this.
 - Fixed 2026-11-17 (prompt `p2`, extraction `b2`): the system prompt now describes all 12 impact types, all aggregations and certainties, for all hazards. MAROONED and EVACUATED were removed from the schema; DISPLACED covers them. Gold CSV rows using them must be relabelled DISPLACED.
 - Fixed 2026-11-18 (prompt `p3`, extraction `b3`): the headline is sent as sentence `T1`; numbers that appear only in the headline become candidates `H1`, `H2`... (a value already in the body is not asked twice). Their claims carry the flag `FROM_HEADLINE` and `char_start: null` (positions are in the title, not the text).
+- 2026-11-19 (prompt `p4`, extraction `b4`): to save time (Qwen writes ~5 tokens/s on CPU), OTHER candidates are answered with `candidate_id` and `impact_type` only. All other `ImpactClaim` fields have defaults (aggregation UNKNOWN, no evidence), so an impact claim that leaves them out never feeds a headline and is flagged for review.
 - Nothing checks that the LLM answered every candidate in a batch. A skipped candidate disappears without an error.
 - `num_ctx` is not set in `local_llm.py` and `prompt_eval_count` is not logged, so silent truncation would go unnoticed.
 - For cue-only candidates the validator drops the LLM's `unit`. Validated claims hold only article-local IDs (`S2`, `L1`), not the sentence text.

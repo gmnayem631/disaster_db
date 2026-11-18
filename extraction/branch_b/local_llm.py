@@ -46,6 +46,11 @@ Certainty: CONFIRMED (officially confirmed), REPORTED (stated as fact), ESTIMATE
 Unit: what is counted, in one plain word: people, families, houses, shops, roads, bridges,
 hectares, tonnes, animals, taka, packets. Use null if nothing is counted.
 
+Answer every candidate. For an OTHER candidate give ONLY its id and type, nothing else:
+{"candidate_id": "Q3", "impact_type": "OTHER"}
+For every other impact type give all fields: candidate_id, impact_type,
+evidence_sentence_ids, location_ids, aggregation, certainty, unit.
+
 Return only valid JSON matching the required schema."""
 
 def run_branch_b(prompt: str, model: str = "qwen3:8b") -> BranchBResult:

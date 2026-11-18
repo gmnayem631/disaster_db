@@ -38,13 +38,18 @@ class CertaintyType(str, Enum):
 
 
 class ImpactClaim(BaseModel):
+    """One answer of the LLM. Only candidate_id and impact_type are required,
+    so an OTHER answer can be one short line (writing tokens is the slow part
+    on CPU). The defaults are deliberately "weak": an impact claim that leaves
+    out its aggregation gets UNKNOWN and never feeds a headline number, and
+    one that leaves out its evidence is flagged for review."""
     candidate_id:          Optional[str]
     impact_type:           ImpactType
-    evidence_sentence_ids: list[str]
-    location_ids:          list[str]
-    aggregation:           AggregationType
-    certainty:             CertaintyType
-    unit:                  Optional[str]
+    evidence_sentence_ids: list[str] = []
+    location_ids:          list[str] = []
+    aggregation:           AggregationType = AggregationType.UNKNOWN
+    certainty:             CertaintyType = CertaintyType.REPORTED
+    unit:                  Optional[str] = None
 
 
 class BranchBResult(BaseModel):
