@@ -79,3 +79,38 @@ def test_modifier_word_inside_another_word_is_not_taken():
     # "some" is a modifier, "awesome" is not
     [candidate] = quantities("The awesome three rescuers saved everyone.")
     assert candidate.raw == "three"
+
+
+# ── Headline numbers (extraction b3) ───────────────────────────────────────
+from extraction.branch_b.candidate_generator import format_for_llm, headline_candidates
+
+
+def test_headline_number_missing_from_the_body_becomes_H1():
+    body = "Flood-affected people in Kurigram are in distress. Relief has been sent."
+    sentences, candidates = generate_candidates(body)
+    sentence, found = headline_candidates("100,000 people marooned in 12 districts", candidates, "S1")
+    assert sentence.sentence_id == "T1"
+    assert [(c.candidate_id, c.raw) for c in found] == [("H1", "100,000"), ("H2", "12")]
+    assert found[0].context_sentence_ids == ["T1", "S1"]
+
+
+def test_headline_number_already_in_the_body_is_not_asked_twice():
+    body = "Some 2 lakh people have been marooned in Jamalpur."
+    _, candidates = generate_candidates(body)
+    # "200,000" in the headline is the same value as "2 lakh" in the body
+    assert headline_candidates("Jamalpur flood leaves 200,000 people marooned", candidates)[1] == []
+
+
+def test_no_title_gives_nothing():
+    assert headline_candidates(None, []) == (None, [])
+    assert headline_candidates("Flood situation worsens", [])[1] == []
+
+
+def test_headline_is_shown_first_and_named_in_the_prompt():
+    body = "Relief has been sent."
+    sentences, candidates = generate_candidates(body)
+    headline, found = headline_candidates("5 more die of dengue", candidates, "S1")
+    prompt = format_for_llm([headline] + sentences, found, [])
+    assert 'H1 = "5" in T1' in prompt
+    assert "T1 is the article's headline" in prompt
+    assert prompt.index("T1: 5 more die") < prompt.index("S1: Relief")

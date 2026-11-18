@@ -16,14 +16,15 @@ from pydantic import ValidationError
 
 import screening
 from database.documents import utc_now
-from extraction.branch_b.candidate_generator import format_for_llm, generate_candidates
+from extraction.branch_b.candidate_generator import (HEADLINE_ID, format_for_llm,
+                                                     generate_candidates, headline_candidates)
 from extraction.branch_b.claim_validator import REVIEW_REQUIRED, validate_claims
 from extraction.branch_b.schemas import BranchBResult
 
 # Bump these when the prompt, schema, candidate generator or validator changes.
 # They are stored with every claim so old and new results can be told apart.
-EXTRACTION_VERSION = "b2"   # b2: new prompt, MAROONED/EVACUATED merged into DISPLACED
-PROMPT_VERSION     = "p2"   # p2: all impact types, aggregations and certainties described
+EXTRACTION_VERSION = "b3"   # b3: headline numbers sent too (b2: MAROONED/EVACUATED -> DISPLACED)
+PROMPT_VERSION     = "p3"   # p3: headline as sentence T1 (p2: all impact types described)
 
 RAW_REPLY_KEPT = 2000      # characters of a bad reply kept in the error record
 TRUNCATION_SHARE = 0.9     # prompt using 90%+ of the context window gets flagged
@@ -59,7 +60,7 @@ def auto_reply(user_prompt, impact_type="OTHER", skip=(), extra=()):
     """Build a well-formed reply that answers every candidate listed in a prompt.
     For tests: `skip` leaves candidates out, `extra` adds IDs that were never asked."""
     claims = []
-    found = re.findall(r'^([QC]\d+) = ".*" in (S\d+)', user_prompt, flags=re.MULTILINE)
+    found = re.findall(r'^([QCH]\d+) = ".*" in ([ST]\d+)', user_prompt, flags=re.MULTILINE)
     for candidate_id, sentence_id in found + [(e, "S1") for e in extra]:
         if candidate_id in skip:
             continue
@@ -375,6 +376,14 @@ def _claim_records(llm_claims, validated, candidates, sentences, locations):
             if status == "ACCEPTED":
                 status = REVIEW_REQUIRED
 
+        # Positions of a headline number are in the title, not in articles.text.
+        in_headline = candidate.sentence_id == HEADLINE_ID
+        if in_headline:
+            flags.append("FROM_HEADLINE")
+
+        def position(sid, which):
+            return None if sid == HEADLINE_ID else getattr(sentences_by_id[sid], which)
+
         records.append({
             "candidate_id":     candidate.candidate_id,
             "candidate_kind":   candidate.kind,
@@ -395,11 +404,11 @@ def _claim_records(llm_claims, validated, candidates, sentences, locations):
                            "district": locations_by_id[lid]["district"]}
                           for lid in llm_claim.location_ids if lid in locations_by_id],
             "evidence": [{"sentence_id": sid, "text": sentences_by_id[sid].text.strip(),
-                          "start_char": sentences_by_id[sid].start_char,
-                          "end_char": sentences_by_id[sid].end_char}
+                          "start_char": position(sid, "start_char"),
+                          "end_char": position(sid, "end_char")}
                          for sid in sentence_ids],
-            "char_start":        candidate.start_char,
-            "char_end":          candidate.end_char,
+            "char_start":        None if in_headline else candidate.start_char,
+            "char_end":          None if in_headline else candidate.end_char,
             "validation_status": status,
             "validation_flags":  flags,
         })
@@ -452,6 +461,11 @@ def extract_article(article, backend, *, branch_a=None, branch_a_model=None,
     # 2. Candidates: every number and every impact sentence
     try:
         sentences, candidates = generate_candidates(text)
+        # Numbers that only the headline gives (H1, H2...), asked first.
+        headline, from_headline = headline_candidates(
+            article.get("title"), candidates, sentences[0].sentence_id if sentences else None)
+        if from_headline:
+            sentences, candidates = [headline] + sentences, from_headline + candidates
     except Exception as exc:
         return finish("failed", _error("candidates", exc))
     result.candidate_count = len(candidates)

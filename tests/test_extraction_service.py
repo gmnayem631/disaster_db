@@ -279,3 +279,24 @@ def test_branch_a_crash_is_reported_not_raised():
     assert result.error == {"stage": "branch_a", "kind": "RuntimeError",
                             "message": "model file missing"}
     assert backend.calls == []
+
+
+# ── Headline numbers (extraction b3) ───────────────────────────────────────
+def test_headline_number_is_extracted_and_marked():
+    item = dict(article("Flood-affected people in Feni are in distress."),
+                title="100,000 people marooned in Feni")
+    backend = FakeBackend([lambda prompt: auto_reply(prompt, "DISPLACED")])
+    result = extract_article(item, backend, branch_a=fake_branch_a)
+    assert result.status == "complete"
+    [claim] = [c for c in result.claims if c["candidate_id"] == "H1"]
+    assert claim["raw_value"] == "100,000" and claim["normalized_value"] == 100000
+    assert "FROM_HEADLINE" in claim["validation_flags"]
+    assert claim["char_start"] is None                     # not a position in the body text
+    assert claim["evidence"][0]["sentence_id"] == "T1" and claim["evidence"][0]["start_char"] is None
+    build_claims({"_id": "abc123"}, "b3", result.claims)   # fits the database layer
+
+
+def test_article_without_title_works_as_before():
+    result = run(FakeBackend())
+    assert result.status == "complete"
+    assert not any(c["candidate_id"].startswith("H") for c in result.claims)

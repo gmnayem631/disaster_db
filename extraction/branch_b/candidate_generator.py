@@ -226,6 +226,54 @@ def generate_candidates(text: str) -> tuple[list[Sentence], list[Candidate]]:
     return sentences, candidates
 
 
+HEADLINE_ID = "T1"
+
+
+def headline_candidates(title: str, body_candidates: list[Candidate],
+                        first_body_sentence: str | None = None) -> tuple[Sentence | None, list[Candidate]]:
+    """Numbers in the headline that the body does not already give.
+
+    Headlines often carry the main figure ("100,000 people marooned in 12
+    districts") while the body words it differently or not at all. The headline
+    becomes sentence T1 and its numbers become candidates H1, H2, ... A number
+    whose value also appears in the body is left out: the body has more
+    context, and asking twice costs time. Offsets of H candidates are
+    positions in the headline, not in the article text.
+    """
+    from extraction.branch_b.quantity_normalizer import normalize_quantity
+
+    title = (title or "").strip()
+    if not title:
+        return None, []
+    sentence = Sentence(sentence_id=HEADLINE_ID, text=title, start_char=0, end_char=len(title))
+
+    def value(raw):
+        try:
+            v = normalize_quantity(raw).normalized_value
+        except Exception:
+            v = None
+        return v if v is not None else raw.lower()
+
+    in_body = {value(c.raw) for c in body_candidates if c.kind == "QUANTITY"}
+    context = [HEADLINE_ID] + ([first_body_sentence] if first_body_sentence else [])
+    flags = detect_flags(title)
+
+    found, spans = [], []
+    for pattern in COMPILED_PATTERNS:
+        for match in pattern.finditer(title):
+            start, end = match.start(), match.end()
+            if any(s <= start and end <= e for s, e in spans):
+                continue                           # part of a longer number already found
+            spans.append((start, end))
+            found.append(Candidate(candidate_id="", kind="QUANTITY", raw=match.group().strip(),
+                                   sentence_id=HEADLINE_ID, start_char=start, end_char=end,
+                                   context_sentence_ids=context, flags=flags))
+    kept = [c for c in deduplicate_candidates(found) if value(c.raw) not in in_body]
+    for n, c in enumerate(kept, 1):
+        c.candidate_id = f"H{n}"
+    return sentence, kept
+
+
 def format_for_llm(
     sentences: list[Sentence],
     candidates: list[Candidate],
@@ -266,9 +314,12 @@ def format_for_llm(
     sent_lines = "\n".join(
         f"{sid}: {sentence_lookup[sid]}"
         for sid in sorted(relevant_ids,
-                         key=lambda x: int(x[1:]))
+                         key=lambda x: (x != HEADLINE_ID, int(x[1:])))
         if sid in sentence_lookup
     )
+    if HEADLINE_ID in relevant_ids:
+        sent_lines = (f"({HEADLINE_ID} is the article's headline. Read it together with "
+                      f"the sentences below it.)\n") + sent_lines
 
     return f"""Known locations:
 {loc_lines}

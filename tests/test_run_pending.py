@@ -36,7 +36,7 @@ def fake_branch_a(text, source_url, publish_date=None):
 def add(store, n, text=None, minutes=0):
     """A cleaned article waiting for extraction. One sentence -> one batch."""
     article_id, _ = store.add_article(
-        f"https://www.thedailystar.net/news/flood-{n}", title=f"Flood report {n}",
+        f"https://www.thedailystar.net/news/flood-{n}", title=f"Flood report {chr(65 + n)}",
         text=text or f"The death toll has risen to {30 + n} in Feni district.",
         publish_date="2024-08-27", now=NOW + timedelta(minutes=minutes))
     return article_id
