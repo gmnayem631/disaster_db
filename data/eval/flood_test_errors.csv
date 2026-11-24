@@ -1,0 +1,12 @@
+model,article,error,annotated,predicted,text,start
+xlmr,test-03,missed,DISPLACED,nothing,"The hapless victims took shelter on the road,",1347
+qwen,test-01,wrong,DISPLACED,AFFECTED_PEOPLE,over three million,405
+qwen,test-01,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),three million people stranded,410
+qwen,test-01,wrong,,AFFECTED_PEOPLE,"In Feni, Parshuram, Fulgazi, and Chhagalnaiya upazilas have been badly affected.",493
+qwen,test-01,wrong,DISPLACED,AFFECTED_PEOPLE,over 1.9 million,1510
+qwen,test-01,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),1.9 million people stranded,1515
+qwen,test-01,wrong,,AFFECTED_PEOPLE,over one lakh,1722
+qwen,test-01,wrong,DISPLACED,AFFECTED_PEOPLE,"around 3,000",2417
+qwen,test-01,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"3,000 people stranded",2424
+qwen,test-01,wrong,,RELIEF_INFO,"He said they have already sent relief materials and dry food to the affected districts. """,4340
+qwen,test-03,missed,DISPLACED,nothing,"The hapless victims took shelter on the road,",1347

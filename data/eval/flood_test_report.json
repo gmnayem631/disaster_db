@@ -1,0 +1,297 @@
+{
+ "created": "2026-11-24 08:55",
+ "gold": "data\\annotations\\test.spacy",
+ "articles_scored": 3,
+ "articles_total": 42,
+ "qwen_version": {
+  "extraction": "b4",
+  "prompt": "p4",
+  "model": "qwen3:8b"
+ },
+ "llm": {
+  "backend": "ollama",
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "host": "http://127.0.0.1:11434",
+  "think": false,
+  "options": {
+   "temperature": 0,
+   "num_gpu": 0,
+   "num_ctx": 8192,
+   "num_predict": 4096
+  }
+ },
+ "qwen_article_status": {
+  "complete": 3
+ },
+ "rule": "same class + character overlap, one-to-one",
+ "classes": [
+  "FATALITIES",
+  "DISPLACED",
+  "AFFECTED_PEOPLE",
+  "MISSING",
+  "RELIEF_INFO"
+ ],
+ "results": {
+  "xlmr": {
+   "per_class": {
+    "FATALITIES": {
+     "tp": 3,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 3,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "DISPLACED": {
+     "tp": 5,
+     "fp": 0,
+     "fn": 1,
+     "inside": 0,
+     "support": 6,
+     "precision": 100.0,
+     "recall": 83.33333333333334,
+     "f1": 90.9090909090909
+    },
+    "AFFECTED_PEOPLE": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 1,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "MISSING": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 1,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "RELIEF_INFO": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 1,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    }
+   },
+   "micro": {
+    "tp": 11,
+    "fp": 0,
+    "fn": 1,
+    "inside": 0,
+    "support": 12,
+    "precision": 100.0,
+    "recall": 91.66666666666666,
+    "f1": 95.65217391304347
+   },
+   "macro_f1": 98.18181818181817
+  },
+  "qwen": {
+   "per_class": {
+    "FATALITIES": {
+     "tp": 3,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 3,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "DISPLACED": {
+     "tp": 2,
+     "fp": 0,
+     "fn": 4,
+     "inside": 0,
+     "support": 6,
+     "precision": 100.0,
+     "recall": 33.33333333333333,
+     "f1": 50.0
+    },
+    "AFFECTED_PEOPLE": {
+     "tp": 1,
+     "fp": 5,
+     "fn": 0,
+     "inside": 0,
+     "support": 1,
+     "precision": 16.666666666666664,
+     "recall": 100.0,
+     "f1": 28.57142857142857
+    },
+    "MISSING": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 1,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "RELIEF_INFO": {
+     "tp": 1,
+     "fp": 1,
+     "fn": 0,
+     "inside": 2,
+     "support": 1,
+     "precision": 50.0,
+     "recall": 100.0,
+     "f1": 66.66666666666667
+    }
+   },
+   "micro": {
+    "tp": 8,
+    "fp": 6,
+    "fn": 4,
+    "inside": 2,
+    "support": 12,
+    "precision": 57.14285714285714,
+    "recall": 66.66666666666666,
+    "f1": 61.53846153846153
+   },
+   "macro_f1": 69.04761904761905
+  },
+  "qwen_with_review": {
+   "per_class": {
+    "FATALITIES": {
+     "tp": 3,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 3,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "DISPLACED": {
+     "tp": 2,
+     "fp": 0,
+     "fn": 4,
+     "inside": 0,
+     "support": 6,
+     "precision": 100.0,
+     "recall": 33.33333333333333,
+     "f1": 50.0
+    },
+    "AFFECTED_PEOPLE": {
+     "tp": 1,
+     "fp": 5,
+     "fn": 0,
+     "inside": 0,
+     "support": 1,
+     "precision": 16.666666666666664,
+     "recall": 100.0,
+     "f1": 28.57142857142857
+    },
+    "MISSING": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 1,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "RELIEF_INFO": {
+     "tp": 1,
+     "fp": 1,
+     "fn": 0,
+     "inside": 2,
+     "support": 1,
+     "precision": 50.0,
+     "recall": 100.0,
+     "f1": 66.66666666666667
+    }
+   },
+   "micro": {
+    "tp": 8,
+    "fp": 6,
+    "fn": 4,
+    "inside": 2,
+    "support": 12,
+    "precision": 57.14285714285714,
+    "recall": 66.66666666666666,
+    "f1": 61.53846153846153
+   },
+   "macro_f1": 69.04761904761905
+  },
+  "xlmr_exact": {
+   "per_class": {
+    "FATALITIES": {
+     "tp": 3,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 3,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "DISPLACED": {
+     "tp": 5,
+     "fp": 0,
+     "fn": 1,
+     "inside": 0,
+     "support": 6,
+     "precision": 100.0,
+     "recall": 83.33333333333334,
+     "f1": 90.9090909090909
+    },
+    "AFFECTED_PEOPLE": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 1,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "MISSING": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "inside": 0,
+     "support": 1,
+     "precision": 100.0,
+     "recall": 100.0,
+     "f1": 100.0
+    },
+    "RELIEF_INFO": {
+     "tp": 0,
+     "fp": 1,
+     "fn": 1,
+     "inside": 0,
+     "support": 1,
+     "precision": 0.0,
+     "recall": 0.0,
+     "f1": 0.0
+    }
+   },
+   "micro": {
+    "tp": 10,
+    "fp": 1,
+    "fn": 2,
+    "inside": 0,
+    "support": 12,
+    "precision": 90.9090909090909,
+    "recall": 83.33333333333334,
+    "f1": 86.95652173913044
+   },
+   "macro_f1": 78.18181818181817
+  }
+ }
+}

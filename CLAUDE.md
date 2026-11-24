@@ -50,6 +50,8 @@ evaluator.py               per-entity P/R/F1 on a .spacy file + timing
 test_cpu.py                Ollama CPU-only sanity test (plain + JSON). A script, not a pytest test.
 test_branch_b_pipeline.py  runs Branch A + candidate generator + Qwen + validator on one article. A script.
 build_gold_draft.py        drafts a claim-level evaluation CSV from test-split annotations
+score_extraction.py        accuracy of impact numbers, XLM-R vs XLM-R + Qwen, against test.spacy annotations
+                           (class + character overlap). `run` (slow, resumable) then `score`. Output in data/eval/.
 gold_helpers.py            guesses unit/aggregation for the draft CSV
 ner_test.py, pipeline_test.py   early one-off scripts
 config.cfg, config_bert.cfg     old CNN training configs. NOT the XLM-R config (see section 5.8).
@@ -89,7 +91,7 @@ daily_run.py               the daily job: ingestion, run_pending(), event matchi
 data/newspapers.txt        one line per newspaper: name | method | url. 7 enabled (checked 2026-11-18).
 data/hazard_keywords.txt   one line per hazard. PROPOSED hazard list, awaiting the author's decision.
 
-tests/                     pytest, 281 tests pass (2026-11-18) without Atlas, the NER model or the LLM
+tests/                     pytest, 300 tests pass (2026-11-24) without Atlas, the NER model or the LLM
                            (mongomock for the database, FakeBackend / a stand-in client for the LLM).
                            1 test marked `qwen` needs real Qwen and is skipped unless RUN_QWEN=1.
                            With RUN_MONGO=1 the database tests use real Atlas, database

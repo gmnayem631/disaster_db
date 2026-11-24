@@ -122,6 +122,29 @@ python test_branch_b_pipeline.py                       # full Branch A + B run o
 
 Qwen on CPU takes minutes for an article with 25 candidates, so do not cancel early.
 
+## Accuracy of the impact numbers: XLM-R vs XLM-R + Qwen
+
+Scores both systems against the human annotations in `data/annotations/test.spacy` (42 held-out flood
+articles) on FATALITIES, DISPLACED, AFFECTED_PEOPLE, MISSING, RELIEF_INFO. No manual CSV is needed.
+
+```
+python score_extraction.py run --limit 3    # Qwen on 3 articles (~10 min), to try it
+python score_extraction.py run              # the rest (~2-3 h); resumable, already-done articles are skipped
+python score_extraction.py score            # table in seconds; plain XLM-R is run and cached the first time
+```
+
+- Rule: a prediction is correct when the class matches the annotation and the characters overlap
+  (one prediction per annotation; numbers are matched before whole cue sentences). The original
+  exact-span rule of `evaluator.py` is printed for XLM-R as a reference.
+- Qwen counts only claims the validator ACCEPTED; a second line includes REVIEW_REQUIRED.
+  Qwen's other classes (INJURED, HOUSING_DAMAGE...) are not scored, because they were never annotated.
+- A class with no annotations is "n/a", not 0%. The `Count` column is the number of annotations.
+- Articles are sent without headlines (they were annotated without them). Nothing is written to MongoDB.
+- Files in `data/eval/`: `flood_test_qwen.json` (Qwen's answers, tied to extraction/prompt version and
+  model; a different version needs `--name`), `flood_test_xlmr.json`, `flood_test_report.json`,
+  `flood_test_errors.csv` (every mistake of both models).
+- Never change the prompt because of these articles. They are the test set.
+
 ## Claim-level gold set
 
 1. `python build_gold_draft.py` writes `data/gold/gold_draft.csv` from `test.spacy` articles (`MAX_ARTICLES = 20`). **It overwrites the file each run and does not skip articles already verified.** The current draft has 279 rows from 20 articles, 114 of them flagged `review`.

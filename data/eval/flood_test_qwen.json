@@ -1,0 +1,628 @@
+{
+ "articles": {
+  "test-01": {
+   "sha": "3e0a01c52599",
+   "status": "complete",
+   "error": null,
+   "seconds": 422.1,
+   "candidates": 23,
+   "unanswered": [],
+   "claims": [
+    {
+     "candidate_id": "Q1",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "eight",
+     "aggregation": "CUMULATIVE",
+     "char_start": 380,
+     "char_end": 385,
+     "validation_status": "REJECTED",
+     "validation_flags": [
+      "NOT_A_PEOPLE_COUNT:districts"
+     ]
+    },
+    {
+     "candidate_id": "Q2",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "over three million",
+     "aggregation": "CUMULATIVE",
+     "char_start": 405,
+     "char_end": 423,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q3",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "HOUSING_DAMAGE",
+     "raw_value": "four",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 601,
+     "char_end": 605,
+     "validation_status": "REVIEW_REQUIRED",
+     "validation_flags": [
+      "UNIT_MISMATCH:unions_not_compatible_with_HOUSING_DAMAGE"
+     ]
+    },
+    {
+     "candidate_id": "Q4",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "MISSING",
+     "raw_value": "One",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 887,
+     "char_end": 890,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q5",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "37",
+     "aggregation": "UNKNOWN",
+     "char_start": 1062,
+     "char_end": 1064,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q6",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "1988",
+     "aggregation": "UNKNOWN",
+     "char_start": 1293,
+     "char_end": 1297,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q7",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "over 1.9 million",
+     "aggregation": "CUMULATIVE",
+     "char_start": 1510,
+     "char_end": 1526,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q8",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "eight",
+     "aggregation": "CUMULATIVE",
+     "char_start": 1546,
+     "char_end": 1551,
+     "validation_status": "REJECTED",
+     "validation_flags": [
+      "NOT_A_PEOPLE_COUNT:upazilas"
+     ]
+    },
+    {
+     "candidate_id": "Q9",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "over one lakh",
+     "aggregation": "CUMULATIVE",
+     "char_start": 1722,
+     "char_end": 1735,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q11",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "over 50,000",
+     "aggregation": "CUMULATIVE",
+     "char_start": 1944,
+     "char_end": 1955,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q12",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "FATALITIES",
+     "raw_value": "eight",
+     "aggregation": "CUMULATIVE",
+     "char_start": 2177,
+     "char_end": 2182,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q14",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "At least 15",
+     "aggregation": "LOWER_BOUND",
+     "char_start": 2344,
+     "char_end": 2355,
+     "validation_status": "REJECTED",
+     "validation_flags": [
+      "UNIT_MISMATCH:villages_not_compatible_with_AFFECTED_PEOPLE",
+      "NOT_A_PEOPLE_COUNT:villages"
+     ]
+    },
+    {
+     "candidate_id": "Q15",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "around 3,000",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2417,
+     "char_end": 2429,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q16",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "at least 15",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2987,
+     "char_end": 2998,
+     "validation_status": "REJECTED",
+     "validation_flags": [
+      "UNIT_MISMATCH:villages_not_compatible_with_AFFECTED_PEOPLE",
+      "NOT_A_PEOPLE_COUNT:villages"
+     ]
+    },
+    {
+     "candidate_id": "Q18",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "DISPLACED",
+     "raw_value": "More than 80,000",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 3423,
+     "char_end": 3439,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q19",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "HOUSING_DAMAGE",
+     "raw_value": "208",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 3464,
+     "char_end": 3467,
+     "validation_status": "REVIEW_REQUIRED",
+     "validation_flags": [
+      "UNIT_MISMATCH:villages_not_compatible_with_HOUSING_DAMAGE"
+     ]
+    },
+    {
+     "candidate_id": "C1",
+     "candidate_kind": "CUE",
+     "impact_type": "FATALITIES",
+     "raw_value": "A pregnant woman in Brahmanbaria's Akhaura upazila died after being swept away as floodwater rushed into her home.",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 133,
+     "char_end": 247,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "C2",
+     "candidate_kind": "CUE",
+     "impact_type": "OTHER",
+     "raw_value": "Feni and Noakhali are the worst-affected districts.",
+     "aggregation": "UNKNOWN",
+     "char_start": 441,
+     "char_end": 492,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "C3",
+     "candidate_kind": "CUE",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "In Feni, Parshuram, Fulgazi, and Chhagalnaiya upazilas have been badly affected.",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 493,
+     "char_end": 573,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "C4",
+     "candidate_kind": "CUE",
+     "impact_type": "FATALITIES",
+     "raw_value": "In Akhaura upazila, a pregnant woman died after being swept away by floodwater.",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2572,
+     "char_end": 2651,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "C5",
+     "candidate_kind": "CUE",
+     "impact_type": "OTHER",
+     "raw_value": "Briefing reporters at the Secretariat yesterday afternoon, KM Ali Reza, additional secretary of the disaster management and relief ministry, expressed concern that more areas may be flooded in the next few days.",
+     "aggregation": "UNKNOWN",
+     "char_start": 4128,
+     "char_end": 4339,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "C6",
+     "candidate_kind": "CUE",
+     "impact_type": "RELIEF",
+     "raw_value": "He said they have already sent relief materials and dry food to the affected districts. \"",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 4340,
+     "char_end": 4429,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "C7",
+     "candidate_kind": "CUE",
+     "impact_type": "OTHER",
+     "raw_value": "The local administration is working in coordination with the deputy commissioners of the flood-affected districts, the coordinators of the Anti-Discrimination Student Movement, the army and volunteers,\" he added.",
+     "aggregation": "UNKNOWN",
+     "char_start": 4429,
+     "char_end": 4641,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    }
+   ]
+  },
+  "test-02": {
+   "sha": "487ccca881c3",
+   "status": "complete",
+   "error": null,
+   "seconds": 187.2,
+   "candidates": 13,
+   "unanswered": [],
+   "claims": [
+    {
+     "candidate_id": "Q1",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "8",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 212,
+     "char_end": 213,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q2",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "26",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 960,
+     "char_end": 962,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q3",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "8",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 1002,
+     "char_end": 1003,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q4",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "13",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 1184,
+     "char_end": 1186,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q5",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "6",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2408,
+     "char_end": 2409,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q6",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "Four",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2550,
+     "char_end": 2554,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q7",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "four",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2569,
+     "char_end": 2573,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q8",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "more than two hundred",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2589,
+     "char_end": 2610,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q9",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "RELIEF",
+     "raw_value": "1,700",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2823,
+     "char_end": 2828,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q11",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "RELIEF",
+     "raw_value": "650",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2853,
+     "char_end": 2856,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q10",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "RELIEF",
+     "raw_value": "10 lakh",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2876,
+     "char_end": 2883,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q12",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "24",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 3382,
+     "char_end": 3384,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q13",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "17",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 3478,
+     "char_end": 3480,
+     "validation_status": "REVIEW_REQUIRED",
+     "validation_flags": [
+      "FORECAST_DETECTED",
+      "GENERATOR_FLAG:FORECAST"
+     ]
+    }
+   ]
+  },
+  "test-03": {
+   "sha": "9557bb4f786a",
+   "status": "complete",
+   "error": null,
+   "seconds": 185.5,
+   "candidates": 14,
+   "unanswered": [],
+   "claims": [
+    {
+     "candidate_id": "Q1",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "DISPLACED",
+     "raw_value": "around 45",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 13,
+     "char_end": 22,
+     "validation_status": "REJECTED",
+     "validation_flags": [
+      "UNIT_MISMATCH:villages_not_compatible_with_DISPLACED",
+      "NOT_A_PEOPLE_COUNT:villages"
+     ]
+    },
+    {
+     "candidate_id": "Q2",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "two",
+     "aggregation": "UNKNOWN",
+     "char_start": 134,
+     "char_end": 137,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q3",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "INFRASTRUCTURE_DAMAGE",
+     "raw_value": "about 270",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 390,
+     "char_end": 399,
+     "validation_status": "REVIEW_REQUIRED",
+     "validation_flags": [
+      "UNIT_MISMATCH:cm_not_compatible_with_INFRASTRUCTURE_DAMAGE"
+     ]
+    },
+    {
+     "candidate_id": "Q4",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "9",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 590,
+     "char_end": 591,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q5",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "12",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 627,
+     "char_end": 629,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q6",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "two",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 910,
+     "char_end": 913,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q7",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "58",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 1043,
+     "char_end": 1045,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q8",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "two",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 1137,
+     "char_end": 1140,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q9",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "65",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 1241,
+     "char_end": 1243,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q10",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "more than five",
+     "aggregation": "LOWER_BOUND",
+     "char_start": 1289,
+     "char_end": 1303,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q11",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "15",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 1801,
+     "char_end": 1803,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q12",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "OTHER",
+     "raw_value": "five",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 1729,
+     "char_end": 1733,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q13",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "DISPLACED",
+     "raw_value": "One lakh",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 1835,
+     "char_end": 1843,
+     "validation_status": "ACCEPTED",
+     "validation_flags": []
+    },
+    {
+     "candidate_id": "Q14",
+     "candidate_kind": "QUANTITY",
+     "impact_type": "AFFECTED_PEOPLE",
+     "raw_value": "45",
+     "aggregation": "POINT_ESTIMATE",
+     "char_start": 2089,
+     "char_end": 2091,
+     "validation_status": "REJECTED",
+     "validation_flags": [
+      "UNIT_MISMATCH:villages_not_compatible_with_AFFECTED_PEOPLE",
+      "NOT_A_PEOPLE_COUNT:villages"
+     ]
+    }
+   ]
+  }
+ },
+ "version": {
+  "extraction": "b4",
+  "prompt": "p4",
+  "model": "qwen3:8b"
+ },
+ "llm": {
+  "backend": "ollama",
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "host": "http://127.0.0.1:11434",
+  "think": false,
+  "options": {
+   "temperature": 0,
+   "num_gpu": 0,
+   "num_ctx": 8192,
+   "num_predict": 4096
+  }
+ },
+ "updated_at": "2026-11-24T02:54:07.052106+00:00"
+}
