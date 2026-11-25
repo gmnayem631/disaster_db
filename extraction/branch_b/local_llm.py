@@ -17,19 +17,43 @@ Impact types:
 - FATALITIES: people killed or dead ("death toll rose to 31", "3 bodies recovered")
 - INJURED: people physically injured or hurt (wounds, burns, fractures). NOT people who are ill.
 - MISSING: people missing or unaccounted for
-- AFFECTED_PEOPLE: people or families affected, hit, in distress. For disease outbreaks:
-  cases, infected people and patients admitted to hospital are AFFECTED_PEOPLE, never INJURED
-- DISPLACED: people or families displaced, marooned, stranded, waterlogged in their homes,
-  evacuated, moved to shelters, homeless
+- AFFECTED_PEOPLE: people or families "affected" or "hit" by the disaster, when the sentence
+  does not say they were displaced. For disease outbreaks: cases, infected people and
+  patients admitted to hospital are AFFECTED_PEOPLE, never INJURED
+- DISPLACED: people or families displaced, marooned, stranded, trapped by water, waterlogged
+  in their homes, evacuated, who left their homes, took shelter or refuge, in shelters, homeless
 - HOUSING_DAMAGE: houses, homes, shops or other buildings damaged, destroyed, gutted, washed away
 - INFRASTRUCTURE_DAMAGE: roads, bridges, embankments, culverts, power lines, schools damaged
 - AGRICULTURAL_DAMAGE: crops, cropland, fish ponds, hectares or tonnes of produce damaged or lost
 - LIVESTOCK_LOSS: cattle, goats, poultry or other animals killed or lost
 - ECONOMIC_LOSS: money value of losses or damage ("goods worth Tk 50 lakh were burnt")
-- RELIEF: aid given or allocated: money, rice, food packets, shelters opened, relief teams
+- RELIEF: aid given, allocated or in stock: money, rice, food packets, shelters or shelter
+  centres opened, medical teams, rescue or relief teams
 - OTHER: anything that is not a disaster impact. Always OTHER: dates, years, times, durations,
   ages, distances, wind speeds, rainfall, water levels, signal numbers, phone numbers,
   numbers of fire service units or firefighters, and counts of districts or villages.
+
+When two types seem to fit, these rules decide:
+1. Stranded, marooned, trapped, sheltering or evacuated people are DISPLACED, even though
+   they are also affected. AFFECTED_PEOPLE is only for people described as affected or hit.
+2. A breakdown by place ("14 died in Cumilla, 17 in Feni, one each in X and Y") gives the
+   same type to every number in it: each one is FATALITIES here.
+3. Shelters opened, teams deployed, rice, money or food given are RELIEF. The PEOPLE staying
+   in those shelters are DISPLACED.
+
+Examples (number -> type):
+"Around 10,72,579 families have been stranded in 11 districts"
+  10,72,579 -> DISPLACED; 11 -> OTHER
+"Five thousand people were affected directly by the flood, while some 50,000 have been marooned."
+  Five thousand -> AFFECTED_PEOPLE; 50,000 -> DISPLACED
+"3,403 shelter centres have been opened, where 5,02,501 people and 36,448 cattle have taken shelter."
+  3,403 -> RELIEF; 5,02,501 -> DISPLACED; 36,448 -> OTHER (animals sheltering, not lost)
+"Of the deceased, 14 died in Cumilla, 17 in Feni, one each in Lakshmipur and Khagrachhari."
+  14 -> FATALITIES; 17 -> FATALITIES; one -> FATALITIES
+"The ministry has allocated Tk 4.52 crore, 20,650 metric tonnes of rice and 15,000 food packets."
+  4.52 crore -> RELIEF; 20,650 -> RELIEF; 15,000 -> RELIEF
+"2,451 medical teams are currently working."
+  2,451 -> RELIEF
 
 Aggregation:
 - CUMULATIVE: a running total ("the death toll rose TO 31", "so far 136 have died")

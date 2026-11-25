@@ -1,7 +1,7 @@
 {
- "created": "2026-11-24 08:55",
+ "created": "2026-11-24 13:00",
  "gold": "data\\annotations\\test.spacy",
- "articles_scored": 3,
+ "articles_scored": 42,
  "articles_total": 42,
  "qwen_version": {
   "extraction": "b4",
@@ -22,7 +22,8 @@
   }
  },
  "qwen_article_status": {
-  "complete": 3
+  "complete": 41,
+  "partial": 1
  },
  "rule": "same class + character overlap, one-to-one",
  "classes": [
@@ -36,262 +37,262 @@
   "xlmr": {
    "per_class": {
     "FATALITIES": {
-     "tp": 3,
-     "fp": 0,
-     "fn": 0,
+     "tp": 110,
+     "fp": 6,
+     "fn": 7,
      "inside": 0,
-     "support": 3,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "support": 117,
+     "precision": 94.82758620689656,
+     "recall": 94.01709401709401,
+     "f1": 94.4206008583691
     },
     "DISPLACED": {
-     "tp": 5,
-     "fp": 0,
-     "fn": 1,
+     "tp": 74,
+     "fp": 7,
+     "fn": 7,
      "inside": 0,
-     "support": 6,
-     "precision": 100.0,
-     "recall": 83.33333333333334,
-     "f1": 90.9090909090909
+     "support": 81,
+     "precision": 91.35802469135803,
+     "recall": 91.35802469135803,
+     "f1": 91.35802469135803
     },
     "AFFECTED_PEOPLE": {
-     "tp": 1,
-     "fp": 0,
-     "fn": 0,
+     "tp": 34,
+     "fp": 6,
+     "fn": 5,
      "inside": 0,
-     "support": 1,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "support": 39,
+     "precision": 85.0,
+     "recall": 87.17948717948718,
+     "f1": 86.07594936708861
     },
     "MISSING": {
-     "tp": 1,
-     "fp": 0,
-     "fn": 0,
+     "tp": 8,
+     "fp": 4,
+     "fn": 2,
      "inside": 0,
-     "support": 1,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "support": 10,
+     "precision": 66.66666666666666,
+     "recall": 80.0,
+     "f1": 72.72727272727272
     },
     "RELIEF_INFO": {
-     "tp": 1,
-     "fp": 0,
-     "fn": 0,
-     "inside": 0,
-     "support": 1,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "tp": 52,
+     "fp": 15,
+     "fn": 15,
+     "inside": 2,
+     "support": 67,
+     "precision": 77.61194029850746,
+     "recall": 77.61194029850746,
+     "f1": 77.61194029850746
     }
    },
    "micro": {
-    "tp": 11,
-    "fp": 0,
-    "fn": 1,
-    "inside": 0,
-    "support": 12,
-    "precision": 100.0,
-    "recall": 91.66666666666666,
-    "f1": 95.65217391304347
+    "tp": 278,
+    "fp": 38,
+    "fn": 36,
+    "inside": 2,
+    "support": 314,
+    "precision": 87.9746835443038,
+    "recall": 88.53503184713377,
+    "f1": 88.25396825396825
    },
-   "macro_f1": 98.18181818181817
+   "macro_f1": 84.43875758851918
   },
   "qwen": {
    "per_class": {
     "FATALITIES": {
-     "tp": 3,
-     "fp": 0,
-     "fn": 0,
-     "inside": 0,
-     "support": 3,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "tp": 101,
+     "fp": 8,
+     "fn": 16,
+     "inside": 2,
+     "support": 117,
+     "precision": 92.66055045871559,
+     "recall": 86.32478632478633,
+     "f1": 89.38053097345133
     },
     "DISPLACED": {
-     "tp": 2,
-     "fp": 0,
-     "fn": 4,
-     "inside": 0,
-     "support": 6,
-     "precision": 100.0,
-     "recall": 33.33333333333333,
-     "f1": 50.0
+     "tp": 40,
+     "fp": 11,
+     "fn": 41,
+     "inside": 3,
+     "support": 81,
+     "precision": 78.43137254901961,
+     "recall": 49.382716049382715,
+     "f1": 60.60606060606061
     },
     "AFFECTED_PEOPLE": {
-     "tp": 1,
-     "fp": 5,
-     "fn": 0,
-     "inside": 0,
-     "support": 1,
-     "precision": 16.666666666666664,
-     "recall": 100.0,
-     "f1": 28.57142857142857
+     "tp": 33,
+     "fp": 53,
+     "fn": 6,
+     "inside": 1,
+     "support": 39,
+     "precision": 38.372093023255815,
+     "recall": 84.61538461538461,
+     "f1": 52.800000000000004
     },
     "MISSING": {
-     "tp": 1,
-     "fp": 0,
-     "fn": 0,
+     "tp": 9,
+     "fp": 4,
+     "fn": 1,
      "inside": 0,
-     "support": 1,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "support": 10,
+     "precision": 69.23076923076923,
+     "recall": 90.0,
+     "f1": 78.26086956521739
     },
     "RELIEF_INFO": {
-     "tp": 1,
-     "fp": 1,
-     "fn": 0,
-     "inside": 2,
-     "support": 1,
-     "precision": 50.0,
-     "recall": 100.0,
-     "f1": 66.66666666666667
+     "tp": 25,
+     "fp": 23,
+     "fn": 42,
+     "inside": 13,
+     "support": 67,
+     "precision": 52.083333333333336,
+     "recall": 37.3134328358209,
+     "f1": 43.47826086956522
     }
    },
    "micro": {
-    "tp": 8,
-    "fp": 6,
-    "fn": 4,
-    "inside": 2,
-    "support": 12,
-    "precision": 57.14285714285714,
-    "recall": 66.66666666666666,
-    "f1": 61.53846153846153
+    "tp": 208,
+    "fp": 99,
+    "fn": 106,
+    "inside": 19,
+    "support": 314,
+    "precision": 67.75244299674267,
+    "recall": 66.2420382165605,
+    "f1": 66.98872785829307
    },
-   "macro_f1": 69.04761904761905
+   "macro_f1": 64.90514440285891
   },
   "qwen_with_review": {
    "per_class": {
     "FATALITIES": {
-     "tp": 3,
-     "fp": 0,
-     "fn": 0,
-     "inside": 0,
-     "support": 3,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "tp": 105,
+     "fp": 11,
+     "fn": 12,
+     "inside": 3,
+     "support": 117,
+     "precision": 90.51724137931035,
+     "recall": 89.74358974358975,
+     "f1": 90.12875536480686
     },
     "DISPLACED": {
-     "tp": 2,
-     "fp": 0,
-     "fn": 4,
-     "inside": 0,
-     "support": 6,
-     "precision": 100.0,
-     "recall": 33.33333333333333,
-     "f1": 50.0
+     "tp": 40,
+     "fp": 16,
+     "fn": 41,
+     "inside": 3,
+     "support": 81,
+     "precision": 71.42857142857143,
+     "recall": 49.382716049382715,
+     "f1": 58.394160583941606
     },
     "AFFECTED_PEOPLE": {
-     "tp": 1,
-     "fp": 5,
-     "fn": 0,
-     "inside": 0,
-     "support": 1,
-     "precision": 16.666666666666664,
-     "recall": 100.0,
-     "f1": 28.57142857142857
+     "tp": 35,
+     "fp": 70,
+     "fn": 4,
+     "inside": 2,
+     "support": 39,
+     "precision": 33.33333333333333,
+     "recall": 89.74358974358975,
+     "f1": 48.61111111111111
     },
     "MISSING": {
-     "tp": 1,
-     "fp": 0,
-     "fn": 0,
+     "tp": 9,
+     "fp": 5,
+     "fn": 1,
      "inside": 0,
-     "support": 1,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "support": 10,
+     "precision": 64.28571428571429,
+     "recall": 90.0,
+     "f1": 75.00000000000001
     },
     "RELIEF_INFO": {
-     "tp": 1,
-     "fp": 1,
-     "fn": 0,
-     "inside": 2,
-     "support": 1,
-     "precision": 50.0,
-     "recall": 100.0,
-     "f1": 66.66666666666667
+     "tp": 45,
+     "fp": 44,
+     "fn": 22,
+     "inside": 22,
+     "support": 67,
+     "precision": 50.56179775280899,
+     "recall": 67.16417910447761,
+     "f1": 57.692307692307686
     }
    },
    "micro": {
-    "tp": 8,
-    "fp": 6,
-    "fn": 4,
-    "inside": 2,
-    "support": 12,
-    "precision": 57.14285714285714,
-    "recall": 66.66666666666666,
-    "f1": 61.53846153846153
+    "tp": 234,
+    "fp": 146,
+    "fn": 80,
+    "inside": 30,
+    "support": 314,
+    "precision": 61.578947368421055,
+    "recall": 74.52229299363057,
+    "f1": 67.43515850144094
    },
-   "macro_f1": 69.04761904761905
+   "macro_f1": 65.96526695043346
   },
   "xlmr_exact": {
    "per_class": {
     "FATALITIES": {
-     "tp": 3,
-     "fp": 0,
-     "fn": 0,
+     "tp": 87,
+     "fp": 29,
+     "fn": 30,
      "inside": 0,
-     "support": 3,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "support": 117,
+     "precision": 75.0,
+     "recall": 74.35897435897436,
+     "f1": 74.67811158798283
     },
     "DISPLACED": {
-     "tp": 5,
-     "fp": 0,
-     "fn": 1,
+     "tp": 51,
+     "fp": 30,
+     "fn": 30,
      "inside": 0,
-     "support": 6,
-     "precision": 100.0,
-     "recall": 83.33333333333334,
-     "f1": 90.9090909090909
+     "support": 81,
+     "precision": 62.96296296296296,
+     "recall": 62.96296296296296,
+     "f1": 62.96296296296296
     },
     "AFFECTED_PEOPLE": {
-     "tp": 1,
-     "fp": 0,
-     "fn": 0,
+     "tp": 27,
+     "fp": 13,
+     "fn": 12,
      "inside": 0,
-     "support": 1,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "support": 39,
+     "precision": 67.5,
+     "recall": 69.23076923076923,
+     "f1": 68.35443037974683
     },
     "MISSING": {
-     "tp": 1,
-     "fp": 0,
-     "fn": 0,
+     "tp": 7,
+     "fp": 5,
+     "fn": 3,
      "inside": 0,
-     "support": 1,
-     "precision": 100.0,
-     "recall": 100.0,
-     "f1": 100.0
+     "support": 10,
+     "precision": 58.333333333333336,
+     "recall": 70.0,
+     "f1": 63.63636363636363
     },
     "RELIEF_INFO": {
-     "tp": 0,
-     "fp": 1,
-     "fn": 1,
+     "tp": 27,
+     "fp": 42,
+     "fn": 40,
      "inside": 0,
-     "support": 1,
-     "precision": 0.0,
-     "recall": 0.0,
-     "f1": 0.0
+     "support": 67,
+     "precision": 39.130434782608695,
+     "recall": 40.298507462686565,
+     "f1": 39.705882352941174
     }
    },
    "micro": {
-    "tp": 10,
-    "fp": 1,
-    "fn": 2,
+    "tp": 199,
+    "fp": 119,
+    "fn": 115,
     "inside": 0,
-    "support": 12,
-    "precision": 90.9090909090909,
-    "recall": 83.33333333333334,
-    "f1": 86.95652173913044
+    "support": 314,
+    "precision": 62.57861635220125,
+    "recall": 63.37579617834395,
+    "f1": 62.97468354430379
    },
-   "macro_f1": 78.18181818181817
+   "macro_f1": 61.867550183999484
   }
  }
 }

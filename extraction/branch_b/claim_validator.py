@@ -51,22 +51,57 @@ def non_people_noun_after(candidate, sentences_by_id):
             return word
     return None
 
-# Unit compatibility
+# Unit compatibility. The LLM writes the unit in its own words ("medical teams",
+# "metric tons of rice"), so a unit is compatible when ANY of its words is in
+# the list. Plurals are reduced to the singular on both sides (see _singular).
+PEOPLE_UNITS = ["people", "person", "individual", "family", "household", "resident",
+                "villager", "child", "children", "woman", "women", "man", "men", "victim",
+                "fisherman", "fishermen", "farmer", "worker", "student", "patient"]
 UNIT_COMPATIBLE = {
-    "FATALITIES":             ["people", "persons", "individuals", "victims"],
-    "INJURED":                ["people", "persons", "individuals"],
-    "MISSING":                ["people", "persons", "individuals"],
-    "AFFECTED_PEOPLE":        ["people", "persons", "families", "households"],
-    "DISPLACED":              ["people", "persons", "families", "households"],
-    "HOUSING_DAMAGE":         ["houses", "homes", "structures", "buildings", "units", "shops"],
-    "INFRASTRUCTURE_DAMAGE":  ["roads", "bridges", "km", "kilometers", "structures"],
-    "AGRICULTURAL_DAMAGE":    ["hectares", "acres", "bigha", "crops", "tonnes"],
-    "LIVESTOCK_LOSS":         ["animals", "cattle", "livestock", "heads"],
-    "ECONOMIC_LOSS":          ["taka", "tk", "crore", "lakh", "usd"],
-    "RELIEF":                 ["taka", "tk", "crore", "lakh", "tonnes", "kg",
-                               "packets", "families", "people"],
+    "FATALITIES":             PEOPLE_UNITS + ["death", "dead", "body", "bodies"],
+    "INJURED":                PEOPLE_UNITS,
+    "MISSING":                PEOPLE_UNITS,
+    "AFFECTED_PEOPLE":        PEOPLE_UNITS + ["case"],
+    "DISPLACED":              PEOPLE_UNITS,
+    "HOUSING_DAMAGE":         ["house", "home", "structure", "building", "unit", "shop",
+                               "hut", "dwelling", "store", "establishment"],
+    "INFRASTRUCTURE_DAMAGE":  ["road", "bridge", "km", "kilometer", "kilometre", "structure",
+                               "culvert", "embankment", "dam", "school", "institution",
+                               "pole", "line", "metre", "meter"],
+    "AGRICULTURAL_DAMAGE":    ["hectare", "acre", "bigha", "crop", "tonne", "ton", "pond",
+                               "field", "land"],
+    "LIVESTOCK_LOSS":         ["animal", "cattle", "livestock", "head", "cow", "goat",
+                               "poultry", "chicken", "duck", "sheep", "buffalo"],
+    "ECONOMIC_LOSS":          ["taka", "tk", "crore", "lakh", "usd", "dollar", "million",
+                               "billion"],
+    # Aid of any kind: money, food, goods, and the teams and places that provide it.
+    "RELIEF":                 ["taka", "tk", "crore", "lakh", "usd", "dollar", "million",
+                               "tonne", "ton", "kg", "kilogram", "packet", "pack", "package",
+                               "bag", "sack", "piece", "sheet", "bundle", "litre", "liter",
+                               "bottle", "tablet", "rice", "food", "relief", "kit",
+                               "team", "doctor", "camp", "shelter", "centre", "center",
+                               "boat", "volunteer", "medical"] + PEOPLE_UNITS,
     "OTHER":                  [],
 }
+NO_UNIT = {"", "null", "none", "n/a", "na", "unknown", "unspecified"}
+
+
+def _singular(word):
+    if word.endswith("ies") and len(word) > 4:
+        return word[:-3] + "y"
+    if word.endswith("s") and not word.endswith("ss") and len(word) > 2:
+        return word[:-1]
+    return word
+
+
+def unit_is_compatible(unit, impact_type):
+    """True when the unit fits the impact type, or when there is no real unit."""
+    allowed = UNIT_COMPATIBLE.get(impact_type)
+    if not allowed or unit is None or unit.strip().lower() in NO_UNIT:
+        return True
+    allowed = {_singular(w) for w in allowed}
+    words = re.findall(r"[a-z%]+", unit.lower())
+    return any(_singular(w) in allowed for w in words)
 
 
 def validate_claims(
@@ -140,15 +175,12 @@ def validate_claims(
 
         # ── 6. Unit compatibility ──────────────────────────────────────────
         impact_type_str = claim.impact_type.value
-        if claim.unit and impact_type_str in UNIT_COMPATIBLE:
-            compatible_units = UNIT_COMPATIBLE[impact_type_str]
-            if (compatible_units and
-                    claim.unit.lower() not in compatible_units):
-                flags.append(
-                    f"UNIT_MISMATCH:{claim.unit}"
-                    f"_not_compatible_with_{impact_type_str}"
-                )
-                status = REVIEW_REQUIRED
+        if claim.unit and not unit_is_compatible(claim.unit, impact_type_str):
+            flags.append(
+                f"UNIT_MISMATCH:{claim.unit}"
+                f"_not_compatible_with_{impact_type_str}"
+            )
+            status = REVIEW_REQUIRED
 
         # ── 7. Negation check ──────────────────────────────────────────────
         evidence_text = ""

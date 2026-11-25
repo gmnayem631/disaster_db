@@ -44,3 +44,20 @@ def test_feni_fatality_claim_not_rejected():
     [record] = validate_claims(result, candidates, sentences, [])
     assert record["validation_status"] != REJECTED
     assert not any(f.startswith("NOT_A_PEOPLE_COUNT") for f in record["validation_flags"])
+
+
+@pytest.mark.parametrize("unit, impact, expected", [
+    ("medical teams", "RELIEF", True),
+    ("metric tons of rice", "RELIEF", True),
+    ("shelter centres", "RELIEF", True),
+    ("food packets", "RELIEF", True),
+    ("districts", "RELIEF", False),
+    ("families", "DISPLACED", True),
+    ("villages", "AFFECTED_PEOPLE", False),
+    ("null", "FATALITIES", True),          # no real unit: nothing to check
+    ("houses", "HOUSING_DAMAGE", True),
+    ("people", "HOUSING_DAMAGE", False),
+])
+def test_unit_is_compatible_word_by_word(unit, impact, expected):
+    from extraction.branch_b.claim_validator import unit_is_compatible
+    assert unit_is_compatible(unit, impact) is expected

@@ -23,8 +23,8 @@ from extraction.branch_b.schemas import BranchBResult
 
 # Bump these when the prompt, schema, candidate generator or validator changes.
 # They are stored with every claim so old and new results can be told apart.
-EXTRACTION_VERSION = "b4"   # b4: short OTHER answers; b3: headline numbers; b2: DISPLACED merge
-PROMPT_VERSION     = "p4"   # p4: OTHER answered with id + type only; p3: headline as T1
+EXTRACTION_VERSION = "b5"   # b5: unit check word by word; b4: short OTHER answers; b3: headline numbers
+PROMPT_VERSION     = "p5"   # p5: priority rules + examples from TRAIN articles; p4: OTHER id + type only
 
 RAW_REPLY_KEPT = 2000      # characters of a bad reply kept in the error record
 TRUNCATION_SHARE = 0.9     # prompt using 90%+ of the context window gets flagged

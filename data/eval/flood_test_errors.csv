@@ -1,5 +1,78 @@
 model,article,error,annotated,predicted,text,start
 xlmr,test-03,missed,DISPLACED,nothing,"The hapless victims took shelter on the road,",1347
+xlmr,test-04,missed,DISPLACED,nothing,"provide refuge for 301,993 people and 21,695 livestock.",2551
+xlmr,test-06,missed,FATALITIES,nothing,27 on Tuesday,375
+xlmr,test-06,wrong,,DISPLACED,"the number of overall flood-affected people, however, decreased by 3.42 lakh",736
+xlmr,test-06,missed,FATALITIES,nothing,Chattogram six deaths,1358
+xlmr,test-06,missed,RELIEF_INFO,RELIEF_INFO,and Tk 70 lakh equally distributed for baby food and fodder,3849
+xlmr,test-07,missed,FATALITIES,nothing,"the floods have claimed the lives of 41 men, six women, and seven children.",501
+xlmr,test-08,missed,MISSING,nothing,reports of missing people,1383
+xlmr,test-10,wrong,,RELIEF_INFO,Field hospitals have been prepared to provide treatments,1471
+xlmr,test-11,missed,DISPLACED,nothing,a stream of people heading towards flood shelters,1548
+xlmr,test-11,missed,DISPLACED,nothing,Hundreds of people moved out of their homes,2393
+xlmr,test-11,missed,DISPLACED,nothing,"Many have taken shelter on rooftops or multi-storey buildings, cramped in rooms",2636
+xlmr,test-11,wrong,,DISPLACED,10.73 lakh customers remained disconnected,5098
+xlmr,test-13,missed,RELIEF_INFO,nothing,"The authorities have opened 3,615 shelter",1413
+xlmr,test-16,wrong,,FATALITIES,one new in Khagrachhari,97
+xlmr,test-16,missed,RELIEF_INFO,nothing,set up 14 health camps,1365
+xlmr,test-16,wrong,,RELIEF_INFO,Army health camps in district towns along with six health camps in six upazilas and seven private hospitals have been in,1487
+xlmr,test-16,wrong,,RELIEF_INFO,Dedicated health camps are being set up outside the health complex,1816
+xlmr,test-16,missed,RELIEF_INFO,nothing,free treatment of flood victims will be provided,2245
+xlmr,test-17,wrong,,MISSING,"five people, including two students, remained missing",1218
+xlmr,test-17,wrong,,MISSING,three people went missing,1984
+xlmr,test-17,wrong,,DISPLACED,Seven hundred tourists at Sajek in Rangamati became stranded,4801
+xlmr,test-21,missed,FATALITIES,FATALITIES,"Of the dead,",713
+xlmr,test-21,wrong,,RELIEF_INFO,567 medical teams are on duty,1400
+xlmr,test-21,wrong,,RELIEF_INFO,Tk 77.8 million has been raised,1607
+xlmr,test-21,wrong,,RELIEF_INFO,Tk 7.12 million has been spent on various relief activities,1932
+xlmr,test-21,wrong,,RELIEF_INFO,Tk 8.3 million was received through mobile banking,2327
+xlmr,test-21,missed,RELIEF_INFO,nothing,"provided meals for approximately 50,000 people",2918
+xlmr,test-21,wrong,,FATALITIES,nine people were seriously injured,4009
+xlmr,test-26,wrong,,AFFECTED_PEOPLE,"12, 864 people have fallen ill",189
+xlmr,test-29,wrong,,DISPLACED,hundreds took shelter with their livestock,5999
+xlmr,test-29,wrong,,DISPLACED,12 families sheltering,6379
+xlmr,test-29,wrong,,AFFECTED_PEOPLE,500 flood-affected families have received government aid,7455
+xlmr,test-29,missed,DISPLACED,nothing,300 families have received government relief,7822
+xlmr,test-29,wrong,,AFFECTED_PEOPLE,"37,000 families in 55 of 73 unions in Kurigram's nine upazilas have been affected",7925
+xlmr,test-29,missed,AFFECTED_PEOPLE,nothing,"52,000 families in 2017",8212
+xlmr,test-30,missed,MISSING,FATALITIES,10 others went missing,250
+xlmr,test-30,wrong,MISSING,FATALITIES,10 others went missing,250
+xlmr,test-30,wrong,,FATALITIES,Cox's Bazar,1659
+xlmr,test-30,wrong,,MISSING,10 people went missing,1976
+xlmr,test-30,wrong,,DISPLACED,"184,900 people in eight upazilas of",2409
+xlmr,test-30,wrong,,RELIEF_INFO,"160 army personnel in 40 rescue vehicles, 71 navy personnel in eight rescue vehicles, and boats of border guards were se",3987
+xlmr,test-30,wrong,,RELIEF_INFO,A water treatment plant has been set up there,4119
+xlmr,test-31,missed,DISPLACED,AFFECTED_PEOPLE,"trapped 1,072,579 families",498
+xlmr,test-31,wrong,DISPLACED,AFFECTED_PEOPLE,"trapped 1,072,579 families",498
+xlmr,test-31,wrong,AFFECTED_PEOPLE,DISPLACED,"the number of flood victims has reached 5,480,463.",529
+xlmr,test-31,missed,AFFECTED_PEOPLE,DISPLACED,"number of flood victims has reached 5,480,463",533
+xlmr,test-31,wrong,,FATALITIES,"Of them, 39 were men, six were women and seven were children",616
+xlmr,test-33,missed,FATALITIES,MISSING,two from snake bites,428
+xlmr,test-33,wrong,FATALITIES,MISSING,"two from snake bites,",428
+xlmr,test-34,wrong,,AFFECTED_PEOPLE,"impacted at least 4,000 families",538
+xlmr,test-35,missed,RELIEF_INFO,nothing,"having mobilised only Tk 4.67 crore and 3,720 tonnes of rice",1211
+xlmr,test-35,wrong,,FATALITIES,the deaths of so many,2605
+xlmr,test-36,wrong,,AFFECTED_PEOPLE,targeting 1.2 million people,2438
+xlmr,test-38,missed,AFFECTED_PEOPLE,nothing,causing thousands of people to suffer,102
+xlmr,test-39,wrong,,RELIEF_INFO,A total of 800 people in the flood affected areas of Mymensingh have received free healthcare and medicine,0
+xlmr,test-39,missed,RELIEF_INFO,nothing,distributed tin (corrugated iron sheets) and cash assistance,806
+xlmr,test-41,wrong,,RELIEF_INFO,A control room has been set up at the Ministry of Disaster Management and Relief,1031
+xlmr,test-41,missed,RELIEF_INFO,nothing,The army and navy are engaged in rescue operations,1509
+xlmr,test-41,wrong,,RELIEF_INFO,160 army personnel have been deployed,1611
+xlmr,test-41,wrong,,RELIEF_INFO,a water treatment plant has been set up,1706
+xlmr,test-41,wrong,,RELIEF_INFO,71 navy personnel along with eight rescue vehicles are on the job,1751
+xlmr,test-41,missed,FATALITIES,nothing,person drowned,2089
+xlmr,test-41,missed,RELIEF_INFO,nothing,providing refuge for 392 people,2433
+xlmr,test-41,missed,AFFECTED_PEOPLE,nothing,"1,202,000 affected people",2649
+xlmr,test-41,missed,RELIEF_INFO,nothing,"providing refuge for 7,753 people",2698
+xlmr,test-41,missed,AFFECTED_PEOPLE,DISPLACED,"95,900 affected people",2945
+xlmr,test-41,missed,RELIEF_INFO,nothing,shelters opened,3499
+xlmr,test-41,missed,RELIEF_INFO,nothing,"providing refuge for 7,277 people",3516
+xlmr,test-41,missed,RELIEF_INFO,nothing,medical teams deployed,3572
+xlmr,test-42,missed,FATALITIES,nothing,including five in Chattogram,581
+xlmr,test-42,missed,RELIEF_INFO,nothing,Medical services are being provided by 748 teams operating,867
+xlmr,test-42,missed,RELIEF_INFO,RELIEF_INFO,"15,000 food packets as relief.",1057
+xlmr,test-42,wrong,,RELIEF_INFO,field hospitals have been prepared to provide health services,1701
 qwen,test-01,wrong,DISPLACED,AFFECTED_PEOPLE,over three million,405
 qwen,test-01,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),three million people stranded,410
 qwen,test-01,wrong,,AFFECTED_PEOPLE,"In Feni, Parshuram, Fulgazi, and Chhagalnaiya upazilas have been badly affected.",493
@@ -10,3 +83,198 @@ qwen,test-01,wrong,DISPLACED,AFFECTED_PEOPLE,"around 3,000",2417
 qwen,test-01,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"3,000 people stranded",2424
 qwen,test-01,wrong,,RELIEF_INFO,"He said they have already sent relief materials and dry food to the affected districts. """,4340
 qwen,test-03,missed,DISPLACED,nothing,"The hapless victims took shelter on the road,",1347
+qwen,test-04,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED) / FATALITIES (ACCEPTED),Around 51 lakh people across 11 eastern and southeastern districts remain marooned,17
+qwen,test-04,wrong,DISPLACED,AFFECTED_PEOPLE,Around 51 lakh,17
+qwen,test-04,wrong,DISPLACED,FATALITIES,11,46
+qwen,test-04,missed,FATALITIES,OTHER (ACCEPTED),The deceased include four in Cumilla,253
+qwen,test-04,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED) / AFFECTED_PEOPLE (REJECTED),around 9.80 lakh families across eleven districts are trapped by water,601
+qwen,test-04,wrong,DISPLACED,AFFECTED_PEOPLE,around 9.80 lakh,601
+qwen,test-04,missed,RELIEF_INFO,HOUSING_DAMAGE (REVIEW_REQUIRED),"3,513 shelters have been established",2511
+qwen,test-04,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED) / LIVESTOCK_LOSS (ACCEPTED) / LIVESTOCK_LOSS (ACCEPTED),"provide refuge for 301,993 people and 21,695 livestock.",2551
+qwen,test-04,wrong,DISPLACED,AFFECTED_PEOPLE,"301,993",2570
+qwen,test-04,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),769 medical teams are actively providing healthcare services,2621
+qwen,test-04,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),seven lakh people stranded,5152
+qwen,test-04,wrong,DISPLACED,AFFECTED_PEOPLE,seven lakh,5152
+qwen,test-05,wrong,,RELIEF_INFO,11,833
+qwen,test-05,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),11 medical teams have been deployed,1011
+qwen,test-05,wrong,,RELIEF_INFO,"Meanwhile, relief distribution among the flood victims was conducted on Sunday afternoon in the Bahadurabad union of Dew",1048
+qwen,test-06,wrong,,RELIEF_INFO,Students work to arrange relief goods for the flood-affected people of the country at the Teacher-Student Centre of Dhak,0
+qwen,test-06,wrong,,AFFECTED_PEOPLE,3.42 lakh to 54.8 lakh,803
+qwen,test-06,wrong,,DISPLACED,12.27 lakh,1230
+qwen,test-06,wrong,,FATALITIES,one,1466
+qwen,test-06,wrong,DISPLACED,AFFECTED_PEOPLE,Around 14 lakh,2471
+qwen,test-06,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),14 lakh people were living in water,2478
+qwen,test-06,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),seven lakh people in the district remained stranded,3408
+qwen,test-06,wrong,DISPLACED,AFFECTED_PEOPLE,seven lakh,3408
+qwen,test-06,missed,DISPLACED,HOUSING_DAMAGE (REVIEW_REQUIRED),"39,572 people have got shelter in shelter centres,",3472
+qwen,test-06,wrong,,AFFECTED_PEOPLE,Waterborne diseases were seen among the flood-affected people in Lakshmipur.,3563
+qwen,test-07,missed,FATALITIES,OTHER (ACCEPTED),two more deaths reported,357
+qwen,test-08,wrong,,MISSING,"Meanwhile, many have also gone missing amid the flood, Saifullah said. """,1259
+qwen,test-08,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),107 medical teams are working,1548
+qwen,test-10,missed,FATALITIES,OTHER (ACCEPTED),"Of the new deaths, two died in Noakhali",188
+qwen,test-10,missed,FATALITIES,OTHER (ACCEPTED),one in Khagrachhari,232
+qwen,test-10,missed,AFFECTED_PEOPLE,AFFECTED_PEOPLE (REJECTED),"The number of families affected in the flood is 12, 38,048",839
+qwen,test-10,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),645 medical teams are providing medical services,1075
+qwen,test-11,wrong,DISPLACED,AFFECTED_PEOPLE,Nearly 10 lakh,840
+qwen,test-11,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),10 lakh families were stranded,847
+qwen,test-11,missed,DISPLACED,AFFECTED_PEOPLE (REVIEW_REQUIRED),2 lakh people stranded,1832
+qwen,test-11,wrong,,AFFECTED_PEOPLE,about 300,2114
+qwen,test-11,missed,DISPLACED,nothing,Hundreds of people moved out of their homes,2393
+qwen,test-11,missed,DISPLACED,nothing,"Many have taken shelter on rooftops or multi-storey buildings, cramped in rooms",2636
+qwen,test-11,wrong,,AFFECTED_PEOPLE,17,2862
+qwen,test-11,wrong,DISPLACED,AFFECTED_PEOPLE,"more than 6,000",4748
+qwen,test-11,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"6,000 people staying in flood shelters",4758
+qwen,test-11,missed,FATALITIES,OTHER (ACCEPTED),"Of the deaths, four each occurred in Cumilla and Chattogram",6202
+qwen,test-11,missed,FATALITIES,OTHER (ACCEPTED),three in Cox s Bazar,6263
+qwen,test-11,missed,FATALITIES,OTHER (ACCEPTED),"one each in Noakhali, Brahmanbaria, Feni, and Lakshmipur.",6289
+qwen,test-12,missed,DISPLACED,OTHER (ACCEPTED),"20,000 families have been marooned",740
+qwen,test-12,wrong,DISPLACED,AFFECTED_PEOPLE,over two thousand,1290
+qwen,test-12,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),two thousand families have been marooned,1295
+qwen,test-12,wrong,DISPLACED,AFFECTED_PEOPLE,Over two thousand,1787
+qwen,test-12,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),two thousand families have been marooned,1792
+qwen,test-13,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),"1,75,700 packs of relief materials, including dry food, clothes and drinking water collected",942
+qwen,test-13,missed,AFFECTED_PEOPLE,OTHER (ACCEPTED),"affected more than 51,08,202 lakh people",1177
+qwen,test-13,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"6,05,767 lakh families became stranded",1273
+qwen,test-13,wrong,DISPLACED,AFFECTED_PEOPLE,767 lakh,1278
+qwen,test-13,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),"The authorities have opened 3,615 shelter",1413
+qwen,test-13,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),472 medical teams are providing treatment,1495
+qwen,test-14,wrong,,RELIEF_INFO,134 million,76
+qwen,test-14,wrong,,AFFECTED_PEOPLE,2.5 million,1130
+qwen,test-14,wrong,,AFFECTED_PEOPLE,1.8 million,1207
+qwen,test-14,wrong,,RELIEF_INFO,The government and humanitarian community are working tirelessly to provide relief and support to affected communities.,1865
+qwen,test-14,wrong,,RELIEF_INFO,"The revised humanitarian response plan addresses the most urgent needs of the affected population, including child prote",2729
+qwen,test-14,wrong,,RELIEF_INFO,Contributions will also help to protect livelihoods and build resilience in affected communities.,3170
+qwen,test-16,wrong,,FATALITIES,one,97
+qwen,test-16,missed,MISSING,FATALITIES (ACCEPTED),two persons are remaining missing,342
+qwen,test-16,wrong,MISSING,FATALITIES,two,342
+qwen,test-16,wrong,,AFFECTED_PEOPLE,20,688
+qwen,test-16,missed,AFFECTED_PEOPLE,OTHER (ACCEPTED),"57,01,204 people have been affected",703
+qwen,test-16,missed,DISPLACED,AFFECTED_PEOPLE (REVIEW_REQUIRED),"4,69,523 people took refuge",888
+qwen,test-16,wrong,,RELIEF_INFO,11,1175
+qwen,test-16,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),645 medical teams are working,1210
+qwen,test-16,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),set up 14 health camps,1365
+qwen,test-16,missed,RELIEF_INFO,nothing,free treatment of flood victims will be provided,2245
+qwen,test-17,wrong,,MISSING,At least five,1209
+qwen,test-17,wrong,,MISSING,three,1984
+qwen,test-17,wrong,DISPLACED,AFFECTED_PEOPLE,about 20 lakh,2496
+qwen,test-17,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),20 lakh people were stranded,2502
+qwen,test-17,missed,DISPLACED,HOUSING_DAMAGE (REVIEW_REQUIRED),"1,325 were in flood shelters",3426
+qwen,test-17,wrong,,AFFECTED_PEOPLE,Seven hundred,4801
+qwen,test-18,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED) / OTHER (ACCEPTED),"Nearly 20, 000 people have been stranded",0
+qwen,test-18,wrong,DISPLACED,AFFECTED_PEOPLE,"Nearly 20,",0
+qwen,test-18,wrong,DISPLACED,AFFECTED_PEOPLE,"Nearly 20,",171
+qwen,test-18,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED) / OTHER (ACCEPTED),"20, 000 people have been stranded",178
+qwen,test-19,missed,RELIEF_INFO,nothing,400MT rice have been allocated,1397
+qwen,test-20,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),9.5 million people marooned,1636
+qwen,test-20,wrong,DISPLACED,AFFECTED_PEOPLE,9.5 million,1636
+qwen,test-21,missed,FATALITIES,nothing,"Of the dead,",713
+qwen,test-21,missed,FATALITIES,FATALITIES (REVIEW_REQUIRED),14 in Cumilla,743
+qwen,test-21,missed,DISPLACED,OTHER (ACCEPTED) / OTHER (ACCEPTED),1.0-million families in these districts were trapped,1122
+qwen,test-21,missed,RELIEF_INFO,AFFECTED_PEOPLE (REJECTED),"3,269 shelters have been opened",1244
+qwen,test-21,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED) / LIVESTOCK_LOSS (REVIEW_REQUIRED),"469,687 people and 38,192 cattle heads are taking refuge at these shelters",1313
+qwen,test-21,wrong,DISPLACED,AFFECTED_PEOPLE,"469,687",1313
+qwen,test-21,wrong,,RELIEF_INFO,7.12 million,1935
+qwen,test-21,wrong,,RELIEF_INFO,7.12 million,2452
+qwen,test-21,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED) / OTHER (ACCEPTED) / OTHER (ACCEPTED),"4,000 of the 0.1-million packages were distributed to remote flood-affected areas",2648
+qwen,test-21,missed,RELIEF_INFO,OTHER (ACCEPTED),cash assistance totalling Tk 0.596 million,2756
+qwen,test-23,wrong,,AFFECTED_PEOPLE,19,123
+qwen,test-24,wrong,,AFFECTED_PEOPLE,"Sylhet district's Gowainghat, Kanaighat, Companiganj, Jaintiapur, and Sylhet Sadar upazilas are the most affected along ",1110
+qwen,test-24,wrong,DISPLACED,AFFECTED_PEOPLE,"Around 10,000",2031
+qwen,test-24,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"10,000 people took refuge",2038
+qwen,test-25,wrong,DISPLACED,AFFECTED_PEOPLE,"around 50,000",135
+qwen,test-25,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"50,000 families marooned",142
+qwen,test-25,wrong,,RELIEF_INFO,As DC Muhammad Azizur Rahman put it:  We have started distributing dry food and food items among the waterlogged familie,853
+qwen,test-25,wrong,,RELIEF_INFO,Also Read- Cox's Bazar flood situation unchanged Upazila Nirbahi Officer (UNO) of Sarankhola Khatune Jannat distributed ,1084
+qwen,test-26,wrong,,AFFECTED_PEOPLE,12,189
+qwen,test-26,wrong,,AFFECTED_PEOPLE,864,193
+qwen,test-26,missed,RELIEF_INFO,OTHER (ACCEPTED),317 health centres have been opened,1158
+qwen,test-26,missed,RELIEF_INFO,OTHER (ACCEPTED),415 medical teams are working,1216
+qwen,test-27,missed,FATALITIES,nothing,person drowned in Fatikchhari upazila,200
+qwen,test-27,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),over one lakh people remain stranded,740
+qwen,test-27,wrong,DISPLACED,AFFECTED_PEOPLE,over one lakh,740
+qwen,test-28,wrong,,DISPLACED,28,331
+qwen,test-28,wrong,,DISPLACED,37,2022
+qwen,test-29,wrong,DISPLACED,AFFECTED_PEOPLE,"More than 20,000",2267
+qwen,test-29,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"20,000 people were marooned",2277
+qwen,test-29,missed,DISPLACED,HOUSING_DAMAGE (REVIEW_REQUIRED) / HOUSING_DAMAGE (REVIEW_REQUIRED),26 people from four families have taken shelter in a single room.,5444
+qwen,test-29,wrong,,DISPLACED,seven,6054
+qwen,test-29,wrong,,DISPLACED,at least 12,6370
+qwen,test-29,wrong,,RELIEF_INFO,500,7455
+qwen,test-29,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),300 families have received government relief,7822
+qwen,test-29,wrong,DISPLACED,AFFECTED_PEOPLE,300,7822
+qwen,test-29,wrong,,AFFECTED_PEOPLE,"37,000",7925
+qwen,test-29,missed,AFFECTED_PEOPLE,AFFECTED_PEOPLE (REVIEW_REQUIRED),"27,500 families were affected",8138
+qwen,test-29,missed,AFFECTED_PEOPLE,AFFECTED_PEOPLE (REVIEW_REQUIRED) / OTHER (REVIEW_REQUIRED),"52,000 families in 2017",8212
+qwen,test-30,wrong,,FATALITIES,22,1823
+qwen,test-30,wrong,,FATALITIES,35,1864
+qwen,test-30,wrong,,FATALITIES,50,1909
+qwen,test-30,wrong,,MISSING,10,1976
+qwen,test-30,wrong,,DISPLACED,"184,900",2409
+qwen,test-30,wrong,,DISPLACED,eight,2535
+qwen,test-30,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),deployed 492 medical teams,2932
+qwen,test-30,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED) / LIVESTOCK_LOSS (ACCEPTED),"82,694 people and 7,755 cattle took refuge",2991
+qwen,test-30,wrong,DISPLACED,AFFECTED_PEOPLE,"82,694",2991
+qwen,test-31,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"trapped 1,072,579 families",498
+qwen,test-31,wrong,DISPLACED,AFFECTED_PEOPLE,"1,072,579",506
+qwen,test-31,missed,FATALITIES,FATALITIES (REVIEW_REQUIRED),52 people have died,595
+qwen,test-31,missed,FATALITIES,FATALITIES (REVIEW_REQUIRED),Fourteen deaths were reported in Cumilla,678
+qwen,test-31,missed,FATALITIES,FATALITIES (REVIEW_REQUIRED),"one each in Khagrachhari, Brahmanbaria, Lakshmipur and Moulvibazar",720
+qwen,test-31,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),"3,403 shelters have been opened",1050
+qwen,test-31,wrong,,RELIEF_INFO,"502,501",1103
+qwen,test-31,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),595 medical teams are on duty,1160
+qwen,test-32,missed,FATALITIES,FATALITIES (REJECTED) / AFFECTED_PEOPLE (ACCEPTED),The death toll from the ongoing floods in 11 districts of Bangladesh has risen to 23,0
+qwen,test-32,wrong,FATALITIES,AFFECTED_PEOPLE,23,82
+qwen,test-34,wrong,,AFFECTED_PEOPLE,at least 300,209
+qwen,test-34,wrong,,RELIEF_INFO,"Despite receiving some relief from both government and non-government sources, residents say the aid is insufficient.",251
+qwen,test-34,wrong,,AFFECTED_PEOPLE,"at least 4,000",547
+qwen,test-34,wrong,,RELIEF_INFO,"Another resident, Habiba Akter, echoed these concerns, noting that the relief provided was inadequate. """,1040
+qwen,test-34,wrong,,AFFECTED_PEOPLE,"2,500",1710
+qwen,test-35,missed,RELIEF_INFO,OTHER (ACCEPTED) / OTHER (ACCEPTED),"having mobilised only Tk 4.67 crore and 3,720 tonnes of rice",1211
+qwen,test-36,wrong,,AFFECTED_PEOPLE,"1,750,000",1000
+qwen,test-36,wrong,,AFFECTED_PEOPLE,1.2 million,2448
+qwen,test-36,wrong,,RELIEF_INFO,"around 700,000",2550
+qwen,test-37,missed,FATALITIES,OTHER (ACCEPTED),four more deaths,74
+qwen,test-38,missed,AFFECTED_PEOPLE,nothing,causing thousands of people to suffer,102
+qwen,test-39,wrong,,RELIEF_INFO,800,11
+qwen,test-39,wrong,,RELIEF_INFO,"Maj Gen AKM Nazmul Hasan, acting GOC (general officer commanding) of Training and Doctrine Command at Army Headquarters,",578
+qwen,test-39,missed,RELIEF_INFO,nothing,distributed tin (corrugated iron sheets) and cash assistance,806
+qwen,test-39,wrong,,RELIEF_INFO,50,873
+qwen,test-39,wrong,,RELIEF_INFO,403,928
+qwen,test-39,wrong,,RELIEF_INFO,369,965
+qwen,test-39,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED) / RELIEF (REVIEW_REQUIRED),"distributed 2,450 relief packets and provided free medical aid to 1,800 victims",1020
+qwen,test-41,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),"A total of 1,359 shelter centres have been opened",299
+qwen,test-41,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),309 medical teams so far have been made operational,481
+qwen,test-41,missed,RELIEF_INFO,OTHER (ACCEPTED),The army and navy are engaged in rescue operations,1509
+qwen,test-41,wrong,,AFFECTED_PEOPLE,"Approximately 300,000",2041
+qwen,test-41,wrong,,FATALITIES,One,2085
+qwen,test-41,missed,FATALITIES,nothing,person drowned,2089
+qwen,test-41,missed,RELIEF_INFO,DISPLACED (ACCEPTED),"shelters opened, providing refuge for 20,000 people.",2124
+qwen,test-41,wrong,RELIEF_INFO,DISPLACED,"20,000",2162
+qwen,test-41,missed,RELIEF_INFO,nothing,medical teams deployed,2181
+qwen,test-41,wrong,,AFFECTED_PEOPLE,"1,21,200",2618
+qwen,test-41,missed,DISPLACED,nothing,marooned families,2627
+qwen,test-41,missed,RELIEF_INFO,nothing,shelters opened,2681
+qwen,test-41,missed,RELIEF_INFO,DISPLACED (ACCEPTED),"providing refuge for 7,753 people",2698
+qwen,test-41,wrong,RELIEF_INFO,DISPLACED,"7,753",2719
+qwen,test-41,missed,RELIEF_INFO,nothing,medical teams deployed,2754
+qwen,test-41,wrong,,DISPLACED,"20,175",2916
+qwen,test-41,missed,DISPLACED,nothing,marooned families,2923
+qwen,test-41,missed,RELIEF_INFO,nothing,shelters opened,2974
+qwen,test-41,missed,RELIEF_INFO,nothing,medical teams deployed,3040
+qwen,test-41,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED) / RELIEF (REVIEW_REQUIRED),"allocated Tk 15,00,000 in cash and 1,600 metric tons of rice",3105
+qwen,test-41,wrong,,AFFECTED_PEOPLE,"12,966",3220
+qwen,test-41,missed,DISPLACED,nothing,marooned families,3227
+qwen,test-41,missed,RELIEF_INFO,OTHER (ACCEPTED) / OTHER (ACCEPTED) / OTHER (ACCEPTED),"allocated Tk 10,00,000 in cash, 1,850 metric tons of rice, and 1,000 packets of dry food.",3314
+qwen,test-41,wrong,,AFFECTED_PEOPLE,"15,422",3441
+qwen,test-41,missed,DISPLACED,nothing,marooned families,3448
+qwen,test-41,missed,RELIEF_INFO,nothing,shelters opened,3499
+qwen,test-41,missed,RELIEF_INFO,DISPLACED (ACCEPTED),"providing refuge for 7,277 people",3516
+qwen,test-41,wrong,RELIEF_INFO,DISPLACED,"7,277",3537
+qwen,test-41,missed,RELIEF_INFO,nothing,medical teams deployed,3572
+qwen,test-41,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),allocated 800 metric tons of rice.,3637
+qwen,test-42,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"The recent floods have marooned 10,47,029 people",0
+qwen,test-42,wrong,DISPLACED,AFFECTED_PEOPLE,"10,47,029",32
+qwen,test-42,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),"Authorities have opened 3,654 shelter centres",270
+qwen,test-42,wrong,,AFFECTED_PEOPLE,"4,15,273",337
+qwen,test-42,missed,RELIEF_INFO,INFRASTRUCTURE_DAMAGE (REVIEW_REQUIRED),Medical services are being provided by 748 teams operating,867
+qwen,test-42,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),"15,000 food packets as relief.",1057
