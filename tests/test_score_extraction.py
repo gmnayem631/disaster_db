@@ -101,3 +101,12 @@ def test_mistake_list_says_what_the_model_said_instead():
                      "other": [{"start": 0, "end": 2, "label": "INJURED (ACCEPTED)"}]}])
     assert result["errors"][0]["predicted"] == "INJURED (ACCEPTED)"
     assert result["errors"][0]["error"] == "missed"
+
+
+def test_hybrid_keeps_xlmr_class_and_adds_only_numbers_xlmr_missed():
+    from score_extraction import hybrid_spans
+    xlmr = [p(0, 9, "DISPLACED")]
+    qwen = [p(0, 2, "AFFECTED_PEOPLE"),      # same number: XLM-R's class wins
+            p(20, 22, "FATALITIES")]          # XLM-R missed it: Qwen's answer is added
+    labels = sorted((s["start"], s["label"]) for s in hybrid_spans(xlmr, qwen))
+    assert labels == [(0, "DISPLACED"), (20, "FATALITIES")]

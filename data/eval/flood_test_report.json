@@ -1,5 +1,5 @@
 {
- "created": "2026-11-24 13:00",
+ "created": "2026-11-25 22:48",
  "gold": "data\\annotations\\test.spacy",
  "articles_scored": 42,
  "articles_total": 42,
@@ -163,6 +163,71 @@
     "f1": 66.98872785829307
    },
    "macro_f1": 64.90514440285891
+  },
+  "hybrid": {
+   "per_class": {
+    "FATALITIES": {
+     "tp": 114,
+     "fp": 11,
+     "fn": 3,
+     "inside": 2,
+     "support": 117,
+     "precision": 91.2,
+     "recall": 97.43589743589743,
+     "f1": 94.21487603305783
+    },
+    "DISPLACED": {
+     "tp": 75,
+     "fp": 15,
+     "fn": 6,
+     "inside": 0,
+     "support": 81,
+     "precision": 83.33333333333334,
+     "recall": 92.5925925925926,
+     "f1": 87.71929824561406
+    },
+    "AFFECTED_PEOPLE": {
+     "tp": 35,
+     "fp": 23,
+     "fn": 4,
+     "inside": 0,
+     "support": 39,
+     "precision": 60.3448275862069,
+     "recall": 89.74358974358975,
+     "f1": 72.16494845360825
+    },
+    "MISSING": {
+     "tp": 9,
+     "fp": 5,
+     "fn": 1,
+     "inside": 0,
+     "support": 10,
+     "precision": 64.28571428571429,
+     "recall": 90.0,
+     "f1": 75.00000000000001
+    },
+    "RELIEF_INFO": {
+     "tp": 54,
+     "fp": 35,
+     "fn": 13,
+     "inside": 2,
+     "support": 67,
+     "precision": 60.67415730337079,
+     "recall": 80.59701492537313,
+     "f1": 69.23076923076923
+    }
+   },
+   "micro": {
+    "tp": 287,
+    "fp": 89,
+    "fn": 27,
+    "inside": 4,
+    "support": 314,
+    "precision": 76.32978723404256,
+    "recall": 91.40127388535032,
+    "f1": 83.18840579710145
+   },
+   "macro_f1": 79.66597839260987
   },
   "qwen_with_review": {
    "per_class": {

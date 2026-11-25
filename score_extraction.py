@@ -175,7 +175,8 @@ def load_gold(path, nlp=None):
     from spacy.tokens import DocBin
     vocab = (nlp or spacy.blank("en")).vocab
     docs = list(DocBin().from_disk(path).get_docs(vocab))
-    return [{"id": f"test-{i + 1:02d}", "text": d.text,
+    prefix = os.path.splitext(os.path.basename(path))[0]      # "test", "dev"
+    return [{"id": f"{prefix}-{i + 1:02d}", "text": d.text,
              "sha": hashlib.sha1(d.text.encode("utf-8")).hexdigest()[:12], "doc": d}
             for i, d in enumerate(docs)]
 
@@ -267,6 +268,14 @@ def run_xlmr(articles, name):
     return cache
 
 
+def hybrid_spans(xlmr_pred, qwen_pred):
+    """The fallback design: XLM-R decides the class of every number it marks;
+    Qwen adds only numbers XLM-R did not mark at all. (In the real system
+    Qwen would still give running total vs new, place, and the new classes.)"""
+    added = [q for q in qwen_pred if not any(overlap(q, x) > 0 for x in xlmr_pred)]
+    return list(xlmr_pred) + added
+
+
 # ── Step 2: compare and report (instant once answers exist) ──────────────
 def fmt(x):
     return "  n/a" if x is None else f"{x:5.1f}"
@@ -294,9 +303,13 @@ def report(gold_path, name):
                      "pred": [s for s in xlmr[a["id"]]["ents"] if s["label"] in SCORED_CLASSES]}
                     for a in done]
 
+    sets["hybrid"] = [{"id": x["id"], "gold": x["gold"], "pred": hybrid_spans(x["pred"], q["pred"])}
+                      for x, q in zip(sets["xlmr"], sets["qwen"])]
+
     results = {
         "xlmr": score(sets["xlmr"]),
         "qwen": score(sets["qwen"]),
+        "hybrid": score(sets["hybrid"]),
         "qwen_with_review": score(sets["qwen_with_review"]),
         "xlmr_exact": score(sets["xlmr"], rule="exact"),
     }
@@ -324,6 +337,13 @@ def report(gold_path, name):
           f"{fmt(x['f1'])} |        {fmt(q['precision'])} {fmt(q['recall'])} {fmt(q['f1'])}")
     print(f"{'Macro F1':<17}{'':>6} | {'':>11}{fmt(results['xlmr']['macro_f1'])} |        "
           f"{'':>12}{fmt(results['qwen']['macro_f1'])}")
+    print(line)
+    print("Hybrid (XLM-R decides the class, Qwen adds numbers XLM-R did not mark), F1:")
+    print("   " + "   ".join(f"{c} {fmt(results['hybrid']['per_class'][c]['f1']).strip()}"
+                             for c in SCORED_CLASSES))
+    h = results["hybrid"]["micro"]
+    print(f"   OVERALL: P {fmt(h['precision'])}  R {fmt(h['recall'])}  F1 {fmt(h['f1'])}   "
+          f"macro F1 {fmt(results['hybrid']['macro_f1'])}")
     print(line)
     w, e = results["qwen_with_review"]["micro"], results["xlmr_exact"]["micro"]
     print(f"Qwen incl. 'needs review' answers: P {fmt(w['precision'])}  R {fmt(w['recall'])}  "
