@@ -1,0 +1,9609 @@
+{
+ "dev-01": {
+  "sha": "a26c6e881153",
+  "ents": [
+   {
+    "start": 0,
+    "end": 10,
+    "label": "BD_DISTRICT",
+    "text": "MYMENSINGH"
+   },
+   {
+    "start": 79,
+    "end": 87,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 95,
+    "end": 104,
+    "label": "BD_UPAZILA",
+    "text": "Haluaghat"
+   },
+   {
+    "start": 106,
+    "end": 114,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 119,
+    "end": 126,
+    "label": "BD_UPAZILA",
+    "text": "Phulpur"
+   },
+   {
+    "start": 139,
+    "end": 149,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 235,
+    "end": 295,
+    "label": "DISPLACED",
+    "text": "150,000 people from the 23 unions in three upazilas stranded"
+   },
+   {
+    "start": 494,
+    "end": 556,
+    "label": "DISPLACED",
+    "text": "2,000 people, including women and children, have sought refuge"
+   },
+   {
+    "start": 594,
+    "end": 664,
+    "label": "RELIEF_INFO",
+    "text": "distributed 63 metric tonnes of rice and cash assistance of Tk 700,000"
+   },
+   {
+    "start": 775,
+    "end": 780,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 833,
+    "end": 841,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 916,
+    "end": 924,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 925,
+    "end": 930,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1260,
+    "end": 1268,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 1378,
+    "end": 1383,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1422,
+    "end": 1430,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 1431,
+    "end": 1444,
+    "label": "BD_UPAZILA",
+    "text": "upazila Sadar"
+   },
+   {
+    "start": 1616,
+    "end": 1630,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura Sadar"
+   },
+   {
+    "start": 1834,
+    "end": 1842,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 2144,
+    "end": 2152,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 2242,
+    "end": 2249,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   }
+  ]
+ },
+ "dev-02": {
+  "sha": "9740481fc03c",
+  "ents": [
+   {
+    "start": 57,
+    "end": 65,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 266,
+    "end": 271,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 791,
+    "end": 797,
+    "label": "BD_UPAZILA",
+    "text": "Ulipur"
+   },
+   {
+    "start": 1351,
+    "end": 1356,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1416,
+    "end": 1450,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Water Development Board"
+   },
+   {
+    "start": 1453,
+    "end": 1461,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1509,
+    "end": 1517,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1688,
+    "end": 1702,
+    "label": "BD_UPAZILA",
+    "text": "Kurigram Sadar"
+   },
+   {
+    "start": 1735,
+    "end": 1743,
+    "label": "BD_UPAZILA",
+    "text": "Nunkhawa"
+   },
+   {
+    "start": 1785,
+    "end": 1793,
+    "label": "BD_UPAZILA",
+    "text": "Chilmari"
+   },
+   {
+    "start": 1814,
+    "end": 1820,
+    "label": "BD_UPAZILA",
+    "text": "Kaunia"
+   },
+   {
+    "start": 2347,
+    "end": 2357,
+    "label": "BD_UNION",
+    "text": "Panchgachi"
+   },
+   {
+    "start": 2472,
+    "end": 2479,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 2627,
+    "end": 2632,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2688,
+    "end": 2720,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Kurigram Water Development Board"
+   },
+   {
+    "start": 2790,
+    "end": 2798,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 2846,
+    "end": 2851,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2907,
+    "end": 2915,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 3009,
+    "end": 3014,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-03": {
+  "sha": "1eeca4c3edda",
+  "ents": [
+   {
+    "start": 0,
+    "end": 12,
+    "label": "DISASTER_TYPE",
+    "text": "Flash floods"
+   },
+   {
+    "start": 16,
+    "end": 26,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 29,
+    "end": 37,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 42,
+    "end": 51,
+    "label": "BD_UPAZILA",
+    "text": "Haluaghat"
+   },
+   {
+    "start": 76,
+    "end": 100,
+    "label": "DISPLACED",
+    "text": "1,25,000 people marooned"
+   },
+   {
+    "start": 288,
+    "end": 296,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 424,
+    "end": 449,
+    "label": "DISPLACED",
+    "text": "50,000 people waterlogged"
+   },
+   {
+    "start": 582,
+    "end": 592,
+    "label": "BD_UNION",
+    "text": "Gamaritola"
+   },
+   {
+    "start": 594,
+    "end": 603,
+    "label": "BD_UNION",
+    "text": "Ghoshgaon"
+   },
+   {
+    "start": 609,
+    "end": 621,
+    "label": "BD_UNION",
+    "text": "Purakandulia"
+   },
+   {
+    "start": 769,
+    "end": 775,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 832,
+    "end": 841,
+    "label": "BD_UNION",
+    "text": "Ghoshgaon"
+   },
+   {
+    "start": 985,
+    "end": 990,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1154,
+    "end": 1195,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affecting over 10,000 families of farmers"
+   },
+   {
+    "start": 1261,
+    "end": 1269,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 1295,
+    "end": 1304,
+    "label": "BD_UPAZILA",
+    "text": "Haluaghat"
+   },
+   {
+    "start": 1328,
+    "end": 1356,
+    "label": "DISPLACED",
+    "text": "marooning some 75,000 people"
+   },
+   {
+    "start": 1385,
+    "end": 1395,
+    "label": "BD_UNION",
+    "text": "Gazirbhita"
+   },
+   {
+    "start": 1397,
+    "end": 1407,
+    "label": "BD_UNION",
+    "text": "Bhubonkura"
+   },
+   {
+    "start": 1409,
+    "end": 1418,
+    "label": "BD_UNION",
+    "text": "Koichapur"
+   },
+   {
+    "start": 1420,
+    "end": 1426,
+    "label": "BD_UNION",
+    "text": "Narail"
+   },
+   {
+    "start": 1432,
+    "end": 1438,
+    "label": "BD_UNION",
+    "text": "Durail"
+   },
+   {
+    "start": 1471,
+    "end": 1480,
+    "label": "BD_UPAZILA",
+    "text": "Haluaghat"
+   },
+   {
+    "start": 1508,
+    "end": 1513,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1539,
+    "end": 1554,
+    "label": "BD_UPAZILA",
+    "text": "Haluaghat Sadar"
+   },
+   {
+    "start": 1556,
+    "end": 1565,
+    "label": "BD_UNION",
+    "text": "Koichapur"
+   },
+   {
+    "start": 1734,
+    "end": 1790,
+    "label": "DISPLACED",
+    "text": "800 flood-affected people have reached the four shelters"
+   },
+   {
+    "start": 1908,
+    "end": 1918,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 2007,
+    "end": 2063,
+    "label": "RELIEF_INFO",
+    "text": "allocated 10 metric tonnes of rice and Tk 1 lakh in cash"
+   },
+   {
+    "start": 2206,
+    "end": 2229,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 2233,
+    "end": 2243,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   }
+  ]
+ },
+ "dev-04": {
+  "sha": "6c4e15a411b5",
+  "ents": [
+   {
+    "start": 28,
+    "end": 33,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 329,
+    "end": 334,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 336,
+    "end": 346,
+    "label": "BD_UPAZILA",
+    "text": "Bhashantek"
+   },
+   {
+    "start": 348,
+    "end": 357,
+    "label": "BD_UPAZILA",
+    "text": "Uttarkhan"
+   },
+   {
+    "start": 394,
+    "end": 430,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Meteorological Department"
+   },
+   {
+    "start": 432,
+    "end": 437,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 540,
+    "end": 545,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 750,
+    "end": 758,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 1012,
+    "end": 1017,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1155,
+    "end": 1193,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Institute of Planners (BIP)"
+   },
+   {
+    "start": 1208,
+    "end": 1213,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1268,
+    "end": 1273,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1421,
+    "end": 1424,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BIP"
+   },
+   {
+    "start": 1550,
+    "end": 1555,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1688,
+    "end": 1693,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1752,
+    "end": 1755,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BIP"
+   },
+   {
+    "start": 1799,
+    "end": 1804,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 2046,
+    "end": 2054,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 2137,
+    "end": 2140,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BIP"
+   },
+   {
+    "start": 2627,
+    "end": 2658,
+    "label": "AGENCIES_INVOLVED",
+    "text": "River and Delta Research Centre"
+   },
+   {
+    "start": 2974,
+    "end": 2979,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3066,
+    "end": 3076,
+    "label": "BD_UPAZILA",
+    "text": "Shewrapara"
+   },
+   {
+    "start": 3078,
+    "end": 3086,
+    "label": "BD_UPAZILA",
+    "text": "Kazipara"
+   },
+   {
+    "start": 3092,
+    "end": 3098,
+    "label": "BD_UPAZILA",
+    "text": "Kafrul"
+   },
+   {
+    "start": 3249,
+    "end": 3257,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 3286,
+    "end": 3297,
+    "label": "BD_UNION",
+    "text": "Kathalbagan"
+   },
+   {
+    "start": 3414,
+    "end": 3424,
+    "label": "BD_UPAZILA",
+    "text": "Hazaribagh"
+   },
+   {
+    "start": 3426,
+    "end": 3435,
+    "label": "BD_DISTRICT",
+    "text": "Nawabganj"
+   },
+   {
+    "start": 3454,
+    "end": 3463,
+    "label": "BD_DISTRICT",
+    "text": "Dhanmondi"
+   },
+   {
+    "start": 3469,
+    "end": 3474,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 3784,
+    "end": 3789,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 3908,
+    "end": 3916,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 4553,
+    "end": 4558,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4910,
+    "end": 4916,
+    "label": "BD_UPAZILA",
+    "text": "Mirpur"
+   },
+   {
+    "start": 5473,
+    "end": 5501,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Dhaka South City Corporation"
+   },
+   {
+    "start": 5521,
+    "end": 5524,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BNP"
+   }
+  ]
+ },
+ "dev-05": {
+  "sha": "d04c97afb349",
+  "ents": [
+   {
+    "start": 0,
+    "end": 68,
+    "label": "FATALITIES",
+    "text": "The death toll from the recent flood in 11 districts has risen to 67"
+   },
+   {
+    "start": 74,
+    "end": 103,
+    "label": "FATALITIES",
+    "text": "eight more losing their lives"
+   },
+   {
+    "start": 164,
+    "end": 203,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Disaster Management and Relief Ministry"
+   },
+   {
+    "start": 205,
+    "end": 264,
+    "label": "FATALITIES",
+    "text": "Of the fresh fatalities, three deaths were reported in Feni"
+   },
+   {
+    "start": 269,
+    "end": 276,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 300,
+    "end": 308,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 331,
+    "end": 337,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 363,
+    "end": 367,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 375,
+    "end": 382,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 384,
+    "end": 401,
+    "label": "FATALITIES",
+    "text": "six in Chattogram"
+   },
+   {
+    "start": 403,
+    "end": 417,
+    "label": "FATALITIES",
+    "text": "11 in Noakhali"
+   },
+   {
+    "start": 419,
+    "end": 439,
+    "label": "FATALITIES",
+    "text": "three in Cox's Bazar"
+   },
+   {
+    "start": 444,
+    "end": 520,
+    "label": "FATALITIES",
+    "text": "one each in Brahmanbaria, Khagrachhari, Moulvibazar and Lakshmipur districts"
+   },
+   {
+    "start": 605,
+    "end": 642,
+    "label": "DISPLACED",
+    "text": "6.06 lakh families have been stranded"
+   },
+   {
+    "start": 664,
+    "end": 669,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 686,
+    "end": 690,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 692,
+    "end": 699,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 701,
+    "end": 711,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 713,
+    "end": 725,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 727,
+    "end": 735,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 737,
+    "end": 748,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 750,
+    "end": 758,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 760,
+    "end": 772,
+    "label": "BD_DISTRICT",
+    "text": "Brahmanbaria"
+   },
+   {
+    "start": 774,
+    "end": 780,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 782,
+    "end": 792,
+    "label": "BD_DISTRICT",
+    "text": "Lakshmipur"
+   },
+   {
+    "start": 797,
+    "end": 808,
+    "label": "BD_DISTRICT",
+    "text": "Cox's Bazar"
+   },
+   {
+    "start": 820,
+    "end": 856,
+    "label": "AFFECTED_PEOPLE",
+    "text": "51.08, 202 people have been affected"
+   },
+   {
+    "start": 940,
+    "end": 945,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 959,
+    "end": 971,
+    "label": "BD_DISTRICT",
+    "text": "Brahmanbaria"
+   },
+   {
+    "start": 973,
+    "end": 983,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 985,
+    "end": 993,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 995,
+    "end": 1001,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1003,
+    "end": 1014,
+    "label": "BD_DISTRICT",
+    "text": "Cox's Bazar"
+   },
+   {
+    "start": 1019,
+    "end": 1030,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachari"
+   },
+   {
+    "start": 1058,
+    "end": 1069,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 1070,
+    "end": 1077,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 1079,
+    "end": 1083,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1085,
+    "end": 1093,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 1098,
+    "end": 1108,
+    "label": "BD_DISTRICT",
+    "text": "Lakshmipur"
+   },
+   {
+    "start": 1167,
+    "end": 1227,
+    "label": "DISPLACED",
+    "text": "3.06 lakh people have taken shelter in 3,615 shelter centres"
+   },
+   {
+    "start": 1344,
+    "end": 1392,
+    "label": "RELIEF_INFO",
+    "text": "472 medical teams are providing medical services"
+   },
+   {
+    "start": 1400,
+    "end": 1405,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1439,
+    "end": 1502,
+    "label": "RELIEF_INFO",
+    "text": "Tk4.52 crore has been disbursed in the flood-stricken districts"
+   },
+   {
+    "start": 1503,
+    "end": 1626,
+    "label": "RELIEF_INFO",
+    "text": "along with 20,650 tonnes of rice, 15,000 pieces of dry foods or other foods and baby foods and fodder worth Tk 35 lakh each"
+   },
+   {
+    "start": 1654,
+    "end": 1659,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-06": {
+  "sha": "82b7c58bd789",
+  "ents": [
+   {
+    "start": 188,
+    "end": 199,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 243,
+    "end": 253,
+    "label": "BD_UPAZILA",
+    "text": "Nalitabari"
+   },
+   {
+    "start": 278,
+    "end": 287,
+    "label": "BD_UPAZILA",
+    "text": "Haluaghat"
+   },
+   {
+    "start": 289,
+    "end": 297,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 299,
+    "end": 307,
+    "label": "BD_UPAZILA",
+    "text": "Durgapur"
+   },
+   {
+    "start": 313,
+    "end": 323,
+    "label": "BD_UPAZILA",
+    "text": "Komlakanda"
+   },
+   {
+    "start": 591,
+    "end": 596,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 630,
+    "end": 635,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 915,
+    "end": 922,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 950,
+    "end": 955,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1322,
+    "end": 1329,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 1969,
+    "end": 1980,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 2106,
+    "end": 2111,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2298,
+    "end": 2303,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2351,
+    "end": 2361,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 2456,
+    "end": 2467,
+    "label": "DISASTER_TYPE",
+    "text": "floodwaters"
+   },
+   {
+    "start": 2952,
+    "end": 2957,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3040,
+    "end": 3045,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 3288,
+    "end": 3299,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 3484,
+    "end": 3492,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 3629,
+    "end": 3634,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4074,
+    "end": 4086,
+    "label": "DISASTER_TYPE",
+    "text": "flash floods"
+   }
+  ]
+ },
+ "dev-07": {
+  "sha": "f179a67e66ba",
+  "ents": [
+   {
+    "start": 17,
+    "end": 60,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Center (FFWC)"
+   },
+   {
+    "start": 66,
+    "end": 72,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 194,
+    "end": 233,
+    "label": "AGENCIES_INVOLVED",
+    "text": "disaster management and relief ministry"
+   },
+   {
+    "start": 381,
+    "end": 386,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 506,
+    "end": 511,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-08": {
+  "sha": "f4a34ef58c4f",
+  "ents": [
+   {
+    "start": 46,
+    "end": 51,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 62,
+    "end": 66,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 130,
+    "end": 199,
+    "label": "FATALITIES",
+    "text": "The death toll in the devastating flood in Bangladesh has risen to 23"
+   },
+   {
+    "start": 203,
+    "end": 240,
+    "label": "FATALITIES",
+    "text": "deaths of two more people in Noakhali"
+   },
+   {
+    "start": 245,
+    "end": 268,
+    "label": "FATALITIES",
+    "text": "one new in Khagrachhari"
+   },
+   {
+    "start": 294,
+    "end": 331,
+    "label": "FATALITIES",
+    "text": "Among the deaths, six were in Cumilla"
+   },
+   {
+    "start": 333,
+    "end": 344,
+    "label": "FATALITIES",
+    "text": "one in Feni"
+   },
+   {
+    "start": 346,
+    "end": 364,
+    "label": "FATALITIES",
+    "text": "five in Chattogram"
+   },
+   {
+    "start": 366,
+    "end": 385,
+    "label": "FATALITIES",
+    "text": "one in Khagrachhari"
+   },
+   {
+    "start": 387,
+    "end": 403,
+    "label": "FATALITIES",
+    "text": "five in Noakhali"
+   },
+   {
+    "start": 405,
+    "end": 424,
+    "label": "FATALITIES",
+    "text": "one in Brahmanbaria"
+   },
+   {
+    "start": 426,
+    "end": 443,
+    "label": "FATALITIES",
+    "text": "one in Lakshmipur"
+   },
+   {
+    "start": 448,
+    "end": 473,
+    "label": "FATALITIES",
+    "text": "three were in Cox s Bazar"
+   },
+   {
+    "start": 490,
+    "end": 523,
+    "label": "MISSING",
+    "text": "two persons are remaining missing"
+   },
+   {
+    "start": 527,
+    "end": 538,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 549,
+    "end": 588,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Disaster Management and Relief Ministry"
+   },
+   {
+    "start": 613,
+    "end": 618,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 645,
+    "end": 649,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 651,
+    "end": 658,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 660,
+    "end": 670,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 672,
+    "end": 684,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 686,
+    "end": 694,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 696,
+    "end": 707,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 709,
+    "end": 717,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 719,
+    "end": 731,
+    "label": "BD_DISTRICT",
+    "text": "Brahmanbaria"
+   },
+   {
+    "start": 733,
+    "end": 739,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 741,
+    "end": 751,
+    "label": "BD_DISTRICT",
+    "text": "Lakshmipur"
+   },
+   {
+    "start": 756,
+    "end": 767,
+    "label": "BD_DISTRICT",
+    "text": "Cox s Bazar"
+   },
+   {
+    "start": 812,
+    "end": 817,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 846,
+    "end": 881,
+    "label": "AFFECTED_PEOPLE",
+    "text": "57,01,204 people have been affected"
+   },
+   {
+    "start": 889,
+    "end": 894,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 974,
+    "end": 1011,
+    "label": "DISPLACED",
+    "text": "12,38,048 families have been stranded"
+   },
+   {
+    "start": 1019,
+    "end": 1024,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1031,
+    "end": 1058,
+    "label": "DISPLACED",
+    "text": "4,69,523 people took refuge"
+   },
+   {
+    "start": 1152,
+    "end": 1309,
+    "label": "RELIEF_INFO",
+    "text": "Taka 3.52 crore (cash), 20,650 metric tons of rice and 15,000 packets of dry food, Taka 35 lakh for baby food and Taka 35 lakh for fodder have been allocated"
+   },
+   {
+    "start": 1321,
+    "end": 1326,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1353,
+    "end": 1382,
+    "label": "RELIEF_INFO",
+    "text": "645 medical teams are working"
+   },
+   {
+    "start": 1434,
+    "end": 1439,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-09": {
+  "sha": "4088a8c46f33",
+  "ents": [
+   {
+    "start": 195,
+    "end": 202,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 310,
+    "end": 320,
+    "label": "BD_DISTRICT",
+    "text": "Shariatpur"
+   },
+   {
+    "start": 369,
+    "end": 373,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 450,
+    "end": 457,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 462,
+    "end": 471,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 568,
+    "end": 580,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 765,
+    "end": 801,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Meteorological Department"
+   },
+   {
+    "start": 894,
+    "end": 899,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 901,
+    "end": 911,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 913,
+    "end": 919,
+    "label": "BD_DISTRICT",
+    "text": "Khulna"
+   },
+   {
+    "start": 925,
+    "end": 932,
+    "label": "BD_DISTRICT",
+    "text": "Barisal"
+   },
+   {
+    "start": 998,
+    "end": 1008,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 1057,
+    "end": 1062,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1064,
+    "end": 1074,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 1080,
+    "end": 1086,
+    "label": "BD_DISTRICT",
+    "text": "Khulna"
+   },
+   {
+    "start": 1260,
+    "end": 1264,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1394,
+    "end": 1403,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 1526,
+    "end": 1569,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre (FFWC)"
+   },
+   {
+    "start": 1576,
+    "end": 1581,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1611,
+    "end": 1615,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1886,
+    "end": 1896,
+    "label": "BD_UPAZILA",
+    "text": "Feni Sadar"
+   },
+   {
+    "start": 2045,
+    "end": 2054,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 2061,
+    "end": 2066,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 2164,
+    "end": 2169,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2314,
+    "end": 2324,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 2371,
+    "end": 2381,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 2712,
+    "end": 2723,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Chawk Bazar"
+   },
+   {
+    "start": 2744,
+    "end": 2753,
+    "label": "BD_UPAZILA",
+    "text": "Katalganj"
+   },
+   {
+    "start": 2759,
+    "end": 2769,
+    "label": "BD_UPAZILA",
+    "text": "Panchlaish"
+   },
+   {
+    "start": 2928,
+    "end": 2937,
+    "label": "BD_DISTRICT",
+    "text": "Rangamati"
+   },
+   {
+    "start": 2982,
+    "end": 2991,
+    "label": "BD_DISTRICT",
+    "text": "Rangamati"
+   },
+   {
+    "start": 3183,
+    "end": 3199,
+    "label": "AGENCIES_INVOLVED",
+    "text": "local met office"
+   },
+   {
+    "start": 3243,
+    "end": 3253,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 3355,
+    "end": 3364,
+    "label": "BD_DISTRICT",
+    "text": "Rangamati"
+   },
+   {
+    "start": 3774,
+    "end": 3779,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 3881,
+    "end": 3917,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Meteorological Department"
+   },
+   {
+    "start": 4023,
+    "end": 4058,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Dhaka South City Corporation (DSCC)"
+   },
+   {
+    "start": 4194,
+    "end": 4201,
+    "label": "BD_DISTRICT",
+    "text": "Barisal"
+   },
+   {
+    "start": 4242,
+    "end": 4250,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 4254,
+    "end": 4261,
+    "label": "BD_DISTRICT",
+    "text": "Barisal"
+   },
+   {
+    "start": 4636,
+    "end": 4641,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 4756,
+    "end": 4780,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Barisal City Corporation"
+   },
+   {
+    "start": 5034,
+    "end": 5041,
+    "label": "BD_DISTRICT",
+    "text": "Barisal"
+   },
+   {
+    "start": 5171,
+    "end": 5176,
+    "label": "BD_DISTRICT",
+    "text": "Bhola"
+   },
+   {
+    "start": 5177,
+    "end": 5182,
+    "label": "BD_DISTRICT",
+    "text": "Bhola"
+   },
+   {
+    "start": 5275,
+    "end": 5282,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 5397,
+    "end": 5408,
+    "label": "BD_UPAZILA",
+    "text": "Bhola Sadar"
+   },
+   {
+    "start": 5628,
+    "end": 5633,
+    "label": "BD_DISTRICT",
+    "text": "Bhola"
+   },
+   {
+    "start": 5701,
+    "end": 5711,
+    "label": "BD_UPAZILA",
+    "text": "Tazumuddin"
+   },
+   {
+    "start": 5713,
+    "end": 5723,
+    "label": "BD_UPAZILA",
+    "text": "Doulatkhan"
+   },
+   {
+    "start": 5729,
+    "end": 5736,
+    "label": "BD_UPAZILA",
+    "text": "Monpura"
+   },
+   {
+    "start": 5756,
+    "end": 5763,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 5837,
+    "end": 5842,
+    "label": "BD_UPAZILA",
+    "text": "Hatia"
+   },
+   {
+    "start": 5844,
+    "end": 5854,
+    "label": "BD_DISTRICT",
+    "text": "Lakshmipur"
+   },
+   {
+    "start": 5856,
+    "end": 5866,
+    "label": "BD_UPAZILA",
+    "text": "Doulatkhan"
+   },
+   {
+    "start": 6095,
+    "end": 6101,
+    "label": "BD_UPAZILA",
+    "text": "Mongla"
+   },
+   {
+    "start": 6384,
+    "end": 6392,
+    "label": "BD_UPAZILA",
+    "text": "Shaltala"
+   },
+   {
+    "start": 6642,
+    "end": 6649,
+    "label": "BD_DISTRICT",
+    "text": "Comilla"
+   },
+   {
+    "start": 7024,
+    "end": 7047,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 7051,
+    "end": 7058,
+    "label": "BD_DISTRICT",
+    "text": "Comilla"
+   }
+  ]
+ },
+ "dev-10": {
+  "sha": "cdb4341bccf5",
+  "ents": [
+   {
+    "start": 12,
+    "end": 17,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 229,
+    "end": 234,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 401,
+    "end": 438,
+    "label": "AFFECTED_PEOPLE",
+    "text": "4.7 million people have been affected"
+   },
+   {
+    "start": 446,
+    "end": 451,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 506,
+    "end": 514,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 516,
+    "end": 523,
+    "label": "BD_DISTRICT",
+    "text": "Tangail"
+   },
+   {
+    "start": 525,
+    "end": 534,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 536,
+    "end": 541,
+    "label": "BD_DISTRICT",
+    "text": "Bogra"
+   },
+   {
+    "start": 543,
+    "end": 552,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 554,
+    "end": 561,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 563,
+    "end": 569,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 575,
+    "end": 584,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 655,
+    "end": 681,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Emergency Operation Centre"
+   },
+   {
+    "start": 689,
+    "end": 722,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Department of Disaster Management"
+   },
+   {
+    "start": 867,
+    "end": 877,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 1333,
+    "end": 1338,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1770,
+    "end": 1813,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre (FFWC)"
+   },
+   {
+    "start": 1817,
+    "end": 1858,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Water Development Board (BWDB)"
+   },
+   {
+    "start": 2015,
+    "end": 2020,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2128,
+    "end": 2133,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2139,
+    "end": 2143,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 2665,
+    "end": 2674,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 2680,
+    "end": 2686,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 2797,
+    "end": 2838,
+    "label": "AGENCIES_INVOLVED",
+    "text": "district relief and rehabilitation office"
+   },
+   {
+    "start": 2883,
+    "end": 2913,
+    "label": "DISPLACED",
+    "text": "153,785 people remain marooned"
+   },
+   {
+    "start": 2937,
+    "end": 2961,
+    "label": "FATALITIES",
+    "text": "seven people were killed"
+   },
+   {
+    "start": 3013,
+    "end": 3022,
+    "label": "BD_UPAZILA",
+    "text": "Jamalganj"
+   },
+   {
+    "start": 3054,
+    "end": 3082,
+    "label": "AFFECTED_PEOPLE",
+    "text": "7,950 families were affected"
+   },
+   {
+    "start": 3084,
+    "end": 3130,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Local Government Engineering Department (LGED)"
+   },
+   {
+    "start": 3242,
+    "end": 3247,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3350,
+    "end": 3355,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3441,
+    "end": 3448,
+    "label": "BD_DISTRICT",
+    "text": "Tangail"
+   },
+   {
+    "start": 3462,
+    "end": 3467,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3725,
+    "end": 3732,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 3770,
+    "end": 3801,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Tangail Water Development Board"
+   },
+   {
+    "start": 4026,
+    "end": 4034,
+    "label": "BD_DISTRICT",
+    "text": "Faridpur"
+   },
+   {
+    "start": 4078,
+    "end": 4083,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4148,
+    "end": 4162,
+    "label": "BD_UPAZILA",
+    "text": "Faridpur sadar"
+   },
+   {
+    "start": 4164,
+    "end": 4178,
+    "label": "BD_UPAZILA",
+    "text": "Charbhadrasan,"
+   },
+   {
+    "start": 4183,
+    "end": 4191,
+    "label": "BD_UPAZILA",
+    "text": "Sadarpur"
+   },
+   {
+    "start": 4334,
+    "end": 4339,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4348,
+    "end": 4356,
+    "label": "BD_DISTRICT",
+    "text": "Faridpur"
+   },
+   {
+    "start": 4400,
+    "end": 4405,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4520,
+    "end": 4600,
+    "label": "RELIEF_INFO",
+    "text": "280 tons of rice, and Tk2.9 lakh in cash were distributed to people of 15 unions"
+   },
+   {
+    "start": 4623,
+    "end": 4632,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 4646,
+    "end": 4652,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 4705,
+    "end": 4731,
+    "label": "DISPLACED",
+    "text": "145,000 families displaced"
+   },
+   {
+    "start": 5216,
+    "end": 5248,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Department Of Livestock Services"
+   },
+   {
+    "start": 5431,
+    "end": 5436,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-11": {
+  "sha": "3cadf161432a",
+  "ents": [
+   {
+    "start": 36,
+    "end": 45,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 156,
+    "end": 164,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 225,
+    "end": 258,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Sirajganj Water Development Board"
+   },
+   {
+    "start": 330,
+    "end": 340,
+    "label": "BD_UPAZILA",
+    "text": "Shahzadpur"
+   },
+   {
+    "start": 342,
+    "end": 350,
+    "label": "BD_UPAZILA",
+    "text": "Belkuchi"
+   },
+   {
+    "start": 352,
+    "end": 359,
+    "label": "BD_UPAZILA",
+    "text": "Kazipur"
+   },
+   {
+    "start": 361,
+    "end": 369,
+    "label": "BD_UPAZILA",
+    "text": "Chouhali"
+   },
+   {
+    "start": 415,
+    "end": 422,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 764,
+    "end": 771,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 1056,
+    "end": 1099,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Center (FFWC)"
+   }
+  ]
+ },
+ "dev-12": {
+  "sha": "c168acbf6c2f",
+  "ents": [
+   {
+    "start": 76,
+    "end": 87,
+    "label": "DISASTER_TYPE",
+    "text": "flashfloods"
+   },
+   {
+    "start": 140,
+    "end": 183,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre (FFWC)"
+   },
+   {
+    "start": 243,
+    "end": 253,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 255,
+    "end": 261,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 263,
+    "end": 273,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 275,
+    "end": 282,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 284,
+    "end": 291,
+    "label": "BD_DISTRICT",
+    "text": "Barisal"
+   },
+   {
+    "start": 296,
+    "end": 302,
+    "label": "BD_DISTRICT",
+    "text": "Khulna"
+   },
+   {
+    "start": 419,
+    "end": 429,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 462,
+    "end": 466,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 565,
+    "end": 576,
+    "label": "DISASTER_TYPE",
+    "text": "flashfloods"
+   },
+   {
+    "start": 632,
+    "end": 636,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 651,
+    "end": 655,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 746,
+    "end": 752,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 757,
+    "end": 767,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 981,
+    "end": 992,
+    "label": "DISASTER_TYPE",
+    "text": "flashfloods"
+   },
+   {
+    "start": 1015,
+    "end": 1021,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1023,
+    "end": 1032,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 1034,
+    "end": 1045,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 1047,
+    "end": 1055,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 1060,
+    "end": 1069,
+    "label": "BD_DISTRICT",
+    "text": "Netrokona"
+   },
+   {
+    "start": 1084,
+    "end": 1091,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 1276,
+    "end": 1283,
+    "label": "BD_DISTRICT",
+    "text": "Barisal"
+   },
+   {
+    "start": 1285,
+    "end": 1291,
+    "label": "BD_DISTRICT",
+    "text": "Khulna"
+   },
+   {
+    "start": 1296,
+    "end": 1306,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 1398,
+    "end": 1402,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   }
+  ]
+ },
+ "dev-13": {
+  "sha": "03fbfac48e46",
+  "ents": [
+   {
+    "start": 25,
+    "end": 32,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 37,
+    "end": 46,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 59,
+    "end": 63,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 119,
+    "end": 124,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 238,
+    "end": 245,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 250,
+    "end": 259,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 272,
+    "end": 276,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 332,
+    "end": 337,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 615,
+    "end": 626,
+    "label": "DISASTER_TYPE",
+    "text": "floodwaters"
+   },
+   {
+    "start": 664,
+    "end": 668,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 754,
+    "end": 786,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Feni Power Distribution Division"
+   },
+   {
+    "start": 791,
+    "end": 818,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Rural Electrification Board"
+   },
+   {
+    "start": 840,
+    "end": 845,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 961,
+    "end": 984,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 988,
+    "end": 992,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1157,
+    "end": 1183,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Feni Meteorological Office"
+   },
+   {
+    "start": 1370,
+    "end": 1386,
+    "label": "AGENCIES_INVOLVED",
+    "text": "local met office"
+   },
+   {
+    "start": 1565,
+    "end": 1574,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 1603,
+    "end": 1610,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 1677,
+    "end": 1686,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 1715,
+    "end": 1722,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 1791,
+    "end": 1800,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 1821,
+    "end": 1828,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 1950,
+    "end": 1959,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 1996,
+    "end": 2002,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 2102,
+    "end": 2105,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   },
+   {
+    "start": 2190,
+    "end": 2199,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 2355,
+    "end": 2362,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 2436,
+    "end": 2464,
+    "label": "DISPLACED",
+    "text": "100 people had taken shelter"
+   },
+   {
+    "start": 2494,
+    "end": 2497,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   },
+   {
+    "start": 2766,
+    "end": 2831,
+    "label": "RELIEF_INFO",
+    "text": "Relief worth Tk 6.5 lakh and 400 food packets have been allocated"
+   },
+   {
+    "start": 2833,
+    "end": 2863,
+    "label": "RELIEF_INFO",
+    "text": "A control room has been opened"
+   },
+   {
+    "start": 2974,
+    "end": 3013,
+    "label": "RELIEF_INFO",
+    "text": "2,500 trained volunteers are on standby"
+   },
+   {
+    "start": 3042,
+    "end": 3046,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 3048,
+    "end": 3056,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 3058,
+    "end": 3068,
+    "label": "BD_DISTRICT",
+    "text": "Lakshmipur"
+   },
+   {
+    "start": 3073,
+    "end": 3080,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 3120,
+    "end": 3128,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 3195,
+    "end": 3199,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 3227,
+    "end": 3232,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-14": {
+  "sha": "33c38f28e6ee",
+  "ents": [
+   {
+    "start": 34,
+    "end": 41,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 52,
+    "end": 62,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 141,
+    "end": 149,
+    "label": "BD_UPAZILA",
+    "text": "Phulgazi"
+   },
+   {
+    "start": 153,
+    "end": 157,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 185,
+    "end": 222,
+    "label": "DISPLACED",
+    "text": "Thousands of people remained stranded"
+   },
+   {
+    "start": 226,
+    "end": 231,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 405,
+    "end": 410,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 949,
+    "end": 954,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1151,
+    "end": 1156,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1253,
+    "end": 1258,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1302,
+    "end": 1306,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1331,
+    "end": 1387,
+    "label": "DISPLACED",
+    "text": "8,966 people from 2,625 families were still awaiting the"
+   },
+   {
+    "start": 1388,
+    "end": 1399,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 1420,
+    "end": 1425,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1470,
+    "end": 1474,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1517,
+    "end": 1522,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1595,
+    "end": 1606,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 1612,
+    "end": 1664,
+    "label": "AFFECTED_PEOPLE",
+    "text": "34,600 people officially hit by the natural disaster"
+   },
+   {
+    "start": 1676,
+    "end": 1680,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1699,
+    "end": 1745,
+    "label": "DISPLACED",
+    "text": "the number of the affected would exceed 50,000"
+   },
+   {
+    "start": 1810,
+    "end": 1814,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1839,
+    "end": 1851,
+    "label": "BD_UPAZILA",
+    "text": "Chhagalnaiya"
+   },
+   {
+    "start": 1853,
+    "end": 1862,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 1867,
+    "end": 1875,
+    "label": "BD_UPAZILA",
+    "text": "Phulgazi"
+   },
+   {
+    "start": 1949,
+    "end": 1958,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 1963,
+    "end": 1968,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1990,
+    "end": 1998,
+    "label": "BD_UPAZILA",
+    "text": "Phulgazi"
+   },
+   {
+    "start": 2069,
+    "end": 2073,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 2093,
+    "end": 2100,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 2107,
+    "end": 2112,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2253,
+    "end": 2258,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2311,
+    "end": 2319,
+    "label": "BD_UPAZILA",
+    "text": "Phulgazi"
+   },
+   {
+    "start": 2346,
+    "end": 2358,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 2487,
+    "end": 2492,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2522,
+    "end": 2537,
+    "label": "DISPLACED",
+    "text": "3,000 people to"
+   },
+   {
+    "start": 2538,
+    "end": 2543,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2577,
+    "end": 2587,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 2861,
+    "end": 2873,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 3026,
+    "end": 3031,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3048,
+    "end": 3059,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachari"
+   },
+   {
+    "start": 3132,
+    "end": 3166,
+    "label": "DISPLACED",
+    "text": "a hundred people remained stranded"
+   },
+   {
+    "start": 3180,
+    "end": 3189,
+    "label": "BD_UPAZILA",
+    "text": "Dighinala"
+   },
+   {
+    "start": 3234,
+    "end": 3243,
+    "label": "BD_UPAZILA",
+    "text": "Dighinala"
+   },
+   {
+    "start": 3248,
+    "end": 3254,
+    "label": "BD_UPAZILA",
+    "text": "Langdu"
+   },
+   {
+    "start": 3346,
+    "end": 3382,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Meteorological Department"
+   },
+   {
+    "start": 3479,
+    "end": 3484,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 3486,
+    "end": 3492,
+    "label": "BD_DISTRICT",
+    "text": "Khulna"
+   },
+   {
+    "start": 3494,
+    "end": 3502,
+    "label": "BD_DISTRICT",
+    "text": "Barishal"
+   },
+   {
+    "start": 3504,
+    "end": 3514,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 3516,
+    "end": 3522,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 3527,
+    "end": 3534,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 3721,
+    "end": 3730,
+    "label": "BD_DISTRICT",
+    "text": "Madaripur"
+   },
+   {
+    "start": 3732,
+    "end": 3737,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 3769,
+    "end": 3805,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Center"
+   },
+   {
+    "start": 3937,
+    "end": 3945,
+    "label": "BD_DISTRICT",
+    "text": "Barishal"
+   },
+   {
+    "start": 4066,
+    "end": 4100,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Water Development Board"
+   },
+   {
+    "start": 4432,
+    "end": 4473,
+    "label": "DISPLACED",
+    "text": "four hundred families have been displaced"
+   },
+   {
+    "start": 4683,
+    "end": 4691,
+    "label": "BD_DISTRICT",
+    "text": "Barishal"
+   },
+   {
+    "start": 4697,
+    "end": 4701,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BWDB"
+   },
+   {
+    "start": 4708,
+    "end": 4712,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BWDB"
+   },
+   {
+    "start": 4937,
+    "end": 4945,
+    "label": "BD_DISTRICT",
+    "text": "Pirojpur"
+   },
+   {
+    "start": 5052,
+    "end": 5059,
+    "label": "BD_UPAZILA",
+    "text": "Barguna"
+   },
+   {
+    "start": 5100,
+    "end": 5108,
+    "label": "BD_DISTRICT",
+    "text": "Pirojpur"
+   }
+  ]
+ },
+ "dev-15": {
+  "sha": "0ffdc6a2cd81",
+  "ents": [
+   {
+    "start": 4,
+    "end": 9,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 23,
+    "end": 33,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 48,
+    "end": 59,
+    "label": "BD_UPAZILA",
+    "text": "Fatikchhari"
+   },
+   {
+    "start": 192,
+    "end": 202,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 614,
+    "end": 622,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 658,
+    "end": 669,
+    "label": "BD_UPAZILA",
+    "text": "Fatikchhari"
+   },
+   {
+    "start": 679,
+    "end": 713,
+    "label": "DISPLACED",
+    "text": "one lakh people have been stranded"
+   },
+   {
+    "start": 847,
+    "end": 857,
+    "label": "BD_UPAZILA",
+    "text": "Narayanhat"
+   },
+   {
+    "start": 916,
+    "end": 927,
+    "label": "BD_UPAZILA",
+    "text": "Fatikchhari"
+   },
+   {
+    "start": 939,
+    "end": 949,
+    "label": "BD_UPAZILA",
+    "text": "Narayanhat"
+   },
+   {
+    "start": 951,
+    "end": 958,
+    "label": "BD_UPAZILA",
+    "text": "Bhujpur"
+   },
+   {
+    "start": 960,
+    "end": 968,
+    "label": "BD_UPAZILA",
+    "text": "Paindong"
+   },
+   {
+    "start": 978,
+    "end": 988,
+    "label": "BD_UPAZILA",
+    "text": "Samitirhat"
+   },
+   {
+    "start": 990,
+    "end": 1001,
+    "label": "BD_UPAZILA",
+    "text": "Harualchari"
+   },
+   {
+    "start": 1003,
+    "end": 1009,
+    "label": "BD_UPAZILA",
+    "text": "Suabil"
+   },
+   {
+    "start": 1028,
+    "end": 1038,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 1181,
+    "end": 1204,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 1301,
+    "end": 1312,
+    "label": "BD_UPAZILA",
+    "text": "Fatikchhari"
+   },
+   {
+    "start": 1338,
+    "end": 1344,
+    "label": "BD_UPAZILA",
+    "text": "Raozan"
+   },
+   {
+    "start": 1346,
+    "end": 1354,
+    "label": "BD_UPAZILA",
+    "text": "Nazirhat"
+   },
+   {
+    "start": 1459,
+    "end": 1469,
+    "label": "BD_UPAZILA",
+    "text": "Narayanhat"
+   },
+   {
+    "start": 1650,
+    "end": 1661,
+    "label": "BD_UPAZILA",
+    "text": "Fatikchhari"
+   },
+   {
+    "start": 1678,
+    "end": 1684,
+    "label": "BD_UPAZILA",
+    "text": "Raozan"
+   },
+   {
+    "start": 1686,
+    "end": 1694,
+    "label": "BD_UNION",
+    "text": "Lohagara"
+   },
+   {
+    "start": 1696,
+    "end": 1704,
+    "label": "BD_UPAZILA",
+    "text": "Satkania"
+   },
+   {
+    "start": 1706,
+    "end": 1717,
+    "label": "BD_UPAZILA",
+    "text": "Chandanaish"
+   },
+   {
+    "start": 1719,
+    "end": 1727,
+    "label": "BD_UPAZILA",
+    "text": "Mirsarai"
+   },
+   {
+    "start": 1732,
+    "end": 1741,
+    "label": "BD_UPAZILA",
+    "text": "Sitakunda"
+   },
+   {
+    "start": 1777,
+    "end": 1789,
+    "label": "DISASTER_TYPE",
+    "text": "flash floods"
+   },
+   {
+    "start": 1876,
+    "end": 1929,
+    "label": "AFFECTED_PEOPLE",
+    "text": "five lakh people in these upazilas have been affected"
+   },
+   {
+    "start": 1937,
+    "end": 1942,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1971,
+    "end": 1981,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 2031,
+    "end": 2065,
+    "label": "RELIEF_INFO",
+    "text": "290 medical teams have been formed"
+   }
+  ]
+ },
+ "dev-16": {
+  "sha": "e1ef8f1839e4",
+  "ents": [
+   {
+    "start": 48,
+    "end": 53,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 360,
+    "end": 382,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Dutch Foreign Ministry"
+   },
+   {
+    "start": 525,
+    "end": 531,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 681,
+    "end": 686,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1044,
+    "end": 1052,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 1140,
+    "end": 1145,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1153,
+    "end": 1158,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1222,
+    "end": 1256,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Water Development Board"
+   },
+   {
+    "start": 1259,
+    "end": 1302,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre (FFWC)"
+   },
+   {
+    "start": 1339,
+    "end": 1344,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1450,
+    "end": 1455,
+    "label": "DISASTER_TYPE",
+    "text": "Flood"
+   },
+   {
+    "start": 1648,
+    "end": 1678,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Delft University of Technology"
+   },
+   {
+    "start": 1961,
+    "end": 1966,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2047,
+    "end": 2052,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2121,
+    "end": 2127,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 2163,
+    "end": 2168,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2364,
+    "end": 2369,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2492,
+    "end": 2532,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Wageningen University and Research (WUR)"
+   },
+   {
+    "start": 3144,
+    "end": 3172,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Engineering Department"
+   }
+  ]
+ },
+ "dev-17": {
+  "sha": "e84c3a2913e6",
+  "ents": [
+   {
+    "start": 4,
+    "end": 9,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 23,
+    "end": 31,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 152,
+    "end": 248,
+    "label": "DISPLACED",
+    "text": "three lakh flood-affected people in 400 villages of 56 unions in nine upazilas are living misery"
+   },
+   {
+    "start": 359,
+    "end": 391,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Kurigram Water Development Board"
+   },
+   {
+    "start": 458,
+    "end": 466,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 516,
+    "end": 524,
+    "label": "BD_UPAZILA",
+    "text": "Chilmari"
+   },
+   {
+    "start": 560,
+    "end": 572,
+    "label": "BD_UPAZILA",
+    "text": "Nunkhawaghat"
+   },
+   {
+    "start": 632,
+    "end": 640,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 748,
+    "end": 756,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 802,
+    "end": 807,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 882,
+    "end": 891,
+    "label": "BD_UNION",
+    "text": "Kodalkati"
+   },
+   {
+    "start": 901,
+    "end": 914,
+    "label": "BD_UPAZILA",
+    "text": "Char Rajibpur"
+   },
+   {
+    "start": 926,
+    "end": 934,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1195,
+    "end": 1200,
+    "label": "DISASTER_TYPE",
+    "text": "Flood"
+   },
+   {
+    "start": 1240,
+    "end": 1248,
+    "label": "BD_UNION",
+    "text": "Thanahat"
+   },
+   {
+    "start": 1258,
+    "end": 1266,
+    "label": "BD_UPAZILA",
+    "text": "Chilmari"
+   },
+   {
+    "start": 1278,
+    "end": 1286,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1317,
+    "end": 1327,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 1599,
+    "end": 1607,
+    "label": "BD_UPAZILA",
+    "text": "Chilmari"
+   },
+   {
+    "start": 1616,
+    "end": 1652,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Public Health Engineering Department"
+   },
+   {
+    "start": 1745,
+    "end": 1750,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1817,
+    "end": 1823,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 1866,
+    "end": 1874,
+    "label": "BD_UPAZILA",
+    "text": "Chilmari"
+   },
+   {
+    "start": 1979,
+    "end": 1984,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2074,
+    "end": 2079,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2183,
+    "end": 2188,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2215,
+    "end": 2226,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 2299,
+    "end": 2304,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2362,
+    "end": 2365,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   }
+  ]
+ },
+ "dev-18": {
+  "sha": "ba4ea19fc086",
+  "ents": [
+   {
+    "start": 0,
+    "end": 44,
+    "label": "DISPLACED",
+    "text": "At least 6.43 lakh people have been marooned"
+   },
+   {
+    "start": 48,
+    "end": 54,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 75,
+    "end": 87,
+    "label": "DISASTER_TYPE",
+    "text": "flash floods"
+   },
+   {
+    "start": 195,
+    "end": 205,
+    "label": "BD_UPAZILA",
+    "text": "Gowainghat"
+   },
+   {
+    "start": 207,
+    "end": 218,
+    "label": "BD_UPAZILA",
+    "text": "Companiganj"
+   },
+   {
+    "start": 220,
+    "end": 230,
+    "label": "BD_UPAZILA",
+    "text": "Jaintiapur"
+   },
+   {
+    "start": 232,
+    "end": 241,
+    "label": "BD_UPAZILA",
+    "text": "Kanaighat"
+   },
+   {
+    "start": 243,
+    "end": 251,
+    "label": "BD_UPAZILA",
+    "text": "Zakiganj"
+   },
+   {
+    "start": 253,
+    "end": 263,
+    "label": "BD_UPAZILA",
+    "text": "Beanibazar"
+   },
+   {
+    "start": 265,
+    "end": 275,
+    "label": "BD_UPAZILA",
+    "text": "Golapganj,"
+   },
+   {
+    "start": 577,
+    "end": 582,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 887,
+    "end": 897,
+    "label": "BD_UPAZILA",
+    "text": "Gowainghat"
+   },
+   {
+    "start": 1087,
+    "end": 1099,
+    "label": "DISASTER_TYPE",
+    "text": "flash floods"
+   },
+   {
+    "start": 1309,
+    "end": 1319,
+    "label": "BD_UPAZILA",
+    "text": "Jaintiapur"
+   },
+   {
+    "start": 1479,
+    "end": 1489,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 1686,
+    "end": 1697,
+    "label": "DISASTER_TYPE",
+    "text": "floodwaters"
+   },
+   {
+    "start": 1773,
+    "end": 1785,
+    "label": "DISASTER_TYPE",
+    "text": "flash floods"
+   },
+   {
+    "start": 1789,
+    "end": 1799,
+    "label": "BD_UPAZILA",
+    "text": "Gowainghat"
+   },
+   {
+    "start": 1801,
+    "end": 1812,
+    "label": "BD_UPAZILA",
+    "text": "Companiganj"
+   },
+   {
+    "start": 1814,
+    "end": 1824,
+    "label": "BD_UPAZILA",
+    "text": "Jaintiapur"
+   },
+   {
+    "start": 1826,
+    "end": 1835,
+    "label": "BD_UPAZILA",
+    "text": "Kanaighat"
+   },
+   {
+    "start": 1837,
+    "end": 1845,
+    "label": "BD_UPAZILA",
+    "text": "Zakiganj"
+   },
+   {
+    "start": 1923,
+    "end": 1933,
+    "label": "BD_UPAZILA",
+    "text": "Gowainghat"
+   },
+   {
+    "start": 2148,
+    "end": 2157,
+    "label": "BD_UPAZILA",
+    "text": "Kanaighat"
+   },
+   {
+    "start": 2178,
+    "end": 2190,
+    "label": "BD_UPAZILA",
+    "text": "Sylhet Sadar"
+   },
+   {
+    "start": 2500,
+    "end": 2506,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 2682,
+    "end": 2723,
+    "label": "DISPLACED",
+    "text": "3,739 people were staying at the shelters"
+   },
+   {
+    "start": 2772,
+    "end": 2778,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 2873,
+    "end": 2878,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2958,
+    "end": 2991,
+    "label": "RELIEF_INFO",
+    "text": "allocated sufficient relief goods"
+   }
+  ]
+ },
+ "dev-19": {
+  "sha": "a38eb51c76aa",
+  "ents": [
+   {
+    "start": 98,
+    "end": 103,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 244,
+    "end": 278,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Ministry of External Affairs (MEA)"
+   },
+   {
+    "start": 363,
+    "end": 368,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-20": {
+  "sha": "ae25ec3bfe64",
+  "ents": [
+   {
+    "start": 121,
+    "end": 131,
+    "label": "BD_UPAZILA",
+    "text": "Chaltatali"
+   },
+   {
+    "start": 135,
+    "end": 145,
+    "label": "BD_UPAZILA",
+    "text": "Feni Sadar"
+   },
+   {
+    "start": 294,
+    "end": 300,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 430,
+    "end": 472,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Ministry of Disaster Management and Relief"
+   },
+   {
+    "start": 810,
+    "end": 821,
+    "label": "DISASTER_TYPE",
+    "text": "floodwaters"
+   },
+   {
+    "start": 988,
+    "end": 994,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 1753,
+    "end": 1792,
+    "label": "AGENCIES_INVOLVED",
+    "text": "disaster management and relief ministry"
+   },
+   {
+    "start": 1798,
+    "end": 1828,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Disaster Management Department"
+   },
+   {
+    "start": 1834,
+    "end": 1865,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Project Implementation Officers"
+   },
+   {
+    "start": 1873,
+    "end": 1878,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2177,
+    "end": 2182,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2269,
+    "end": 2275,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 2644,
+    "end": 2649,
+    "label": "DISASTER_TYPE",
+    "text": "Flood"
+   },
+   {
+    "start": 2831,
+    "end": 2842,
+    "label": "DISASTER_TYPE",
+    "text": "floodwaters"
+   },
+   {
+    "start": 3065,
+    "end": 3071,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 3451,
+    "end": 3456,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3575,
+    "end": 3577,
+    "label": "AGENCIES_INVOLVED",
+    "text": "UN"
+   },
+   {
+    "start": 3600,
+    "end": 3603,
+    "label": "AGENCIES_INVOLVED",
+    "text": "ILO"
+   },
+   {
+    "start": 3622,
+    "end": 3625,
+    "label": "AGENCIES_INVOLVED",
+    "text": "IOM"
+   },
+   {
+    "start": 3736,
+    "end": 3738,
+    "label": "AGENCIES_INVOLVED",
+    "text": "UN"
+   },
+   {
+    "start": 4270,
+    "end": 4275,
+    "label": "DISASTER_TYPE",
+    "text": "Flood"
+   },
+   {
+    "start": 4347,
+    "end": 4390,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Ministry of Disaster Management and Relief,"
+   },
+   {
+    "start": 4391,
+    "end": 4434,
+    "label": "FATALITIES",
+    "text": "the death toll from the floods stands at 71"
+   },
+   {
+    "start": 4495,
+    "end": 4502,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 4504,
+    "end": 4508,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 4510,
+    "end": 4520,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 4522,
+    "end": 4534,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 4536,
+    "end": 4544,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 4546,
+    "end": 4558,
+    "label": "BD_DISTRICT",
+    "text": "Brahmanbaria"
+   },
+   {
+    "start": 4560,
+    "end": 4570,
+    "label": "BD_DISTRICT",
+    "text": "Lakshmipur"
+   },
+   {
+    "start": 4572,
+    "end": 4583,
+    "label": "BD_DISTRICT",
+    "text": "Cox's Bazar"
+   },
+   {
+    "start": 4589,
+    "end": 4600,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 4607,
+    "end": 4631,
+    "label": "MISSING",
+    "text": "one person still missing"
+   },
+   {
+    "start": 4635,
+    "end": 4646,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 4671,
+    "end": 4676,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4711,
+    "end": 4721,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 4723,
+    "end": 4735,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 4737,
+    "end": 4745,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 4747,
+    "end": 4753,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 4755,
+    "end": 4767,
+    "label": "BD_DISTRICT",
+    "text": "Brahmanbaria"
+   },
+   {
+    "start": 4773,
+    "end": 4784,
+    "label": "BD_DISTRICT",
+    "text": "Cox's Bazar"
+   },
+   {
+    "start": 4820,
+    "end": 4824,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 4826,
+    "end": 4833,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 4835,
+    "end": 4843,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 4849,
+    "end": 4859,
+    "label": "BD_DISTRICT",
+    "text": "Lakshmipur"
+   },
+   {
+    "start": 4872,
+    "end": 4907,
+    "label": "DISPLACED",
+    "text": "582,155 families remain waterlogged"
+   },
+   {
+    "start": 4909,
+    "end": 4946,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affecting a total of 50,24,202 people"
+   },
+   {
+    "start": 5029,
+    "end": 5090,
+    "label": "DISPLACED",
+    "text": "2,85,996 people and 31,203 livestock remain in 3,612 shelters"
+   }
+  ]
+ },
+ "dev-21": {
+  "sha": "28da53219606",
+  "ents": [
+   {
+    "start": 16,
+    "end": 27,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 34,
+    "end": 43,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 162,
+    "end": 168,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 199,
+    "end": 211,
+    "label": "DISASTER_TYPE",
+    "text": "flash floods"
+   },
+   {
+    "start": 352,
+    "end": 358,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 667,
+    "end": 703,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre"
+   },
+   {
+    "start": 796,
+    "end": 805,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 889,
+    "end": 893,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 951,
+    "end": 960,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 1074,
+    "end": 1078,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1178,
+    "end": 1186,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 1357,
+    "end": 1361,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1407,
+    "end": 1411,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1418,
+    "end": 1429,
+    "label": "BD_DISTRICT",
+    "text": "Cox s Bazar"
+   },
+   {
+    "start": 1558,
+    "end": 1563,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1615,
+    "end": 1619,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1630,
+    "end": 1634,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1730,
+    "end": 1736,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1746,
+    "end": 1779,
+    "label": "FATALITIES",
+    "text": "the death of a pregnant housewife"
+   },
+   {
+    "start": 1842,
+    "end": 1851,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 2136,
+    "end": 2145,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 2172,
+    "end": 2177,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2178,
+    "end": 2205,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affected over a lakh people"
+   },
+   {
+    "start": 2478,
+    "end": 2487,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 2562,
+    "end": 2573,
+    "label": "BD_UPAZILA",
+    "text": "Shahjadapur"
+   },
+   {
+    "start": 2635,
+    "end": 2639,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 2907,
+    "end": 2912,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2991,
+    "end": 2999,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 3001,
+    "end": 3009,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 3015,
+    "end": 3024,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 3056,
+    "end": 3061,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3093,
+    "end": 3100,
+    "label": "BD_DISTRICT",
+    "text": "Boguura"
+   },
+   {
+    "start": 3102,
+    "end": 3109,
+    "label": "BD_DISTRICT",
+    "text": "Tangail"
+   },
+   {
+    "start": 3115,
+    "end": 3124,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 3140,
+    "end": 3144,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 3478,
+    "end": 3509,
+    "label": "AGENCIES_INVOLVED",
+    "text": "India Meteorological Department"
+   }
+  ]
+ },
+ "dev-22": {
+  "sha": "3b9fdac83067",
+  "ents": [
+   {
+    "start": 4,
+    "end": 9,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 100,
+    "end": 132,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affecting around six lakh people"
+   },
+   {
+    "start": 155,
+    "end": 198,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre (FFWC)"
+   },
+   {
+    "start": 257,
+    "end": 262,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 280,
+    "end": 326,
+    "label": "FATALITIES",
+    "text": "five people, including two children, have died"
+   },
+   {
+    "start": 331,
+    "end": 355,
+    "label": "MISSING",
+    "text": "another has gone missing"
+   },
+   {
+    "start": 359,
+    "end": 364,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 386,
+    "end": 394,
+    "label": "BD_DISTRICT",
+    "text": "Dinajpur"
+   },
+   {
+    "start": 396,
+    "end": 423,
+    "label": "FATALITIES",
+    "text": "rising the death toll to 20"
+   },
+   {
+    "start": 509,
+    "end": 513,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1023,
+    "end": 1029,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 1069,
+    "end": 1074,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1265,
+    "end": 1270,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1351,
+    "end": 1356,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1446,
+    "end": 1453,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 1456,
+    "end": 1467,
+    "label": "BD_UPAZILA",
+    "text": "Gangachhara"
+   },
+   {
+    "start": 1501,
+    "end": 1508,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 1510,
+    "end": 1520,
+    "label": "BD_DISTRICT",
+    "text": "Nilphamari"
+   },
+   {
+    "start": 1522,
+    "end": 1530,
+    "label": "BD_DISTRICT",
+    "text": "Dinajpur"
+   },
+   {
+    "start": 1535,
+    "end": 1543,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1576,
+    "end": 1581,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1658,
+    "end": 1663,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1808,
+    "end": 1814,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 2143,
+    "end": 2148,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2353,
+    "end": 2358,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2426,
+    "end": 2431,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2576,
+    "end": 2587,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 2588,
+    "end": 2596,
+    "label": "BD_UNION",
+    "text": "Phulbari"
+   },
+   {
+    "start": 2605,
+    "end": 2622,
+    "label": "BD_UPAZILA",
+    "text": "Lalmonirhat Sadar"
+   },
+   {
+    "start": 2645,
+    "end": 2652,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 2685,
+    "end": 2699,
+    "label": "BD_UPAZILA",
+    "text": "Dinajpur Sadar"
+   },
+   {
+    "start": 2747,
+    "end": 2752,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2879,
+    "end": 2883,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 3033,
+    "end": 3041,
+    "label": "BD_DISTRICT",
+    "text": "Dinajpur"
+   },
+   {
+    "start": 3043,
+    "end": 3054,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 3059,
+    "end": 3067,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 3203,
+    "end": 3213,
+    "label": "BD_UPAZILA",
+    "text": "Parbatipur"
+   },
+   {
+    "start": 3214,
+    "end": 3222,
+    "label": "BD_DISTRICT",
+    "text": "Dinajpur"
+   },
+   {
+    "start": 3223,
+    "end": 3233,
+    "label": "BD_DISTRICT",
+    "text": "Panchagarh"
+   },
+   {
+    "start": 3235,
+    "end": 3246,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 3247,
+    "end": 3255,
+    "label": "BD_UPAZILA",
+    "text": "Burimari"
+   },
+   {
+    "start": 3279,
+    "end": 3290,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 3294,
+    "end": 3299,
+    "label": "BD_UNION",
+    "text": "Ramna"
+   },
+   {
+    "start": 3309,
+    "end": 3317,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 3320,
+    "end": 3328,
+    "label": "BD_UPAZILA",
+    "text": "Chilmari"
+   },
+   {
+    "start": 3345,
+    "end": 3352,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 3385,
+    "end": 3399,
+    "label": "BD_UPAZILA",
+    "text": "Dinajpur Sadar"
+   },
+   {
+    "start": 3447,
+    "end": 3452,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3618,
+    "end": 3628,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 3706,
+    "end": 3715,
+    "label": "BD_DISTRICT",
+    "text": "Manikganj"
+   },
+   {
+    "start": 3784,
+    "end": 3795,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 3797,
+    "end": 3807,
+    "label": "BD_DISTRICT",
+    "text": "Panchagarh"
+   },
+   {
+    "start": 3809,
+    "end": 3819,
+    "label": "BD_DISTRICT",
+    "text": "Nilphamari"
+   },
+   {
+    "start": 3821,
+    "end": 3829,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 3831,
+    "end": 3840,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 3842,
+    "end": 3847,
+    "label": "BD_DISTRICT",
+    "text": "Bogra"
+   },
+   {
+    "start": 3849,
+    "end": 3857,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 3859,
+    "end": 3866,
+    "label": "BD_DISTRICT",
+    "text": "Tangail"
+   },
+   {
+    "start": 3868,
+    "end": 3877,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 3882,
+    "end": 3888,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 3932,
+    "end": 3939,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 3943,
+    "end": 3948,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4030,
+    "end": 4044,
+    "label": "BD_UPAZILA",
+    "text": "Kurigram Sadar"
+   },
+   {
+    "start": 4190,
+    "end": 4195,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4328,
+    "end": 4336,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 4337,
+    "end": 4349,
+    "label": "BD_UPAZILA",
+    "text": "Bhurungamari"
+   },
+   {
+    "start": 4423,
+    "end": 4428,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4461,
+    "end": 4471,
+    "label": "BD_DISTRICT",
+    "text": "Nilphamari"
+   },
+   {
+    "start": 4476,
+    "end": 4486,
+    "label": "BD_DISTRICT",
+    "text": "Thakurgaon"
+   }
+  ]
+ },
+ "dev-23": {
+  "sha": "7cb5bb718e00",
+  "ents": [
+   {
+    "start": 9,
+    "end": 19,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 163,
+    "end": 191,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affecting 5.2 million people"
+   },
+   {
+    "start": 200,
+    "end": 229,
+    "label": "DISPLACED",
+    "text": "1.1 million families stranded"
+   },
+   {
+    "start": 333,
+    "end": 386,
+    "label": "DISPLACED",
+    "text": "the total number of flood victims stands at 5,209,798"
+   },
+   {
+    "start": 393,
+    "end": 402,
+    "label": "FATALITIES",
+    "text": "18 deaths"
+   },
+   {
+    "start": 424,
+    "end": 448,
+    "label": "MISSING",
+    "text": "two people still missing"
+   },
+   {
+    "start": 513,
+    "end": 563,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Ministry of Disaster Management and Relief (MoDMR)"
+   },
+   {
+    "start": 601,
+    "end": 635,
+    "label": "FATALITIES",
+    "text": "five deaths occurred in Chattogram"
+   },
+   {
+    "start": 637,
+    "end": 652,
+    "label": "FATALITIES",
+    "text": "four in Cumilla"
+   },
+   {
+    "start": 654,
+    "end": 692,
+    "label": "FATALITIES",
+    "text": "three each in Noakhali and Cox's Bazar"
+   },
+   {
+    "start": 694,
+    "end": 739,
+    "label": "FATALITIES",
+    "text": "one each in Feni, Brahmanbaria and Lakshmipur"
+   },
+   {
+    "start": 741,
+    "end": 777,
+    "label": "FATALITIES",
+    "text": "The two missing are from Moulvibazar"
+   },
+   {
+    "start": 790,
+    "end": 853,
+    "label": "RELIEF_INFO",
+    "text": "3,654 shelters have been opened in the flood-affected districts"
+   },
+   {
+    "start": 1042,
+    "end": 1047,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1115,
+    "end": 1119,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Army"
+   },
+   {
+    "start": 1121,
+    "end": 1125,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Navy"
+   },
+   {
+    "start": 1127,
+    "end": 1139,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Fire Service"
+   },
+   {
+    "start": 1141,
+    "end": 1154,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Civil Defence"
+   },
+   {
+    "start": 1175,
+    "end": 1211,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Anti-Discrimination Student Movement"
+   },
+   {
+    "start": 1234,
+    "end": 1278,
+    "label": "RELIEF_INFO",
+    "text": "Field hospital has also been set up in Feni."
+   },
+   {
+    "start": 1534,
+    "end": 1543,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 1545,
+    "end": 1553,
+    "label": "BD_UPAZILA",
+    "text": "Sonagazi"
+   },
+   {
+    "start": 1558,
+    "end": 1568,
+    "label": "BD_UPAZILA",
+    "text": "Feni Sadar"
+   },
+   {
+    "start": 1997,
+    "end": 2009,
+    "label": "DISASTER_TYPE",
+    "text": "flash floods"
+   },
+   {
+    "start": 2011,
+    "end": 2035,
+    "label": "AGENCIES_INVOLVED",
+    "text": "The agriculture ministry"
+   }
+  ]
+ },
+ "dev-24": {
+  "sha": "5422d7c9ac45",
+  "ents": [
+   {
+    "start": 9,
+    "end": 44,
+    "label": "DISPLACED",
+    "text": "5,209,798 people have been stranded"
+   },
+   {
+    "start": 69,
+    "end": 74,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 129,
+    "end": 168,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Disaster Management and Relief Ministry"
+   },
+   {
+    "start": 179,
+    "end": 192,
+    "label": "FATALITIES",
+    "text": "no new deaths"
+   },
+   {
+    "start": 227,
+    "end": 254,
+    "label": "MISSING",
+    "text": "Two people remained missing"
+   },
+   {
+    "start": 258,
+    "end": 269,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 279,
+    "end": 298,
+    "label": "FATALITIES",
+    "text": "18 people have died"
+   },
+   {
+    "start": 302,
+    "end": 307,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 365,
+    "end": 369,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 371,
+    "end": 378,
+    "label": "BD_DISTRICT",
+    "text": "Comilla"
+   },
+   {
+    "start": 380,
+    "end": 390,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 392,
+    "end": 404,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 406,
+    "end": 414,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 416,
+    "end": 427,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 429,
+    "end": 437,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 439,
+    "end": 451,
+    "label": "BD_DISTRICT",
+    "text": "Brahmanbaria"
+   },
+   {
+    "start": 453,
+    "end": 459,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 461,
+    "end": 471,
+    "label": "BD_DISTRICT",
+    "text": "Lakshmipur"
+   },
+   {
+    "start": 476,
+    "end": 487,
+    "label": "BD_DISTRICT",
+    "text": "Cox s Bazar"
+   },
+   {
+    "start": 489,
+    "end": 530,
+    "label": "FATALITIES",
+    "text": "Of the total deaths, four died in Comilla"
+   },
+   {
+    "start": 532,
+    "end": 543,
+    "label": "FATALITIES",
+    "text": "one in Feni"
+   },
+   {
+    "start": 545,
+    "end": 563,
+    "label": "FATALITIES",
+    "text": "five in Chittagong"
+   },
+   {
+    "start": 565,
+    "end": 582,
+    "label": "FATALITIES",
+    "text": "three in Noakhali"
+   },
+   {
+    "start": 584,
+    "end": 623,
+    "label": "FATALITIES",
+    "text": "one each in Brahmanbaria and Lakshmipur"
+   },
+   {
+    "start": 628,
+    "end": 648,
+    "label": "FATALITIES",
+    "text": "three in Cox s Bazar"
+   },
+   {
+    "start": 679,
+    "end": 737,
+    "label": "AFFECTED_PEOPLE",
+    "text": "The number of families affected in the flood is 10, 47,029"
+   },
+   {
+    "start": 791,
+    "end": 825,
+    "label": "DISPLACED",
+    "text": "4,15,273 people have taken shelter"
+   },
+   {
+    "start": 909,
+    "end": 948,
+    "label": "RELIEF_INFO",
+    "text": "748 medical teams are providing medical"
+   },
+   {
+    "start": 965,
+    "end": 970,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 996,
+    "end": 1028,
+    "label": "RELIEF_INFO",
+    "text": "Tk 3.52 crore has been allocated"
+   },
+   {
+    "start": 1039,
+    "end": 1044,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1065,
+    "end": 1185,
+    "label": "RELIEF_INFO",
+    "text": "20,650 tonnes of rice, 15,000 pieces of dry foods/packets and baby foods and fodder worth Tk 35 lakh each were allocated"
+   },
+   {
+    "start": 1333,
+    "end": 1338,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1387,
+    "end": 1392,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1494,
+    "end": 1530,
+    "label": "AGENCIES_INVOLVED",
+    "text": "anti-discrimination student movement"
+   },
+   {
+    "start": 1532,
+    "end": 1536,
+    "label": "AGENCIES_INVOLVED",
+    "text": "army"
+   },
+   {
+    "start": 1538,
+    "end": 1542,
+    "label": "AGENCIES_INVOLVED",
+    "text": "navy"
+   }
+  ]
+ },
+ "dev-25": {
+  "sha": "a1bf7fc3bb60",
+  "ents": [
+   {
+    "start": 109,
+    "end": 114,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 234,
+    "end": 239,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 454,
+    "end": 464,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 621,
+    "end": 631,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 720,
+    "end": 726,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 770,
+    "end": 775,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 811,
+    "end": 816,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1008,
+    "end": 1013,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1043,
+    "end": 1048,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-26": {
+  "sha": "c55ba45c14f9",
+  "ents": [
+   {
+    "start": 0,
+    "end": 51,
+    "label": "DISPLACED",
+    "text": "Hundreds of thousands of people have been displaced"
+   },
+   {
+    "start": 296,
+    "end": 339,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre (FFWC)"
+   },
+   {
+    "start": 343,
+    "end": 384,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Water Development Board (BWDB)"
+   },
+   {
+    "start": 441,
+    "end": 446,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 531,
+    "end": 536,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 726,
+    "end": 734,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 749,
+    "end": 757,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 759,
+    "end": 767,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 769,
+    "end": 778,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 780,
+    "end": 785,
+    "label": "BD_DISTRICT",
+    "text": "Bogra"
+   },
+   {
+    "start": 787,
+    "end": 796,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 801,
+    "end": 808,
+    "label": "BD_DISTRICT",
+    "text": "Tangail"
+   },
+   {
+    "start": 849,
+    "end": 860,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 862,
+    "end": 871,
+    "label": "BD_DISTRICT",
+    "text": "Netrokona"
+   },
+   {
+    "start": 873,
+    "end": 882,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 884,
+    "end": 890,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 892,
+    "end": 900,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 906,
+    "end": 917,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 959,
+    "end": 963,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1440,
+    "end": 1450,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 1463,
+    "end": 1468,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1687,
+    "end": 1695,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1697,
+    "end": 1708,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 1710,
+    "end": 1715,
+    "label": "BD_DISTRICT",
+    "text": "Bogra"
+   },
+   {
+    "start": 1717,
+    "end": 1726,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 1732,
+    "end": 1741,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 1771,
+    "end": 1777,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1779,
+    "end": 1788,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 1790,
+    "end": 1798,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 1800,
+    "end": 1809,
+    "label": "BD_DISTRICT",
+    "text": "Netrokona"
+   },
+   {
+    "start": 1814,
+    "end": 1825,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 1855,
+    "end": 1863,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 1865,
+    "end": 1871,
+    "label": "DISASTER_TYPE",
+    "text": "Floods"
+   },
+   {
+    "start": 1882,
+    "end": 1893,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 1895,
+    "end": 1903,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 1908,
+    "end": 1914,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 1985,
+    "end": 1996,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 2001,
+    "end": 2009,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 2043,
+    "end": 2052,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 2066,
+    "end": 2077,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 2101,
+    "end": 2108,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 2181,
+    "end": 2192,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 2193,
+    "end": 2222,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board (WDB)"
+   },
+   {
+    "start": 2425,
+    "end": 2433,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 2435,
+    "end": 2517,
+    "label": "AFFECTED_PEOPLE",
+    "text": "300,000 people living in 47 unions of three municipalities are currently suffering"
+   },
+   {
+    "start": 2525,
+    "end": 2531,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 2634,
+    "end": 2642,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 2643,
+    "end": 2646,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   },
+   {
+    "start": 2757,
+    "end": 2768,
+    "label": "BD_UNION",
+    "text": "Bahadurabad"
+   },
+   {
+    "start": 2787,
+    "end": 2792,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2829,
+    "end": 2838,
+    "label": "BD_UPAZILA",
+    "text": "Madarganj"
+   },
+   {
+    "start": 2849,
+    "end": 2858,
+    "label": "BD_UNION",
+    "text": "Gunritala"
+   },
+   {
+    "start": 2860,
+    "end": 2870,
+    "label": "BD_UNION",
+    "text": "Adar Bhita"
+   },
+   {
+    "start": 2895,
+    "end": 2903,
+    "label": "BD_DISTRICT",
+    "text": "Islampur"
+   },
+   {
+    "start": 2936,
+    "end": 2945,
+    "label": "BD_DISTRICT",
+    "text": "Mahmudpur"
+   },
+   {
+    "start": 2947,
+    "end": 2952,
+    "label": "BD_UNION",
+    "text": "Nagla"
+   },
+   {
+    "start": 2988,
+    "end": 2999,
+    "label": "BD_UPAZILA",
+    "text": "Sarishabari"
+   },
+   {
+    "start": 3010,
+    "end": 3015,
+    "label": "BD_UNION",
+    "text": "Doail"
+   },
+   {
+    "start": 3020,
+    "end": 3028,
+    "label": "BD_UNION",
+    "text": "Kamrabad"
+   },
+   {
+    "start": 3041,
+    "end": 3050,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 3056,
+    "end": 3061,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3243,
+    "end": 3254,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 3356,
+    "end": 3391,
+    "label": "DISPLACED",
+    "text": "Thousands of families were marooned"
+   },
+   {
+    "start": 3423,
+    "end": 3431,
+    "label": "BD_UPAZILA",
+    "text": "Kutirpar"
+   },
+   {
+    "start": 3432,
+    "end": 3437,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3473,
+    "end": 3481,
+    "label": "BD_UPAZILA",
+    "text": "Aditmari"
+   },
+   {
+    "start": 3726,
+    "end": 3729,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   },
+   {
+    "start": 3897,
+    "end": 3906,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 3951,
+    "end": 3980,
+    "label": "AGENCIES_INVOLVED",
+    "text": "local Water Development Board"
+   },
+   {
+    "start": 3996,
+    "end": 4025,
+    "label": "DISPLACED",
+    "text": "75,000 people remain marooned"
+   },
+   {
+    "start": 4029,
+    "end": 4034,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4142,
+    "end": 4150,
+    "label": "BD_UPAZILA",
+    "text": "Chouhali"
+   },
+   {
+    "start": 4152,
+    "end": 4162,
+    "label": "BD_UPAZILA",
+    "text": "Shahjadpur"
+   },
+   {
+    "start": 4164,
+    "end": 4173,
+    "label": "BD_UPAZILA",
+    "text": "Enayetpur"
+   },
+   {
+    "start": 4175,
+    "end": 4182,
+    "label": "BD_UPAZILA",
+    "text": "Kazipur"
+   },
+   {
+    "start": 4184,
+    "end": 4192,
+    "label": "BD_UPAZILA",
+    "text": "Belkuchi"
+   },
+   {
+    "start": 4223,
+    "end": 4229,
+    "label": "BD_UPAZILA",
+    "text": "Tarash"
+   },
+   {
+    "start": 4235,
+    "end": 4243,
+    "label": "BD_UPAZILA",
+    "text": "Ullapara"
+   },
+   {
+    "start": 4272,
+    "end": 4277,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4289,
+    "end": 4297,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 4372,
+    "end": 4410,
+    "label": "DISPLACED",
+    "text": "350,000 people were under the open sky"
+   },
+   {
+    "start": 4515,
+    "end": 4523,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 4579,
+    "end": 4651,
+    "label": "DISPLACED",
+    "text": "three lakh people of 72,480 families in nine upazilas have been marooned"
+   },
+   {
+    "start": 4655,
+    "end": 4666,
+    "label": "DISASTER_TYPE",
+    "text": "floodwaters"
+   },
+   {
+    "start": 4687,
+    "end": 4719,
+    "label": "AFFECTED_PEOPLE",
+    "text": "1,031 families have been damaged"
+   },
+   {
+    "start": 4727,
+    "end": 4733,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 4852,
+    "end": 4887,
+    "label": "RELIEF_INFO",
+    "text": "gave 15 kg of rice to 2000 families"
+   },
+   {
+    "start": 4897,
+    "end": 4902,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4933,
+    "end": 4941,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 4959,
+    "end": 4967,
+    "label": "BD_UPAZILA",
+    "text": "Nabiganj"
+   },
+   {
+    "start": 5102,
+    "end": 5111,
+    "label": "BD_UNION",
+    "text": "Digholbag"
+   },
+   {
+    "start": 5122,
+    "end": 5129,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 5145,
+    "end": 5153,
+    "label": "BD_UNION",
+    "text": "Inatganj"
+   },
+   {
+    "start": 5178,
+    "end": 5187,
+    "label": "BD_UNION",
+    "text": "Aushkandi"
+   },
+   {
+    "start": 5203,
+    "end": 5210,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 5215,
+    "end": 5220,
+    "label": "BD_DISTRICT",
+    "text": "Bogra"
+   },
+   {
+    "start": 5397,
+    "end": 5407,
+    "label": "BD_UPAZILA",
+    "text": "Sariakandi"
+   },
+   {
+    "start": 5417,
+    "end": 5429,
+    "label": "DISASTER_TYPE",
+    "text": "Flash floods"
+   },
+   {
+    "start": 5481,
+    "end": 5489,
+    "label": "BD_UPAZILA",
+    "text": "Sonatola"
+   },
+   {
+    "start": 5491,
+    "end": 5501,
+    "label": "BD_UPAZILA",
+    "text": "Sariakandi"
+   },
+   {
+    "start": 5507,
+    "end": 5513,
+    "label": "BD_UPAZILA",
+    "text": "Dhunat"
+   },
+   {
+    "start": 5524,
+    "end": 5578,
+    "label": "DISPLACED",
+    "text": "People have taken shelter on flood control embankments"
+   },
+   {
+    "start": 5632,
+    "end": 5727,
+    "label": "RELIEF_INFO",
+    "text": "distributed 500 packets of dry food and requisitioned 10 metric tons of rice as relief supplies"
+   },
+   {
+    "start": 5736,
+    "end": 5741,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 5811,
+    "end": 5816,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 5841,
+    "end": 5850,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 5856,
+    "end": 5861,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 5909,
+    "end": 5931,
+    "label": "DISPLACED",
+    "text": "3 lakh people marooned"
+   },
+   {
+    "start": 5936,
+    "end": 5941,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 6169,
+    "end": 6178,
+    "label": "BD_UNION",
+    "text": "Kholahati"
+   },
+   {
+    "start": 6210,
+    "end": 6219,
+    "label": "BD_UNION",
+    "text": "Purbapara"
+   },
+   {
+    "start": 6254,
+    "end": 6278,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bridgeroad Kalibaripara,"
+   },
+   {
+    "start": 6313,
+    "end": 6322,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 6344,
+    "end": 6392,
+    "label": "DISPLACED",
+    "text": "3 lakh people of the upazilas have been marooned"
+   },
+   {
+    "start": 6608,
+    "end": 6618,
+    "label": "BD_UPAZILA",
+    "text": "Sundarganj"
+   },
+   {
+    "start": 6626,
+    "end": 6635,
+    "label": "BD_UPAZILA",
+    "text": "Fulchhari"
+   },
+   {
+    "start": 6641,
+    "end": 6648,
+    "label": "BD_UPAZILA",
+    "text": "Saghata"
+   },
+   {
+    "start": 6684,
+    "end": 6690,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 6765,
+    "end": 6773,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 6778,
+    "end": 6799,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affected 763 families"
+   },
+   {
+    "start": 6830,
+    "end": 6833,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WBD"
+   },
+   {
+    "start": 7003,
+    "end": 7012,
+    "label": "BD_UPAZILA",
+    "text": "Kanaighat"
+   },
+   {
+    "start": 7032,
+    "end": 7038,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 7096,
+    "end": 7102,
+    "label": "BD_UPAZILA",
+    "text": "Shewla"
+   },
+   {
+    "start": 7135,
+    "end": 7142,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 7150,
+    "end": 7156,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 7304,
+    "end": 7310,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 7360,
+    "end": 7363,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   },
+   {
+    "start": 7366,
+    "end": 7371,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 7423,
+    "end": 7430,
+    "label": "BD_DISTRICT",
+    "text": "Tangail"
+   },
+   {
+    "start": 7693,
+    "end": 7696,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   }
+  ]
+ },
+ "dev-27": {
+  "sha": "fdc78ac4905f",
+  "ents": [
+   {
+    "start": 62,
+    "end": 69,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 463,
+    "end": 468,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 597,
+    "end": 606,
+    "label": "BD_DISTRICT",
+    "text": "Rangamati"
+   },
+   {
+    "start": 608,
+    "end": 629,
+    "label": "FATALITIES",
+    "text": "an elderly woman died"
+   },
+   {
+    "start": 667,
+    "end": 673,
+    "label": "BD_UPAZILA",
+    "text": "Barkal"
+   },
+   {
+    "start": 728,
+    "end": 740,
+    "label": "BD_UNION",
+    "text": "Bhushanchara"
+   },
+   {
+    "start": 935,
+    "end": 947,
+    "label": "BD_UPAZILA",
+    "text": "Baghaichhari"
+   },
+   {
+    "start": 1199,
+    "end": 1237,
+    "label": "DISPLACED",
+    "text": "250 families have already been shifted"
+   },
+   {
+    "start": 1256,
+    "end": 1266,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 1267,
+    "end": 1276,
+    "label": "BD_DISTRICT",
+    "text": "Rangamati"
+   },
+   {
+    "start": 1287,
+    "end": 1293,
+    "label": "BD_UNION",
+    "text": "Ghagra"
+   },
+   {
+    "start": 1414,
+    "end": 1423,
+    "label": "BD_DISTRICT",
+    "text": "Rangamati"
+   },
+   {
+    "start": 1424,
+    "end": 1433,
+    "label": "BD_DISTRICT",
+    "text": "Bandarban"
+   },
+   {
+    "start": 1440,
+    "end": 1449,
+    "label": "BD_DISTRICT",
+    "text": "Rangamati"
+   },
+   {
+    "start": 1604,
+    "end": 1613,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 1626,
+    "end": 1632,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1721,
+    "end": 1729,
+    "label": "BD_UPAZILA",
+    "text": "Tahirpur"
+   },
+   {
+    "start": 1731,
+    "end": 1742,
+    "label": "BD_UPAZILA",
+    "text": "Dowarabazar"
+   },
+   {
+    "start": 1744,
+    "end": 1757,
+    "label": "BD_UPAZILA",
+    "text": "Bishambharpur"
+   },
+   {
+    "start": 1762,
+    "end": 1771,
+    "label": "BD_UPAZILA",
+    "text": "Jamalganj"
+   },
+   {
+    "start": 1930,
+    "end": 1940,
+    "label": "BD_DISTRICT",
+    "text": "Bangladesh"
+   },
+   {
+    "start": 2060,
+    "end": 2065,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2078,
+    "end": 2087,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 2147,
+    "end": 2155,
+    "label": "BD_UNION",
+    "text": "Fatehpur"
+   },
+   {
+    "start": 2169,
+    "end": 2182,
+    "label": "BD_UPAZILA",
+    "text": "Bishambharpur"
+   },
+   {
+    "start": 2201,
+    "end": 2242,
+    "label": "DISPLACED",
+    "text": "50,000 people in 48 villages are marooned"
+   },
+   {
+    "start": 2255,
+    "end": 2274,
+    "label": "DISPLACED",
+    "text": "1,200 homes flooded"
+   },
+   {
+    "start": 2331,
+    "end": 2336,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2495,
+    "end": 2528,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Sunamganj Water Development Board"
+   },
+   {
+    "start": 3015,
+    "end": 3020,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3129,
+    "end": 3152,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 3304,
+    "end": 3340,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre"
+   },
+   {
+    "start": 3446,
+    "end": 3518,
+    "label": "RELIEF_INFO",
+    "text": "300 metric tons of rice and 1,265 packets of dry food have been supplied"
+   },
+   {
+    "start": 3526,
+    "end": 3531,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3619,
+    "end": 3672,
+    "label": "RELIEF_INFO",
+    "text": "200 tons of rice and Tk3 lakh have been kept in stock"
+   },
+   {
+    "start": 3678,
+    "end": 3686,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 3709,
+    "end": 3719,
+    "label": "BD_UPAZILA",
+    "text": "Bokshiganj"
+   },
+   {
+    "start": 3738,
+    "end": 3745,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 3825,
+    "end": 3840,
+    "label": "BD_UNION",
+    "text": "Dhanua Kamalpur"
+   },
+   {
+    "start": 3915,
+    "end": 3922,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 3924,
+    "end": 3934,
+    "label": "BD_UPAZILA",
+    "text": "Bakshiganj"
+   },
+   {
+    "start": 3991,
+    "end": 3996,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4035,
+    "end": 4042,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 4178,
+    "end": 4189,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 4365,
+    "end": 4368,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WBD"
+   },
+   {
+    "start": 4373,
+    "end": 4383,
+    "label": "BD_DISTRICT",
+    "text": "Nilphamari"
+   },
+   {
+    "start": 4450,
+    "end": 4453,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   },
+   {
+    "start": 4472,
+    "end": 4477,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4502,
+    "end": 4505,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WBD"
+   },
+   {
+    "start": 4587,
+    "end": 4594,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 4725,
+    "end": 4730,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4750,
+    "end": 4758,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 4913,
+    "end": 4916,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   }
+  ]
+ },
+ "dev-28": {
+  "sha": "03c84424fe6d",
+  "ents": [
+   {
+    "start": 296,
+    "end": 301,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 805,
+    "end": 810,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 839,
+    "end": 844,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 929,
+    "end": 968,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Institute of Water and Flood Management"
+   },
+   {
+    "start": 972,
+    "end": 1030,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh University of Engineering and Technology (Buet)"
+   },
+   {
+    "start": 1053,
+    "end": 1094,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting & Warning Centre (FFWC)"
+   },
+   {
+    "start": 1105,
+    "end": 1111,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 1166,
+    "end": 1170,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1307,
+    "end": 1311,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1322,
+    "end": 1330,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 1418,
+    "end": 1422,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1548,
+    "end": 1554,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 1753,
+    "end": 1758,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1820,
+    "end": 1824,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 1854,
+    "end": 1859,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2004,
+    "end": 2010,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 2082,
+    "end": 2088,
+    "label": "BD_UNION",
+    "text": "Gabura"
+   },
+   {
+    "start": 2098,
+    "end": 2106,
+    "label": "BD_DISTRICT",
+    "text": "Satkhira"
+   },
+   {
+    "start": 2184,
+    "end": 2191,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 2454,
+    "end": 2460,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 2850,
+    "end": 2873,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 3029,
+    "end": 3035,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 3078,
+    "end": 3084,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 3153,
+    "end": 3158,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3203,
+    "end": 3209,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 3284,
+    "end": 3295,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 3448,
+    "end": 3453,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3594,
+    "end": 3599,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4158,
+    "end": 4165,
+    "label": "BD_DISTRICT",
+    "text": "Gazipur"
+   },
+   {
+    "start": 4185,
+    "end": 4192,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 4459,
+    "end": 4465,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 4523,
+    "end": 4565,
+    "label": "FATALITIES",
+    "text": "rising death tolls dominated the headlines"
+   },
+   {
+    "start": 4784,
+    "end": 4788,
+    "label": "BD_UNION",
+    "text": "Boda"
+   },
+   {
+    "start": 4798,
+    "end": 4808,
+    "label": "BD_DISTRICT",
+    "text": "Panchagarh"
+   },
+   {
+    "start": 5150,
+    "end": 5156,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 5251,
+    "end": 5255,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 5498,
+    "end": 5504,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 5555,
+    "end": 5563,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 5839,
+    "end": 5845,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 5993,
+    "end": 6000,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 6350,
+    "end": 6360,
+    "label": "BD_UPAZILA",
+    "text": "Gurudaspur"
+   },
+   {
+    "start": 6429,
+    "end": 6437,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 7291,
+    "end": 7296,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 7359,
+    "end": 7364,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 7437,
+    "end": 7442,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 7591,
+    "end": 7622,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Meter Public Works Datum (mPWD)"
+   },
+   {
+    "start": 7824,
+    "end": 7828,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 7972,
+    "end": 7977,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 8004,
+    "end": 8009,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 8054,
+    "end": 8059,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 8115,
+    "end": 8123,
+    "label": "BD_DISTRICT",
+    "text": "Rajshahi"
+   },
+   {
+    "start": 8128,
+    "end": 8139,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   }
+  ]
+ },
+ "dev-29": {
+  "sha": "243a5877112d",
+  "ents": [
+   {
+    "start": 86,
+    "end": 95,
+    "label": "BD_DISTRICT",
+    "text": "Bandarban"
+   },
+   {
+    "start": 97,
+    "end": 105,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 131,
+    "end": 155,
+    "label": "DISPLACED",
+    "text": "20,000 families marooned"
+   },
+   {
+    "start": 236,
+    "end": 244,
+    "label": "BD_UPAZILA",
+    "text": "Armypara"
+   },
+   {
+    "start": 246,
+    "end": 254,
+    "label": "BD_UPAZILA",
+    "text": "Islampur"
+   },
+   {
+    "start": 349,
+    "end": 356,
+    "label": "BD_UPAZILA",
+    "text": "Thanchi"
+   },
+   {
+    "start": 361,
+    "end": 373,
+    "label": "BD_UPAZILA",
+    "text": "Rowangchhari"
+   },
+   {
+    "start": 448,
+    "end": 453,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 583,
+    "end": 588,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 629,
+    "end": 638,
+    "label": "BD_DISTRICT",
+    "text": "Bandarban"
+   },
+   {
+    "start": 789,
+    "end": 798,
+    "label": "BD_DISTRICT",
+    "text": "Bandarban"
+   },
+   {
+    "start": 846,
+    "end": 921,
+    "label": "RELIEF_INFO",
+    "text": "450 tonnes of food grains have been allocated for the flood-affected people"
+   },
+   {
+    "start": 1185,
+    "end": 1194,
+    "label": "BD_DISTRICT",
+    "text": "Bandarban"
+   }
+  ]
+ },
+ "dev-30": {
+  "sha": "56668e5f8944",
+  "ents": [
+   {
+    "start": 0,
+    "end": 63,
+    "label": "FATALITIES",
+    "text": "A total of 59 people, including six women and 12 children, died"
+   },
+   {
+    "start": 79,
+    "end": 85,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 132,
+    "end": 162,
+    "label": "AGENCIES_INVOLVED",
+    "text": "disaster management and relief"
+   },
+   {
+    "start": 191,
+    "end": 227,
+    "label": "FATALITIES",
+    "text": "Among the deceased, 23 are from Feni"
+   },
+   {
+    "start": 229,
+    "end": 244,
+    "label": "FATALITIES",
+    "text": "14 from Cumilla"
+   },
+   {
+    "start": 246,
+    "end": 264,
+    "label": "FATALITIES",
+    "text": "nine from Noakhali"
+   },
+   {
+    "start": 266,
+    "end": 285,
+    "label": "FATALITIES",
+    "text": "six from Chattogram"
+   },
+   {
+    "start": 287,
+    "end": 309,
+    "label": "FATALITIES",
+    "text": "three from Cox's Bazar"
+   },
+   {
+    "start": 315,
+    "end": 381,
+    "label": "FATALITIES",
+    "text": "one each in Moulvibazar, Lakshmipur, Brahmanbaria and Khagrachhari"
+   },
+   {
+    "start": 392,
+    "end": 433,
+    "label": "MISSING",
+    "text": "one person in Moulvibazar remains missing"
+   },
+   {
+    "start": 481,
+    "end": 486,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 500,
+    "end": 510,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 512,
+    "end": 520,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 522,
+    "end": 528,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 530,
+    "end": 542,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 547,
+    "end": 558,
+    "label": "BD_DISTRICT",
+    "text": "Cox's Bazar"
+   },
+   {
+    "start": 635,
+    "end": 738,
+    "label": "RELIEF_INFO",
+    "text": "disbursed Tk 4.52 crore in cash, 20,650 tonnes of rice, 15,000 packages or sacks of dry and other foods"
+   },
+   {
+    "start": 740,
+    "end": 768,
+    "label": "RELIEF_INFO",
+    "text": "Tk 35 lakh for children food"
+   },
+   {
+    "start": 816,
+    "end": 911,
+    "label": "RELIEF_INFO",
+    "text": "1,40,900 packages of relief materials, including dry food, clothes and drinking water collected"
+   },
+   {
+    "start": 931,
+    "end": 969,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Anti-Discrimination Students' Movement"
+   },
+   {
+    "start": 987,
+    "end": 992,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1015,
+    "end": 1048,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Department of Disaster Management"
+   },
+   {
+    "start": 1068,
+    "end": 1101,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affected more than 54 lakh people"
+   },
+   {
+    "start": 1121,
+    "end": 1131,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 1136,
+    "end": 1142,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1157,
+    "end": 1189,
+    "label": "DISPLACED",
+    "text": "6.96 lakh families were stranded"
+   }
+  ]
+ },
+ "dev-31": {
+  "sha": "f8c869a0f98d",
+  "ents": [
+   {
+    "start": 23,
+    "end": 31,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 45,
+    "end": 51,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 66,
+    "end": 89,
+    "label": "DISPLACED",
+    "text": "600,000 people marooned"
+   },
+   {
+    "start": 163,
+    "end": 217,
+    "label": "AFFECTED_PEOPLE",
+    "text": "4,000 people in the metropolitan area are now affected"
+   },
+   {
+    "start": 225,
+    "end": 231,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 233,
+    "end": 280,
+    "label": "RELIEF_INFO",
+    "text": "The authorities have opened two shelter centers"
+   },
+   {
+    "start": 321,
+    "end": 357,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre"
+   },
+   {
+    "start": 530,
+    "end": 571,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Water Development Board (BWDB)"
+   },
+   {
+    "start": 709,
+    "end": 715,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 860,
+    "end": 866,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 951,
+    "end": 960,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 968,
+    "end": 972,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BWDB"
+   },
+   {
+    "start": 973,
+    "end": 979,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1023,
+    "end": 1028,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1097,
+    "end": 1103,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1297,
+    "end": 1303,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1336,
+    "end": 1363,
+    "label": "DISPLACED",
+    "text": "50 people have been trapped"
+   },
+   {
+    "start": 1391,
+    "end": 1402,
+    "label": "DISASTER_TYPE",
+    "text": "floodwaters"
+   },
+   {
+    "start": 1537,
+    "end": 1541,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   }
+  ]
+ },
+ "dev-32": {
+  "sha": "5de48a8cd028",
+  "ents": [
+   {
+    "start": 0,
+    "end": 76,
+    "label": "DISPLACED",
+    "text": "Around 300,000 people of five upazilas of Sylhet district have been marooned"
+   },
+   {
+    "start": 318,
+    "end": 323,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 398,
+    "end": 409,
+    "label": "BD_UPAZILA",
+    "text": "Companiganj"
+   },
+   {
+    "start": 411,
+    "end": 421,
+    "label": "BD_UPAZILA",
+    "text": "Gowainghat"
+   },
+   {
+    "start": 427,
+    "end": 436,
+    "label": "BD_UPAZILA",
+    "text": "Jaintapur"
+   },
+   {
+    "start": 498,
+    "end": 508,
+    "label": "BD_UPAZILA",
+    "text": "Gowainghat"
+   },
+   {
+    "start": 517,
+    "end": 522,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 603,
+    "end": 609,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 655,
+    "end": 663,
+    "label": "BD_UNION",
+    "text": "Kalighat"
+   },
+   {
+    "start": 756,
+    "end": 766,
+    "label": "BD_UPAZILA",
+    "text": "Gowainghat"
+   },
+   {
+    "start": 1010,
+    "end": 1020,
+    "label": "BD_UPAZILA",
+    "text": "Gowainghat"
+   },
+   {
+    "start": 1086,
+    "end": 1091,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1278,
+    "end": 1287,
+    "label": "BD_UPAZILA",
+    "text": "Kanaighat"
+   },
+   {
+    "start": 1314,
+    "end": 1344,
+    "label": "AFFECTED_PEOPLE",
+    "text": "Hundreds of people of Zakiganj"
+   },
+   {
+    "start": 1368,
+    "end": 1379,
+    "label": "BD_UPAZILA",
+    "text": "Companiganj"
+   },
+   {
+    "start": 1498,
+    "end": 1521,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 1697,
+    "end": 1706,
+    "label": "BD_UPAZILA",
+    "text": "Kanaighat"
+   },
+   {
+    "start": 1711,
+    "end": 1717,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   }
+  ]
+ },
+ "dev-33": {
+  "sha": "7411af5345df",
+  "ents": [
+   {
+    "start": 30,
+    "end": 36,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 87,
+    "end": 91,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 128,
+    "end": 133,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 279,
+    "end": 333,
+    "label": "RELIEF_INFO",
+    "text": "Tk12.67 crore has been returned to the national coffer"
+   },
+   {
+    "start": 450,
+    "end": 480,
+    "label": "RELIEF_INFO",
+    "text": "allocated Tk12,99,70,812 crore"
+   },
+   {
+    "start": 956,
+    "end": 995,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Local Government Engineering Department"
+   },
+   {
+    "start": 1050,
+    "end": 1088,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Directorate of Primary Education (DPE)"
+   },
+   {
+    "start": 1107,
+    "end": 1110,
+    "label": "AGENCIES_INVOLVED",
+    "text": "DPE"
+   },
+   {
+    "start": 1112,
+    "end": 1116,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1593,
+    "end": 1632,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Local Government Engineering Department"
+   },
+   {
+    "start": 1779,
+    "end": 1811,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Directorate of Primary Education"
+   },
+   {
+    "start": 1983,
+    "end": 1987,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 2020,
+    "end": 2077,
+    "label": "RELIEF_INFO",
+    "text": "received Tk5,02,26,514 while only 5 schools were repaired"
+   },
+   {
+    "start": 2140,
+    "end": 2152,
+    "label": "BD_UPAZILA",
+    "text": "Dagonbhuiyan"
+   },
+   {
+    "start": 2274,
+    "end": 2280,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 2508,
+    "end": 2516,
+    "label": "BD_UPAZILA",
+    "text": "Sonagazi"
+   },
+   {
+    "start": 2539,
+    "end": 2566,
+    "label": "RELIEF_INFO",
+    "text": "Tk2,83,29,941 was allocated"
+   },
+   {
+    "start": 2692,
+    "end": 2715,
+    "label": "RELIEF_INFO",
+    "text": "Tk2,57,18,766 allocated"
+   },
+   {
+    "start": 2762,
+    "end": 2774,
+    "label": "BD_UPAZILA",
+    "text": "Chhagalnaiya"
+   },
+   {
+    "start": 2819,
+    "end": 2853,
+    "label": "RELIEF_INFO",
+    "text": "received Tk3,51,66,987 for repairs"
+   },
+   {
+    "start": 2865,
+    "end": 2874,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 2895,
+    "end": 2927,
+    "label": "RELIEF_INFO",
+    "text": "Tk29, 58, 875 has been allocated"
+   },
+   {
+    "start": 2949,
+    "end": 2956,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 2966,
+    "end": 2993,
+    "label": "RELIEF_INFO",
+    "text": "Tk55, 76, 546 was allocated"
+   },
+   {
+    "start": 3919,
+    "end": 3965,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Local Government Engineering Department (LGED)"
+   },
+   {
+    "start": 4620,
+    "end": 4624,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 4655,
+    "end": 4660,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-34": {
+  "sha": "5488ada55337",
+  "ents": [
+   {
+    "start": 57,
+    "end": 68,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 122,
+    "end": 130,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 142,
+    "end": 152,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 207,
+    "end": 240,
+    "label": "FATALITIES",
+    "text": "At least three people were killed"
+   },
+   {
+    "start": 272,
+    "end": 283,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 491,
+    "end": 521,
+    "label": "FATALITIES",
+    "text": "A man was washed away and died"
+   },
+   {
+    "start": 580,
+    "end": 590,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 663,
+    "end": 726,
+    "label": "FATALITIES",
+    "text": "two other deaths occurred after a house, weakened by floodwater"
+   },
+   {
+    "start": 775,
+    "end": 810,
+    "label": "FATALITIES",
+    "text": "three deaths occurred in Nalitabari"
+   },
+   {
+    "start": 822,
+    "end": 829,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 835,
+    "end": 840,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 854,
+    "end": 862,
+    "label": "BD_UPAZILA",
+    "text": "Sribardi"
+   },
+   {
+    "start": 867,
+    "end": 877,
+    "label": "BD_UPAZILA",
+    "text": "Jhinaigati"
+   },
+   {
+    "start": 963,
+    "end": 968,
+    "label": "BD_UPAZILA",
+    "text": "Nakla"
+   },
+   {
+    "start": 1026,
+    "end": 1040,
+    "label": "DISASTER_TYPE",
+    "text": "flash flooding"
+   },
+   {
+    "start": 1064,
+    "end": 1094,
+    "label": "RELIEF_INFO",
+    "text": "nine shelters have been opened"
+   },
+   {
+    "start": 1098,
+    "end": 1103,
+    "label": "BD_UPAZILA",
+    "text": "Nakla"
+   },
+   {
+    "start": 1160,
+    "end": 1167,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 1199,
+    "end": 1207,
+    "label": "AGENCIES_INVOLVED",
+    "text": "The army"
+   },
+   {
+    "start": 1265,
+    "end": 1276,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 1615,
+    "end": 1620,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1648,
+    "end": 1658,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 1781,
+    "end": 1817,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Meteorological Department"
+   },
+   {
+    "start": 1954,
+    "end": 1959,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 1961,
+    "end": 1971,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 1973,
+    "end": 1979,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1981,
+    "end": 1989,
+    "label": "BD_DISTRICT",
+    "text": "Barishal"
+   },
+   {
+    "start": 1994,
+    "end": 2004,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 2077,
+    "end": 2087,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 2212,
+    "end": 2220,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 2222,
+    "end": 2226,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 2231,
+    "end": 2238,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 2293,
+    "end": 2304,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 2414,
+    "end": 2428,
+    "label": "DISASTER_TYPE",
+    "text": "flash flooding"
+   },
+   {
+    "start": 2559,
+    "end": 2567,
+    "label": "BD_DISTRICT",
+    "text": "Chandpur"
+   },
+   {
+    "start": 2573,
+    "end": 2576,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BMD"
+   },
+   {
+    "start": 2614,
+    "end": 2623,
+    "label": "BD_DISTRICT",
+    "text": "Madaripur"
+   },
+   {
+    "start": 2634,
+    "end": 2645,
+    "label": "BD_DISTRICT",
+    "text": "Narayanganj"
+   },
+   {
+    "start": 2671,
+    "end": 2680,
+    "label": "BD_DISTRICT",
+    "text": "Netrakona"
+   },
+   {
+    "start": 2707,
+    "end": 2715,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 2836,
+    "end": 2872,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre"
+   },
+   {
+    "start": 2910,
+    "end": 2918,
+    "label": "BD_UPAZILA",
+    "text": "Durgapur"
+   },
+   {
+    "start": 2922,
+    "end": 2931,
+    "label": "BD_DISTRICT",
+    "text": "Netrakona"
+   },
+   {
+    "start": 2946,
+    "end": 2950,
+    "label": "AGENCIES_INVOLVED",
+    "text": "FFWC"
+   },
+   {
+    "start": 3100,
+    "end": 3107,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 3112,
+    "end": 3120,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 3126,
+    "end": 3131,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3185,
+    "end": 3192,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 3194,
+    "end": 3202,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 3204,
+    "end": 3214,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 3219,
+    "end": 3228,
+    "label": "BD_DISTRICT",
+    "text": "Netrakona"
+   },
+   {
+    "start": 3280,
+    "end": 3290,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 3322,
+    "end": 3329,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 3333,
+    "end": 3342,
+    "label": "BD_UPAZILA",
+    "text": "Haluaghat"
+   },
+   {
+    "start": 3347,
+    "end": 3355,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 3374,
+    "end": 3410,
+    "label": "DISPLACED",
+    "text": "tens of thousands of people marooned"
+   },
+   {
+    "start": 3487,
+    "end": 3528,
+    "label": "DISPLACED",
+    "text": "700 people in the district had been moved"
+   },
+   {
+    "start": 3543,
+    "end": 3548,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3589,
+    "end": 3594,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3641,
+    "end": 3652,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 3746,
+    "end": 3782,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Department of Agricultural Extension"
+   },
+   {
+    "start": 3797,
+    "end": 3802,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3890,
+    "end": 3898,
+    "label": "BD_UPAZILA",
+    "text": "Dhobaura"
+   },
+   {
+    "start": 3948,
+    "end": 3980,
+    "label": "DISPLACED",
+    "text": "15,000 people were left stranded"
+   },
+   {
+    "start": 3997,
+    "end": 4006,
+    "label": "BD_UPAZILA",
+    "text": "Haluaghat"
+   },
+   {
+    "start": 4066,
+    "end": 4093,
+    "label": "DISPLACED",
+    "text": "700 people had taken refuge"
+   },
+   {
+    "start": 4123,
+    "end": 4148,
+    "label": "AGENCIES_INVOLVED",
+    "text": "United News of Bangladesh"
+   },
+   {
+    "start": 4249,
+    "end": 4257,
+    "label": "BD_DISTRICT",
+    "text": "Chandpur"
+   },
+   {
+    "start": 4727,
+    "end": 4735,
+    "label": "BD_DISTRICT",
+    "text": "Rajshahi"
+   },
+   {
+    "start": 4737,
+    "end": 4744,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 4746,
+    "end": 4756,
+    "label": "BD_DISTRICT",
+    "text": "Mymensingh"
+   },
+   {
+    "start": 4761,
+    "end": 4767,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 4798,
+    "end": 4803,
+    "label": "BD_DISTRICT",
+    "text": "Dhaka"
+   },
+   {
+    "start": 4805,
+    "end": 4811,
+    "label": "BD_DISTRICT",
+    "text": "Khulna"
+   },
+   {
+    "start": 4816,
+    "end": 4824,
+    "label": "BD_DISTRICT",
+    "text": "Barishal"
+   },
+   {
+    "start": 4865,
+    "end": 4875,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 4910,
+    "end": 4941,
+    "label": "AGENCIES_INVOLVED",
+    "text": "India Meteorological Department"
+   },
+   {
+    "start": 5083,
+    "end": 5086,
+    "label": "AGENCIES_INVOLVED",
+    "text": "IMD"
+   },
+   {
+    "start": 5209,
+    "end": 5240,
+    "label": "AGENCIES_INVOLVED",
+    "text": "India Meteorological Department"
+   },
+   {
+    "start": 5418,
+    "end": 5421,
+    "label": "AGENCIES_INVOLVED",
+    "text": "IMD"
+   },
+   {
+    "start": 5644,
+    "end": 5647,
+    "label": "AGENCIES_INVOLVED",
+    "text": "IMD"
+   },
+   {
+    "start": 5906,
+    "end": 5949,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Inland Water Transport Authority"
+   }
+  ]
+ },
+ "dev-35": {
+  "sha": "cb30823b175b",
+  "ents": [
+   {
+    "start": 20,
+    "end": 25,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 36,
+    "end": 42,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 76,
+    "end": 117,
+    "label": "DISPLACED",
+    "text": "one-and-half million people were marooned"
+   },
+   {
+    "start": 141,
+    "end": 146,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 154,
+    "end": 160,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 351,
+    "end": 357,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 427,
+    "end": 434,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 495,
+    "end": 501,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 512,
+    "end": 544,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affecting around 7.5 lakh people"
+   },
+   {
+    "start": 551,
+    "end": 587,
+    "label": "DISPLACED",
+    "text": "18,000 people rushed to 627 shelters"
+   },
+   {
+    "start": 595,
+    "end": 601,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 652,
+    "end": 659,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 660,
+    "end": 692,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affecting around 6.5 lakh people"
+   },
+   {
+    "start": 696,
+    "end": 705,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 749,
+    "end": 781,
+    "label": "DISPLACED",
+    "text": "15,000 people rushed to shelters"
+   },
+   {
+    "start": 822,
+    "end": 831,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 875,
+    "end": 886,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 1075,
+    "end": 1082,
+    "label": "BD_UPAZILA",
+    "text": "Chhatak"
+   },
+   {
+    "start": 1084,
+    "end": 1095,
+    "label": "BD_UPAZILA",
+    "text": "Dowarabazar"
+   },
+   {
+    "start": 1100,
+    "end": 1111,
+    "label": "BD_UPAZILA",
+    "text": "Madhyanagar"
+   },
+   {
+    "start": 1175,
+    "end": 1183,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 1374,
+    "end": 1407,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Sunamganj Water Development Board"
+   },
+   {
+    "start": 1529,
+    "end": 1536,
+    "label": "BD_UPAZILA",
+    "text": "Chhatak"
+   },
+   {
+    "start": 1639,
+    "end": 1651,
+    "label": "BD_UPAZILA",
+    "text": "Jagannathpur"
+   },
+   {
+    "start": 1729,
+    "end": 1766,
+    "label": "RELIEF_INFO",
+    "text": "143 flood shelter centres were opened"
+   },
+   {
+    "start": 1786,
+    "end": 1861,
+    "label": "DISPLACED",
+    "text": "several hundred flood-hit people, whose homes already were inundated by the"
+   },
+   {
+    "start": 1862,
+    "end": 1872,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 1926,
+    "end": 1935,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 2018,
+    "end": 2023,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2257,
+    "end": 2269,
+    "label": "BD_DISTRICT",
+    "text": "Moulavibazar"
+   },
+   {
+    "start": 2280,
+    "end": 2287,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 2345,
+    "end": 2351,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 2408,
+    "end": 2413,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2531,
+    "end": 2541,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 2921,
+    "end": 2931,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 2986,
+    "end": 2997,
+    "label": "DISASTER_TYPE",
+    "text": "flash flood"
+   },
+   {
+    "start": 3007,
+    "end": 3060,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affected more than one million people in the district"
+   },
+   {
+    "start": 3203,
+    "end": 3208,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3275,
+    "end": 3281,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 3396,
+    "end": 3401,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3537,
+    "end": 3656,
+    "label": "AFFECTED_PEOPLE",
+    "text": "6,75,937 people of 21 wards in the city and 1323 villages at 116 unions under 13 upazilas in the district were affected"
+   },
+   {
+    "start": 3677,
+    "end": 3731,
+    "label": "DISPLACED",
+    "text": "17,285 flood-stricken people so far had taken shelters"
+   },
+   {
+    "start": 3739,
+    "end": 3744,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3993,
+    "end": 4000,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 4109,
+    "end": 4114,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 4297,
+    "end": 4307,
+    "label": "BD_UPAZILA",
+    "text": "Gowainghat"
+   },
+   {
+    "start": 4309,
+    "end": 4320,
+    "label": "BD_UPAZILA",
+    "text": "Companiganj"
+   },
+   {
+    "start": 4325,
+    "end": 4334,
+    "label": "BD_UPAZILA",
+    "text": "Kanaighat"
+   },
+   {
+    "start": 4436,
+    "end": 4446,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 4499,
+    "end": 4522,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Sylhet City Corporation"
+   },
+   {
+    "start": 4765,
+    "end": 4771,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 4820,
+    "end": 4835,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Army"
+   },
+   {
+    "start": 4901,
+    "end": 4911,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 4924,
+    "end": 4932,
+    "label": "AGENCIES_INVOLVED",
+    "text": "the army"
+   },
+   {
+    "start": 4957,
+    "end": 4980,
+    "label": "AGENCIES_INVOLVED",
+    "text": "power development board"
+   },
+   {
+    "start": 4985,
+    "end": 5008,
+    "label": "AGENCIES_INVOLVED",
+    "text": "water development board"
+   },
+   {
+    "start": 5105,
+    "end": 5108,
+    "label": "AGENCIES_INVOLVED",
+    "text": "SCC"
+   },
+   {
+    "start": 5290,
+    "end": 5295,
+    "label": "BD_UPAZILA",
+    "text": "Nagar"
+   },
+   {
+    "start": 5296,
+    "end": 5302,
+    "label": "BD_UPAZILA",
+    "text": "Bhaban"
+   },
+   {
+    "start": 5464,
+    "end": 5469,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 5633,
+    "end": 5641,
+    "label": "BD_UPAZILA",
+    "text": "Zakiganj"
+   },
+   {
+    "start": 5905,
+    "end": 5915,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 6382,
+    "end": 6388,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 6466,
+    "end": 6475,
+    "label": "BD_UPAZILA",
+    "text": "Kanaighat"
+   },
+   {
+    "start": 6480,
+    "end": 6486,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 6596,
+    "end": 6606,
+    "label": "BD_UPAZILA",
+    "text": "Fenchuganj"
+   },
+   {
+    "start": 6620,
+    "end": 6628,
+    "label": "BD_DISTRICT",
+    "text": "Jakiganj"
+   },
+   {
+    "start": 6633,
+    "end": 6640,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 6672,
+    "end": 6675,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   },
+   {
+    "start": 6681,
+    "end": 6709,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Sylhet meteorological office"
+   },
+   {
+    "start": 6747,
+    "end": 6753,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 6912,
+    "end": 6918,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 6960,
+    "end": 6998,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Disaster management and relief affairs"
+   },
+   {
+    "start": 7078,
+    "end": 7084,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 7117,
+    "end": 7122,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 7134,
+    "end": 7137,
+    "label": "AGENCIES_INVOLVED",
+    "text": "SCC"
+   }
+  ]
+ },
+ "dev-36": {
+  "sha": "059c00472602",
+  "ents": [
+   {
+    "start": 4,
+    "end": 9,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 212,
+    "end": 257,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Directorate General of Health Services (DGHS)"
+   },
+   {
+    "start": 328,
+    "end": 333,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 451,
+    "end": 457,
+    "label": "DISASTER_TYPE",
+    "text": "Floods"
+   },
+   {
+    "start": 458,
+    "end": 483,
+    "label": "AFFECTED_PEOPLE",
+    "text": "hit over a million people"
+   },
+   {
+    "start": 498,
+    "end": 554,
+    "label": "AGENCIES_INVOLVED",
+    "text": "DGHS Health Emergency Operations Center and control room"
+   },
+   {
+    "start": 576,
+    "end": 607,
+    "label": "AFFECTED_PEOPLE",
+    "text": "8,201 people have been affected"
+   },
+   {
+    "start": 630,
+    "end": 689,
+    "label": "FATALITIES",
+    "text": "2,309 have been suffering from respiratory tract infections"
+   },
+   {
+    "start": 696,
+    "end": 705,
+    "label": "FATALITIES",
+    "text": "one death"
+   },
+   {
+    "start": 720,
+    "end": 766,
+    "label": "AFFECTED_PEOPLE",
+    "text": "2,791 people are afflicted with skin disorders"
+   },
+   {
+    "start": 884,
+    "end": 888,
+    "label": "AGENCIES_INVOLVED",
+    "text": "DGHS"
+   },
+   {
+    "start": 1049,
+    "end": 1054,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1064,
+    "end": 1068,
+    "label": "AGENCIES_INVOLVED",
+    "text": "DGHS"
+   },
+   {
+    "start": 1119,
+    "end": 1128,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 1198,
+    "end": 1202,
+    "label": "AGENCIES_INVOLVED",
+    "text": "DGHS"
+   },
+   {
+    "start": 1213,
+    "end": 1228,
+    "label": "FATALITIES",
+    "text": "119 people died"
+   },
+   {
+    "start": 1258,
+    "end": 1264,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   },
+   {
+    "start": 1307,
+    "end": 1328,
+    "label": "FATALITIES",
+    "text": "98 people who drowned"
+   },
+   {
+    "start": 1330,
+    "end": 1365,
+    "label": "FATALITIES",
+    "text": "10 people who died from snake bites"
+   },
+   {
+    "start": 1371,
+    "end": 1409,
+    "label": "FATALITIES",
+    "text": "seven people died of lightning strikes"
+   },
+   {
+    "start": 1563,
+    "end": 1567,
+    "label": "AGENCIES_INVOLVED",
+    "text": "DGHS"
+   },
+   {
+    "start": 1615,
+    "end": 1620,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1649,
+    "end": 1659,
+    "label": "BD_DISTRICT",
+    "text": "Shariatpur"
+   },
+   {
+    "start": 1661,
+    "end": 1668,
+    "label": "BD_DISTRICT",
+    "text": "Rajbari"
+   },
+   {
+    "start": 1670,
+    "end": 1679,
+    "label": "BD_DISTRICT",
+    "text": "Manikganj"
+   },
+   {
+    "start": 1681,
+    "end": 1691,
+    "label": "BD_DISTRICT",
+    "text": "Munshiganj"
+   },
+   {
+    "start": 1693,
+    "end": 1702,
+    "label": "BD_DISTRICT",
+    "text": "Netrokona"
+   },
+   {
+    "start": 1704,
+    "end": 1714,
+    "label": "BD_DISTRICT",
+    "text": "Chittagong"
+   },
+   {
+    "start": 1716,
+    "end": 1727,
+    "label": "BD_DISTRICT",
+    "text": "Cox s Bazar"
+   },
+   {
+    "start": 1729,
+    "end": 1741,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 1743,
+    "end": 1752,
+    "label": "BD_DISTRICT",
+    "text": "Bandarban"
+   },
+   {
+    "start": 1754,
+    "end": 1763,
+    "label": "BD_DISTRICT",
+    "text": "Rangamati"
+   },
+   {
+    "start": 1765,
+    "end": 1769,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1771,
+    "end": 1776,
+    "label": "BD_DISTRICT",
+    "text": "Bogra"
+   },
+   {
+    "start": 1778,
+    "end": 1787,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 1789,
+    "end": 1800,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 1802,
+    "end": 1812,
+    "label": "BD_DISTRICT",
+    "text": "Nilphamari"
+   },
+   {
+    "start": 1814,
+    "end": 1820,
+    "label": "BD_DISTRICT",
+    "text": "Sylhet"
+   },
+   {
+    "start": 1822,
+    "end": 1831,
+    "label": "BD_DISTRICT",
+    "text": "Sunamganj"
+   },
+   {
+    "start": 1833,
+    "end": 1844,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 1846,
+    "end": 1854,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1856,
+    "end": 1864,
+    "label": "BD_DISTRICT",
+    "text": "Jamalpur"
+   },
+   {
+    "start": 1866,
+    "end": 1873,
+    "label": "BD_DISTRICT",
+    "text": "Sherpur"
+   },
+   {
+    "start": 1875,
+    "end": 1887,
+    "label": "BD_DISTRICT",
+    "text": "Brahmanbaria"
+   },
+   {
+    "start": 1889,
+    "end": 1896,
+    "label": "BD_DISTRICT",
+    "text": "Tangail"
+   },
+   {
+    "start": 1898,
+    "end": 1907,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 1909,
+    "end": 1917,
+    "label": "BD_DISTRICT",
+    "text": "Habiganj"
+   },
+   {
+    "start": 1919,
+    "end": 1927,
+    "label": "BD_DISTRICT",
+    "text": "Faridpur"
+   },
+   {
+    "start": 1929,
+    "end": 1937,
+    "label": "BD_DISTRICT",
+    "text": "Chandpur"
+   },
+   {
+    "start": 1943,
+    "end": 1952,
+    "label": "BD_DISTRICT",
+    "text": "Madaripur"
+   }
+  ]
+ },
+ "dev-37": {
+  "sha": "e3db5446925f",
+  "ents": [
+   {
+    "start": 56,
+    "end": 60,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 87,
+    "end": 95,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 225,
+    "end": 233,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 273,
+    "end": 280,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 339,
+    "end": 369,
+    "label": "MISSING",
+    "text": "another person remains missing"
+   },
+   {
+    "start": 410,
+    "end": 415,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 634,
+    "end": 649,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Army"
+   },
+   {
+    "start": 658,
+    "end": 695,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Fire Service and Civil Defence (FSCD)"
+   },
+   {
+    "start": 770,
+    "end": 774,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 874,
+    "end": 881,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 918,
+    "end": 927,
+    "label": "BD_UNION",
+    "text": "Anondapur"
+   },
+   {
+    "start": 929,
+    "end": 938,
+    "label": "BD_UNION",
+    "text": "Munshihat"
+   },
+   {
+    "start": 944,
+    "end": 952,
+    "label": "BD_UNION",
+    "text": "Amjadhat"
+   },
+   {
+    "start": 1168,
+    "end": 1175,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 1203,
+    "end": 1212,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 1350,
+    "end": 1362,
+    "label": "BD_UPAZILA",
+    "text": "Chhagalnaiya"
+   },
+   {
+    "start": 1365,
+    "end": 1371,
+    "label": "BD_UNION",
+    "text": "Pathan"
+   },
+   {
+    "start": 1379,
+    "end": 1389,
+    "label": "BD_UNION",
+    "text": "Radhanagar"
+   },
+   {
+    "start": 1395,
+    "end": 1404,
+    "label": "BD_UNION",
+    "text": "Shubhapur"
+   },
+   {
+    "start": 1437,
+    "end": 1448,
+    "label": "DISASTER_TYPE",
+    "text": "Floodwaters"
+   },
+   {
+    "start": 1673,
+    "end": 1681,
+    "label": "DISASTER_TYPE",
+    "text": "flooding"
+   },
+   {
+    "start": 1839,
+    "end": 1844,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2296,
+    "end": 2305,
+    "label": "BD_UPAZILA",
+    "text": "Parshuram"
+   },
+   {
+    "start": 2378,
+    "end": 2383,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2494,
+    "end": 2506,
+    "label": "AGENCIES_INVOLVED",
+    "text": "fire service"
+   },
+   {
+    "start": 2605,
+    "end": 2631,
+    "label": "MISSING",
+    "text": "One person remains missing"
+   },
+   {
+    "start": 2637,
+    "end": 2682,
+    "label": "RELIEF_INFO",
+    "text": "500 packets of dry food have been distributed"
+   },
+   {
+    "start": 2703,
+    "end": 2745,
+    "label": "RELIEF_INFO",
+    "text": "500 packets and 50 tons of rice in reserve"
+   },
+   {
+    "start": 2747,
+    "end": 2754,
+    "label": "BD_UPAZILA",
+    "text": "Fulgazi"
+   },
+   {
+    "start": 2842,
+    "end": 2849,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 2902,
+    "end": 2930,
+    "label": "DISPLACED",
+    "text": "evacuating around 300 people"
+   },
+   {
+    "start": 2932,
+    "end": 2940,
+    "label": "AGENCIES_INVOLVED",
+    "text": "The army"
+   },
+   {
+    "start": 2945,
+    "end": 2956,
+    "label": "AGENCIES_INVOLVED",
+    "text": "coast guard"
+   },
+   {
+    "start": 2995,
+    "end": 3040,
+    "label": "RELIEF_INFO",
+    "text": "500 packets of dry food have been distributed"
+   },
+   {
+    "start": 3109,
+    "end": 3128,
+    "label": "FATALITIES",
+    "text": "one death confirmed"
+   },
+   {
+    "start": 3130,
+    "end": 3134,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 3301,
+    "end": 3324,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 3467,
+    "end": 3486,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Feni Weather Office"
+   }
+  ]
+ },
+ "dev-38": {
+  "sha": "b6b85b3e9cfa",
+  "ents": [
+   {
+    "start": 0,
+    "end": 112,
+    "label": "DISPLACED",
+    "text": "Around five lakh people of three upazilas and three municipalities around Bhabadah beel in Jessore were marooned"
+   },
+   {
+    "start": 267,
+    "end": 277,
+    "label": "BD_UPAZILA",
+    "text": "Abhaynagar"
+   },
+   {
+    "start": 279,
+    "end": 289,
+    "label": "BD_UPAZILA",
+    "text": "Monirampur"
+   },
+   {
+    "start": 294,
+    "end": 303,
+    "label": "BD_UPAZILA",
+    "text": "Keshabpur"
+   },
+   {
+    "start": 332,
+    "end": 340,
+    "label": "BD_UPAZILA",
+    "text": "Nawapara"
+   },
+   {
+    "start": 342,
+    "end": 352,
+    "label": "BD_UPAZILA",
+    "text": "Abhaynagar"
+   },
+   {
+    "start": 357,
+    "end": 366,
+    "label": "BD_UPAZILA",
+    "text": "Keshabpur"
+   },
+   {
+    "start": 410,
+    "end": 420,
+    "label": "BD_UNION",
+    "text": "Abhoynagor"
+   },
+   {
+    "start": 427,
+    "end": 457,
+    "label": "AFFECTED_PEOPLE",
+    "text": "five lakh people were affected"
+   },
+   {
+    "start": 489,
+    "end": 512,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 644,
+    "end": 651,
+    "label": "BD_UNION",
+    "text": "Sundali"
+   },
+   {
+    "start": 673,
+    "end": 683,
+    "label": "BD_UPAZILA",
+    "text": "Abhaynagar"
+   },
+   {
+    "start": 757,
+    "end": 812,
+    "label": "AFFECTED_PEOPLE",
+    "text": "affecting around seven lakh people of over 100 villages"
+   },
+   {
+    "start": 958,
+    "end": 965,
+    "label": "BD_DISTRICT",
+    "text": "Jessore"
+   },
+   {
+    "start": 1088,
+    "end": 1097,
+    "label": "BD_UPAZILA",
+    "text": "Keshabpur"
+   },
+   {
+    "start": 1104,
+    "end": 1184,
+    "label": "AFFECTED_PEOPLE",
+    "text": "10,000 people of seven unions and a municipality under the upazila were affected"
+   },
+   {
+    "start": 1340,
+    "end": 1376,
+    "label": "RELIEF_INFO",
+    "text": "Eleven tonnes of rice were allocated"
+   },
+   {
+    "start": 1675,
+    "end": 1685,
+    "label": "BD_UPAZILA",
+    "text": "Monirampur"
+   },
+   {
+    "start": 2042,
+    "end": 2052,
+    "label": "BD_UPAZILA",
+    "text": "Monirampur"
+   }
+  ]
+ },
+ "dev-39": {
+  "sha": "6802e47d3f83",
+  "ents": [
+   {
+    "start": 34,
+    "end": 39,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 190,
+    "end": 231,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Water Development Board (BWDB)"
+   },
+   {
+    "start": 533,
+    "end": 538,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 575,
+    "end": 585,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 619,
+    "end": 624,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 642,
+    "end": 649,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 651,
+    "end": 661,
+    "label": "BD_DISTRICT",
+    "text": "Nilphamari"
+   },
+   {
+    "start": 663,
+    "end": 674,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 676,
+    "end": 684,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 690,
+    "end": 699,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 811,
+    "end": 814,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BSS"
+   },
+   {
+    "start": 835,
+    "end": 842,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 851,
+    "end": 855,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BWDB"
+   },
+   {
+    "start": 898,
+    "end": 903,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1171,
+    "end": 1179,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1181,
+    "end": 1190,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 1196,
+    "end": 1207,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 1316,
+    "end": 1327,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 1329,
+    "end": 1337,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1342,
+    "end": 1351,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 1436,
+    "end": 1442,
+    "label": "BD_UPAZILA",
+    "text": "Kawnia"
+   },
+   {
+    "start": 1452,
+    "end": 1459,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 1499,
+    "end": 1509,
+    "label": "BD_DISTRICT",
+    "text": "Nilphamari"
+   },
+   {
+    "start": 1597,
+    "end": 1603,
+    "label": "BD_UPAZILA",
+    "text": "Kawnia"
+   },
+   {
+    "start": 1780,
+    "end": 1788,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1858,
+    "end": 1866,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 1930,
+    "end": 1939,
+    "label": "BD_UNION",
+    "text": "Noonkhawa"
+   },
+   {
+    "start": 1950,
+    "end": 1955,
+    "label": "BD_UNION",
+    "text": "Hatia"
+   },
+   {
+    "start": 1969,
+    "end": 1977,
+    "label": "BD_UPAZILA",
+    "text": "Chilmari"
+   },
+   {
+    "start": 1988,
+    "end": 1996,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 2056,
+    "end": 2065,
+    "label": "BD_UPAZILA",
+    "text": "Fulchhari"
+   },
+   {
+    "start": 2095,
+    "end": 2106,
+    "label": "BD_UNION",
+    "text": "Bahadurabad"
+   },
+   {
+    "start": 2117,
+    "end": 2127,
+    "label": "BD_UPAZILA",
+    "text": "Sariakandi"
+   },
+   {
+    "start": 2138,
+    "end": 2145,
+    "label": "BD_UPAZILA",
+    "text": "Kazipur"
+   },
+   {
+    "start": 2159,
+    "end": 2168,
+    "label": "BD_DISTRICT",
+    "text": "Sirajganj"
+   },
+   {
+    "start": 2325,
+    "end": 2332,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 2334,
+    "end": 2345,
+    "label": "BD_DISTRICT",
+    "text": "Lalmonirhat"
+   },
+   {
+    "start": 2347,
+    "end": 2357,
+    "label": "BD_DISTRICT",
+    "text": "Nilphamari"
+   },
+   {
+    "start": 2359,
+    "end": 2367,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 2372,
+    "end": 2381,
+    "label": "BD_DISTRICT",
+    "text": "Gaibandha"
+   },
+   {
+    "start": 2398,
+    "end": 2402,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BWDB"
+   },
+   {
+    "start": 2405,
+    "end": 2412,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 2469,
+    "end": 2511,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Department of Agricultural Extension (DAE)"
+   },
+   {
+    "start": 2516,
+    "end": 2523,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 2623,
+    "end": 2633,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 2678,
+    "end": 2685,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 2697,
+    "end": 2707,
+    "label": "DISASTER_TYPE",
+    "text": "Floodwater"
+   },
+   {
+    "start": 2851,
+    "end": 2861,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 3069,
+    "end": 3076,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 3130,
+    "end": 3133,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BSS"
+   },
+   {
+    "start": 3208,
+    "end": 3218,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 3302,
+    "end": 3309,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 3339,
+    "end": 3344,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3438,
+    "end": 3443,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3522,
+    "end": 3526,
+    "label": "AGENCIES_INVOLVED",
+    "text": "BWDB"
+   },
+   {
+    "start": 3602,
+    "end": 3607,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3691,
+    "end": 3698,
+    "label": "BD_DISTRICT",
+    "text": "Rangpur"
+   },
+   {
+    "start": 3768,
+    "end": 3773,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3847,
+    "end": 3852,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   }
+  ]
+ },
+ "dev-40": {
+  "sha": "0290fac6448f",
+  "ents": [
+   {
+    "start": 17,
+    "end": 27,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 44,
+    "end": 59,
+    "label": "BD_UPAZILA",
+    "text": "Laksmipur Poura"
+   },
+   {
+    "start": 75,
+    "end": 84,
+    "label": "BD_DISTRICT",
+    "text": "Laksmipur"
+   },
+   {
+    "start": 133,
+    "end": 203,
+    "label": "FATALITIES",
+    "text": "Death toll in the flash floods in the 11 affected districts rose to 59"
+   },
+   {
+    "start": 207,
+    "end": 223,
+    "label": "FATALITIES",
+    "text": "five more deaths"
+   },
+   {
+    "start": 253,
+    "end": 292,
+    "label": "AGENCIES_INVOLVED",
+    "text": "disaster management and relief ministry"
+   },
+   {
+    "start": 299,
+    "end": 304,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 346,
+    "end": 385,
+    "label": "DISPLACED",
+    "text": "seven lakh people still remain marooned"
+   },
+   {
+    "start": 444,
+    "end": 453,
+    "label": "BD_UPAZILA",
+    "text": "Burichang"
+   },
+   {
+    "start": 458,
+    "end": 469,
+    "label": "BD_UPAZILA",
+    "text": "Brahmanpara"
+   },
+   {
+    "start": 482,
+    "end": 489,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 500,
+    "end": 507,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 531,
+    "end": 536,
+    "label": "DISASTER_TYPE",
+    "text": "Flood"
+   },
+   {
+    "start": 679,
+    "end": 683,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1022,
+    "end": 1026,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1031,
+    "end": 1038,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 1103,
+    "end": 1216,
+    "label": "DISPLACED",
+    "text": "The floods have displaced around five lakh people over 3.93 lakh of whom are still living in 3,928 flood shelters"
+   },
+   {
+    "start": 1307,
+    "end": 1312,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1498,
+    "end": 1560,
+    "label": "DISPLACED",
+    "text": "the number of overall flood-affected people stood at 54.5 lakh"
+   },
+   {
+    "start": 1582,
+    "end": 1621,
+    "label": "AGENCIES_INVOLVED",
+    "text": "disaster management and relief ministry"
+   },
+   {
+    "start": 1628,
+    "end": 1633,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 1663,
+    "end": 1733,
+    "label": "FATALITIES",
+    "text": "among the dead people 41 were men, 12 were children and six were women"
+   },
+   {
+    "start": 1735,
+    "end": 1739,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 1772,
+    "end": 1798,
+    "label": "FATALITIES",
+    "text": "Cumilla recorded 14 deaths"
+   },
+   {
+    "start": 1800,
+    "end": 1820,
+    "label": "FATALITIES",
+    "text": "Noakhali nine deaths"
+   },
+   {
+    "start": 1822,
+    "end": 1832,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 1845,
+    "end": 1869,
+    "label": "FATALITIES",
+    "text": "Cox s Bazar three deaths"
+   },
+   {
+    "start": 1875,
+    "end": 1887,
+    "label": "BD_DISTRICT",
+    "text": "Khagrachhari"
+   },
+   {
+    "start": 1889,
+    "end": 1901,
+    "label": "BD_DISTRICT",
+    "text": "Brahmanbaria"
+   },
+   {
+    "start": 1903,
+    "end": 1913,
+    "label": "BD_DISTRICT",
+    "text": "Lakshmipur"
+   },
+   {
+    "start": 1918,
+    "end": 1929,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 1946,
+    "end": 1966,
+    "label": "MISSING",
+    "text": "One remained missing"
+   },
+   {
+    "start": 1970,
+    "end": 1981,
+    "label": "BD_DISTRICT",
+    "text": "Moulvibazar"
+   },
+   {
+    "start": 2008,
+    "end": 2015,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 2106,
+    "end": 2111,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2295,
+    "end": 2318,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Water Development Board"
+   },
+   {
+    "start": 2319,
+    "end": 2326,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 2460,
+    "end": 2465,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2466,
+    "end": 2475,
+    "label": "BD_UPAZILA",
+    "text": "Burichang"
+   },
+   {
+    "start": 2480,
+    "end": 2491,
+    "label": "BD_UPAZILA",
+    "text": "Brahmanpara"
+   },
+   {
+    "start": 2615,
+    "end": 2626,
+    "label": "BD_UPAZILA",
+    "text": "Brahmanpara"
+   },
+   {
+    "start": 2717,
+    "end": 2724,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 2726,
+    "end": 2731,
+    "label": "DISASTER_TYPE",
+    "text": "Flood"
+   },
+   {
+    "start": 2765,
+    "end": 2772,
+    "label": "BD_DISTRICT",
+    "text": "Cumilla"
+   },
+   {
+    "start": 2781,
+    "end": 2789,
+    "label": "BD_UPAZILA",
+    "text": "Chandina"
+   },
+   {
+    "start": 2791,
+    "end": 2797,
+    "label": "BD_UPAZILA",
+    "text": "Meghna"
+   },
+   {
+    "start": 2802,
+    "end": 2807,
+    "label": "BD_UPAZILA",
+    "text": "Homna"
+   },
+   {
+    "start": 2822,
+    "end": 2827,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 2841,
+    "end": 2850,
+    "label": "BD_UPAZILA",
+    "text": "Burichang"
+   },
+   {
+    "start": 2852,
+    "end": 2863,
+    "label": "BD_UPAZILA",
+    "text": "Brahmanpara"
+   },
+   {
+    "start": 2865,
+    "end": 2876,
+    "label": "BD_UPAZILA",
+    "text": "Chauddagram"
+   },
+   {
+    "start": 2878,
+    "end": 2887,
+    "label": "BD_UPAZILA",
+    "text": "Nangalkot"
+   },
+   {
+    "start": 2889,
+    "end": 2895,
+    "label": "BD_UPAZILA",
+    "text": "Laksam"
+   },
+   {
+    "start": 2897,
+    "end": 2908,
+    "label": "BD_UPAZILA",
+    "text": "Manoharganj"
+   },
+   {
+    "start": 2910,
+    "end": 2916,
+    "label": "BD_UPAZILA",
+    "text": "Barura"
+   },
+   {
+    "start": 3026,
+    "end": 3031,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3165,
+    "end": 3170,
+    "label": "BD_UNION",
+    "text": "Nadda"
+   },
+   {
+    "start": 3180,
+    "end": 3186,
+    "label": "BD_UPAZILA",
+    "text": "Laksam"
+   },
+   {
+    "start": 3263,
+    "end": 3274,
+    "label": "BD_UPAZILA",
+    "text": "Manoharganj"
+   },
+   {
+    "start": 3279,
+    "end": 3288,
+    "label": "BD_UPAZILA",
+    "text": "Nangalkot"
+   },
+   {
+    "start": 3388,
+    "end": 3397,
+    "label": "BD_UPAZILA",
+    "text": "Burichang"
+   },
+   {
+    "start": 3419,
+    "end": 3430,
+    "label": "BD_UPAZILA",
+    "text": "Brahmanpara"
+   },
+   {
+    "start": 3469,
+    "end": 3474,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3516,
+    "end": 3520,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 3577,
+    "end": 3587,
+    "label": "BD_UPAZILA",
+    "text": "Feni sadar"
+   },
+   {
+    "start": 3592,
+    "end": 3604,
+    "label": "BD_UPAZILA",
+    "text": "Daganbhuiyan"
+   },
+   {
+    "start": 3637,
+    "end": 3647,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 3733,
+    "end": 3741,
+    "label": "BD_UPAZILA",
+    "text": "Phulgazi"
+   },
+   {
+    "start": 3803,
+    "end": 3808,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 3882,
+    "end": 3891,
+    "label": "BD_UPAZILA",
+    "text": "Porshuram"
+   },
+   {
+    "start": 3967,
+    "end": 3971,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 4124,
+    "end": 4128,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 4156,
+    "end": 4163,
+    "label": "DISASTER_TYPE",
+    "text": "flooded"
+   },
+   {
+    "start": 4275,
+    "end": 4279,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 4405,
+    "end": 4413,
+    "label": "BD_UPAZILA",
+    "text": "Sonagazi"
+   },
+   {
+    "start": 4516,
+    "end": 4520,
+    "label": "BD_DISTRICT",
+    "text": "Feni"
+   },
+   {
+    "start": 4594,
+    "end": 4604,
+    "label": "DISASTER_TYPE",
+    "text": "floodwater"
+   },
+   {
+    "start": 4638,
+    "end": 4646,
+    "label": "BD_UPAZILA",
+    "text": "Sonagazi"
+   },
+   {
+    "start": 4647,
+    "end": 4655,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 4839,
+    "end": 4868,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Roads and Highways Department"
+   },
+   {
+    "start": 4871,
+    "end": 4879,
+    "label": "BD_DISTRICT",
+    "text": "Noakhali"
+   },
+   {
+    "start": 5009,
+    "end": 5014,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 5059,
+    "end": 5086,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Sangbad Sangstha"
+   },
+   {
+    "start": 5164,
+    "end": 5200,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Flood Forecasting and Warning Centre"
+   },
+   {
+    "start": 5341,
+    "end": 5366,
+    "label": "AGENCIES_INVOLVED",
+    "text": "United News of Bangladesh"
+   },
+   {
+    "start": 5777,
+    "end": 5813,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Meteorological Department"
+   },
+   {
+    "start": 5850,
+    "end": 5860,
+    "label": "BD_DISTRICT",
+    "text": "Chattogram"
+   },
+   {
+    "start": 5862,
+    "end": 5873,
+    "label": "BD_DISTRICT",
+    "text": "Cox s Bazar"
+   },
+   {
+    "start": 5875,
+    "end": 5881,
+    "label": "BD_UPAZILA",
+    "text": "Mongla"
+   },
+   {
+    "start": 5886,
+    "end": 5891,
+    "label": "BD_UPAZILA",
+    "text": "Payra"
+   },
+   {
+    "start": 6312,
+    "end": 6318,
+    "label": "DISASTER_TYPE",
+    "text": "floods"
+   }
+  ]
+ },
+ "dev-41": {
+  "sha": "080947f45a7f",
+  "ents": [
+   {
+    "start": 21,
+    "end": 26,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 204,
+    "end": 209,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 277,
+    "end": 282,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 314,
+    "end": 322,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 458,
+    "end": 466,
+    "label": "BD_DISTRICT",
+    "text": "Kurigram"
+   },
+   {
+    "start": 512,
+    "end": 552,
+    "label": "AGENCIES_INVOLVED",
+    "text": "Bangladesh Water Development Board (WDB)"
+   },
+   {
+    "start": 559,
+    "end": 564,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 607,
+    "end": 612,
+    "label": "DISASTER_TYPE",
+    "text": "flood"
+   },
+   {
+    "start": 899,
+    "end": 907,
+    "label": "BD_UPAZILA",
+    "text": "Chilmari"
+   },
+   {
+    "start": 937,
+    "end": 940,
+    "label": "AGENCIES_INVOLVED",
+    "text": "WDB"
+   }
+  ]
+ }
+}

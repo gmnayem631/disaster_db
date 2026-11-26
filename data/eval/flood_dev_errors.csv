@@ -1,0 +1,208 @@
+model,article,error,annotated,predicted,text,start
+xlmr,dev-01,missed,RELIEF_INFO,nothing,Distribution of relief among the victims is ongoing,681
+xlmr,dev-03,missed,AFFECTED_PEOPLE,DISPLACED,"50,000 people waterlogged",424
+xlmr,dev-03,wrong,AFFECTED_PEOPLE,DISPLACED,"50,000 people waterlogged",424
+xlmr,dev-05,missed,FATALITIES,nothing,two were in Noakhali,288
+xlmr,dev-05,missed,FATALITIES,nothing,the floods have claimed 26 lives in Feni,327
+xlmr,dev-05,missed,FATALITIES,nothing,17 in Cumilla,369
+xlmr,dev-10,missed,RELIEF_INFO,nothing,"allotted 24,150 tons of rice, Tk3.27 crore in cash, 102,000 packages of dry food, and 8,000 tents as relief materials",1386
+xlmr,dev-10,missed,DISPLACED,nothing,significant number of people are still marooned,2582
+xlmr,dev-13,wrong,,DISPLACED,100 people had taken shelter,2436
+xlmr,dev-13,wrong,,RELIEF_INFO,A control room has been opened,2833
+xlmr,dev-14,wrong,,DISPLACED,"8,966 people from 2,625 families were still awaiting the",1331
+xlmr,dev-14,missed,AFFECTED_PEOPLE,DISPLACED,"the number of the affected would exceed 50,000",1699
+xlmr,dev-14,wrong,AFFECTED_PEOPLE,DISPLACED,"the number of the affected would exceed 50,000",1699
+xlmr,dev-14,missed,RELIEF_INFO,nothing,Tk 60 crore have been sent,4375
+xlmr,dev-15,missed,FATALITIES,nothing,Bhujpur,951
+xlmr,dev-17,missed,AFFECTED_PEOPLE,DISPLACED,three lakh flood-affected people,152
+xlmr,dev-17,wrong,AFFECTED_PEOPLE,DISPLACED,three lakh flood-affected people in 400 villages of 56 unions in nine upazilas are living misery,152
+xlmr,dev-18,wrong,,RELIEF_INFO,allocated sufficient relief goods,2958
+xlmr,dev-20,wrong,,DISPLACED,"2,85,996 people and 31,203 livestock remain in 3,612 shelters",5029
+xlmr,dev-22,missed,AFFECTED_PEOPLE,nothing,Several lakh people have been hit hard,2701
+xlmr,dev-22,missed,AFFECTED_PEOPLE,nothing,Several lakh people have been hit hard,3401
+xlmr,dev-23,wrong,AFFECTED_PEOPLE,DISPLACED,"the total number of flood victims stands at 5,209,798",333
+xlmr,dev-23,missed,AFFECTED_PEOPLE,DISPLACED,"total number of flood victims stands at 5,209,798",337
+xlmr,dev-23,wrong,,FATALITIES,The two missing are from Moulvibazar,741
+xlmr,dev-23,wrong,,RELIEF_INFO,Field hospital has also been set up in Feni.,1234
+xlmr,dev-24,wrong,,FATALITIES,no new deaths,179
+xlmr,dev-26,wrong,,DISPLACED,Hundreds of thousands of people have been displaced,0
+xlmr,dev-26,missed,RELIEF_INFO,nothing,"distributed 153 MT of rice and Tk 2,50,000,",3646
+xlmr,dev-26,wrong,,DISPLACED,People have taken shelter on flood control embankments,5524
+xlmr,dev-27,missed,FATALITIES,nothing,"The deceased Bijuram Chakma, 67",683
+xlmr,dev-27,wrong,,DISPLACED,250 families have already been shifted,1199
+xlmr,dev-27,wrong,,DISPLACED,"1,200 homes flooded",2255
+xlmr,dev-27,wrong,,RELIEF_INFO,"300 metric tons of rice and 1,265 packets of dry food have been supplied",3446
+xlmr,dev-27,wrong,,RELIEF_INFO,200 tons of rice and Tk3 lakh have been kept in stock,3619
+xlmr,dev-28,wrong,,FATALITIES,rising death tolls dominated the headlines,4523
+xlmr,dev-31,wrong,,DISPLACED,50 people have been trapped,1336
+xlmr,dev-32,missed,RELIEF_INFO,nothing,Forty-two shelters were opened in Gowainghat for the flood-hit people,464
+xlmr,dev-32,missed,DISPLACED,nothing,Around 90 percent of people of the upazila were stranded,789
+xlmr,dev-32,missed,RELIEF_INFO,nothing,prepared 42 shelters,1116
+xlmr,dev-32,wrong,,AFFECTED_PEOPLE,Hundreds of people of Zakiganj,1314
+xlmr,dev-33,missed,RELIEF_INFO,nothing,allocation of over Tk12.99 crore,186
+xlmr,dev-33,wrong,,RELIEF_INFO,Tk12.67 crore has been returned to the national coffer,279
+xlmr,dev-33,missed,RELIEF_INFO,nothing,"received allocations of less than Tk1,50,000",1279
+xlmr,dev-33,missed,RELIEF_INFO,nothing,"Tk76,11,960 was allocated",2292
+xlmr,dev-33,wrong,,RELIEF_INFO,"received Tk3,51,66,987 for repairs",2819
+xlmr,dev-34,missed,DISPLACED,nothing,thousands evacuated,245
+xlmr,dev-34,missed,DISPLACED,nothing,thousands of people stuck,1354
+xlmr,dev-34,missed,AFFECTED_PEOPLE,nothing,"10 lakh people, most of whom are affected",1566
+xlmr,dev-35,wrong,,DISPLACED,"several hundred flood-hit people, whose homes already were inundated by the",1786
+xlmr,dev-35,wrong,,AFFECTED_PEOPLE,"6,75,937 people of 21 wards in the city and 1323 villages at 116 unions under 13 upazilas in the district were affected",3537
+xlmr,dev-36,wrong,,FATALITIES,"2,309 have been suffering from respiratory tract infections",630
+xlmr,dev-36,missed,AFFECTED_PEOPLE,nothing,710 people are suffering from impaired vision,768
+xlmr,dev-36,missed,AFFECTED_PEOPLE,nothing,"6,717 people are dealing with other health related issues",821
+xlmr,dev-36,missed,RELIEF_INFO,nothing,"formed 2,462 medical teams",919
+xlmr,dev-37,wrong,,MISSING,another person remains missing,339
+xlmr,dev-37,wrong,,DISPLACED,evacuating around 300 people,2902
+xlmr,dev-40,missed,AFFECTED_PEOPLE,DISPLACED,the number of overall flood-affected people stood at 54.5 lakh,1498
+xlmr,dev-40,wrong,AFFECTED_PEOPLE,DISPLACED,the number of overall flood-affected people stood at 54.5 lakh,1498
+xlmr,dev-40,wrong,,FATALITIES,"among the dead people 41 were men, 12 were children and six were women",1663
+xlmr,dev-40,wrong,,FATALITIES,Noakhali nine deaths,1800
+xlmr,dev-40,missed,FATALITIES,nothing,"Khagrachhari, Brahmanbaria, Lakshmipur and Moulvibazar one death each.",1875
+xlmr,dev-40,missed,RELIEF_INFO,nothing,first got relief on Friday,3219
+xlmr,dev-40,missed,DISPLACED,nothing,trapped in flood,3458
+qwen,dev-01,wrong,,AFFECTED_PEOPLE,"Rafiqul Islam of the Porakandulia area of Dhobaura said, ""There is an extreme shortage of dry food and clean water among",791
+qwen,dev-02,wrong,,DISPLACED,"approximately 12,000",139
+qwen,dev-02,wrong,,AFFECTED_PEOPLE,"As a result, the plight of the flood-affected people has intensified, with the families in the Char areas suffering the ",235
+qwen,dev-02,wrong,,DISPLACED,Many have been forced to abandon their houses and seek refuge on boats and elevated surfaces and face a scarcity of dry ,497
+qwen,dev-02,wrong,,DISPLACED,More than two hundred,639
+qwen,dev-02,wrong,,AFFECTED_PEOPLE,"I have been severely affected by this flood.""",2589
+qwen,dev-02,wrong,,RELIEF_INFO,"We have sufficient cash and dry food stockpiled, and the UNO and UP chairmen have been instructed to take immediate acti",3027
+qwen,dev-02,wrong,,RELIEF_INFO,"Relief distribution has already commenced,"" he said.",3165
+qwen,dev-03,wrong,AFFECTED_PEOPLE,DISPLACED,"over 50,000",419
+qwen,dev-03,missed,AFFECTED_PEOPLE,DISPLACED (ACCEPTED),"50,000 people waterlogged",424
+qwen,dev-03,missed,DISPLACED,AFFECTED_PEOPLE (ACCEPTED),"marooning some 75,000 people",1328
+qwen,dev-03,wrong,DISPLACED,AFFECTED_PEOPLE,"some 75,000",1338
+qwen,dev-03,missed,RELIEF_INFO,OTHER (ACCEPTED) / OTHER (ACCEPTED),allocated 10 metric tonnes of rice and Tk 1 lakh,2007
+qwen,dev-04,wrong,,AFFECTED_PEOPLE,"Jurain, Shyampur, and Rayerbagh are affected by the encroached Kadamtali and Manda canals.",4006
+qwen,dev-04,wrong,,AFFECTED_PEOPLE,"Mirpur is affected by the clogged Paris Khal, which the city is currently cleaning, Azaz said.",4910
+qwen,dev-05,missed,DISPLACED,DISPLACED (REVIEW_REQUIRED),3.06 lakh people have taken shelter,1167
+qwen,dev-05,missed,RELIEF_INFO,OTHER (REVIEW_REQUIRED),472 medical teams are providing medical services,1344
+qwen,dev-05,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),Tk4.52 crore has been disbursed,1439
+qwen,dev-05,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED) / RELIEF (REVIEW_REQUIRED) / RELIEF (REVIEW_REQUIRED),"20,650 tonnes of rice, 15,000 pieces of dry foods or other foods and baby foods and fodder worth Tk 35 lakh each",1514
+qwen,dev-07,wrong,,RELIEF_INFO,"The disaster management and relief ministry came up with this information on Saturday, adding that they have already sen",190
+qwen,dev-07,wrong,,RELIEF_INFO,Directives have been given to turn local government and private buildings into shelter centres for the flood-affected pe,403
+qwen,dev-08,missed,FATALITIES,FATALITIES (REVIEW_REQUIRED),three were in Cox s Bazar,448
+qwen,dev-08,missed,MISSING,FATALITIES (ACCEPTED),two persons are remaining missing,490
+qwen,dev-08,wrong,MISSING,FATALITIES,two,490
+qwen,dev-08,missed,DISPLACED,AFFECTED_PEOPLE (REVIEW_REQUIRED),"12,38,048 families have been stranded",974
+qwen,dev-08,wrong,,RELIEF_INFO,"3,834",1062
+qwen,dev-09,wrong,,DISPLACED,"around 20,000",3391
+qwen,dev-09,wrong,,DISPLACED,"5,000",3417
+qwen,dev-10,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED) / RELIEF (REVIEW_REQUIRED) / RELIEF (REVIEW_REQUIRED) / RELIEF (REVIEW_REQUIRED),"allotted 24,150 tons of rice, Tk3.27 crore in cash, 102,000 packages of dry food, and 8,000 tents as relief materials",1386
+qwen,dev-10,wrong,,AFFECTED_PEOPLE,"Thousands of people have been affected in the districts, as rising water levels of the major rivers left people stranded",2306
+qwen,dev-10,missed,FATALITIES,FATALITIES (REVIEW_REQUIRED),seven people were killed,2937
+qwen,dev-10,wrong,,DISPLACED,"Despite the improvement, a huge number of people continue to remain marooned, and cultivable lands, and roads are still ",3605
+qwen,dev-10,wrong,,RELIEF_INFO,"Faridpur Deputy Commissioner Atul Sarkar said:  The flood affected families are being closely monitored, and are being p",4347
+qwen,dev-10,wrong,,DISPLACED,"80,000",5182
+qwen,dev-13,wrong,,DISPLACED,over 100,2431
+qwen,dev-13,wrong,,DISPLACED,131,2687
+qwen,dev-13,wrong,,DISPLACED,150,2736
+qwen,dev-14,wrong,,DISPLACED,"8,966",1331
+qwen,dev-14,wrong,,DISPLACED,"2,625",1349
+qwen,dev-15,wrong,,DISPLACED,11,870
+qwen,dev-15,missed,FATALITIES,nothing,Bhujpur,951
+qwen,dev-15,wrong,,DISPLACED,"Apart from Fatikchhari, many people in Raozan, Lohagara, Satkania, Chandanaish, Mirsarai and Sitakunda remain stranded a",1639
+qwen,dev-17,wrong,,DISPLACED,65,1220
+qwen,dev-17,wrong,,AFFECTED_PEOPLE,"However, they are also facing an acute food crisis, the affected dwellers said.",2397
+qwen,dev-18,wrong,,DISPLACED,eight,1355
+qwen,dev-18,wrong,,DISPLACED,15,1429
+qwen,dev-18,wrong,,DISPLACED,Seven,1453
+qwen,dev-18,wrong,,RELIEF_INFO,547,2624
+qwen,dev-18,missed,DISPLACED,DISPLACED (REVIEW_REQUIRED),"3,739 people were staying at the shelters",2682
+qwen,dev-18,wrong,,RELIEF_INFO,We have allocated sufficient relief goods for the affected people.,2950
+qwen,dev-20,wrong,,RELIEF_INFO,Medical treatment and essential medicines will be provided to affected communities to prevent disease outbreaks.,2923
+qwen,dev-20,missed,DISPLACED,HOUSING_DAMAGE (REVIEW_REQUIRED),"582,155 families remain waterlogged",4872
+qwen,dev-20,wrong,,DISPLACED,"2,85,996",5029
+qwen,dev-21,missed,FATALITIES,nothing,the death of a pregnant housewife and her mother-in-law from drowning,1746
+qwen,dev-21,missed,AFFECTED_PEOPLE,nothing,affected over a lakh people,2178
+qwen,dev-22,missed,AFFECTED_PEOPLE,AFFECTED_PEOPLE (REVIEW_REQUIRED),affecting around six lakh people,100
+qwen,dev-22,missed,MISSING,nothing,another has gone missing,331
+qwen,dev-22,missed,AFFECTED_PEOPLE,nothing,Several lakh people have been hit hard,2701
+qwen,dev-22,missed,AFFECTED_PEOPLE,nothing,Several lakh people have been hit hard,3401
+qwen,dev-23,wrong,,MISSING,two,745
+qwen,dev-23,wrong,,DISPLACED,over 0.415 million,875
+qwen,dev-23,wrong,,RELIEF_INFO,"Along with rescue operations, governmental and non-governmental organisations are distributing relief supplies.",902
+qwen,dev-24,missed,AFFECTED_PEOPLE,AFFECTED_PEOPLE (REJECTED),"The number of families affected in the flood is 10, 47,029",679
+qwen,dev-24,wrong,,RELIEF_INFO,"3,654",829
+qwen,dev-26,wrong,,DISPLACED,"Hundreds of thousands of people have been displaced across Bangladesh, particularly in the northern, northeastern, and c",0
+qwen,dev-26,wrong,,AFFECTED_PEOPLE,Also Read- Chittagong hit hard by flood Thousands of people have been affected in the districts while rising water level,1429
+qwen,dev-26,missed,DISPLACED,nothing,Thousands of families were marooned,3356
+qwen,dev-26,wrong,,DISPLACED,200,3399
+qwen,dev-26,missed,AFFECTED_PEOPLE,HOUSING_DAMAGE (REVIEW_REQUIRED),"1,031 families have been damaged",4687
+qwen,dev-26,wrong,,RELIEF_INFO,three,4891
+qwen,dev-26,wrong,,DISPLACED,nearly one lakh,5455
+qwen,dev-26,missed,AFFECTED_PEOPLE,INFRASTRUCTURE_DAMAGE (REVIEW_REQUIRED),affected 763 families,6778
+qwen,dev-26,wrong,,AFFECTED_PEOPLE,3.5 lakh,6812
+qwen,dev-26,wrong,,DISPLACED,51,7231
+qwen,dev-27,wrong,,DISPLACED,"Around 100,000",157
+qwen,dev-27,wrong,,RELIEF_INFO,They are in need of immediate rehabilitation and relief as well.,394
+qwen,dev-27,wrong,,RELIEF_INFO,The district administration distributed dry foods and clean drinking water to the affected areas.,1045
+qwen,dev-27,wrong,,RELIEF_INFO,24,1181
+qwen,dev-27,wrong,,DISPLACED,250,1199
+qwen,dev-27,wrong,,AFFECTED_PEOPLE,The disaster has severely affected the Sunamganj district in Sylhet.,1565
+qwen,dev-27,wrong,,RELIEF_INFO,300,3446
+qwen,dev-27,wrong,,RELIEF_INFO,"1,265",3474
+qwen,dev-27,wrong,,RELIEF_INFO,200,3619
+qwen,dev-27,wrong,,RELIEF_INFO,3 lakh,3642
+qwen,dev-28,wrong,,AFFECTED_PEOPLE,"These August floods spelled doom for Abdur Rashed, a fish farmer from Lebubunia village in Gabura union of Satkhira. """,1991
+qwen,dev-28,wrong,,RELIEF_INFO,000 crore,7120
+qwen,dev-29,wrong,,RELIEF_INFO,131,971
+qwen,dev-29,wrong,,RELIEF_INFO,"3,000",1260
+qwen,dev-31,wrong,,DISPLACED,Around 40,1404
+qwen,dev-32,missed,DISPLACED,DISPLACED (REJECTED),Around 90 percent of people of the upazila were stranded,789
+qwen,dev-32,wrong,,DISPLACED,"Tahmilur Rahman, upazila nirbahi officer of Gowainghat, said: ""Many people have become marooned due to the second phase ",966
+qwen,dev-32,wrong,,AFFECTED_PEOPLE,Hundreds of people of Zakiganj upazila were affected.,1314
+qwen,dev-33,missed,RELIEF_INFO,ECONOMIC_LOSS (ACCEPTED),allocation of over Tk12.99 crore,186
+qwen,dev-33,missed,RELIEF_INFO,ECONOMIC_LOSS (ACCEPTED),"allocated Tk12,99,70,812 crore",450
+qwen,dev-33,missed,RELIEF_INFO,OTHER (ACCEPTED),"received allocations of less than Tk1,50,000",1279
+qwen,dev-33,missed,RELIEF_INFO,OTHER (ACCEPTED),"received Tk5,02,26,514",2020
+qwen,dev-33,missed,RELIEF_INFO,OTHER (ACCEPTED),"Tk76,11,960 was allocated",2292
+qwen,dev-33,missed,RELIEF_INFO,OTHER (ACCEPTED),"Tk2,83,29,941 was allocated",2539
+qwen,dev-33,missed,RELIEF_INFO,INFRASTRUCTURE_DAMAGE (REVIEW_REQUIRED),"Tk2,57,18,766 allocated",2692
+qwen,dev-33,missed,RELIEF_INFO,INFRASTRUCTURE_DAMAGE (ACCEPTED) / INFRASTRUCTURE_DAMAGE (ACCEPTED),"Tk29, 58, 875 has been allocated",2895
+qwen,dev-33,missed,RELIEF_INFO,INFRASTRUCTURE_DAMAGE (ACCEPTED) / INFRASTRUCTURE_DAMAGE (ACCEPTED),"Tk55, 76, 546 was allocated",2966
+qwen,dev-34,missed,DISPLACED,nothing,thousands evacuated,245
+qwen,dev-34,missed,FATALITIES,nothing,A man was washed away and died,491
+qwen,dev-34,missed,FATALITIES,INJURED (ACCEPTED),two other deaths occurred,663
+qwen,dev-34,missed,DISPLACED,nothing,thousands of people stuck,1354
+qwen,dev-34,wrong,,DISPLACED,up to 21,1430
+qwen,dev-34,missed,DISPLACED,nothing,tens of thousands of people marooned.,3374
+qwen,dev-35,missed,DISPLACED,OTHER (ACCEPTED),one-and-half million people were marooned,76
+qwen,dev-35,wrong,,AFFECTED_PEOPLE,152,418
+qwen,dev-35,wrong,,DISPLACED,over one lakh,970
+qwen,dev-35,wrong,,AFFECTED_PEOPLE,28,2980
+qwen,dev-35,wrong,,AFFECTED_PEOPLE,"6,75,937",3537
+qwen,dev-35,wrong,,AFFECTED_PEOPLE,21,3556
+qwen,dev-35,wrong,,RELIEF_INFO,627,3735
+qwen,dev-35,wrong,,FATALITIES,55,5733
+qwen,dev-36,wrong,,AFFECTED_PEOPLE,"20,728",304
+qwen,dev-36,missed,AFFECTED_PEOPLE,nothing,Floods hit over a million people,451
+qwen,dev-36,wrong,,AFFECTED_PEOPLE,"2,309",630
+qwen,dev-36,wrong,,FATALITIES,10,1278
+qwen,dev-36,missed,FATALITIES,FATALITIES (REVIEW_REQUIRED),98 people who drowned,1307
+qwen,dev-36,missed,FATALITIES,FATALITIES (REVIEW_REQUIRED),10 people who died from snake bites,1330
+qwen,dev-36,missed,FATALITIES,FATALITIES (REVIEW_REQUIRED),seven people died,1371
+qwen,dev-37,wrong,,FATALITIES,"The flooding has claimed the life of a young man in Fulgazi upazila, who was swept away by the strong currents, while an",221
+qwen,dev-37,wrong,,RELIEF_INFO,Over 400,371
+qwen,dev-37,wrong,,FATALITIES,"Although locals managed to rescue him, he was declared dead upon arrival at Fulgazi Upazila Health Complex.",1092
+qwen,dev-37,wrong,,DISPLACED,Displaced residents are now seeking shelter as local authorities and volunteer organizations distribute relief supplies.,1548
+qwen,dev-37,wrong,,RELIEF_INFO,two,2539
+qwen,dev-37,wrong,,DISPLACED,around 100,2576
+qwen,dev-37,wrong,,RELIEF_INFO,two,2872
+qwen,dev-37,wrong,,DISPLACED,around 300,2913
+qwen,dev-40,wrong,,DISPLACED,Flood-affected people stranded in remote localities desperately wait for relief amid a situation of complete breakdown o,531
+qwen,dev-40,wrong,,DISPLACED,over 3.93 lakh,1153
+qwen,dev-40,wrong,,FATALITIES,41,1685
+qwen,dev-40,wrong,,FATALITIES,12,1698
+qwen,dev-40,wrong,,FATALITIES,six,1719
+qwen,dev-40,wrong,,FATALITIES,23,1761
+qwen,dev-40,wrong,,FATALITIES,nine,1809
+qwen,dev-40,wrong,,FATALITIES,six,1833
+qwen,dev-40,wrong,,FATALITIES,14,2741
+qwen,dev-40,missed,RELIEF_INFO,RELIEF (REVIEW_REQUIRED),first got relief on Friday,3219
+qwen,dev-40,missed,DISPLACED,nothing,trapped in flood,3458
+qwen,dev-40,wrong,,AFFECTED_PEOPLE,468,4340
+qwen,dev-40,wrong,,AFFECTED_PEOPLE,90,4368
+qwen,dev-41,wrong,,DISPLACED,Some flood affected people started to go back to the flood shelter centres due to the rising of the Dharla river water t,554
